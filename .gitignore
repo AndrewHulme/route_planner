@@ -3,6 +3,7 @@
 # dependencies
 /node_modules
 /.pnp
+/cypress/integration/examples
 .pnp.js
 
 # testing
