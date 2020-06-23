@@ -5,6 +5,7 @@
 /.pnp
 /cypress/integration/examples
 .pnp.js
+.env
 
 # testing
 /coverage
