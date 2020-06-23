@@ -32,8 +32,8 @@ class MapContainer extends Component {
       lng = 0.1277;
     }
     return (
-      <div className="container">
-        <div div="map-div" className="text-center">
+      <div className="container map-div">
+        <div className="text-center">
           <Map
             google={this.props.google}
             zoom={14}

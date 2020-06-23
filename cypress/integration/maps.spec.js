@@ -4,8 +4,8 @@ describe('Route Planner', () => {
   beforeEach(() => {
     cy.visit('http://localhost:3000');
   });
-  it('should have a title', () => {
-    cy.contains('Hello');
-    cy.get('#map-div').should('be.visible');
+  it('should have a map container present', () => {
+    // cy.stub(obj, 'method')
+    cy.get('.map-div').should('not.be.disabled');
   });
 });
