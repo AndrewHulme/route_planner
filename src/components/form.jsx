@@ -8,14 +8,14 @@ class Form extends Component {
         <form>
           <div className="form-group">
             <label>Starting Point:</label>
-            <input type="text" name="startingpoint" />
+            <input autoFocus className='form-control' type="text" name="startingpoint" />
           </div>
           <div className="form-group">
             <label>End Point:</label>
-            <input type="text" name="endpoint" />
+            <input className='form-control' type="text" name="endpoint" />
           </div>
           <br />
-          <input type="submit" className="btn btn-primary" value="Generate" />
+          <input className='form-control' type="submit" className="btn btn-primary" value="Generate" />
         </form>
       </div>
     );
