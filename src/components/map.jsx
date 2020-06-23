@@ -1,9 +1,16 @@
 import React, { Component } from 'react';
 import { Map, GoogleApiWrapper, Marker } from 'google-maps-react';
+import mapTheme from './mapTheme';
 
 const mapStyles = {
   width: '75%',
   height: '75%',
+};
+
+const options = {
+  styles: mapTheme,
+  disableDefaultUI: true,
+  zoomControl: true,
 };
 
 class MapContainer extends Component {
@@ -16,17 +23,25 @@ class MapContainer extends Component {
   }
 
   render() {
+    if (localStorage.getItem('lat') != null) {
+      var lat = localStorage.getItem('lat');
+      var lng = localStorage.getItem('long');
+      console.log('hello');
+    } else {
+      lat = 51.5074;
+      lng = 0.1277;
+    }
     return (
       <div className="container">
         <div div="map-div" className="text-center">
-          {/* {console.log(process.env.REACT_APP_GOOGLE_KEY)} */}
           <Map
             google={this.props.google}
             zoom={14}
             style={mapStyles}
+            options={options}
             initialCenter={{
-              lat: localStorage.getItem('lat'),
-              lng: localStorage.getItem('long'),
+              lat: lat,
+              lng: lng,
             }}
           >
             <Marker onClick={this.onMarkerClick} name={'This is test name'} />
