@@ -19,11 +19,12 @@ class Form extends Component {
     event.preventDefault();
 
     var apiKey = process.env.REACT_APP_ROUTE_API_KEY;
+    var geocodingKey = process.env.REACT_APP_GEOCODING_API_KEY;
     var transportType = "driving-car";
     var startCoordinates = "8.681495,49.41461";
     var endCoordinates = "8.687872,49.420318";
-    var startingURL = 'https://eu1.locationiq.com/v1/search.php?key=55968608b06de7&q=Piccadilly%20Circus&format=json';
-    var endingURL = 'https://eu1.locationiq.com/v1/search.php?key=55968608b06de7&q=Waterloo&format=json';
+    var startingURL = 'https://eu1.locationiq.com/v1/search.php?key=' + geocodingKey + '&q=Piccadilly%20Circus&format=json';
+    var endingURL = 'https://eu1.locationiq.com/v1/search.php?key=' + geocodingKey + '&q=Waterloo&format=json';
     var routeURL= `https://api.openrouteservice.org/v2/directions/` +
       transportType +
       `?api_key=` +
