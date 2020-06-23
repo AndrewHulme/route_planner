@@ -18,13 +18,14 @@ class MapContainer extends Component {
   render() {
     return (
       <div>
+        {console.log(localStorage.getItem("lat"))}
         <Map
           google={this.props.google}
           zoom={14}
           style={mapStyles}
           initialCenter={{
-            lat: "51.553973000000006",
-            lng: "-0.2004717",
+            lat: localStorage.getItem("lat"),
+            lng: localStorage.getItem("long"),
           }}
         >
           <Marker onClick={this.onMarkerClick} name={"This is test name"} />
