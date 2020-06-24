@@ -8,7 +8,7 @@ before_install:
   - npm i -g npm@6.13.4
 
 install:
-  - npm ci
+  - npm install
 
 before_script:
   - npm run start &
