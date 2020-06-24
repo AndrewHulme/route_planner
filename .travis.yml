@@ -9,4 +9,4 @@ before_script:
   - npm start
 
 script:
-  - npm test
+  - npx cypress open
