@@ -9,6 +9,8 @@ class LeafletMapContainer extends Component {
   state = {
     lat: 51.5033,
     lng: -0.1195,
+    startingCoords: this.props.startingCoords,
+    endingCoords: this.props.endingCoords,
     zoom: 13,
     isMapInit: false,
   };
@@ -44,6 +46,10 @@ class LeafletMapContainer extends Component {
     //   lat = 51.5074;
     //   lng = 0.1277;
     // }
+    console.log("Starting:");
+    console.log(this.props.startingCoords);
+    console.log("Ending:");
+    console.log(this.props.endingCoords);
     const position = [this.state.lat, this.state.lng];
     return (
       <Map center={position} zoom={this.state.zoom} ref={this.saveMap}>
@@ -52,9 +58,17 @@ class LeafletMapContainer extends Component {
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
         />
-        {this.state.isMapInit && (
-          <Routing map={this.map} lat={this.state.lat} lng={this.state.lng} />
-        )}
+        {this.props.startingCoords[0] != undefined &&
+          this.props.endingCoords[0] != undefined &&
+          this.state.isMapInit && (
+            <Routing
+              map={this.map}
+              lat={this.state.lat}
+              lng={this.state.lng}
+              startingCoords={this.props.startingCoords}
+              endingCoords={this.props.endingCoords}
+            />
+          )}
       </Map>
     );
   }
