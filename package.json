@@ -29,7 +29,9 @@
     "cy:open": "cypress open",
     "cy:run": "cypress run",
     "dev": "start-test 3000 cy:open",
-    "e2e": "start-test 3000"
+    "e2e": "start-test 3000",
+    "test:ci": "react-scripts && start-server-and-test http://localhost:3000 cy:run"
+
   },
   "eslintConfig": {
     "extends": "react-app"

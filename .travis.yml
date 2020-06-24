@@ -11,7 +11,7 @@ install:
   - npm ci
 
 before_script:
-  - npm start & wait-on http://localhost:3000
+  - npm start
 
 script:
   # - npm run cy:run
