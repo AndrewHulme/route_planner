@@ -10,11 +10,10 @@ before_install:
 install:
   - npm ci
 
-# before_script:
-#   - npm start & wait-on http://localhost:3000
+before_script:
+  - npm start & wait-on http://localhost:3000
 
 script:
-  - npm test
   # - npm run cy:run
-  - $(npm bin)/cypress run --record
+  - cypress run
   - npm run build
