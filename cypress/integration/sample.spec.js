@@ -2,7 +2,7 @@
 
 describe('Route Planner', () => {
   beforeEach(() => {
-    cy.visit('http://localhost:3000');
+    cy.visit('/');
   });
   const hello = 'Hello';
   it('should have a title', () => {
