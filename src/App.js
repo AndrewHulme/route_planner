@@ -7,9 +7,9 @@ import LeafletMapContainer from "./components/mapleaflet.jsx";
 function App() {
   return (
     <div className="App">
-      <Form />
-      <CurrentLocation />
-      {/* <LeafletMapContainer /> */}
+      {/* <Form /> */}
+      {/* <CurrentLocation /> */}
+      <LeafletMapContainer />
     </div>
   );
 }
