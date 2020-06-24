@@ -9,6 +9,7 @@
     "bootstrap": "^4.5.0",
     "dotenv": "^8.2.0",
     "google-maps-react": "^2.0.6",
+    "istanbul-lib-coverage": "^3.0.0",
     "jquery": "^1.9.1",
     "popper.js": "^1.16.0",
     "react": "^16.13.1",
@@ -16,10 +17,14 @@
     "react-scripts": "3.4.1"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "react-scripts -r @cypress/instrument-cra start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "test": "nyc mocha",
+    "eject": "react-scripts eject",
+    "cy:open": "cypress open",
+    "cy:run": "cypress run",
+    "dev": "start-test 3000 cy:open",
+    "e2e": "start-test 3000"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -37,6 +42,9 @@
     ]
   },
   "devDependencies": {
-    "cypress": "^4.8.0"
+    "@cypress/code-coverage": "^3.8.1",
+    "@cypress/instrument-cra": "^1.1.1",
+    "cypress": "^4.8.0",
+    "nyc": "^15.1.0"
   }
 }
