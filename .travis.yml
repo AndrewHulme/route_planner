@@ -7,8 +7,8 @@ cache: npm
 before_install:
   - npm i -g npm@6.13.4
 
-# install:
-#   - npm ci
+install:
+  - npm install
 
 # before_script:
 #   - npm start & wait-on http://localhost:3000
