@@ -17,7 +17,7 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "typescript": "^3.9.5",
-    "wait-on": "^5.0.1"
+    "wait-on": "^5.0.1",
     "react-leaflet": "^2.7.0",
     "react-scripts": "3.4.1"
   },
