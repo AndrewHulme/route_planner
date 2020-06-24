@@ -8,12 +8,13 @@ before_install:
   - npm i -g npm@6.13.4
 
 install:
-  - npm install
+  - npm ci
 
 # before_script:
 #   - npm start & wait-on http://localhost:3000
 
 script:
   - npm test
-  - npm run cy:run
+  # - npm run cy:run
+  - $(npm bin)/cypress run --record
   - npm run build
