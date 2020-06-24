@@ -10,8 +10,8 @@ before_install:
 install:
   - npm ci
 
-before_script:
-  - npm start
+# before_script:
+#   - npm start
 
 script:
   - npm run cy:run
