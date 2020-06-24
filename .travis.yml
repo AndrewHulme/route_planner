@@ -2,11 +2,17 @@ language: node_js
 node_js:
   - 12
 
+cache: npm
+
 before_install:
   - npm i -g npm@6.13.4
+
+install:
+  - npm ci
 
 before_script:
   - npm start
 
 script:
-  - npx cypress open
+  - npm test
+  - npm run build
