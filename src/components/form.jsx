@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import LeafletMapContainer from "./mapleaflet.jsx";
 
 class Form extends Component {
   state = {};
@@ -116,6 +117,10 @@ class Form extends Component {
             value="Generate"
           />
         </form>
+        <LeafletMapContainer
+          startingCoords={[this.state.startingLat, this.state.startingLon]}
+          endingCoords={[this.state.endingLat, this.state.endingLon]}
+        />
       </div>
     );
   }
