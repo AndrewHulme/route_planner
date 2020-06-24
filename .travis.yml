@@ -13,6 +13,8 @@ install:
 # before_script:
 #   - npm start
 
+  #- npm start & wait-on http://localhost:3000
+
 script:
   - npm run cy:run
   - npm run build
