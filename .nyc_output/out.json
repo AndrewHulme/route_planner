@@ -1,6 +1,6 @@
 {
-  "/Users/ed/Projects/Makers/week11-12/route_planner/src/components/hello.js": {
-    "path": "/Users/ed/Projects/Makers/week11-12/route_planner/src/components/hello.js",
+  "C:\\Users\\szony\\Documents\\learning\\course\\FinalProject\\route_planner\\src\\components\\hello.js": {
+    "path": "C:\\Users\\szony\\Documents\\learning\\course\\FinalProject\\route_planner\\src\\components\\hello.js",
     "statementMap": {
       "0": {
         "start": {
@@ -41,17 +41,17 @@
     },
     "branchMap": {},
     "s": {
-      "0": 1
+      "0": 8
     },
     "f": {
-      "0": 1
+      "0": 8
     },
     "b": {},
     "_coverageSchema": "43e27e138ebf9cfc5966b082cf9a028302ed4184",
-    "hash": "84a3cfd1e9fe471d48edf946746227506d0fecad"
+    "hash": "1ab211186a4ff53b2eee6561a00168143a6eccb7"
   },
-  "/Users/ed/Projects/Makers/week11-12/route_planner/src/components/mapTheme.js": {
-    "path": "/Users/ed/Projects/Makers/week11-12/route_planner/src/components/mapTheme.js",
+  "C:\\Users\\szony\\Documents\\learning\\course\\FinalProject\\route_planner\\src\\components\\mapTheme.js": {
+    "path": "C:\\Users\\szony\\Documents\\learning\\course\\FinalProject\\route_planner\\src\\components\\mapTheme.js",
     "statementMap": {},
     "fnMap": {},
     "branchMap": {},
@@ -59,10 +59,10 @@
     "f": {},
     "b": {},
     "_coverageSchema": "43e27e138ebf9cfc5966b082cf9a028302ed4184",
-    "hash": "f8cecfb933aeac6eeb1cd2da11c372588363cbe3"
+    "hash": "f8a6f5825d06e993028f80229d23fc47f8e42b38"
   },
-  "/Users/ed/Projects/Makers/week11-12/route_planner/src/components/map.jsx": {
-    "path": "/Users/ed/Projects/Makers/week11-12/route_planner/src/components/map.jsx",
+  "C:\\Users\\szony\\Documents\\learning\\course\\FinalProject\\route_planner\\src\\components\\map.jsx": {
+    "path": "C:\\Users\\szony\\Documents\\learning\\course\\FinalProject\\route_planner\\src\\components\\map.jsx",
     "statementMap": {
       "0": {
         "start": {
@@ -264,33 +264,33 @@
       }
     },
     "s": {
-      "0": 1,
-      "1": 1,
-      "2": 2,
-      "3": 2,
-      "4": 2,
+      "0": 8,
+      "1": 8,
+      "2": 16,
+      "3": 16,
+      "4": 16,
       "5": 0,
       "6": 0,
       "7": 0,
-      "8": 2,
-      "9": 2,
-      "10": 2
+      "8": 16,
+      "9": 16,
+      "10": 16
     },
     "f": {
-      "0": 2,
-      "1": 2
+      "0": 16,
+      "1": 16
     },
     "b": {
       "0": [
         0,
-        2
+        16
       ]
     },
     "_coverageSchema": "43e27e138ebf9cfc5966b082cf9a028302ed4184",
-    "hash": "81b138aa4e7566c79611d46973fc4bcfa56e9eae"
+    "hash": "3dd6b24a8fe3100cee1645761cb9ecc285089af5"
   },
-  "/Users/ed/Projects/Makers/week11-12/route_planner/src/components/currentlocation.jsx": {
-    "path": "/Users/ed/Projects/Makers/week11-12/route_planner/src/components/currentlocation.jsx",
+  "C:\\Users\\szony\\Documents\\learning\\course\\FinalProject\\route_planner\\src\\components\\currentlocation.jsx": {
+    "path": "C:\\Users\\szony\\Documents\\learning\\course\\FinalProject\\route_planner\\src\\components\\currentlocation.jsx",
     "statementMap": {
       "0": {
         "start": {
@@ -473,27 +473,27 @@
     },
     "branchMap": {},
     "s": {
-      "0": 2,
-      "1": 2,
-      "2": 1,
+      "0": 16,
+      "1": 16,
+      "2": 8,
       "3": 0,
       "4": 0,
       "5": 0,
       "6": 0,
-      "7": 2
+      "7": 16
     },
     "f": {
-      "0": 2,
-      "1": 1,
+      "0": 16,
+      "1": 8,
       "2": 0,
-      "3": 2
+      "3": 16
     },
     "b": {},
     "_coverageSchema": "43e27e138ebf9cfc5966b082cf9a028302ed4184",
-    "hash": "100ef0b98043fb12b6d8aad2a6fcaaced7901e92"
+    "hash": "6adcd5d3a9f428b5ecaa4c3b8ea4b9673761eadb"
   },
-  "/Users/ed/Projects/Makers/week11-12/route_planner/src/components/form.jsx": {
-    "path": "/Users/ed/Projects/Makers/week11-12/route_planner/src/components/form.jsx",
+  "C:\\Users\\szony\\Documents\\learning\\course\\FinalProject\\route_planner\\src\\components\\form.jsx": {
+    "path": "C:\\Users\\szony\\Documents\\learning\\course\\FinalProject\\route_planner\\src\\components\\form.jsx",
     "statementMap": {
       "0": {
         "start": {
@@ -1058,12 +1058,12 @@
     },
     "branchMap": {},
     "s": {
-      "0": 2,
-      "1": 2,
-      "2": 0,
-      "3": 2,
-      "4": 0,
-      "5": 2,
+      "0": 16,
+      "1": 16,
+      "2": 13,
+      "3": 16,
+      "4": 16,
+      "5": 16,
       "6": 0,
       "7": 0,
       "8": 0,
@@ -1084,11 +1084,11 @@
       "23": 0,
       "24": 0,
       "25": 0,
-      "26": 2
+      "26": 74
     },
     "f": {
-      "0": 0,
-      "1": 0,
+      "0": 13,
+      "1": 16,
       "2": 0,
       "3": 0,
       "4": 0,
@@ -1098,14 +1098,14 @@
       "8": 0,
       "9": 0,
       "10": 0,
-      "11": 2
+      "11": 74
     },
     "b": {},
     "_coverageSchema": "43e27e138ebf9cfc5966b082cf9a028302ed4184",
-    "hash": "83ce40e547a0a0f3c1b4f5c084b104b8e436da31"
+    "hash": "50a729b58a5447cc3248e522753e60a497dcdf87"
   },
-  "/Users/ed/Projects/Makers/week11-12/route_planner/src/index.js": {
-    "path": "/Users/ed/Projects/Makers/week11-12/route_planner/src/index.js",
+  "C:\\Users\\szony\\Documents\\learning\\course\\FinalProject\\route_planner\\src\\index.js": {
+    "path": "C:\\Users\\szony\\Documents\\learning\\course\\FinalProject\\route_planner\\src\\index.js",
     "statementMap": {
       "0": {
         "start": {
@@ -1121,11 +1121,11 @@
     "fnMap": {},
     "branchMap": {},
     "s": {
-      "0": 1
+      "0": 8
     },
     "f": {},
     "b": {},
     "_coverageSchema": "43e27e138ebf9cfc5966b082cf9a028302ed4184",
-    "hash": "f114ca3087ec506cda4522aad8140d0cb1f36773"
+    "hash": "77cb181e4f04f6d66dd8df9e854446800643f253"
   }
 }
