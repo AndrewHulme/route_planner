@@ -26,7 +26,6 @@ class MapContainer extends Component {
     if (localStorage.getItem('lat') != null) {
       var lat = localStorage.getItem('lat');
       var lng = localStorage.getItem('long');
-      console.log('hello');
     } else {
       lat = 51.5074;
       lng = 0.1277;
