@@ -7,8 +7,8 @@ import Routing from "./routing";
 
 class LeafletMapContainer extends Component {
   state = {
-    lat: 57.74,
-    lng: 11.94,
+    // lat: 51.5033,
+    // lng: -0.1195,
     zoom: 13,
     isMapInit: false,
   };
@@ -24,12 +24,12 @@ class LeafletMapContainer extends Component {
     // if (localStorage.getItem("lat") != null) {
     //   var lat = localStorage.getItem("lat");
     //   var lng = localStorage.getItem("long");
-    //   console.log("hello");
+    // console.log(this.props);
     // } else {
     //   lat = 51.5074;
     //   lng = 0.1277;
     // }
-    const position = [this.state.lat, this.state.lng];
+    const position = [this.props.lat, this.props.lng];
     return (
       <Map center={position} zoom={this.state.zoom} ref={this.saveMap}>
         {/* // <Map center={[lat, lng]} zoom={12}> */}
@@ -37,14 +37,12 @@ class LeafletMapContainer extends Component {
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
         />
-        {this.state.isMapInit && <Routing map={this.map} />}
+        {this.state.isMapInit && (
+          <Routing map={this.map} lat={this.props.lat} lng={this.props.lng} />
+        )}
       </Map>
     );
   }
 }
 
 export default LeafletMapContainer;
-
-// export default GoogleApiWrapper({
-//   apiKey: process.env.REACT_APP_GOOGLE_KEY,
-// })(LeafletMapContainer);
