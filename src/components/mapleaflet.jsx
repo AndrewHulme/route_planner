@@ -7,11 +7,26 @@ import Routing from "./routing";
 
 class LeafletMapContainer extends Component {
   state = {
-    // lat: 51.5033,
-    // lng: -0.1195,
+    lat: 51.5033,
+    lng: -0.1195,
     zoom: 13,
     isMapInit: false,
   };
+
+  componentDidMount() {
+    navigator.geolocation.getCurrentPosition((position) => {
+      console.log("Latitude is :", position.coords.latitude);
+      console.log("Longitude is :", position.coords.longitude);
+
+      this.setState({
+        lat: position.coords.latitude,
+        lng: position.coords.longitude,
+      });
+
+      // localStorage.setItem("lat", position.coords.latitude);
+      // localStorage.setItem("long", position.coords.longitude);
+    });
+  }
 
   saveMap = (map) => {
     this.map = map;
@@ -24,12 +39,12 @@ class LeafletMapContainer extends Component {
     // if (localStorage.getItem("lat") != null) {
     //   var lat = localStorage.getItem("lat");
     //   var lng = localStorage.getItem("long");
-    // console.log(this.props);
+    // console.log(this.state);
     // } else {
     //   lat = 51.5074;
     //   lng = 0.1277;
     // }
-    const position = [this.props.lat, this.props.lng];
+    const position = [this.state.lat, this.state.lng];
     return (
       <Map center={position} zoom={this.state.zoom} ref={this.saveMap}>
         {/* // <Map center={[lat, lng]} zoom={12}> */}
@@ -38,7 +53,7 @@ class LeafletMapContainer extends Component {
           attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
         />
         {this.state.isMapInit && (
-          <Routing map={this.map} lat={this.props.lat} lng={this.props.lng} />
+          <Routing map={this.map} lat={this.state.lat} lng={this.state.lng} />
         )}
       </Map>
     );
