@@ -1,2 +1,32 @@
 [0624/155047.763:ERROR:process_reader_win.cc(151)] SuspendThread: Access is denied. (0x5)
 [0624/155047.764:ERROR:process_reader_win.cc(151)] SuspendThread: Access is denied. (0x5)
+[0624/182952.266:ERROR:process_memory_win.cc(73)] ReadMemory at 0x1fb995246b0 of 72 bytes failed: Only part of a ReadProcessMemory or WriteProcessMemory request was completed. (0x12B)
+[0624/182952.267:WARNING:pe_image_annotations_reader.cc(134)] could not read annotations list object in C:\Program Files (x86)\Google\Chrome\Application\83.0.4103.116\chrome_elf.dll
+[0624/182952.268:ERROR:process_memory_win.cc(73)] ReadMemory at 0x1fb99980000 of 64 bytes failed: Only part of a ReadProcessMemory or WriteProcessMemory request was completed. (0x12B)
+[0624/182952.268:WARNING:pe_image_reader.cc(340)] could not read dos header from C:\Windows\System32\ADVAPI32.dll
+[0624/182952.268:ERROR:process_memory_win.cc(73)] ReadMemory at 0x1fb99bd5c70 of 72 bytes failed: Only part of a ReadProcessMemory or WriteProcessMemory request was completed. (0x12B)
+[0624/182952.268:WARNING:pe_image_annotations_reader.cc(134)] could not read annotations list object in C:\Program Files (x86)\Google\Chrome\Application\83.0.4103.116\chrome.dll
+[0624/182952.275:ERROR:process_memory_win.cc(73)] ReadMemory at 0x1fb995246b0 of 72 bytes failed: Only part of a ReadProcessMemory or WriteProcessMemory request was completed. (0x12B)
+[0624/182952.275:WARNING:pe_image_annotations_reader.cc(134)] could not read annotations list object in C:\Program Files (x86)\Google\Chrome\Application\83.0.4103.116\chrome_elf.dll
+[0624/182952.276:ERROR:process_memory_win.cc(73)] ReadMemory at 0x1fb99980000 of 64 bytes failed: Only part of a ReadProcessMemory or WriteProcessMemory request was completed. (0x12B)
+[0624/182952.276:WARNING:pe_image_reader.cc(340)] could not read dos header from C:\Windows\System32\ADVAPI32.dll
+[0624/182952.276:ERROR:process_memory_win.cc(73)] ReadMemory at 0x1fb99bd5c70 of 72 bytes failed: Only part of a ReadProcessMemory or WriteProcessMemory request was completed. (0x12B)
+[0624/182952.276:WARNING:pe_image_annotations_reader.cc(134)] could not read annotations list object in C:\Program Files (x86)\Google\Chrome\Application\83.0.4103.116\chrome.dll
+[0624/182952.276:ERROR:process_memory_win.cc(73)] ReadMemory at 0x1fb995246b0 of 72 bytes failed: Only part of a ReadProcessMemory or WriteProcessMemory request was completed. (0x12B)
+[0624/182952.276:WARNING:pe_image_annotations_reader.cc(134)] could not read annotations list object in C:\Program Files (x86)\Google\Chrome\Application\83.0.4103.116\chrome_elf.dll
+[0624/182952.276:ERROR:process_memory_win.cc(73)] ReadMemory at 0x1fb99980000 of 64 bytes failed: Only part of a ReadProcessMemory or WriteProcessMemory request was completed. (0x12B)
+[0624/182952.276:WARNING:pe_image_reader.cc(340)] could not read dos header from C:\Windows\System32\ADVAPI32.dll
+[0624/182952.276:ERROR:process_memory_win.cc(73)] ReadMemory at 0x1fb99bd5c70 of 72 bytes failed: Only part of a ReadProcessMemory or WriteProcessMemory request was completed. (0x12B)
+[0624/182952.276:WARNING:pe_image_annotations_reader.cc(134)] could not read annotations list object in C:\Program Files (x86)\Google\Chrome\Application\83.0.4103.116\chrome.dll
+[0624/182952.281:ERROR:process_memory_win.cc(73)] ReadMemory at 0x1dbcd00000 of 1048576 bytes failed: Only part of a ReadProcessMemory or WriteProcessMemory request was completed. (0x12B)
+[0624/182952.283:ERROR:process_memory_win.cc(73)] ReadMemory at 0x1db1dd3000 of 852 bytes failed: Only part of a ReadProcessMemory or WriteProcessMemory request was completed. (0x12B)
+[0624/182952.283:ERROR:process_memory_win.cc(73)] ReadMemory at 0x1db1dfe000 of 6024 bytes failed: Only part of a ReadProcessMemory or WriteProcessMemory request was completed. (0x12B)
+[0624/182952.283:ERROR:process_memory_win.cc(73)] ReadMemory at 0x1fb993b0750 of 80 bytes failed: Only part of a ReadProcessMemory or WriteProcessMemory request was completed. (0x12B)
+[0624/182952.283:ERROR:process_memory_win.cc(73)] ReadMemory at 0x1fb993b0fe0 of 9592 bytes failed: Only part of a ReadProcessMemory or WriteProcessMemory request was completed. (0x12B)
+[0624/182952.283:ERROR:process_memory_win.cc(73)] ReadMemory at 0x1fb993b3560 of 1012 bytes failed: Only part of a ReadProcessMemory or WriteProcessMemory request was completed. (0x12B)
+[0624/182952.283:ERROR:process_memory_win.cc(73)] ReadMemory at 0x1fb993b3ba8 of 118 bytes failed: Only part of a ReadProcessMemory or WriteProcessMemory request was completed. (0x12B)
+[0624/182952.283:ERROR:process_memory_win.cc(73)] ReadMemory at 0x1fb993b3c20 of 1444 bytes failed: Only part of a ReadProcessMemory or WriteProcessMemory request was completed. (0x12B)
+[0624/182952.283:ERROR:process_memory_win.cc(73)] ReadMemory at 0x1fb993b41c6 of 118 bytes failed: Only part of a ReadProcessMemory or WriteProcessMemory request was completed. (0x12B)
+[0624/182952.283:ERROR:process_memory_win.cc(73)] ReadMemory at 0x1fb993b423e of 102 bytes failed: Only part of a ReadProcessMemory or WriteProcessMemory request was completed. (0x12B)
+[0624/182952.283:ERROR:process_memory_win.cc(73)] ReadMemory at 0x1fb993b42b0 of 58 bytes failed: Only part of a ReadProcessMemory or WriteProcessMemory request was completed. (0x12B)
+[0624/182952.283:ERROR:process_memory_win.cc(73)] ReadMemory at 0x1fb993b43b0 of 132 bytes failed: Only part of a ReadProcessMemory or WriteProcessMemory request was completed. (0x12B)

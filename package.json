@@ -17,14 +17,14 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "typescript": "^3.9.5",
-    "wait-on": "^5.0.1"
+    "wait-on": "^5.0.1",
     "react-leaflet": "^2.7.0",
     "react-scripts": "3.4.1"
   },
   "scripts": {
-    "start": "set PORT=3000 && react-scripts -r @cypress/instrument-cra start",
+    "start": "react-scripts -r @cypress/instrument-cra start",
     "build": "react-scripts build",
-    "test": "nyc mocha",
+    "test": "react-scripts test",
     "eject": "react-scripts eject",
     "cy:open": "cypress open",
     "cy:run": "cypress run",
