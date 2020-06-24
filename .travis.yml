@@ -1,9 +1,18 @@
 language: node_js
 node_js:
-  - "stable"
-cache:
-  directories:
-    - node_modules
+  - 12
+
+cache: npm
+
+before_install:
+  - npm i -g npm@6.13.4
+
+install:
+  - npm ci
+
+before_script:
+  - npm start &
+
 script:
-  - npm test
+  - npm run cy:run
   - npm run build
