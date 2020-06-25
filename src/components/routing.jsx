@@ -7,10 +7,10 @@ import { withLeaflet } from "react-leaflet";
 class Routing extends MapLayer {
   createLeafletElement() {
     const { map, startingCoords, endingCoords, vehicle } = this.props;
-    console.log("YOOOOO");
+    // console.log("YOOOOO");
     // console.log(startingCoords);
     // console.log(endingCoords);
-    console.log(this.props.vehicle);
+    // console.log(this.props.vehicle);
 
     var apiGraphHopper = process.env.REACT_APP_GRAPHHOPPER;
 

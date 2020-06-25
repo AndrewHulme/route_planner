@@ -122,6 +122,7 @@ class Form extends Component {
             <label>
               Mode of Transport:
               <select
+                cy-name="vehiclechoice"
                 value={this.state.value}
                 onChange={this.vehicleChangeHandler}
               >
@@ -129,7 +130,7 @@ class Form extends Component {
                 <option value="car">Driving</option>
                 <option value="bike">Cycling</option>
                 <option value="foot">Walking</option>
-                <option value="hike">Hike</option>
+                <option value="hike">Hiking</option>
               </select>
             </label>
           </div>
