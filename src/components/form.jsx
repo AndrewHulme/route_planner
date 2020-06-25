@@ -16,6 +16,17 @@ class Form extends Component {
     });
   };
 
+  roundTripStartHandler = (event) => {
+    this.setState({
+      roundTripStart: event.target.value,
+    })
+  }
+  roundTripLengthHandler = (event) => {
+    this.setState({
+      roundTripLength: event.target.value,
+    })
+  }
+
   submitHandler = (event) => {
     event.preventDefault();
 
@@ -88,33 +99,31 @@ class Form extends Component {
   handleSubmitRoundTrip = (evt) => {
     evt.preventDefault();
 
-    // let request = new XMLHttpRequest();
+    var geocodingKey = process.env.REACT_APP_GEOCODING_API_KEY;
 
-    // request.open(
-    //   "POST",
-    //   "https://api.openrouteservice.org/v2/directions/driving-car/geojson"
-    // );
+    var startingURL =
+      "https://eu1.locationiq.com/v1/search.php?key=" +
+      geocodingKey +
+      "&q=" +
+      this.state.roundTripStart +
+      "&format=json";
 
-    // request.setRequestHeader(
-    //   "Accept",
-    //   "application/json, application/geo+json, application/gpx+xml, img/png; charset=utf-8"
-    // );
-    // request.setRequestHeader("Content-Type", "application/json");
-    // request.setRequestHeader("Authorization", "your-api-key");
+    // const body =
+    //   // '{"coordinates":[[8.681495,49.41461]],"options":{"round_trip":{"length":10000,"points":3,"seed":1}}}';
+    //   '{"coordinates":[[
+    //     8.681495,49.41461
+    //   ]],"options":{"round_trip":{"length":10000,"points":3,"seed":1}}}';
 
-    // request.onreadystatechange = function () {
-    //   if (this.readyState === 4) {
-    //     console.log("Status:", this.status);
-    //     console.log("Headers:", this.getAllResponseHeaders());
-    //     console.log("Body:", this.responseText);
-    //   }
-    // };
-
-    const body =
-      '{"coordinates":[[8.681495,49.41461]],"options":{"round_trip":{"length":10000,"points":3,"seed":1}}}';
-
-    // request.send(body);
-    fetch(
+    const asyncWrapper = async () => {
+      await fetch(startingURL)
+        .then((response) => response.json())
+        .then((data) =>
+          this.setState({
+            startingLat: data[0].lat,
+            startingLon: data[0].lon,
+          })
+        );
+      await fetch(
       `https://api.openrouteservice.org/v2/directions/driving-car/geojson`,
       {
         method: "POST",
@@ -126,13 +135,19 @@ class Form extends Component {
             "5b3ce3597851110001cf6248b4be2ae5777840a697277752138f89c2",
         },
         body:
-          '{"coordinates":[[8.681495,49.41461]],"options":{"round_trip":{"length":10000,"points":3,"seed":5}}}',
+          '{"coordinates":[[' +
+            this.state.startingLon + ',' + this.state.startingLat +
+          ']],"options":{"round_trip":{"length":' +
+          this.state.roundTripLength + ',"points":3,"seed":5}}}',
       }
     )
       .then((resp) => resp.json())
       .then((data) => {
         console.log(data);
       });
+    }
+
+    asyncWrapper();
   };
 
   render() {
@@ -146,7 +161,16 @@ class Form extends Component {
               className="form-control"
               type="text"
               name="roundTripStart"
-              // onChange={this.endChangeHandler}
+              onChange={this.roundTripStartHandler}
+            />
+          </div>
+          <div className="form-group">
+            <label>Length of trip:</label>
+            <input
+              className="form-control"
+              type="text"
+              name="roundTripLength"
+              onChange={this.roundTripLengthHandler}
             />
           </div>
           <br />
