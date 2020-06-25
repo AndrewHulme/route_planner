@@ -1,12 +1,12 @@
-import { MapLayer } from "react-leaflet";
-import L from "leaflet";
-import "leaflet-routing-machine";
-import { withLeaflet } from "react-leaflet";
+import { MapLayer } from 'react-leaflet';
+import L from 'leaflet';
+import 'leaflet-routing-machine';
+import { withLeaflet } from 'react-leaflet';
 
 class Routing extends MapLayer {
   createLeafletElement() {
     const { map, startingCoords, endingCoords } = this.props;
-    console.log("YOOOOO");
+    console.log('YOOOOO');
     console.log(startingCoords);
     console.log(endingCoords);
 

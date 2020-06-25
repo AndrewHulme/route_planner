@@ -31,11 +31,7 @@ describe('Route Planner', () => {
 
     it('able to submit new route', () => {
       cy.mockGeolocation();
-      const startInput = 'W1 C1DE';
-      const endpoint = 'London Eye';
-      cy.get('input[name="startingpoint"]').type(startInput);
-      cy.get('input[name="endpoint"]').type(endpoint);
-      cy.get('.btn-primary').click();
+      cy.generateRoute();
       cy.server().should((server) => {
         expect(server.method).to.eq('GET');
         expect(server.status).to.eq(200);

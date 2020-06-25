@@ -1,9 +1,9 @@
-import React, { Component } from "react";
-import { render } from "react-dom";
-import { Map, TileLayer } from "react-leaflet";
-import { Icon } from "leaflet";
-import "../css/app.css";
-import Routing from "./routing";
+import React, { Component } from 'react';
+import { render } from 'react-dom';
+import { Map, TileLayer } from 'react-leaflet';
+import { Icon } from 'leaflet';
+import '../css/app.css';
+import Routing from './routing';
 
 class LeafletMapContainer extends Component {
   state = {
@@ -17,8 +17,8 @@ class LeafletMapContainer extends Component {
 
   componentDidMount() {
     navigator.geolocation.getCurrentPosition((position) => {
-      console.log("Latitude is :", position.coords.latitude);
-      console.log("Longitude is :", position.coords.longitude);
+      // console.log("Latitude is :", position.coords.latitude);
+      // console.log("Longitude is :", position.coords.longitude);
 
       this.setState({
         lat: position.coords.latitude,
@@ -46,9 +46,9 @@ class LeafletMapContainer extends Component {
     //   lat = 51.5074;
     //   lng = 0.1277;
     // }
-    console.log("Starting:");
+    console.log('Starting:');
     console.log(this.props.startingCoords);
-    console.log("Ending:");
+    console.log('Ending:');
     console.log(this.props.endingCoords);
     const position = [this.state.lat, this.state.lng];
     return (
