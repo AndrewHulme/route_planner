@@ -53,7 +53,6 @@ class LeafletMapContainer extends Component {
     const position = [this.state.lat, this.state.lng];
     return (
       <Map center={position} zoom={this.state.zoom} ref={this.saveMap}>
-        {/* // <Map center={[lat, lng]} zoom={12}> */}
         <TileLayer
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'

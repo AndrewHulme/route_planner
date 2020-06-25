@@ -20,6 +20,14 @@ class Routing extends MapLayer {
         // L.latLng(27.68, 85.321),
         // L.latLng(27.7, 85.331),
       ],
+
+      routeWhileDragging: true,
+      geocoder: L.Control.Geocoder.nominatim(),
+      router: L.Routing.graphHopper('a585904f-5193-4605-bc3c-870c4f472177', {
+        urlParameters: {
+          vehicle: 'car',
+        },
+      }),
     }).addTo(map.leafletElement);
     return leafletElement.getPlan();
   }
