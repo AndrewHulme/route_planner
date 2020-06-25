@@ -108,12 +108,6 @@ class Form extends Component {
       this.state.roundTripStart +
       "&format=json";
 
-    // const body =
-    //   // '{"coordinates":[[8.681495,49.41461]],"options":{"round_trip":{"length":10000,"points":3,"seed":1}}}';
-    //   '{"coordinates":[[
-    //     8.681495,49.41461
-    //   ]],"options":{"round_trip":{"length":10000,"points":3,"seed":1}}}';
-
     const asyncWrapper = async () => {
       await fetch(startingURL)
         .then((response) => response.json())
@@ -143,7 +137,10 @@ class Form extends Component {
     )
       .then((resp) => resp.json())
       .then((data) => {
-        console.log(data);
+        this.setState({
+          roundTripCoords: JSON.stringify(data.features[0].geometry.coordinates)
+        })
+        console.log(JSON.stringify(data.features[0].geometry.coordinates));
       });
     }
 
@@ -151,7 +148,6 @@ class Form extends Component {
   };
 
   render() {
-    // console.log(this.state);
     return (
       <div>
         <form id="roundTripForm" onSubmit={this.handleSubmitRoundTrip}>
@@ -215,6 +211,7 @@ class Form extends Component {
         <LeafletMapContainer
           startingCoords={[this.state.startingLat, this.state.startingLon]}
           endingCoords={[this.state.endingLat, this.state.endingLon]}
+          roundTripCoords={this.state.roundTripCoords}
         />
       </div>
     );

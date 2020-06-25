@@ -4,6 +4,7 @@ import { Map, TileLayer } from "react-leaflet";
 import { Icon } from "leaflet";
 import "../css/app.css";
 import Routing from "./routing";
+import RoutingRoundTrip from "./routingRoundTrip";
 
 class LeafletMapContainer extends Component {
   state = {
@@ -50,6 +51,7 @@ class LeafletMapContainer extends Component {
     console.log(this.props.startingCoords);
     console.log("Ending:");
     console.log(this.props.endingCoords);
+    console.log("roundtrip" + this.props.roundTripCoords)
     const position = [this.state.lat, this.state.lng];
     return (
       <Map center={position} zoom={this.state.zoom} ref={this.saveMap}>
@@ -69,6 +71,15 @@ class LeafletMapContainer extends Component {
               endingCoords={this.props.endingCoords}
             />
           )}
+          {this.props.roundTripCoords != undefined &&
+            this.state.isMapInit && (
+              <RoutingRoundTrip
+                map={this.map}
+                lat={this.state.lat}
+                lng={this.state.lng}
+                roundTripCoords={this.props.roundTripCoords}
+              />
+            )}
       </Map>
     );
   }

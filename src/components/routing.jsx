@@ -15,6 +15,9 @@ class Routing extends MapLayer {
 
     let leafletElement = L.Routing.control({
       waypoints: [
+        // L.latLng(51.627534, -0.391221),
+        // L.latLng(51.645046, -0.388907),
+        // L.latLng(51.627534, -0.391221)
         L.latLng(startingCoords[0], startingCoords[1]),
         L.latLng(endingCoords[0], endingCoords[1]),
         // L.latLng(27.68, 85.321),
