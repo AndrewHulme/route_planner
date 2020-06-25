@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import LeafletMapContainer from './mapleaflet.jsx';
+import React, { Component } from "react";
+import LeafletMapContainer from "./mapleaflet.jsx";
 
 class Form extends Component {
   state = {};
@@ -21,23 +21,23 @@ class Form extends Component {
 
     var apiKey = process.env.REACT_APP_ROUTE_API_KEY;
     var geocodingKey = process.env.REACT_APP_GEOCODING_API_KEY;
-    var transportType = 'driving-car';
+    var transportType = "driving-car";
     // var startCoordinates = "8.681495,49.41461";
     // var endCoordinates = "8.687872,49.420318";
 
     var startingURL =
-      'https://eu1.locationiq.com/v1/search.php?key=' +
+      "https://eu1.locationiq.com/v1/search.php?key=" +
       geocodingKey +
-      '&q=' +
+      "&q=" +
       this.state.startingpoint +
-      '&format=json';
+      "&format=json";
 
     var endingURL =
-      'https://eu1.locationiq.com/v1/search.php?key=' +
+      "https://eu1.locationiq.com/v1/search.php?key=" +
       geocodingKey +
-      '&q=' +
+      "&q=" +
       this.state.endpoint +
-      '&format=json';
+      "&format=json";
 
     const asyncWrapper = async () => {
       await fetch(startingURL)
@@ -64,11 +64,11 @@ class Form extends Component {
         apiKey +
         `&start=` +
         this.state.startingLon +
-        ',' +
+        "," +
         this.state.startingLat +
         `&end=` +
         this.state.endingLon +
-        ',' +
+        "," +
         this.state.endingLat;
 
       await fetch(routeURL)
@@ -85,31 +85,81 @@ class Form extends Component {
     asyncWrapper();
   };
 
+  handleSubmitRoundTrip = (evt) => {
+    evt.preventDefault();
+
+    // let request = new XMLHttpRequest();
+
+    // request.open(
+    //   "POST",
+    //   "https://api.openrouteservice.org/v2/directions/driving-car/geojson"
+    // );
+
+    // request.setRequestHeader(
+    //   "Accept",
+    //   "application/json, application/geo+json, application/gpx+xml, img/png; charset=utf-8"
+    // );
+    // request.setRequestHeader("Content-Type", "application/json");
+    // request.setRequestHeader("Authorization", "your-api-key");
+
+    // request.onreadystatechange = function () {
+    //   if (this.readyState === 4) {
+    //     console.log("Status:", this.status);
+    //     console.log("Headers:", this.getAllResponseHeaders());
+    //     console.log("Body:", this.responseText);
+    //   }
+    // };
+
+    const body =
+      '{"coordinates":[[8.681495,49.41461]],"options":{"round_trip":{"length":10000,"points":3,"seed":1}}}';
+
+    // request.send(body);
+    fetch(
+      `https://api.openrouteservice.org/v2/directions/driving-car/geojson`,
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json; charset=utf-8",
+          Accept:
+            "application/geo+json, application/gpx+xml, img/png; charset=utf-8",
+          Authorization:
+            "5b3ce3597851110001cf6248b4be2ae5777840a697277752138f89c2",
+        },
+        body:
+          '{"coordinates":[[8.681495,49.41461]],"options":{"round_trip":{"length":10000,"points":3,"seed":5}}}',
+      }
+    )
+      .then((resp) => resp.json())
+      .then((data) => {
+        console.log(data);
+      });
+  };
+
   render() {
     // console.log(this.state);
     return (
       <div>
-        <form id='roundTripForm' onSubmit={this.submitHandler} >
+        <form id="roundTripForm" onSubmit={this.handleSubmitRoundTrip}>
           <div className="form-group">
             <label>Start point for round trip:</label>
             <input
               className="form-control"
               type="text"
               name="roundTripStart"
-              onChange={this.endChangeHandler}
+              // onChange={this.endChangeHandler}
             />
-            </div>
-            <br />
-            <input
-              id='roundTripButton'
-              className="form-control"
-              type="submit"
-              className="btn btn-primary"
-              value="Generate"
-            />
+          </div>
+          <br />
+          <input
+            id="roundTripButton"
+            className="form-control"
+            type="submit"
+            className="btn btn-primary"
+            value="Generate"
+          />
         </form>
 
-        <form onSubmit={this.submitHandler} id='secondForm'>
+        <form onSubmit={this.submitHandler} id="secondForm">
           <div className="form-group">
             <label>Starting Point:</label>
             <input
