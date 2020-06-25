@@ -35,7 +35,7 @@ describe('Route Planner', () => {
       const endpoint = 'London Eye';
       cy.get('input[name="startingpoint"]').type(startInput);
       cy.get('input[name="endpoint"]').type(endpoint);
-      cy.get('.btn-primary').click();
+      cy.get('input[id="secondButton"]').click();
       cy.server().should((server) => {
         expect(server.method).to.eq('GET');
         expect(server.status).to.eq(200);

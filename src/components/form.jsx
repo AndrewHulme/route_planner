@@ -89,7 +89,27 @@ class Form extends Component {
     // console.log(this.state);
     return (
       <div>
-        <form onSubmit={this.submitHandler}>
+        <form id='roundTripForm' onSubmit={this.submitHandler} >
+          <div className="form-group">
+            <label>Start point for round trip:</label>
+            <input
+              className="form-control"
+              type="text"
+              name="roundTripStart"
+              onChange={this.endChangeHandler}
+            />
+            </div>
+            <br />
+            <input
+              id='roundTripButton'
+              className="form-control"
+              type="submit"
+              className="btn btn-primary"
+              value="Generate"
+            />
+        </form>
+
+        <form onSubmit={this.submitHandler} id='secondForm'>
           <div className="form-group">
             <label>Starting Point:</label>
             <input
@@ -111,6 +131,7 @@ class Form extends Component {
           </div>
           <br />
           <input
+            id="secondButton"
             className="form-control"
             type="submit"
             className="btn btn-primary"

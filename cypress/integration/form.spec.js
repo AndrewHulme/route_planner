@@ -23,11 +23,20 @@ describe('Form', () => {
       const input = 'Endpoint';
       cy.get('input[name="endpoint"]').type(input).should('have.value', input);
     });
+    it('should have a different form for round trip', function() {
+      cy.get('input[name="roundTripStart"]')
+        .type('Hello')
+        .should('have.value', 'Hello');
+    })
 
     it('it prevents default behaviour of the function', () => {
-      cy.get('form').submit();
+      cy.get('form[id="secondForm"]').submit();
       cy.url().should('eq', 'http://localhost:3000/');
     });
+    // it('it prevents default behaviour of the function', () => {
+    //   cy.get('form[id="roundTripForm"]').submit();
+    //   cy.url().should('eq', 'http://localhost:3000/');
+    // });
   });
   context('Network Requests', () => {
     beforeEach(() => {
