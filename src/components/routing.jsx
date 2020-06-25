@@ -1,6 +1,7 @@
 import { MapLayer } from "react-leaflet";
 import L from "leaflet";
 import "leaflet-routing-machine";
+import "lrm-graphhopper";
 import { withLeaflet } from "react-leaflet";
 
 class Routing extends MapLayer {
@@ -9,6 +10,8 @@ class Routing extends MapLayer {
     console.log("YOOOOO");
     console.log(startingCoords);
     console.log(endingCoords);
+
+    var apiGraphHopper = process.env.REACT_APP_GRAPHHOPPER;
 
     // var lat = localStorage.getItem("lat");
     // var lng = localStorage.getItem("long");
@@ -20,6 +23,11 @@ class Routing extends MapLayer {
         // L.latLng(27.68, 85.321),
         // L.latLng(27.7, 85.331),
       ],
+      router: L.Routing.graphHopper(apiGraphHopper, {
+        urlParameters: {
+          vehicle: "bike",
+        },
+      }),
     }).addTo(map.leafletElement);
     return leafletElement.getPlan();
   }
