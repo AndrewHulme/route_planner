@@ -6,7 +6,7 @@ import "lrm-graphhopper";
 
 class RoutingRoundTrip extends MapLayer {
   createLeafletElement() {
-    const { map, roundTripCoords } = this.props;
+    const { map, roundTripCoords, vehicle } = this.props;
     var apiGraphHopper = process.env.REACT_APP_GRAPHHOPPER;
 
     let waypointsArr = [];
@@ -24,7 +24,7 @@ class RoutingRoundTrip extends MapLayer {
 
       router: L.Routing.graphHopper(apiGraphHopper, {
         urlParameters: {
-          vehicle: "foot",
+          vehicle: vehicle,
         },
       }),
     }).addTo(map.leafletElement);

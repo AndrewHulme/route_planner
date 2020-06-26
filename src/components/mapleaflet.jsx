@@ -62,6 +62,7 @@ class LeafletMapContainer extends Component {
                 lat={this.state.lat}
                 lng={this.state.lng}
                 roundTripCoords={this.props.roundTripCoords}
+                vehicle={this.props.vehicle}
               />
             )}
       </Map>

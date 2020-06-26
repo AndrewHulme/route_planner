@@ -4,7 +4,7 @@ import LeafletMapContainer from './mapleaflet.jsx';
 class Form extends Component {
   state = {
     vehicle: 'car',
-    vehicleRoundTrip: 'driving-car',
+    // vehicleRoundTrip: 'driving-car',
     lat: 51.5033,
     lng: -0.1195,
   };
@@ -58,7 +58,7 @@ class Form extends Component {
   vehicleChangeHandler = (event) => {
     this.setState({
       vehicle: event.target.value,
-      vehicleRoundTrip: event.target.value,
+      // vehicleRoundTrip: event.target.value,
     });
   };
 
@@ -118,7 +118,6 @@ class Form extends Component {
         this.state.endingLon +
         ',' +
         this.state.endingLat;
-
       await fetch(routeURL)
         // We get the API response and receive data in JSON format...
         .then((response) => response.json())
@@ -136,6 +135,7 @@ class Form extends Component {
   handleSubmitRoundTrip = (evt) => {
     evt.preventDefault();
 
+    var transportType = 'driving-car';
     var geocodingKey = process.env.REACT_APP_GEOCODING_API_KEY;
     var startingURL =
       'https://eu1.locationiq.com/v1/search.php?key=' +
@@ -144,8 +144,6 @@ class Form extends Component {
       this.state.roundTripStart +
       '&format=json';
 
-    console.log(this.state.vehicleRoundTrip);
-    console.log(this.state.vehicleRoundTrip);
     const asyncWrapper = async () => {
       await fetch(startingURL)
         .then((response) => response.json())
@@ -156,7 +154,7 @@ class Form extends Component {
           })
         );
       await fetch(
-        `https://api.openrouteservice.org/v2/directions/${this.state.vehicleRoundTrip}/geojson`,
+        `https://api.openrouteservice.org/v2/directions/${transportType}/geojson`,
         {
           method: 'POST',
           headers: {
@@ -250,10 +248,10 @@ class Form extends Component {
                 onChange={this.vehicleChangeHandler}
               >
                 {' '}
-                <option value="driving-car">Driving</option>
-                <option value="cycling-regular">Cycling</option>
-                <option value="foot-walking">Walking</option>
-                <option value="foot-hiking">Hiking</option>
+                <option value="car">Driving</option>
+                <option value="bike">Cycling</option>
+                <option value="foot">Walking</option>
+                <option value="hike">Hiking</option>
               </select>
             </label>
           </div>
