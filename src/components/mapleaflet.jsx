@@ -51,7 +51,6 @@ class LeafletMapContainer extends Component {
     console.log(this.props.startingCoords);
     console.log("Ending:");
     console.log(this.props.endingCoords);
-    console.log("roundtrip" + this.props.roundTripCoords)
     const position = [this.state.lat, this.state.lng];
     return (
       <Map center={position} zoom={this.state.zoom} ref={this.saveMap}>

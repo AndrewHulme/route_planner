@@ -138,9 +138,9 @@ class Form extends Component {
       .then((resp) => resp.json())
       .then((data) => {
         this.setState({
-          roundTripCoords: JSON.stringify(data.features[0].geometry.coordinates)
+          roundTripCoords: data.features[0].geometry.coordinates
         })
-        console.log(JSON.stringify(data.features[0].geometry.coordinates));
+        console.log(data.features[0]);
       });
     }
 
