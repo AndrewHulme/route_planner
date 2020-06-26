@@ -78,7 +78,6 @@ class Form extends Component {
       //   this.state.endingLon +
       //   "," +
       //   this.state.endingLat;
-
       // await fetch(routeURL)
       //   // We get the API response and receive data in JSON format...
       //   .then((response) => response.json())
@@ -86,7 +85,6 @@ class Form extends Component {
       //   .then((data) => console.log(data.features[0].geometry.coordinates))
       //   // Catch any errors we hit and update the app
       //   .catch((error) => this.setState({ error, isLoading: false }));
-
       // console.log(this.state);
     };
 
