@@ -4,7 +4,6 @@ import LeafletMapContainer from './mapleaflet.jsx';
 class Form extends Component {
   state = {
     vehicle: 'car',
-    vehicleRoundTrip: 'driving-car',
     lat: 51.5033,
     lng: -0.1195,
   };
@@ -58,7 +57,6 @@ class Form extends Component {
   vehicleChangeHandler = (event) => {
     this.setState({
       vehicle: event.target.value,
-      vehicleRoundTrip: event.target.value,
     });
   };
 
@@ -156,7 +154,7 @@ class Form extends Component {
           })
         );
       await fetch(
-        `https://api.openrouteservice.org/v2/directions/${this.state.vehicleRoundTrip}/geojson`,
+        `https://api.openrouteservice.org/v2/directions/driving-car/geojson`,
         {
           method: 'POST',
           headers: {
@@ -250,10 +248,10 @@ class Form extends Component {
                 onChange={this.vehicleChangeHandler}
               >
                 {' '}
-                <option value="driving-car">Driving</option>
-                <option value="cycling-regular">Cycling</option>
-                <option value="foot-walking">Walking</option>
-                <option value="foot-hiking">Hiking</option>
+                <option value="car">Driving</option>
+                <option value="bike">Cycling</option>
+                <option value="foot">Walking</option>
+                <option value="hike">Hiking</option>
               </select>
             </label>
           </div>
