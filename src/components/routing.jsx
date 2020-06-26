@@ -5,6 +5,13 @@ import "lrm-graphhopper";
 import { withLeaflet } from "react-leaflet";
 
 class Routing extends MapLayer {
+  render() {
+    {
+      this.createLeafletElement();
+    }
+    return "Hi";
+  }
+
   createLeafletElement() {
     // console.log(this.props);
     console.log("Routing Rendered");

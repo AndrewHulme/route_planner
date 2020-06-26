@@ -33,16 +33,12 @@ class LeafletMapContainer extends Component {
 
     const position = [this.props.lat, this.props.lng];
     return (
-      <Map
-        center={position}
-        zoom={this.state.zoom}
-        ref={this.saveMap}
-        rerender={this.props.startingCoords}
-      >
+      <Map center={position} zoom={this.state.zoom} ref={this.saveMap}>
         <TileLayer
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-        />
+          rerender={this.props.startingCoords}
+        ></TileLayer>
         {this.props.startingCoords[0] !== undefined &&
           this.props.endingCoords[0] !== undefined &&
           this.state.isMapInit && (
