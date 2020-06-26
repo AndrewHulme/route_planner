@@ -9,22 +9,17 @@ class RoutingRoundTrip extends MapLayer {
     const { map, roundTripCoords } = this.props;
     var apiGraphHopper = process.env.REACT_APP_GRAPHHOPPER;
 
-    let routingObj = {};
     let waypointsArr = [];
-    let i = 0;
-    roundTripCoords.forEach((item) => {
-      i += 1;
+    waypointsArr.push(L.latLng(roundTripCoords[0][1], roundTripCoords[0][0]));
+    roundTripCoords.forEach((item, i) => {
       if (i % 10 == 0) {
         let coord = L.latLng(item[1], item[0]);
         waypointsArr.push(coord);
       }
     });
-    routingObj.waypoints = waypointsArr;
-    console.log(routingObj);
+    waypointsArr.push(L.latLng(roundTripCoords[roundTripCoords.length-1][1], roundTripCoords[roundTripCoords.length-1][0]));
 
     let leafletElement = L.Routing.control({
-      // routingObj,
-      //   {
       waypoints: waypointsArr,
 
       router: L.Routing.graphHopper(apiGraphHopper, {

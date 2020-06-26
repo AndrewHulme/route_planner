@@ -140,7 +140,7 @@ class Form extends Component {
         this.setState({
           roundTripCoords: data.features[0].geometry.coordinates
         })
-        console.log(data.features[0]);
+        console.log(data.features[0].geometry.coordinates);
       });
     }
 
