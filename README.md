@@ -1,3 +1,29 @@
+## Features
+
+## Tech Stack:
+
+- [React](https://reactjs.org) for the front end controller
+- [Firebase](https://firebase.google.com) for the backend
+- [Cypress](https://www.cypress.io/) for end-to-end testing
+- [Maps JavaScript API](https://developers.google.com/maps/documentation/javascript/tutorial) for displaying maps
+- [Location IQ API](https://locationiq.com/) for converting user input locations to geographic coordinates
+- [Open Route Service API](https://openrouteservice.org/) for route planning
+- [Bootstrap](https://getbootstrap.com/) for styling
+
+## Installation
+
+* Clone this repository
+* Navigate to local repository
+* Install dependencies
+`npm install`
+* Start react server
+`npm start`
+* Got to [http://localhost:3000](http://localhost:3000)
+
+## Testing
+
+## Development Process
+
 ## User Stories
 
 ```
