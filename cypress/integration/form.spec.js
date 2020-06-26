@@ -76,6 +76,12 @@ describe("Form", () => {
       cy.get('input[name="roundTripStart"]').should("have.value", input);
 
     });
+
+    it("contains a vehicle selector with hiking option for round trip", () => {
+      cy.get('select[cy-name="roundVehiclechoice"]')
+        .select("Hiking")
+        .should("have.value", "hike");
+    });
   });
 
   context("Network Requests", () => {
