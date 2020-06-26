@@ -1,10 +1,21 @@
-import React, { Component } from 'react';
-import LeafletMapContainer from './mapleaflet.jsx';
+import React, { Component } from "react";
+import LeafletMapContainer from "./mapleaflet.jsx";
 
 class Form extends Component {
   state = {
-    vehicle: 'car',
+    vehicle: "car",
+    lat: 51.5033,
+    lng: -0.1195,
   };
+
+  componentDidMount() {
+    navigator.geolocation.getCurrentPosition((position) => {
+      this.setState({
+        lat: position.coords.latitude,
+        lng: position.coords.longitude,
+      });
+    });
+  }
 
   startChangeHandler = (event) => {
     this.setState({
@@ -35,23 +46,23 @@ class Form extends Component {
 
     var apiKey = process.env.REACT_APP_ROUTE_API_KEY;
     var geocodingKey = process.env.REACT_APP_GEOCODING_API_KEY;
-    var transportType = 'driving-car';
+    var transportType = "driving-car";
     // var startCoordinates = "8.681495,49.41461";
     // var endCoordinates = "8.687872,49.420318";
 
     var startingURL =
-      'https://eu1.locationiq.com/v1/search.php?key=' +
+      "https://eu1.locationiq.com/v1/search.php?key=" +
       geocodingKey +
-      '&q=' +
+      "&q=" +
       this.state.startingpoint +
-      '&format=json';
+      "&format=json";
 
     var endingURL =
-      'https://eu1.locationiq.com/v1/search.php?key=' +
+      "https://eu1.locationiq.com/v1/search.php?key=" +
       geocodingKey +
-      '&q=' +
+      "&q=" +
       this.state.endpoint +
-      '&format=json';
+      "&format=json";
 
     const asyncWrapper = async () => {
       await fetch(startingURL)
@@ -141,7 +152,7 @@ class Form extends Component {
                 value={this.state.value}
                 onChange={this.vehicleChangeHandler}
               >
-                {' '}
+                {" "}
                 <option value="car">Driving</option>
                 <option value="bike">Cycling</option>
                 <option value="foot">Walking</option>
@@ -162,6 +173,8 @@ class Form extends Component {
           startingCoords={[this.state.startingLat, this.state.startingLon]}
           endingCoords={[this.state.endingLat, this.state.endingLon]}
           vehicle={this.state.vehicle}
+          lat={this.state.lat}
+          lng={this.state.lng}
         />
       </div>
     );

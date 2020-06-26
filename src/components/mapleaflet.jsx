@@ -1,34 +1,19 @@
-import React, { Component } from 'react';
-import { render } from 'react-dom';
-import { Map, TileLayer } from 'react-leaflet';
-import { Icon } from 'leaflet';
-import '../css/app.css';
-import Routing from './routing';
+import React, { Component } from "react";
+import { render } from "react-dom";
+import { Map, TileLayer } from "react-leaflet";
+import { Icon } from "leaflet";
+import "../css/app.css";
+import Routing from "./routing";
 
 class LeafletMapContainer extends Component {
   state = {
-    lat: 51.5033,
-    lng: -0.1195,
+    // lat: 51.5033,
+    // lng: -0.1195,
     startingCoords: this.props.startingCoords,
     endingCoords: this.props.endingCoords,
     zoom: 13,
     isMapInit: false,
   };
-
-  componentDidMount() {
-    navigator.geolocation.getCurrentPosition((position) => {
-      // console.log("Latitude is :", position.coords.latitude);
-      // console.log("Longitude is :", position.coords.longitude);
-
-      this.setState({
-        lat: position.coords.latitude,
-        lng: position.coords.longitude,
-      });
-
-      // localStorage.setItem("lat", position.coords.latitude);
-      // localStorage.setItem("long", position.coords.longitude);
-    });
-  }
 
   saveMap = (map) => {
     this.map = map;
@@ -50,7 +35,7 @@ class LeafletMapContainer extends Component {
     // console.log(this.props.startingCoords);
     // console.log("Ending:");
     // console.log(this.props.endingCoords);
-    const position = [this.state.lat, this.state.lng];
+    const position = [this.props.lat, this.props.lng];
     return (
       <Map center={position} zoom={this.state.zoom} ref={this.saveMap}>
         <TileLayer
@@ -62,8 +47,8 @@ class LeafletMapContainer extends Component {
           this.state.isMapInit && (
             <Routing
               map={this.map}
-              lat={this.state.lat}
-              lng={this.state.lng}
+              lat={this.props.lat}
+              lng={this.props.lng}
               startingCoords={this.props.startingCoords}
               endingCoords={this.props.endingCoords}
               vehicle={this.props.vehicle}
