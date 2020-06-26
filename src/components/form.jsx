@@ -38,13 +38,13 @@ class Form extends Component {
   roundTripStartHandler = (event) => {
     this.setState({
       roundTripStart: event.target.value,
-    })
-  }
+    });
+  };
   roundTripLengthHandler = (event) => {
     this.setState({
       roundTripLength: event.target.value,
-    })
-  }
+    });
+  };
   vehicleChangeHandler = (event) => {
     this.setState({
       vehicle: event.target.value,
@@ -54,10 +54,10 @@ class Form extends Component {
   submitHandler = (event) => {
     event.preventDefault();
 
-    // var apiKey = process.env.REACT_APP_ROUTE_API_KEY;
+    var apiKey = process.env.REACT_APP_ROUTE_API_KEY;
     var geocodingKey = process.env.REACT_APP_GEOCODING_API_KEY;
 
-    // var transportType = "driving-car";
+    var transportType = "driving-car";
 
     // var startCoordinates = "8.681495,49.41461";
     // var endCoordinates = "8.687872,49.420318";
@@ -144,37 +144,39 @@ class Form extends Component {
           })
         );
       await fetch(
-      `https://api.openrouteservice.org/v2/directions/driving-car/geojson`,
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json; charset=utf-8",
-          Accept:
-            "application/geo+json, application/gpx+xml, img/png; charset=utf-8",
-          Authorization:
-            "5b3ce3597851110001cf6248b4be2ae5777840a697277752138f89c2",
-        },
-        body:
-          '{"coordinates":[[' +
-            this.state.startingLon + ',' + this.state.startingLat +
-          ']],"options":{"round_trip":{"length":' +
-          this.state.roundTripLength + ',"points":3,"seed":5}}}',
-      }
-    )
-      .then((resp) => resp.json())
-      .then((data) => {
-        this.setState({
-          roundTripCoords: data.features[0].geometry.coordinates
-        })
-        console.log(data.features[0].geometry.coordinates);
-      });
-    }
+        `https://api.openrouteservice.org/v2/directions/driving-car/geojson`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json; charset=utf-8",
+            Accept:
+              "application/geo+json, application/gpx+xml, img/png; charset=utf-8",
+            Authorization:
+              "5b3ce3597851110001cf6248b4be2ae5777840a697277752138f89c2",
+          },
+          body:
+            '{"coordinates":[[' +
+            this.state.startingLon +
+            "," +
+            this.state.startingLat +
+            ']],"options":{"round_trip":{"length":' +
+            this.state.roundTripLength +
+            ',"points":3,"seed":5}}}',
+        }
+      )
+        .then((resp) => resp.json())
+        .then((data) => {
+          this.setState({
+            roundTripCoords: data.features[0].geometry.coordinates,
+          });
+          console.log(data.features[0].geometry.coordinates);
+        });
+    };
 
     asyncWrapper();
   };
 
   render() {
-
     // console.log(this.state.startingpoint);
 
     const { startingpoint, lat, lng } = this.state;
