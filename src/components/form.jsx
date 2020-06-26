@@ -17,6 +17,12 @@ class Form extends Component {
     });
   }
 
+  locationHandler = (event) => {
+    this.setState({
+      startingpoint: `${this.state.lat}, ${this.state.lng}`,
+    });
+  };
+
   startChangeHandler = (event) => {
     this.setState({
       startingpoint: event.target.value,
@@ -34,12 +40,6 @@ class Form extends Component {
       vehicle: event.target.value,
     });
   };
-
-  // locationHandler = (event) => {
-  //   this.setState({
-  //     startingpoint: event.target.value,
-  //   });
-  // };
 
   submitHandler = (event) => {
     event.preventDefault();
@@ -120,11 +120,12 @@ class Form extends Component {
               className="form-control"
               type="text"
               name="startingpoint"
+              // value="Show text in input box"
               onChange={this.startChangeHandler}
             />
           </div>
 
-          {/* <div className="form-group">
+          <div className="form-group">
             <button
               onClick={this.locationHandler}
               type="button"
@@ -133,7 +134,7 @@ class Form extends Component {
             >
               Use My Location
             </button>
-          </div> */}
+          </div>
 
           <div className="form-group">
             <label>End Point:</label>
