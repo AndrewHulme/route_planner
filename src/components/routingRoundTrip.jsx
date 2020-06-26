@@ -11,25 +11,25 @@ class RoutingRoundTrip extends MapLayer {
 
     let routingObj = {};
     let waypointsArr = [];
+    let i = 0;
     roundTripCoords.forEach((item) => {
-      let coord = L.latLng(item[1], item[0]);
-      waypointsArr.push(coord);
+      i += 1;
+      if (i % 10 == 0) {
+        let coord = L.latLng(item[1], item[0]);
+        waypointsArr.push(coord);
+      }
     });
     routingObj.waypoints = waypointsArr;
+    console.log(routingObj);
 
     let leafletElement = L.Routing.control({
-      routingObj,
-      // //   {
-      // waypoints: [
-      //   L.latLng(51.627534, -0.391221),
-      //   L.latLng(51.627602, -0.390801),
-      //   L.latLng(51.627745, -0.389936),
-      //   L.latLng(51.627846, -0.389318),
-      // ],
+      // routingObj,
+      //   {
+      waypoints: waypointsArr,
 
       router: L.Routing.graphHopper(apiGraphHopper, {
         urlParameters: {
-          vehicle: "car",
+          vehicle: "foot",
         },
       }),
     }).addTo(map.leafletElement);

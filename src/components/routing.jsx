@@ -27,6 +27,7 @@ class Routing extends MapLayer {
       router: L.Routing.graphHopper(apiGraphHopper, {
         urlParameters: {
           vehicle: "car",
+          collapsible: true,
         },
       }),
     }).addTo(map.leafletElement);
