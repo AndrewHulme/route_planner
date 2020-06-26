@@ -52,6 +52,13 @@ describe("Form", () => {
         .select("Hiking")
         .should("have.value", "hike");
     });
+
+    it("contains an option to choose my own location as a start point", () => {
+      cy.get('button[value="myLocation"]').click();
+
+      const input = "My Location";
+      cy.get('input[name="startingpoint"]').should("have.value", input);
+    });
   });
 
   context("Network Requests", () => {

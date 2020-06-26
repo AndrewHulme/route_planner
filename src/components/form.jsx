@@ -44,9 +44,9 @@ class Form extends Component {
   submitHandler = (event) => {
     event.preventDefault();
 
-    var apiKey = process.env.REACT_APP_ROUTE_API_KEY;
+    // var apiKey = process.env.REACT_APP_ROUTE_API_KEY;
     var geocodingKey = process.env.REACT_APP_GEOCODING_API_KEY;
-    var transportType = "driving-car";
+    // var transportType = "driving-car";
     // var startCoordinates = "8.681495,49.41461";
     // var endCoordinates = "8.687872,49.420318";
 
@@ -109,7 +109,17 @@ class Form extends Component {
   };
 
   render() {
-    // console.log(this.state);
+    // console.log(this.state.startingpoint);
+
+    const { startingpoint, lat, lng } = this.state;
+    var displayStartingPoint = "";
+
+    if (startingpoint === `${lat}, ${lng}`) {
+      displayStartingPoint = "My Location";
+    } else {
+      displayStartingPoint = this.state.startingpoint;
+    }
+
     return (
       <div>
         <form onSubmit={this.submitHandler}>
@@ -120,7 +130,7 @@ class Form extends Component {
               className="form-control"
               type="text"
               name="startingpoint"
-              // value="Show text in input box"
+              value={displayStartingPoint}
               onChange={this.startChangeHandler}
             />
           </div>
@@ -163,12 +173,7 @@ class Form extends Component {
           </div>
 
           <br />
-          <input
-            className="form-control"
-            type="submit"
-            className="btn btn-primary"
-            value="Generate"
-          />
+          <input type="submit" className="btn btn-primary" value="Generate" />
         </form>
         <LeafletMapContainer
           startingCoords={[this.state.startingLat, this.state.startingLon]}
