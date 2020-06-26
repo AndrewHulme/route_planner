@@ -12,12 +12,17 @@ class RoutingRoundTrip extends MapLayer {
     let waypointsArr = [];
     waypointsArr.push(L.latLng(roundTripCoords[0][1], roundTripCoords[0][0]));
     roundTripCoords.forEach((item, i) => {
-      if (i % 10 == 0) {
+      if (i % 10 === 0) {
         let coord = L.latLng(item[1], item[0]);
         waypointsArr.push(coord);
       }
     });
-    waypointsArr.push(L.latLng(roundTripCoords[roundTripCoords.length-1][1], roundTripCoords[roundTripCoords.length-1][0]));
+    waypointsArr.push(
+      L.latLng(
+        roundTripCoords[roundTripCoords.length - 1][1],
+        roundTripCoords[roundTripCoords.length - 1][0]
+      )
+    );
 
     let leafletElement = L.Routing.control({
       waypoints: waypointsArr,

@@ -6,6 +6,7 @@ class Form extends Component {
     vehicle: "car",
     lat: 51.5033,
     lng: -0.1195,
+    zoom: 13,
   };
 
   componentDidMount() {
@@ -53,6 +54,8 @@ class Form extends Component {
 
   submitHandler = (event) => {
     event.preventDefault();
+
+    console.log("Click Generate");
 
     var apiKey = process.env.REACT_APP_ROUTE_API_KEY;
     var geocodingKey = process.env.REACT_APP_GEOCODING_API_KEY;
@@ -112,14 +115,18 @@ class Form extends Component {
         // We get the API response and receive data in JSON format...
         .then((response) => response.json())
         // ...then we update the users state
-        .then((data) => console.log(data.features[0].geometry.coordinates))
+        // .then((data) => console.log(data.features[0].geometry.coordinates))
         // Catch any errors we hit and update the app
         .catch((error) => this.setState({ error, isLoading: false }));
 
-      console.log(this.state);
+      // console.log(this.state);
     };
 
     asyncWrapper();
+
+    this.setState({
+      mapZoom: this.state.mapZoom + 1,
+    });
   };
 
   handleSubmitRoundTrip = (evt) => {
@@ -169,7 +176,7 @@ class Form extends Component {
           this.setState({
             roundTripCoords: data.features[0].geometry.coordinates,
           });
-          console.log(data.features[0].geometry.coordinates);
+          // console.log(data.features[0].geometry.coordinates);
         });
     };
 
@@ -286,6 +293,7 @@ class Form extends Component {
           vehicle={this.state.vehicle}
           lat={this.state.lat}
           lng={this.state.lng}
+          mapZoom={this.state.zoom}
         />
       </div>
     );

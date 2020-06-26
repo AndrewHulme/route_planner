@@ -12,7 +12,8 @@ class LeafletMapContainer extends Component {
     // lng: -0.1195,
     startingCoords: this.props.startingCoords,
     endingCoords: this.props.endingCoords,
-    zoom: 13,
+    // zoom: 13,
+    zoom: this.props.mapZoom,
     isMapInit: false,
   };
 
@@ -24,21 +25,20 @@ class LeafletMapContainer extends Component {
   };
 
   render() {
-    // if (localStorage.getItem("lat") != null) {
-    //   var lat = localStorage.getItem("lat");
-    //   var lng = localStorage.getItem("long");
-    // console.log(this.state);
-    // } else {
-    //   lat = 51.5074;
-    //   lng = 0.1277;
-    // }
-    // console.log("Starting:");
+    console.log("Map Leaflet Render");
+    // console.log("Coords Update");
     // console.log(this.props.startingCoords);
-    // console.log("Ending:");
+
     // console.log(this.props.endingCoords);
+
     const position = [this.props.lat, this.props.lng];
     return (
-      <Map center={position} zoom={this.state.zoom} ref={this.saveMap}>
+      <Map
+        center={position}
+        zoom={this.state.zoom}
+        ref={this.saveMap}
+        rerender={this.props.startingCoords}
+      >
         <TileLayer
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
@@ -55,15 +55,14 @@ class LeafletMapContainer extends Component {
               vehicle={this.props.vehicle}
             />
           )}
-          {this.props.roundTripCoords != undefined &&
-            this.state.isMapInit && (
-              <RoutingRoundTrip
-                map={this.map}
-                lat={this.state.lat}
-                lng={this.state.lng}
-                roundTripCoords={this.props.roundTripCoords}
-              />
-            )}
+        {this.props.roundTripCoords !== undefined && this.state.isMapInit && (
+          <RoutingRoundTrip
+            map={this.map}
+            lat={this.state.lat}
+            lng={this.state.lng}
+            roundTripCoords={this.props.roundTripCoords}
+          />
+        )}
       </Map>
     );
   }
