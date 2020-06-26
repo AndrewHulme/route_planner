@@ -68,10 +68,14 @@ describe("Form", () => {
       cy.get('input[name="startingpoint"]').should("have.value", input);
 
     });
-    // it('it prevents default behaviour of the function', () => {
-    //   cy.get('form[id="roundTripForm"]').submit();
-    //   cy.url().should('eq', 'http://localhost:3000/');
-    // });
+
+    it("should be able to choose own location as a start point for round trip", () => {
+      cy.get('button[value="myRoundLocation"]').click();
+
+      const input = "My Location";
+      cy.get('input[name="roundTripStart"]').should("have.value", input);
+
+    });
   });
 
   context("Network Requests", () => {
