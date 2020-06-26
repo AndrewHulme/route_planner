@@ -1,9 +1,9 @@
-import React, { Component } from "react";
-import LeafletMapContainer from "./mapleaflet.jsx";
+import React, { Component } from 'react';
+import LeafletMapContainer from './mapleaflet.jsx';
 
 class Form extends Component {
   state = {
-    vehicle: "car",
+    vehicle: 'car',
   };
 
   startChangeHandler = (event) => {
@@ -24,28 +24,34 @@ class Form extends Component {
     });
   };
 
+  // locationHandler = (event) => {
+  //   this.setState({
+  //     startingpoint: event.target.value,
+  //   });
+  // };
+
   submitHandler = (event) => {
     event.preventDefault();
 
     var apiKey = process.env.REACT_APP_ROUTE_API_KEY;
     var geocodingKey = process.env.REACT_APP_GEOCODING_API_KEY;
-    var transportType = "driving-car";
+    var transportType = 'driving-car';
     // var startCoordinates = "8.681495,49.41461";
     // var endCoordinates = "8.687872,49.420318";
 
     var startingURL =
-      "https://eu1.locationiq.com/v1/search.php?key=" +
+      'https://eu1.locationiq.com/v1/search.php?key=' +
       geocodingKey +
-      "&q=" +
+      '&q=' +
       this.state.startingpoint +
-      "&format=json";
+      '&format=json';
 
     var endingURL =
-      "https://eu1.locationiq.com/v1/search.php?key=" +
+      'https://eu1.locationiq.com/v1/search.php?key=' +
       geocodingKey +
-      "&q=" +
+      '&q=' +
       this.state.endpoint +
-      "&format=json";
+      '&format=json';
 
     const asyncWrapper = async () => {
       await fetch(startingURL)
@@ -106,6 +112,18 @@ class Form extends Component {
               onChange={this.startChangeHandler}
             />
           </div>
+
+          {/* <div className="form-group">
+            <button
+              onClick={this.locationHandler}
+              type="button"
+              className="btn btn-sm btn-secondary"
+              value="myLocation"
+            >
+              Use My Location
+            </button>
+          </div> */}
+
           <div className="form-group">
             <label>End Point:</label>
             <input
@@ -115,7 +133,6 @@ class Form extends Component {
               onChange={this.endChangeHandler}
             />
           </div>
-
           <div className="form-group">
             <label>
               Mode of Transport:
@@ -124,7 +141,7 @@ class Form extends Component {
                 value={this.state.value}
                 onChange={this.vehicleChangeHandler}
               >
-                {" "}
+                {' '}
                 <option value="car">Driving</option>
                 <option value="bike">Cycling</option>
                 <option value="foot">Walking</option>
