@@ -4,6 +4,7 @@ import LeafletMapContainer from './mapleaflet.jsx';
 class Form extends Component {
   state = {
     vehicle: 'car',
+    vehicleRoundTrip: 'driving-car',
     lat: 51.5033,
     lng: -0.1195,
   };
@@ -53,9 +54,11 @@ class Form extends Component {
       roundTripLength: event.target.value,
     });
   };
+
   vehicleChangeHandler = (event) => {
     this.setState({
       vehicle: event.target.value,
+      vehicleRoundTrip: event.target.value,
     });
   };
 
@@ -141,7 +144,8 @@ class Form extends Component {
       this.state.roundTripStart +
       '&format=json';
 
-    console.log(startingURL);
+    console.log(this.state.vehicleRoundTrip);
+    console.log(this.state.vehicleRoundTrip);
     const asyncWrapper = async () => {
       await fetch(startingURL)
         .then((response) => response.json())
@@ -152,7 +156,7 @@ class Form extends Component {
           })
         );
       await fetch(
-        `https://api.openrouteservice.org/v2/directions/driving-car/geojson`,
+        `https://api.openrouteservice.org/v2/directions/${this.state.vehicleRoundTrip}/geojson`,
         {
           method: 'POST',
           headers: {
@@ -241,15 +245,15 @@ class Form extends Component {
             <label>
               Mode of Transport:
               <select
-                cy-name="vehiclechoice"
+                cy-name="roundVehiclechoice"
                 value={this.state.value}
                 onChange={this.vehicleChangeHandler}
               >
                 {' '}
-                <option value="car">Driving</option>
-                <option value="bike">Cycling</option>
-                <option value="foot">Walking</option>
-                <option value="hike">Hiking</option>
+                <option value="driving-car">Driving</option>
+                <option value="cycling-regular">Cycling</option>
+                <option value="foot-walking">Walking</option>
+                <option value="foot-hiking">Hiking</option>
               </select>
             </label>
           </div>
