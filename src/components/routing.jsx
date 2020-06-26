@@ -5,6 +5,9 @@ import "lrm-graphhopper";
 import { withLeaflet } from "react-leaflet";
 
 class Routing extends MapLayer {
+  state = {
+    i: 0,
+  };
   render() {
     {
       this.createLeafletElement();
@@ -15,6 +18,14 @@ class Routing extends MapLayer {
   createLeafletElement() {
     // console.log(this.props);
     console.log("Routing Rendered");
+
+    // console.log(leafletElement);
+    // if (leafletElement !== undefined) {
+    //   leafletElement.remove();
+    // }
+    // if (this.state !== undefined) {
+    //   this.setState({ i: this.state.i + 1 });
+    // }
 
     const { map, startingCoords, endingCoords, vehicle } = this.props;
 
@@ -30,6 +41,7 @@ class Routing extends MapLayer {
         // L.latLng(27.68, 85.321),
         // L.latLng(27.7, 85.331),
       ],
+
       router: L.Routing.graphHopper(apiGraphHopper, {
         urlParameters: {
           vehicle: vehicle,
