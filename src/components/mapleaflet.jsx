@@ -46,10 +46,10 @@ class LeafletMapContainer extends Component {
     //   lat = 51.5074;
     //   lng = 0.1277;
     // }
-    console.log('Starting:');
-    console.log(this.props.startingCoords);
-    console.log('Ending:');
-    console.log(this.props.endingCoords);
+    // console.log("Starting:");
+    // console.log(this.props.startingCoords);
+    // console.log("Ending:");
+    // console.log(this.props.endingCoords);
     const position = [this.state.lat, this.state.lng];
     return (
       <Map center={position} zoom={this.state.zoom} ref={this.saveMap}>
@@ -66,6 +66,7 @@ class LeafletMapContainer extends Component {
               lng={this.state.lng}
               startingCoords={this.props.startingCoords}
               endingCoords={this.props.endingCoords}
+              vehicle={this.props.vehicle}
             />
           )}
       </Map>
