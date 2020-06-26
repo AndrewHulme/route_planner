@@ -8,6 +8,7 @@ class Routing extends MapLayer {
   state = {
     i: 0,
   };
+
   render() {
     {
       this.createLeafletElement();
@@ -48,6 +49,13 @@ class Routing extends MapLayer {
         },
       }),
     }).addTo(map.leafletElement);
+
+    // if (this.props.generated > 1) {
+    //   leafletElement.remove();
+    // }
+
+    // console.log(this.props.generated);
+
     return leafletElement.getPlan();
   }
 }

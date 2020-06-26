@@ -7,6 +7,7 @@ class Form extends Component {
     lat: 51.5033,
     lng: -0.1195,
     zoom: 13,
+    generated: 0,
   };
 
   componentDidMount() {
@@ -41,11 +42,13 @@ class Form extends Component {
       roundTripStart: event.target.value,
     });
   };
+
   roundTripLengthHandler = (event) => {
     this.setState({
       roundTripLength: event.target.value,
     });
   };
+
   vehicleChangeHandler = (event) => {
     this.setState({
       vehicle: event.target.value,
@@ -126,7 +129,10 @@ class Form extends Component {
 
     this.setState({
       mapZoom: this.state.mapZoom + 1,
+      generated: this.state.generated + 1,
     });
+
+    console.log(this.state.generated);
   };
 
   handleSubmitRoundTrip = (evt) => {
@@ -294,6 +300,7 @@ class Form extends Component {
           lat={this.state.lat}
           lng={this.state.lng}
           mapZoom={this.state.zoom}
+          generated={this.state.generated}
         />
       </div>
     );

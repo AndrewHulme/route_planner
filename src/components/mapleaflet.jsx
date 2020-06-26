@@ -49,6 +49,7 @@ class LeafletMapContainer extends Component {
               startingCoords={this.props.startingCoords}
               endingCoords={this.props.endingCoords}
               vehicle={this.props.vehicle}
+              generated={this.props.generated}
             />
           )}
         {this.props.roundTripCoords !== undefined && this.state.isMapInit && (
