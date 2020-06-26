@@ -1,9 +1,9 @@
-import React, { Component } from "react";
-import LeafletMapContainer from "./mapleaflet.jsx";
+import React, { Component } from 'react';
+import LeafletMapContainer from './mapleaflet.jsx';
 
 class Form extends Component {
   state = {
-    vehicle: "car",
+    vehicle: 'car',
     lat: 51.5033,
     lng: -0.1195,
   };
@@ -21,6 +21,14 @@ class Form extends Component {
     this.setState({
       startingpoint: `${this.state.lat}, ${this.state.lng}`,
     });
+  };
+
+  roundTripLocationHandler = (event) => {
+    console.log(this.state.roundTripStart);
+    this.setState({
+      roundTripStart: `${this.state.lat}, ${this.state.lng}`,
+    });
+    console.log(this.state.roundTripStart);
   };
 
   startChangeHandler = (event) => {
@@ -57,24 +65,24 @@ class Form extends Component {
     var apiKey = process.env.REACT_APP_ROUTE_API_KEY;
     var geocodingKey = process.env.REACT_APP_GEOCODING_API_KEY;
 
-    var transportType = "driving-car";
+    var transportType = 'driving-car';
 
     // var startCoordinates = "8.681495,49.41461";
     // var endCoordinates = "8.687872,49.420318";
 
     var startingURL =
-      "https://eu1.locationiq.com/v1/search.php?key=" +
+      'https://eu1.locationiq.com/v1/search.php?key=' +
       geocodingKey +
-      "&q=" +
+      '&q=' +
       this.state.startingpoint +
-      "&format=json";
+      '&format=json';
 
     var endingURL =
-      "https://eu1.locationiq.com/v1/search.php?key=" +
+      'https://eu1.locationiq.com/v1/search.php?key=' +
       geocodingKey +
-      "&q=" +
+      '&q=' +
       this.state.endpoint +
-      "&format=json";
+      '&format=json';
 
     const asyncWrapper = async () => {
       await fetch(startingURL)
@@ -101,11 +109,11 @@ class Form extends Component {
         apiKey +
         `&start=` +
         this.state.startingLon +
-        "," +
+        ',' +
         this.state.startingLat +
         `&end=` +
         this.state.endingLon +
-        "," +
+        ',' +
         this.state.endingLat;
 
       await fetch(routeURL)
@@ -126,14 +134,14 @@ class Form extends Component {
     evt.preventDefault();
 
     var geocodingKey = process.env.REACT_APP_GEOCODING_API_KEY;
-
     var startingURL =
-      "https://eu1.locationiq.com/v1/search.php?key=" +
+      'https://eu1.locationiq.com/v1/search.php?key=' +
       geocodingKey +
-      "&q=" +
+      '&q=' +
       this.state.roundTripStart +
-      "&format=json";
+      '&format=json';
 
+    console.log(startingURL);
     const asyncWrapper = async () => {
       await fetch(startingURL)
         .then((response) => response.json())
@@ -146,18 +154,18 @@ class Form extends Component {
       await fetch(
         `https://api.openrouteservice.org/v2/directions/driving-car/geojson`,
         {
-          method: "POST",
+          method: 'POST',
           headers: {
-            "Content-Type": "application/json; charset=utf-8",
+            'Content-Type': 'application/json; charset=utf-8',
             Accept:
-              "application/geo+json, application/gpx+xml, img/png; charset=utf-8",
+              'application/geo+json, application/gpx+xml, img/png; charset=utf-8',
             Authorization:
-              "5b3ce3597851110001cf6248b4be2ae5777840a697277752138f89c2",
+              '5b3ce3597851110001cf6248b4be2ae5777840a697277752138f89c2',
           },
           body:
             '{"coordinates":[[' +
             this.state.startingLon +
-            "," +
+            ',' +
             this.state.startingLat +
             ']],"options":{"round_trip":{"length":' +
             this.state.roundTripLength +
@@ -177,15 +185,20 @@ class Form extends Component {
   };
 
   render() {
-    // console.log(this.state.startingpoint);
-
-    const { startingpoint, lat, lng } = this.state;
-    var displayStartingPoint = "";
+    const { roundTripStart, startingpoint, lat, lng } = this.state;
+    var displayStartingPoint,
+      displayRoundStartingPoint = '';
 
     if (startingpoint === `${lat}, ${lng}`) {
-      displayStartingPoint = "My Location";
+      displayStartingPoint = 'My Location';
     } else {
       displayStartingPoint = this.state.startingpoint;
+    }
+
+    if (roundTripStart === `${lat}, ${lng}`) {
+      displayRoundStartingPoint = 'My Location';
+    } else {
+      displayRoundStartingPoint = this.state.roundTripStart;
     }
 
     return (
@@ -198,8 +211,21 @@ class Form extends Component {
               type="text"
               name="roundTripStart"
               onChange={this.roundTripStartHandler}
+              value={displayRoundStartingPoint}
             />
           </div>
+
+          <div className="form-group">
+            <button
+              onClick={this.roundTripLocationHandler}
+              type="button"
+              className="btn btn-sm btn-secondary"
+              value="myLocation"
+            >
+              Use My Location
+            </button>
+          </div>
+
           <div className="form-group">
             <label>Length of trip:</label>
             <input
@@ -210,6 +236,24 @@ class Form extends Component {
             />
           </div>
           <br />
+
+          <div className="form-group">
+            <label>
+              Mode of Transport:
+              <select
+                cy-name="vehiclechoice"
+                value={this.state.value}
+                onChange={this.vehicleChangeHandler}
+              >
+                {' '}
+                <option value="car">Driving</option>
+                <option value="bike">Cycling</option>
+                <option value="foot">Walking</option>
+                <option value="hike">Hiking</option>
+              </select>
+            </label>
+          </div>
+
           <input
             id="roundTripButton"
             className="form-control"
@@ -260,7 +304,7 @@ class Form extends Component {
                 value={this.state.value}
                 onChange={this.vehicleChangeHandler}
               >
-                {" "}
+                {' '}
                 <option value="car">Driving</option>
                 <option value="bike">Cycling</option>
                 <option value="foot">Walking</option>
