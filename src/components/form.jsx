@@ -253,21 +253,25 @@ class Form extends Component {
 
             <br />
 
-            <div className="form-group">
-              <label>
-                Mode of Transport:
-                <select
-                  cy-name="roundVehiclechoice"
-                  value={this.state.value}
-                  onChange={this.vehicleChangeHandler}
-                >
-                  {' '}
-                  <option value="car">Driving</option>
-                  <option value="bike">Cycling</option>
-                  <option value="foot">Walking</option>
-                  <option value="hike">Hiking</option>
-                </select>
-              </label>
+            <div class="form-group">
+              <label for="demo_overview_minimal"></label>
+              <select
+                class="form-control"
+                data-role="select-dropdown"
+                data-profile="minimal"
+                cy-name="roundVehiclechoice"
+                value={this.state.value}
+                onChange={this.vehicleChangeHandler}
+              >
+                {' '}
+                <option selected disabled>
+                  Mode of Transport
+                </option>
+                <option value="car">Driving</option>
+                <option value="bike">Cycling</option>
+                <option value="foot">Walking</option>
+                <option value="hike">Hiking</option>
+              </select>
             </div>
 
             <input
@@ -313,21 +317,25 @@ class Form extends Component {
               </button>
             </div>
 
-            <div className="form-group">
-              <label>
-                Mode of Transport:
-                <select
-                  cy-name="vehiclechoice"
-                  value={this.state.value}
-                  onChange={this.vehicleChangeHandler}
-                >
-                  {' '}
-                  <option value="car">Driving</option>
-                  <option value="bike">Cycling</option>
-                  <option value="foot">Walking</option>
-                  <option value="hike">Hiking</option>
-                </select>
-              </label>
+            <div class="form-group">
+              <label for="demo_overview_minimal"></label>
+              <select
+                class="form-control"
+                data-role="select-dropdown"
+                data-profile="minimal"
+                cy-name="vehiclechoice"
+                value={this.state.value}
+                onChange={this.vehicleChangeHandler}
+              >
+                {' '}
+                <option selected disabled>
+                  Mode of Transport
+                </option>
+                <option value="car">Driving</option>
+                <option value="bike">Cycling</option>
+                <option value="foot">Walking</option>
+                <option value="hike">Hiking</option>
+              </select>
             </div>
 
             <br />
