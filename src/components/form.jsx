@@ -267,12 +267,12 @@ class Form extends Component {
 
             <div className="form-row">
               <div className="col">
-                <label for="demo_overview_minimal"></label>
+                <label htmlFor="demo_overview_minimal"></label>
                 <select
                   class="form-control"
                   data-role="select-dropdown"
                   data-profile="minimal"
-                  cy-name="roundVehiclechoice"
+                  cy-name="vehicleChoice"
                   value={this.state.value}
                   onChange={this.vehicleChangeHandler}
                 >
