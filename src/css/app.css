@@ -15,8 +15,3 @@ body {
 html {
   font-size: 20px;
 }
-
-.leaflet-container {
-  width: 90%;
-  height: 100vh;
-}

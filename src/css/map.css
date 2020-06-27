@@ -1,0 +1,24 @@
+.leaflet-container {
+  margin: auto;
+  width: 90%;
+  height: 60vh;
+  border-radius: 30px;
+  border: none;
+  margin: 20px;
+  box-shadow: 0 0 10px 10px rgba(200, 200, 200, 0.4);
+}
+
+.leaflet-control-attribution {
+  display: none;
+}
+
+.leaflet-top {
+  padding: 20px;
+}
+
+a.leaflet-control-zoom-in,
+a.leaflet-control-zoom-out {
+  background: #007bff;
+}
+
+/* opacity: 0.9; */
