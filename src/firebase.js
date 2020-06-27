@@ -8,5 +8,7 @@ var config = {
   storageBucket: process.env.REACT_APP_FIREBASE_BUCKET,
 };
 firebase.initializeApp(config);
+const db = firebase.firestore();
+db.settings({ timestampsInSnapshots: true })
 
 export default firebase;
