@@ -239,17 +239,6 @@ class Form extends Component {
               </div>
             </div>
 
-            {/* <div className="form-group">
-            <label>Start point for round trip:</label>
-            <input
-              className="form-control"
-              type="text"
-              name="roundTripStart"
-              onChange={this.roundTripStartHandler}
-              value={displayRoundStartingPoint}
-            />
-          </div> */}
-
             <div className="form-group">
               <button
                 id="roundTripMyLocation"
@@ -262,15 +251,6 @@ class Form extends Component {
               </button>
             </div>
 
-            {/* <div className="form-group">
-            <label>Length of trip:</label>
-            <input
-              className="form-control"
-              type="text"
-              name="roundTripLength"
-              onChange={this.roundTripLengthHandler}
-            />
-          </div> */}
             <br />
 
             <div className="form-group">
@@ -300,16 +280,26 @@ class Form extends Component {
           </form>
         ) : (
           <form onSubmit={this.submitHandler} id="secondForm">
-            <div className="form-group">
-              <label>Starting Point:</label>
-              <input
-                autoFocus
-                className="form-control"
-                type="text"
-                name="startingpoint"
-                value={displayStartingPoint}
-                onChange={this.startChangeHandler}
-              />
+            <div className="form-row">
+              <div className="col">
+                <input
+                  type="text"
+                  className="form-control"
+                  placeholder="Starting Point"
+                  name="startingpoint"
+                  value={displayStartingPoint}
+                  onChange={this.startChangeHandler}
+                />
+              </div>
+              <div className="col">
+                <input
+                  type="text"
+                  className="form-control"
+                  placeholder="End Point"
+                  name="endpoint"
+                  onChange={this.endChangeHandler}
+                />
+              </div>
             </div>
 
             <div className="form-group">
@@ -323,15 +313,6 @@ class Form extends Component {
               </button>
             </div>
 
-            <div className="form-group">
-              <label>End Point:</label>
-              <input
-                className="form-control"
-                type="text"
-                name="endpoint"
-                onChange={this.endChangeHandler}
-              />
-            </div>
             <div className="form-group">
               <label>
                 Mode of Transport:
