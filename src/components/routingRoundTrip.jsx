@@ -1,10 +1,15 @@
-import { MapLayer } from 'react-leaflet';
-import L from 'leaflet';
-import 'leaflet-routing-machine';
-import { withLeaflet } from 'react-leaflet';
-import 'lrm-graphhopper';
+import { MapLayer } from "react-leaflet";
+import L from "leaflet";
+import "leaflet-routing-machine";
+import { withLeaflet } from "react-leaflet";
+import "lrm-graphhopper";
 
 class RoutingRoundTrip extends MapLayer {
+  render() {
+    this.createLeafletElement();
+    return "Hi";
+  }
+
   createLeafletElement() {
     const { map, roundTripCoords, vehicle } = this.props;
     var apiGraphHopper = process.env.REACT_APP_GRAPHHOPPER;
