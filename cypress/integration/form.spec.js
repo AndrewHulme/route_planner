@@ -82,6 +82,10 @@ describe('Form', () => {
         .select('Hiking')
         .should('have.value', 'hike');
     });
+    it('should contain an Add Endpoint button', function() {
+      cy.get('#addEndPoint')
+        .should('have.value', 'Add endpoint');
+    })
   });
 
   context('Network Requests', () => {
