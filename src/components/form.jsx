@@ -6,6 +6,7 @@ class Form extends Component {
     vehicle: 'car',
     lat: 51.5033,
     lng: -0.1195,
+    roundTrip: true
   };
 
   componentDidMount() {
@@ -17,6 +18,12 @@ class Form extends Component {
     });
   }
 
+  formHandler = () => {
+    let form = !this.state.roundTrip;
+    this.setState({
+      roundTrip: form
+    })
+  }
   locationHandler = (event) => {
     this.setState({
       startingpoint: `${this.state.lat}, ${this.state.lng}`,
@@ -205,6 +212,7 @@ class Form extends Component {
 
     return (
       <div>
+      {this.state.roundTrip == true ?  (
         <form id="roundTripForm" onSubmit={this.handleSubmitRoundTrip}>
           <div className="form-row">
             <div className="col">
@@ -287,7 +295,7 @@ class Form extends Component {
             value="Generate"
           />
         </form>
-
+      ) : (
         <form onSubmit={this.submitHandler} id="secondForm">
           <div className="form-group">
             <label>Starting Point:</label>
@@ -348,6 +356,14 @@ class Form extends Component {
             value="Generate"
           />
         </form>
+      )}
+        <button
+          value='Add endpoint'
+          id='addEndPoint'
+          className="btn btn-danger"
+          onClick={this.formHandler}
+          >Add endpoint</button>
+
         <LeafletMapContainer
           startingCoords={[this.state.startingLat, this.state.startingLon]}
           endingCoords={[this.state.endingLat, this.state.endingLon]}
