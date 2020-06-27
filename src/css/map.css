@@ -17,8 +17,8 @@
 }
 
 a.leaflet-control-zoom-in,
-a.leaflet-control-zoom-out {
+a.leaflet-control-zoom-out,
+a.leaflet-control-zoom-in.leaflet-disabled,
+a.leaflet-control-zoom-out.leaflet-disabled {
   background: #007bff;
 }
-
-/* opacity: 0.9; */

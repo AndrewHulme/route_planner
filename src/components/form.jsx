@@ -206,7 +206,29 @@ class Form extends Component {
     return (
       <div>
         <form id="roundTripForm" onSubmit={this.handleSubmitRoundTrip}>
-          <div className="form-group">
+          <div className="form-row">
+            <div className="col">
+              <input
+                type="text"
+                className="form-control"
+                placeholder="Start point for round trip"
+                name="roundTripStart"
+                onChange={this.roundTripStartHandler}
+                value={displayRoundStartingPoint}
+              />
+            </div>
+            <div className="col">
+              <input
+                type="text"
+                className="form-control"
+                placeholder="Length of trip"
+                name="roundTripLength"
+                onChange={this.roundTripLengthHandler}
+              />
+            </div>
+          </div>
+
+          {/* <div className="form-group">
             <label>Start point for round trip:</label>
             <input
               className="form-control"
@@ -215,7 +237,7 @@ class Form extends Component {
               onChange={this.roundTripStartHandler}
               value={displayRoundStartingPoint}
             />
-          </div>
+          </div> */}
 
           <div className="form-group">
             <button
@@ -228,7 +250,7 @@ class Form extends Component {
             </button>
           </div>
 
-          <div className="form-group">
+          {/* <div className="form-group">
             <label>Length of trip:</label>
             <input
               className="form-control"
@@ -236,7 +258,7 @@ class Form extends Component {
               name="roundTripLength"
               onChange={this.roundTripLengthHandler}
             />
-          </div>
+          </div> */}
           <br />
 
           <div className="form-group">
