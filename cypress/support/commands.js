@@ -37,5 +37,5 @@ Cypress.Commands.add('generateRoute', () => {
   const endpoint = 'London Eye';
   cy.get('input[name="startingpoint"]').type(startInput);
   cy.get('input[name="endpoint"]').type(endpoint);
-  cy.get('.btn-primary').click();
+  cy.get('#secondButton').click();
 });

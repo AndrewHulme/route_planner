@@ -1,0 +1,36 @@
+.leaflet-container {
+  margin: auto;
+  width: 90%;
+  height: 60vh;
+  border-radius: 30px;
+  border: none;
+  margin: 20px;
+  box-shadow: 0 0 10px 10px rgba(200, 200, 200, 0.4);
+}
+
+.leaflet-control-attribution {
+  display: none;
+}
+
+.leaflet-top {
+  padding: 20px;
+}
+
+.leaflet-routing-container {
+  height: 250px;
+  width: 200px;
+  overflow: hidden;
+  border-radius: 20px;
+  border: none;
+}
+
+.leaflet-routing-container:first-of-type {
+  display: none;
+}
+
+a.leaflet-control-zoom-in,
+a.leaflet-control-zoom-out,
+a.leaflet-control-zoom-in.leaflet-disabled,
+a.leaflet-control-zoom-out.leaflet-disabled {
+  background: #007bff;
+}
