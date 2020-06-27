@@ -1,12 +1,12 @@
-import { MapLayer } from "react-leaflet";
-import L from "leaflet";
-import "leaflet-routing-machine";
-import { withLeaflet } from "react-leaflet";
-import "lrm-graphhopper";
+import { MapLayer } from 'react-leaflet';
+import L from 'leaflet';
+import 'leaflet-routing-machine';
+import { withLeaflet } from 'react-leaflet';
+import 'lrm-graphhopper';
 
 class RoutingRoundTrip extends MapLayer {
   createLeafletElement() {
-    const { map, roundTripCoords } = this.props;
+    const { map, roundTripCoords, vehicle } = this.props;
     var apiGraphHopper = process.env.REACT_APP_GRAPHHOPPER;
 
     let waypointsArr = [];
@@ -17,14 +17,19 @@ class RoutingRoundTrip extends MapLayer {
         waypointsArr.push(coord);
       }
     });
-    waypointsArr.push(L.latLng(roundTripCoords[roundTripCoords.length-1][1], roundTripCoords[roundTripCoords.length-1][0]));
+    waypointsArr.push(
+      L.latLng(
+        roundTripCoords[roundTripCoords.length - 1][1],
+        roundTripCoords[roundTripCoords.length - 1][0]
+      )
+    );
 
     let leafletElement = L.Routing.control({
       waypoints: waypointsArr,
 
       router: L.Routing.graphHopper(apiGraphHopper, {
         urlParameters: {
-          vehicle: "foot",
+          vehicle: vehicle,
         },
       }),
     }).addTo(map.leafletElement);

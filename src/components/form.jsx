@@ -53,6 +53,7 @@ class Form extends Component {
       roundTripLength: event.target.value,
     });
   };
+
   vehicleChangeHandler = (event) => {
     this.setState({
       vehicle: event.target.value,
@@ -141,7 +142,8 @@ class Form extends Component {
       this.state.roundTripStart +
       '&format=json';
 
-    console.log(startingURL);
+    console.log(this.state.vehicleRoundTrip);
+    console.log(this.state.vehicleRoundTrip);
     const asyncWrapper = async () => {
       await fetch(startingURL)
         .then((response) => response.json())
@@ -217,10 +219,11 @@ class Form extends Component {
 
           <div className="form-group">
             <button
+              id="roundTripMyLocation"
               onClick={this.roundTripLocationHandler}
               type="button"
               className="btn btn-sm btn-secondary"
-              value="myLocation"
+              value="myRoundLocation"
             >
               Use My Location
             </button>
@@ -241,7 +244,7 @@ class Form extends Component {
             <label>
               Mode of Transport:
               <select
-                cy-name="vehiclechoice"
+                cy-name="roundVehiclechoice"
                 value={this.state.value}
                 onChange={this.vehicleChangeHandler}
               >
