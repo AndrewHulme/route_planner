@@ -8,6 +8,7 @@
     "@testing-library/user-event": "^7.1.2",
     "bootstrap": "^4.5.0",
     "dotenv": "^8.2.0",
+    "firebase": "^7.15.5",
     "google-maps-react": "^2.0.6",
     "istanbul-lib-coverage": "^3.0.0",
     "jquery": "^1.9.1",

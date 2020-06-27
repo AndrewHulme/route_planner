@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import LeafletMapContainer from './mapleaflet.jsx';
+import firebase from "./Firestore";
+import ReturnedFromDB from "./ReturnedFromDB"
 
 class Form extends Component {
   state = {
@@ -213,6 +215,8 @@ class Form extends Component {
       displayRoundStartingPoint = this.state.roundTripStart;
     }
 
+
+
     return (
       <div>
         {this.state.roundTrip == true ? (
@@ -361,6 +365,8 @@ class Form extends Component {
         >
           {this.state.buttonText}
         </button>
+
+  <ReturnedFromDB />
 
         <LeafletMapContainer
           startingCoords={[this.state.startingLat, this.state.startingLon]}
