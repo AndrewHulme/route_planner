@@ -253,34 +253,37 @@ class Form extends Component {
 
             <br />
 
-            <div class="form-group">
-              <label for="demo_overview_minimal"></label>
-              <select
-                class="form-control"
-                data-role="select-dropdown"
-                data-profile="minimal"
-                cy-name="roundVehiclechoice"
-                value={this.state.value}
-                onChange={this.vehicleChangeHandler}
-              >
-                {' '}
-                <option selected disabled>
-                  Mode of Transport
-                </option>
-                <option value="car">Driving</option>
-                <option value="bike">Cycling</option>
-                <option value="foot">Walking</option>
-                <option value="hike">Hiking</option>
-              </select>
+            <div className="form-row">
+              <div className="col">
+                <label for="demo_overview_minimal"></label>
+                <select
+                  class="form-control"
+                  data-role="select-dropdown"
+                  data-profile="minimal"
+                  cy-name="roundVehiclechoice"
+                  value={this.state.value}
+                  onChange={this.vehicleChangeHandler}
+                >
+                  {' '}
+                  <option selected disabled>
+                    Mode of Transport
+                  </option>
+                  <option value="car">Driving</option>
+                  <option value="bike">Cycling</option>
+                  <option value="foot">Walking</option>
+                  <option value="hike">Hiking</option>
+                </select>
+              </div>
+              <div className="col m-3">
+                <input
+                  id="roundTripButton"
+                  className="form-control"
+                  type="submit"
+                  className="btn btn-primary"
+                  value="Generate"
+                />
+              </div>
             </div>
-
-            <input
-              id="roundTripButton"
-              className="form-control"
-              type="submit"
-              className="btn btn-primary"
-              value="Generate"
-            />
           </form>
         ) : (
           <form onSubmit={this.submitHandler} id="secondForm">
@@ -317,36 +320,37 @@ class Form extends Component {
               </button>
             </div>
 
-            <div class="form-group">
-              <label for="demo_overview_minimal"></label>
-              <select
-                class="form-control"
-                data-role="select-dropdown"
-                data-profile="minimal"
-                cy-name="vehiclechoice"
-                value={this.state.value}
-                onChange={this.vehicleChangeHandler}
-              >
-                {' '}
-                <option selected disabled>
-                  Mode of Transport
-                </option>
-                <option value="car">Driving</option>
-                <option value="bike">Cycling</option>
-                <option value="foot">Walking</option>
-                <option value="hike">Hiking</option>
-              </select>
+            <div className="form-row">
+              <div className="col">
+                <label for="demo_overview_minimal"></label>
+                <select
+                  class="form-control"
+                  data-role="select-dropdown"
+                  data-profile="minimal"
+                  cy-name="roundVehiclechoice"
+                  value={this.state.value}
+                  onChange={this.vehicleChangeHandler}
+                >
+                  {' '}
+                  <option selected disabled>
+                    Mode of Transport
+                  </option>
+                  <option value="car">Driving</option>
+                  <option value="bike">Cycling</option>
+                  <option value="foot">Walking</option>
+                  <option value="hike">Hiking</option>
+                </select>
+              </div>
+              <div className="col m-3">
+                <input
+                  id="roundTripButton"
+                  className="form-control"
+                  type="submit"
+                  className="btn btn-primary"
+                  value="Generate"
+                />
+              </div>
             </div>
-
-            <br />
-
-            <input
-              id="secondButton"
-              className="form-control"
-              type="submit"
-              className="btn btn-primary"
-              value="Generate"
-            />
           </form>
         )}
         <button
