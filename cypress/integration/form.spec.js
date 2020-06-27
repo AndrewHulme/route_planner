@@ -1,100 +1,109 @@
 /// <reference types='cypress' />
 
-describe('Form', () => {
-  context('Contains DOM Elements', () => {
+describe("Form", () => {
+  context("Contains DOM Elements", () => {
     beforeEach(() => {
-      cy.visit('http://localhost:3000');
+      cy.visit("http://localhost:3000");
     });
 
-    it('should contain a form', () => {
-      cy.contains('Starting Point');
-      cy.contains('End Point');
+    it("should contain a form", () => {
+      cy.contains("Starting Point");
+      cy.contains("End Point");
     });
-    it('focuses the input', () => {
-      cy.focused().should('have.class', 'form-control');
+    it("focuses the input", () => {
+      cy.focused().should("have.class", "form-control");
     });
-    it('accepts input Startingpoint', () => {
-      const input = 'Startingpoint';
+    it("accepts input Startingpoint", () => {
+      const input = "Startingpoint";
       cy.get('input[name="startingpoint"]')
         .type(input)
-        .should('have.value', input);
+        .should("have.value", input);
     });
-    it('accepts input Endpoint', () => {
-      const input = 'Endpoint';
-      cy.get('input[name="endpoint"]').type(input).should('have.value', input);
+    it("accepts input Endpoint", () => {
+      const input = "Endpoint";
+      cy.get('input[name="endpoint"]').type(input).should("have.value", input);
     });
-    it('should have a different form for round trip', function () {
+    it("should have a different form for round trip", function () {
       cy.get('input[name="roundTripStart"]')
-        .type('Hello')
-        .should('have.value', 'Hello');
+        .type("Hello")
+        .should("have.value", "Hello");
     });
 
-    it('it prevents default behaviour of the function', () => {
+    it("it prevents default behaviour of the function", () => {
       cy.get('form[id="secondForm"]').submit();
-      cy.url().should('eq', 'http://localhost:3000/');
+      cy.url().should("eq", "http://localhost:3000/");
     });
 
-    it('prevents default behaviour of the function', () => {
-      cy.get('#roundTripForm').submit();
-      cy.url().should('eq', 'http://localhost:3000/');
+    it("prevents default behaviour of the function", () => {
+      cy.get("#roundTripForm").submit();
+      cy.url().should("eq", "http://localhost:3000/");
     });
 
-    it('contains a vehicle selector with driving option', () => {
+    it("contains a vehicle selector with driving option", () => {
       cy.get('select[cy-name="vehiclechoice"]')
-        .select('Driving')
-        .should('have.value', 'car');
+        .select("Driving")
+        .should("have.value", "car");
     });
 
-    it('contains a vehicle selector with cycling option', () => {
+    it("contains a vehicle selector with cycling option", () => {
       cy.get('select[cy-name="vehiclechoice"]')
-        .select('Cycling')
-        .should('have.value', 'bike');
+        .select("Cycling")
+        .should("have.value", "bike");
     });
 
-    it('contains a vehicle selector with walking option', () => {
+    it("contains a vehicle selector with walking option", () => {
       cy.get('select[cy-name="vehiclechoice"]')
-        .select('Walking')
-        .should('have.value', 'foot');
+        .select("Walking")
+        .should("have.value", "foot");
     });
 
-    it('contains a vehicle selector with hiking option', () => {
+    it("contains a vehicle selector with hiking option", () => {
       cy.get('select[cy-name="vehiclechoice"]')
-        .select('Hiking')
-        .should('have.value', 'hike');
+        .select("Hiking")
+        .should("have.value", "hike");
     });
 
-    it('contains an option to choose my own location as a start point', () => {
+    it("contains an option to choose my own location as a start point", () => {
       cy.get('button[value="myLocation"]').click();
 
-      const input = 'My Location';
-      cy.get('input[name="startingpoint"]').should('have.value', input);
+      const input = "My Location";
+      cy.get('input[name="startingpoint"]').should("have.value", input);
     });
 
-    it('should be able to choose own location as a start point for round trip', () => {
+    it("should be able to choose own location as a start point for round trip", () => {
       cy.get('button[value="myRoundLocation"]').click();
 
-      const input = 'My Location';
-      cy.get('input[name="roundTripStart"]').should('have.value', input);
+      const input = "My Location";
+      cy.get('input[name="roundTripStart"]').should("have.value", input);
     });
 
-    it('contains a vehicle selector with hiking option for round trip', () => {
+    it("contains a vehicle selector with hiking option for round trip", () => {
       cy.get('select[cy-name="roundVehiclechoice"]')
-        .select('Hiking')
-        .should('have.value', 'hike');
+        .select("Hiking")
+        .should("have.value", "hike");
     });
-    it('should contain an Add Endpoint button', function() {
-      cy.get('#addEndPoint')
-        .should('have.value', 'Add endpoint');
-    })
+    it("should contain an Add Endpoint button", function () {
+      cy.get("#addEndPoint").should("have.value", "Add endpoint");
+    });
+    it("should change generate to randomise after initial round trip selection", function () {
+      const startInput = "London Eye";
+      const length = 10000;
+
+      cy.get('input[name="roundTripStart"]').type(startInput);
+      cy.get('input[name="roundTripLength"]').type(length);
+      cy.get('select[cy-name="roundVehiclechoice"]').select("Walking");
+      cy.get("#roundTripButton").click();
+      cy.get("#roundTripButton").should("have.value", "Randomise");
+    });
   });
 
-  context('Network Requests', () => {
+  context("Network Requests", () => {
     beforeEach(() => {
-      cy.visit('http://localhost:3000');
+      cy.visit("http://localhost:3000");
     });
-    it('cy.server() network requests and responses', () => {
+    it("cy.server() network requests and responses", () => {
       cy.server().should((server) => {
-        expect(server.method).to.eq('GET');
+        expect(server.method).to.eq("GET");
         expect(server.status).to.eq(200);
       });
     });

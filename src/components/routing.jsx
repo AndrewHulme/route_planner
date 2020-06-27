@@ -1,10 +1,14 @@
-import { MapLayer } from 'react-leaflet';
-import L from 'leaflet';
-import 'leaflet-routing-machine';
-import 'lrm-graphhopper';
-import { withLeaflet } from 'react-leaflet';
+import { MapLayer } from "react-leaflet";
+import L from "leaflet";
+import "leaflet-routing-machine";
+import "lrm-graphhopper";
+import { withLeaflet } from "react-leaflet";
 
 class Routing extends MapLayer {
+  render() {
+    this.createLeafletElement();
+    return "Hi";
+  }
   createLeafletElement() {
     console.log(this.props);
     const { map, startingCoords, endingCoords, vehicle } = this.props;
