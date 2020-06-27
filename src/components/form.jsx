@@ -241,10 +241,11 @@ class Form extends Component {
 
           <div className="form-group">
             <button
+              id="roundTripMyLocation"
               onClick={this.roundTripLocationHandler}
               type="button"
               className="btn btn-sm btn-secondary"
-              value="myLocation"
+              value="myRoundLocation"
             >
               Use My Location
             </button>
