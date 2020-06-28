@@ -1,6 +1,8 @@
-import React from "react";
-import "./css/app.css";
-import Form from "./components/form";
+import React from 'react';
+import './css/app.css';
+import Form from './components/form';
+import fire from './components/firebase';
+import Login from './components/login';
 
 function App() {
   // state = {};
