@@ -33,7 +33,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        {this.state.user ? <Form /> : <Login />}
+        {this.state.user ? <Form user={this.state.user} /> : <Login />}
         {/* <Login />
         <Form /> */}
       </div>
