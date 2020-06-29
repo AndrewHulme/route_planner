@@ -12,10 +12,14 @@ class Routing extends MapLayer {
   componentDidUpdate(prevProps) {
     if (prevProps.generated !== this.props.generated) {
       this.createLeafletElement();
-      if (this.props.generated > 1) {
+
+      if (this.state.leafletElement !== "") {
         console.log("YO");
         console.log(this.state.leafletElement);
         this.state.leafletElement.spliceWaypoints(0, 2);
+      } else {
+        console.log("componentDidUpdate: Leaflet element");
+        console.log(this.state.leafletElement);
       }
     }
   }
@@ -36,6 +40,9 @@ class Routing extends MapLayer {
         },
       }),
     });
+
+    console.log("createLeafletElement: What is leaflet element?!");
+    console.log(leafletElement);
 
     this.setState({
       leafletElement: leafletElement,
