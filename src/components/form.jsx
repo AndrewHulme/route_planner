@@ -11,6 +11,7 @@ class Form extends Component {
     generateButton: "Generate",
     seed: 1,
     generated: 0,
+    roundTripGenerated: 0,
   };
 
   componentDidMount() {
@@ -206,6 +207,7 @@ class Form extends Component {
           this.setState({
             generateButton: "Randomise",
             seed: this.state.seed + 1,
+            roundTripGenerated: this.state.roundTripGenerated + 1,
           });
         });
     };
@@ -387,6 +389,7 @@ class Form extends Component {
           lat={this.state.lat}
           lng={this.state.lng}
           generated={this.state.generated}
+          roundTripGenerated={this.state.roundTripGenerated}
         />
       </div>
     );
