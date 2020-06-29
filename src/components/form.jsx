@@ -5,11 +5,13 @@ import ReturnedFromDB from "./ReturnedFromDB"
 
 class Form extends Component {
   state = {
-    vehicle: 'car',
+    vehicle: "car",
     lat: 51.5033,
     lng: -0.1195,
     roundTrip: true,
-    buttonText: 'Add endpoint',
+    buttonText: "Add endpoint",
+    generateButton: "Generate",
+    seed: 1,
   };
 
   componentDidMount() {
@@ -26,7 +28,7 @@ class Form extends Component {
     this.setState({
       roundTrip: form,
       buttonText:
-        this.state.buttonText == 'Add endpoint' ? 'Round Trip' : 'Add endpoint',
+        this.state.buttonText == "Add endpoint" ? "Round Trip" : "Add endpoint",
     });
   };
   locationHandler = (event) => {
@@ -58,11 +60,15 @@ class Form extends Component {
   roundTripStartHandler = (event) => {
     this.setState({
       roundTripStart: event.target.value,
+      generateButton: "Generate",
+      seed: 1,
     });
   };
   roundTripLengthHandler = (event) => {
     this.setState({
       roundTripLength: event.target.value,
+      generateButton: "Generate",
+      seed: 1,
     });
   };
 
@@ -78,24 +84,24 @@ class Form extends Component {
     var apiKey = process.env.REACT_APP_ROUTE_API_KEY;
     var geocodingKey = process.env.REACT_APP_GEOCODING_API_KEY;
 
-    var transportType = 'driving-car';
+    var transportType = "driving-car";
 
     // var startCoordinates = "8.681495,49.41461";
     // var endCoordinates = "8.687872,49.420318";
 
     var startingURL =
-      'https://eu1.locationiq.com/v1/search.php?key=' +
+      "https://eu1.locationiq.com/v1/search.php?key=" +
       geocodingKey +
-      '&q=' +
+      "&q=" +
       this.state.startingpoint +
-      '&format=json';
+      "&format=json";
 
     var endingURL =
-      'https://eu1.locationiq.com/v1/search.php?key=' +
+      "https://eu1.locationiq.com/v1/search.php?key=" +
       geocodingKey +
-      '&q=' +
+      "&q=" +
       this.state.endpoint +
-      '&format=json';
+      "&format=json";
 
     const asyncWrapper = async () => {
       await fetch(startingURL)
@@ -122,11 +128,11 @@ class Form extends Component {
         apiKey +
         `&start=` +
         this.state.startingLon +
-        ',' +
+        "," +
         this.state.startingLat +
         `&end=` +
         this.state.endingLon +
-        ',' +
+        "," +
         this.state.endingLat;
 
       await fetch(routeURL)
@@ -148,11 +154,11 @@ class Form extends Component {
 
     var geocodingKey = process.env.REACT_APP_GEOCODING_API_KEY;
     var startingURL =
-      'https://eu1.locationiq.com/v1/search.php?key=' +
+      "https://eu1.locationiq.com/v1/search.php?key=" +
       geocodingKey +
-      '&q=' +
+      "&q=" +
       this.state.roundTripStart +
-      '&format=json';
+      "&format=json";
 
     console.log(this.state.vehicleRoundTrip);
     console.log(this.state.vehicleRoundTrip);
@@ -168,22 +174,24 @@ class Form extends Component {
       await fetch(
         `https://api.openrouteservice.org/v2/directions/driving-car/geojson`,
         {
-          method: 'POST',
+          method: "POST",
           headers: {
-            'Content-Type': 'application/json; charset=utf-8',
+            "Content-Type": "application/json; charset=utf-8",
             Accept:
-              'application/geo+json, application/gpx+xml, img/png; charset=utf-8',
+              "application/geo+json, application/gpx+xml, img/png; charset=utf-8",
             Authorization:
-              '5b3ce3597851110001cf6248b4be2ae5777840a697277752138f89c2',
+              "5b3ce3597851110001cf6248b4be2ae5777840a697277752138f89c2",
           },
           body:
             '{"coordinates":[[' +
             this.state.startingLon +
-            ',' +
+            "," +
             this.state.startingLat +
             ']],"options":{"round_trip":{"length":' +
             this.state.roundTripLength +
-            ',"points":3,"seed":5}}}',
+            ',"points":3,"seed":' +
+            this.state.seed +
+            "}}}",
         }
       )
         .then((resp) => resp.json())
@@ -192,6 +200,10 @@ class Form extends Component {
             roundTripCoords: data.features[0].geometry.coordinates,
           });
           console.log(data.features[0].geometry.coordinates);
+          this.setState({
+            generateButton: "Randomise",
+            seed: this.state.seed + 1,
+          });
         });
     };
 
@@ -201,16 +213,16 @@ class Form extends Component {
   render() {
     const { roundTripStart, startingpoint, lat, lng } = this.state;
     var displayStartingPoint,
-      displayRoundStartingPoint = '';
+      displayRoundStartingPoint = "";
 
     if (startingpoint === `${lat}, ${lng}`) {
-      displayStartingPoint = 'My Location';
+      displayStartingPoint = "My Location";
     } else {
       displayStartingPoint = this.state.startingpoint;
     }
 
     if (roundTripStart === `${lat}, ${lng}`) {
-      displayRoundStartingPoint = 'My Location';
+      displayRoundStartingPoint = "My Location";
     } else {
       displayRoundStartingPoint = this.state.roundTripStart;
     }
@@ -259,16 +271,16 @@ class Form extends Component {
 
             <div className="form-row">
               <div className="col">
-                <label for="demo_overview_minimal"></label>
+                <label htmlFor="demo_overview_minimal"></label>
                 <select
                   class="form-control"
                   data-role="select-dropdown"
                   data-profile="minimal"
-                  cy-name="roundVehiclechoice"
+                  cy-name="vehicleChoice"
                   value={this.state.value}
                   onChange={this.vehicleChangeHandler}
                 >
-                  {' '}
+                  {" "}
                   <option selected disabled>
                     Mode of Transport
                   </option>
@@ -284,7 +296,7 @@ class Form extends Component {
                   className="form-control"
                   type="submit"
                   className="btn btn-primary"
-                  value="Generate"
+                  value={this.state.generateButton}
                 />
               </div>
             </div>
@@ -335,7 +347,7 @@ class Form extends Component {
                   value={this.state.value}
                   onChange={this.vehicleChangeHandler}
                 >
-                  {' '}
+                  {" "}
                   <option selected disabled>
                     Mode of Transport
                   </option>
