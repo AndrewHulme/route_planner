@@ -24,6 +24,10 @@ class Form extends Component {
     this.logout = this.logout.bind(this);
   }
 
+  // removeMap = (id) => {
+  //   console.log(id);
+  // };
+
   displayRoute = (item) => {
     if (item.roundTrip) {
       this.setState({
@@ -51,6 +55,7 @@ class Form extends Component {
 
   saveToDB = () => {
     let db = fire.firestore();
+    let dbID = String(Date.now());
     db.collection('routes').add({
       roundTrip: this.state.roundTrip,
       distance: this.state.roundTripLength
@@ -60,7 +65,7 @@ class Form extends Component {
       startingCoordinates: [this.state.startingLat, this.state.startingLon],
       endingCoordinates: [this.state.endingLat, this.state.endingLon],
       vehicleType: this.state.vehicle,
-      id: Date.now(),
+      id: dbID,
       userName: this.props.user.email,
     });
   };
@@ -438,7 +443,10 @@ class Form extends Component {
           {this.state.buttonText}
         </button>
 
-        <ReturnedFromDB displayRoute={this.displayRoute} />
+        <ReturnedFromDB
+          displayRoute={this.displayRoute}
+          removeMap={this.removeMap}
+        />
 
         <LeafletMapContainer
           startingCoords={[this.state.startingLat, this.state.startingLon]}

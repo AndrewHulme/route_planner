@@ -6,7 +6,6 @@ class ReturnedFromDB extends React.Component {
     super();
     this.state = {
       data: [],
-      mapID: '',
     };
   }
 
@@ -14,10 +13,14 @@ class ReturnedFromDB extends React.Component {
     this.renderRouteData();
   }
 
+  removeMap = (id) => {
+    console.log(id);
+    // this.props.removeMap(id);
+    let db = fire.firestore();
+    db.collection('routes').doc(id).delete();
+  };
+
   displaySavedRoute = (id) => {
-    this.setState({
-      mapID: id,
-    });
     console.log(id);
     let db = fire.firestore();
     db.collection('routes')
@@ -55,12 +58,20 @@ class ReturnedFromDB extends React.Component {
           return (
             <a onClick={() => this.displaySavedRoute(item.id)}>
               <div key={i} className="savedMapDiv row">
-                {console.log(this.state.mapID)}
                 <div className="col">
                   <p>User: {item.userName}</p>
                 </div>
                 <div className="col">
                   <p>Id: {item.id}</p>
+                </div>
+                <div className="col">
+                  <button
+                    type="button"
+                    className="close"
+                    onClick={() => this.removeMap(item.id)}
+                  >
+                    <span aria-hidden="true">&times;</span>
+                  </button>
                 </div>
               </div>
             </a>
