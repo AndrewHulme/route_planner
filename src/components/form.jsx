@@ -33,6 +33,8 @@ class Form extends Component {
   displayRoute = (item) => {
     if (item.roundTrip) {
       this.setState({
+        generated: 0,
+        roundTripGenerated: this.state.roundTripGenerated + 1,
         roundTripCoords: JSON.parse(item.roundTripCoordinates),
         vehicle: item.vehicleType,
       });
@@ -46,6 +48,8 @@ class Form extends Component {
         return endCoordinates.push(Number(element));
       });
       this.setState({
+        roundTripGenerated: 0,
+        generated: this.state.generated + 1,
         startingLat: startCoordinates[0],
         startingLon: startCoordinates[1],
         endingLat: endCoordinates[0],
