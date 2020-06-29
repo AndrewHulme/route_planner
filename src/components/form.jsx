@@ -24,6 +24,30 @@ class Form extends Component {
     this.logout = this.logout.bind(this);
   }
 
+  displayRoute = (item) => {
+    console.log("I've been called!");
+    console.log(item);
+    if (item.roundTrip) {
+      this.setState({
+        roundTripCoords: JSON.parse(item.roundTripCoordinates),
+        vehicle: item.vehicleType
+      })
+    } else {
+      this.setState({
+        startingCoords: item.startingCoordinates,
+        endingCoords: item.endingCoordinates,
+        vehicle: item.vehicleType
+      })
+    }
+  }
+
+  // startingCoords={[this.state.startingLat, this.state.startingLon]}
+  // endingCoords={[this.state.endingLat, this.state.endingLon]}
+  // roundTripCoords={this.state.roundTripCoords}
+  // vehicle={this.state.vehicle}
+  // lat={this.state.lat}
+  // lng={this.state.lng}
+
   saveToDB = () => {
     let db = fire.firestore();
     db.collection('routes').add({
@@ -414,7 +438,7 @@ class Form extends Component {
           {this.state.buttonText}
         </button>
 
-        <ReturnedFromDB />
+        <ReturnedFromDB displayRoute={this.displayRoute}/>
 
         <LeafletMapContainer
           startingCoords={[this.state.startingLat, this.state.startingLon]}

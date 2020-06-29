@@ -16,9 +16,20 @@ class ReturnedFromDB extends React.Component {
 
   displaySavedRoute = (id) => {
     this.setState({
-      mopID: id,
+      mapID: id,
     });
     console.log(id);
+    let db = fire.firestore();
+    db.collection('routes')
+      .where('id', '==', id)
+      .get()
+      .then((snapshot) => {
+        this.setState({
+          route: snapshot.docs[0].data()
+        })
+        console.log(this.state.route);
+        this.props.displayRoute(this.state.route);
+      })
   };
 
   renderRouteData = () => {
