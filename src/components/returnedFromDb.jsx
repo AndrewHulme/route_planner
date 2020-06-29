@@ -32,13 +32,10 @@ class ReturnedFromDB extends React.Component {
       <ul>
         { this.state.data.map((item, i) => {
           return (
-            <li key={i}>
-              <p>Distance: {item.distance}m</p>
-              <p>Username: {item.userName}</p>
-              <p>Activity: {item.vehicleType}</p>
-              <p>Start: {item.startingCoordinates}</p>
-              <p>Start: {item.endingCoordinates}</p>
-            </li>
+            <div key={i}>
+              <p>Id: {item.id}</p>
+              <p>User: {item.userName}</p>
+            </div>
           )
         })}
         </ul>
