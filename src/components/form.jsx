@@ -17,6 +17,8 @@ class Form extends Component {
     roundTripCoords: [[], []],
     startingCoordinates: [],
     endingCoordinates: [],
+    endingLat: null,
+    endingLon: null
   };
   constructor(props) {
     super(props);
