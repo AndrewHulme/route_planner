@@ -13,6 +13,8 @@ class Form extends Component {
     buttonText: 'Add endpoint',
     generateButton: 'Generate',
     seed: 1,
+    generated: 0,
+    roundTripGenerated: 0,
     distance: null,
     roundTripCoords: [[], []],
     endingLat: null,
@@ -86,11 +88,14 @@ class Form extends Component {
   formHandler = () => {
     let form = !this.state.roundTrip;
     this.setState({
+      roundTripGenerated: 0,
+      generated: 0,
       roundTrip: form,
       buttonText:
         this.state.buttonText == 'Add endpoint' ? 'Round Trip' : 'Add endpoint',
     });
   };
+
   locationHandler = (event) => {
     this.setState({
       startingpoint: `${this.state.lat}, ${this.state.lng}`,
@@ -204,6 +209,9 @@ class Form extends Component {
         })
         // Catch any errors we hit and update the app
         .catch((error) => this.setState({ error, isLoading: false }));
+      this.setState({
+        generated: this.state.generated + 1,
+      });
     };
 
     asyncWrapper();
@@ -260,6 +268,7 @@ class Form extends Component {
           this.setState({
             generateButton: 'Randomise',
             seed: this.state.seed + 1,
+            roundTripGenerated: this.state.roundTripGenerated + 1,
           });
         });
     };
@@ -455,6 +464,8 @@ class Form extends Component {
           vehicle={this.state.vehicle}
           lat={this.state.lat}
           lng={this.state.lng}
+          generated={this.state.generated}
+          roundTripGenerated={this.state.roundTripGenerated}
         />
 
         <button
