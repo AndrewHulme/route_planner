@@ -13,6 +13,10 @@ class Form extends Component {
     buttonText: 'Add endpoint',
     generateButton: 'Generate',
     seed: 1,
+    distance: null,
+    roundTripCoords: [[], []],
+    startingCoordinates: [],
+    endingCoordinates: [],
   };
   constructor(props) {
     super(props);
@@ -23,10 +27,12 @@ class Form extends Component {
     let db = fire.firestore();
     db.collection('routes').add({
       roundTrip: this.state.roundTrip,
-      distance: this.state.roundTripLength,
+      distance: this.state.roundTripLength
+        ? this.state.roundTripLength
+        : this.state.distance,
       roundTripCoordinates: JSON.stringify(this.state.roundTripCoords),
-      endingCoordinates: 'endingCord',
-      startingCoordinates: 'startingCord',
+      startingCoordinates: [this.state.startingLat, this.state.startingLon],
+      endingCoordinates: [this.state.endingLat, this.state.endingLon],
       vehicleType: this.state.vehicle,
     });
   };
@@ -160,11 +166,14 @@ class Form extends Component {
         // We get the API response and receive data in JSON format...
         .then((response) => response.json())
         // ...then we update the users state
-        .then((data) => console.log(data.features[0].geometry.coordinates))
+        .then((data) => {
+          this.setState({
+            distance: data.features[0].properties.summary.distance,
+          });
+          console.log(data.features[0].properties.summary.distance);
+        })
         // Catch any errors we hit and update the app
         .catch((error) => this.setState({ error, isLoading: false }));
-
-      console.log(this.state);
     };
 
     asyncWrapper();
