@@ -15,8 +15,6 @@ class Form extends Component {
     seed: 1,
     distance: null,
     roundTripCoords: [[], []],
-    startingCoordinates: [],
-    endingCoordinates: [],
     endingLat: null,
     endingLon: null
   };
@@ -67,11 +65,9 @@ class Form extends Component {
   };
 
   roundTripLocationHandler = (event) => {
-    console.log(this.state.roundTripStart);
     this.setState({
       roundTripStart: `${this.state.lat}, ${this.state.lng}`,
     });
-    console.log(this.state.roundTripStart);
   };
 
   startChangeHandler = (event) => {
@@ -172,7 +168,6 @@ class Form extends Component {
           this.setState({
             distance: data.features[0].properties.summary.distance,
           });
-          console.log(data.features[0].properties.summary.distance);
         })
         // Catch any errors we hit and update the app
         .catch((error) => this.setState({ error, isLoading: false }));
@@ -192,8 +187,6 @@ class Form extends Component {
       this.state.roundTripStart +
       '&format=json';
 
-    console.log(this.state.vehicleRoundTrip);
-    console.log(this.state.vehicleRoundTrip);
     const asyncWrapper = async () => {
       await fetch(startingURL)
         .then((response) => response.json())
@@ -231,8 +224,6 @@ class Form extends Component {
           this.setState({
             roundTripCoords: data.features[0].geometry.coordinates,
           });
-          console.log(this.state.roundTripLength);
-          console.log(data.features[0].geometry.coordinates);
           this.setState({
             generateButton: 'Randomise',
             seed: this.state.seed + 1,
