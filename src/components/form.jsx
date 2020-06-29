@@ -25,8 +25,6 @@ class Form extends Component {
   }
 
   displayRoute = (item) => {
-    console.log("I've been called!");
-    console.log(item);
     if (item.roundTrip) {
       this.setState({
         roundTripCoords: JSON.parse(item.roundTripCoordinates),
@@ -41,8 +39,6 @@ class Form extends Component {
       item.endingCoordinates.forEach((element) => {
         return endCoordinates.push(Number(element));
       });
-      console.log('Strat Coord', startCoordinates);
-      console.log('End Coord', endCoordinates);
       this.setState({
         startingLat: startCoordinates[0],
         startingLon: startCoordinates[1],
@@ -50,17 +46,8 @@ class Form extends Component {
         endingLon: endCoordinates[1],
         vehicle: item.vehicleType,
       });
-      console.log(this.state.startingLat);
-      console.log(this.state.endingCoords);
     }
   };
-
-  // startingCoords={[this.state.startingLat, this.state.startingLon]}
-  // endingCoords={[this.state.endingLat, this.state.endingLon]}
-  // roundTripCoords={this.state.roundTripCoords}
-  // vehicle={this.state.vehicle}
-  // lat={this.state.lat}
-  // lng={this.state.lng}
 
   saveToDB = () => {
     let db = fire.firestore();
@@ -304,7 +291,6 @@ class Form extends Component {
             </button>
           </div>
         </div>
-        {console.log(this.props.user)}
         {this.state.roundTrip == true ? (
           <form id="roundTripForm" onSubmit={this.handleSubmitRoundTrip}>
             <div className="form-row">

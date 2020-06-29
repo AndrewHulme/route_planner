@@ -10,14 +10,7 @@ class Routing extends MapLayer {
     return 'Hi';
   }
   createLeafletElement() {
-    console.log(this.props);
     const { map, startingCoords, endingCoords, vehicle } = this.props;
-    // console.log("YOOOOO");
-    // console.log(startingCoords);
-    // console.log(endingCoords);
-    // console.log(this.props.vehicle);
-    console.log(startingCoords, endingCoords);
-    console.log("hello")
     var apiGraphHopper = process.env.REACT_APP_GRAPHHOPPER;
 
     // var lat = localStorage.getItem("lat");

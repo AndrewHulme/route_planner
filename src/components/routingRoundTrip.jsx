@@ -14,7 +14,6 @@ class RoutingRoundTrip extends MapLayer {
     const { map, roundTripCoords, vehicle } = this.props;
     var apiGraphHopper = process.env.REACT_APP_GRAPHHOPPER;
 
-    console.log("hello roundtrip")
     let waypointsArr = [];
     waypointsArr.push(L.latLng(roundTripCoords[0][1], roundTripCoords[0][0]));
     roundTripCoords.forEach((item, i) => {
