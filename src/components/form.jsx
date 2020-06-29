@@ -19,6 +19,18 @@ class Form extends Component {
     this.logout = this.logout.bind(this);
   }
 
+  saveToDB = () => {
+    let db = fire.firestore();
+    db.collection('routes').add({
+      roundTrip: this.state.roundTrip,
+      distance: this.state.roundTripLength,
+      roundTripCoordinates: JSON.stringify(this.state.roundTripCoords),
+      endingCoordinates: 'endingCord',
+      startingCoordinates: 'startingCord',
+      vehicleType: this.state.vehicle,
+    });
+  };
+
   logout() {
     fire.auth().signOut();
   }
@@ -208,6 +220,7 @@ class Form extends Component {
           this.setState({
             roundTripCoords: data.features[0].geometry.coordinates,
           });
+          console.log(this.state.roundTripLength);
           console.log(data.features[0].geometry.coordinates);
           this.setState({
             generateButton: 'Randomise',
@@ -397,6 +410,7 @@ class Form extends Component {
         </button>
 
         <ReturnedFromDB />
+
         <LeafletMapContainer
           startingCoords={[this.state.startingLat, this.state.startingLon]}
           endingCoords={[this.state.endingLat, this.state.endingLon]}
@@ -405,6 +419,15 @@ class Form extends Component {
           lat={this.state.lat}
           lng={this.state.lng}
         />
+
+        <button
+          value="saveRoute"
+          id="saveRoute"
+          className="btn btn-warning"
+          onClick={this.saveToDB}
+        >
+          Save To DB
+        </button>
       </div>
     );
   }
