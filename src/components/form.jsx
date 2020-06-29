@@ -30,16 +30,18 @@ class Form extends Component {
     if (item.roundTrip) {
       this.setState({
         roundTripCoords: JSON.parse(item.roundTripCoordinates),
-        vehicle: item.vehicleType
-      })
+        vehicle: item.vehicleType,
+      });
     } else {
       this.setState({
-        startingCoords: item.startingCoordinates,
+        startingCoords: Number(item.startingCoordinates),
         endingCoords: item.endingCoordinates,
-        vehicle: item.vehicleType
-      })
+        vehicle: item.vehicleType,
+      });
+      console.log(this.state.startingCoords);
+      console.log(this.state.endingCoords);
     }
-  }
+  };
 
   // startingCoords={[this.state.startingLat, this.state.startingLon]}
   // endingCoords={[this.state.endingLat, this.state.endingLon]}
@@ -56,8 +58,8 @@ class Form extends Component {
         ? this.state.roundTripLength
         : this.state.distance,
       roundTripCoordinates: JSON.stringify(this.state.roundTripCoords),
-      startingCoordinates: [this.state.startingLat, this.state.startingLon],
-      endingCoordinates: [this.state.endingLat, this.state.endingLon],
+      startingCoordinates: [this.state.startingLon, this.state.startingLat],
+      endingCoordinates: [this.state.endingLon, this.state.endingLat],
       vehicleType: this.state.vehicle,
       id: Date.now(),
       userName: this.props.user.email,
@@ -438,7 +440,7 @@ class Form extends Component {
           {this.state.buttonText}
         </button>
 
-        <ReturnedFromDB displayRoute={this.displayRoute}/>
+        <ReturnedFromDB displayRoute={this.displayRoute} />
 
         <LeafletMapContainer
           startingCoords={[this.state.startingLat, this.state.startingLon]}

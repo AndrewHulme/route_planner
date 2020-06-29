@@ -25,11 +25,11 @@ class ReturnedFromDB extends React.Component {
       .get()
       .then((snapshot) => {
         this.setState({
-          route: snapshot.docs[0].data()
-        })
+          route: snapshot.docs[0].data(),
+        });
         console.log(this.state.route);
         this.props.displayRoute(this.state.route);
-      })
+      });
   };
 
   renderRouteData = () => {
@@ -54,10 +54,14 @@ class ReturnedFromDB extends React.Component {
         {this.state.data.map((item, i) => {
           return (
             <a onClick={() => this.displaySavedRoute(item.id)}>
-              <div key={i}>
+              <div key={i} className="savedMapDiv row">
                 {console.log(this.state.mapID)}
-                <p>User: {item.userName}</p>
-                <p>Id: {item.id}</p>
+                <div className="col">
+                  <p>User: {item.userName}</p>
+                </div>
+                <div className="col">
+                  <p>Id: {item.id}</p>
+                </div>
               </div>
             </a>
           );
