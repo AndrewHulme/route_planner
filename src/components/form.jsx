@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import LeafletMapContainer from './mapleaflet.jsx';
+import ReturnedFromDB from './returnedFromDb.jsx';
 import fire from './firebase';
 
 class Form extends Component {
@@ -393,6 +394,8 @@ class Form extends Component {
         >
           {this.state.buttonText}
         </button>
+
+        <ReturnedFromDB />
         <LeafletMapContainer
           startingCoords={[this.state.startingLat, this.state.startingLon]}
           endingCoords={[this.state.endingLat, this.state.endingLon]}
