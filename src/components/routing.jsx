@@ -17,6 +17,7 @@ class Routing extends MapLayer {
     // console.log(endingCoords);
     // console.log(this.props.vehicle);
     console.log(startingCoords, endingCoords);
+    console.log("hello")
     var apiGraphHopper = process.env.REACT_APP_GRAPHHOPPER;
 
     // var lat = localStorage.getItem("lat");

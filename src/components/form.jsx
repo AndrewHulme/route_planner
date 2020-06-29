@@ -37,18 +37,20 @@ class Form extends Component {
       item.startingCoordinates.forEach((element) => {
         return startCoordinates.push(Number(element));
       });
-      let endtCoordinates = [];
+      let endCoordinates = [];
       item.endingCoordinates.forEach((element) => {
-        return endtCoordinates.push(Number(element));
+        return endCoordinates.push(Number(element));
       });
       console.log('Strat Coord', startCoordinates);
-      console.log('End Coord', endtCoordinates);
+      console.log('End Coord', endCoordinates);
       this.setState({
-        startingCoords: startCoordinates,
-        endingCoords: endtCoordinates,
+        startingLat: startCoordinates[0],
+        startingLon: startCoordinates[1],
+        endingLat: endCoordinates[0],
+        endingLon: endCoordinates[1],
         vehicle: item.vehicleType,
       });
-      console.log(this.state.startingCoords);
+      console.log(this.state.startingLat);
       console.log(this.state.endingCoords);
     }
   };

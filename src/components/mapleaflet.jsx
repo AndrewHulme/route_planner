@@ -33,7 +33,7 @@ class LeafletMapContainer extends Component {
     //   lng = 0.1277;
     // }
     // console.log("Starting:");
-    // console.log(this.props.startingCoords);
+    console.log(this.state.startingCoords);
     // console.log("Ending:");
     // console.log(this.props.endingCoords);
     const position = [this.props.lat, this.props.lng];
