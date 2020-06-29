@@ -3,6 +3,7 @@ import './css/app.css';
 import fire from './components/firebase.jsx';
 import Form from './components/form.jsx';
 import Login from './components/login.jsx';
+import Flash from './components/flash.jsx';
 
 class App extends Component {
   constructor() {
@@ -33,6 +34,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        <Flash />
         {this.state.user ? <Form user={this.state.user} /> : <Login />}
         {/* <Login />
         <Form /> */}

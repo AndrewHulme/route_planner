@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import LeafletMapContainer from './mapleaflet.jsx';
 import fire from './firebase';
+import Flash from './flash';
 
 class Form extends Component {
   state = {
