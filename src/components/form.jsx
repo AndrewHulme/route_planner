@@ -26,11 +26,14 @@ class Form extends Component {
   formHandler = () => {
     let form = !this.state.roundTrip;
     this.setState({
+      roundTripGenerated: 0,
+      generated: 0,
       roundTrip: form,
       buttonText:
         this.state.buttonText == "Add endpoint" ? "Round Trip" : "Add endpoint",
     });
   };
+
   locationHandler = (event) => {
     this.setState({
       startingpoint: `${this.state.lat}, ${this.state.lng}`,
