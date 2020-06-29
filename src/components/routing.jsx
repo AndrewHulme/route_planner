@@ -7,22 +7,24 @@ import { withLeaflet } from "react-leaflet";
 class Routing extends MapLayer {
   state = {
     leafletElement: "",
+    leafletElements: [],
+    i: 0,
   };
 
   componentDidUpdate(prevProps) {
+    console.log(this.state.leafletElements);
+
     if (prevProps.generated !== this.props.generated) {
       this.createLeafletElement();
 
-      if (this.state.leafletElement !== "") {
-        console.log("YO");
-        console.log(this.state.leafletElement);
-        this.state.leafletElement.spliceWaypoints(0, 2);
-      } else {
-        console.log("componentDidUpdate: Leaflet element");
-        console.log(this.state.leafletElement);
+      if (this.state.leafletElements.length !== 0) {
+        this.state.leafletElements.forEach((element) =>
+          element.spliceWaypoints(0, 2)
+        );
       }
     }
   }
+
   createLeafletElement() {
     console.log("Create leaflet element called");
     const { map, startingCoords, endingCoords, vehicle } = this.props;
@@ -44,9 +46,13 @@ class Routing extends MapLayer {
     console.log("createLeafletElement: What is leaflet element?!");
     console.log(leafletElement);
 
-    this.setState({
-      leafletElement: leafletElement,
-    });
+    this.setState((prevState) => ({
+      leafletElements: [...prevState.leafletElements, leafletElement],
+    }));
+
+    if (this.props.generated < 1) {
+      leafletElement.spliceWaypoints(0, 2);
+    }
 
     leafletElement.addTo(map.leafletElement);
     return leafletElement.getPlan();

@@ -48,8 +48,8 @@ class LeafletMapContainer extends Component {
           this.state.isMapInit && (
             <Routing
               map={this.map}
-              lat={this.props.lat}
-              lng={this.props.lng}
+              // lat={this.props.lat}
+              // lng={this.props.lng}
               startingCoords={this.props.startingCoords}
               endingCoords={this.props.endingCoords}
               vehicle={this.props.vehicle}
@@ -59,8 +59,8 @@ class LeafletMapContainer extends Component {
         {this.props.roundTripCoords != undefined && this.state.isMapInit && (
           <RoutingRoundTrip
             map={this.map}
-            lat={this.state.lat}
-            lng={this.state.lng}
+            // lat={this.state.lat}
+            // lng={this.state.lng}
             roundTripCoords={this.props.roundTripCoords}
             vehicle={this.props.vehicle}
           />
