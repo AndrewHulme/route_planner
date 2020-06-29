@@ -1,15 +1,15 @@
-import { MapLayer } from "react-leaflet";
-import L from "leaflet";
-import "leaflet-routing-machine";
-import "lrm-graphhopper";
-import { withLeaflet } from "react-leaflet";
+import { MapLayer } from 'react-leaflet';
+import L from 'leaflet';
+import 'leaflet-routing-machine';
+import 'lrm-graphhopper';
+import { withLeaflet } from 'react-leaflet';
 
 class Routing extends MapLayer {
+
   state = {
     leafletElement: "",
     leafletElements: [],
   };
-
   componentDidUpdate(prevProps) {
     console.log(this.state.leafletElements);
     console.log(this.props.generated);
@@ -26,9 +26,7 @@ class Routing extends MapLayer {
   }
 
   createLeafletElement() {
-    console.log("Create leaflet element called");
     const { map, startingCoords, endingCoords, vehicle } = this.props;
-
     var apiGraphHopper = process.env.REACT_APP_GRAPHHOPPER;
 
     let leafletElement = L.Routing.control({

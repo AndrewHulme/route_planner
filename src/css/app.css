@@ -16,3 +16,8 @@ body {
 html {
   font-size: 20px;
 }
+
+.savedMapDiv:hover {
+  background: rgba(215, 215, 215, 0.5);
+  cursor: pointer;
+}
