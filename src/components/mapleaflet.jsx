@@ -1,10 +1,10 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 // import { render } from "react-dom";
-import { Map, TileLayer } from 'react-leaflet';
+import { Map, TileLayer } from "react-leaflet";
 // import { Icon } from "leaflet";
-import '../css/app.css';
-import Routing from './routing';
-import RoutingRoundTrip from './routingRoundTrip';
+import "../css/app.css";
+import Routing from "./routing";
+import RoutingRoundTrip from "./routingRoundTrip";
 
 class LeafletMapContainer extends Component {
   state = {
@@ -53,6 +53,7 @@ class LeafletMapContainer extends Component {
               startingCoords={this.props.startingCoords}
               endingCoords={this.props.endingCoords}
               vehicle={this.props.vehicle}
+              generated={this.props.generated}
             />
           )}
         {this.props.roundTripCoords != undefined && this.state.isMapInit && (

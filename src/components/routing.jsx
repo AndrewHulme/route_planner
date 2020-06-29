@@ -5,12 +5,23 @@ import "lrm-graphhopper";
 import { withLeaflet } from "react-leaflet";
 
 class Routing extends MapLayer {
-  render() {
-    this.createLeafletElement();
-    return "Hi";
+  state = {
+    leafletElement: "",
+    //   long: this.props.long,
+  };
+
+  componentDidUpdate(prevProps) {
+    if (prevProps.generated !== this.props.generated) {
+      this.createLeafletElement();
+      if (this.props.generated > 1) {
+        console.log("YO");
+        console.log(this.state.leafletElement);
+        this.state.leafletElement.spliceWaypoints(0, 2);
+      }
+    }
   }
   createLeafletElement() {
-    console.log(this.props);
+    console.log("Create leaflet element called");
     const { map, startingCoords, endingCoords, vehicle } = this.props;
     // console.log("YOOOOO");
     // console.log(startingCoords);
@@ -34,7 +45,13 @@ class Routing extends MapLayer {
           vehicle: vehicle,
         },
       }),
-    }).addTo(map.leafletElement);
+    });
+
+    this.setState({
+      leafletElement: leafletElement,
+    });
+
+    leafletElement.addTo(map.leafletElement);
     return leafletElement.getPlan();
   }
 }
