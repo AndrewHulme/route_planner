@@ -5,36 +5,56 @@ import "lrm-graphhopper";
 import { withLeaflet } from "react-leaflet";
 
 class Routing extends MapLayer {
-  render() {
-    this.createLeafletElement();
-    return "Hi";
+  state = {
+    leafletElement: "",
+    leafletElements: [],
+  };
+
+  componentDidUpdate(prevProps) {
+    console.log(this.state.leafletElements);
+    console.log(this.props.generated);
+
+    if (prevProps.generated !== this.props.generated) {
+      this.createLeafletElement();
+
+      if (this.state.leafletElements.length !== 0) {
+        this.state.leafletElements.forEach((element) =>
+          element.spliceWaypoints(0, 2)
+        );
+      }
+    }
   }
+
   createLeafletElement() {
-    console.log(this.props);
+    console.log("Create leaflet element called");
     const { map, startingCoords, endingCoords, vehicle } = this.props;
-    // console.log("YOOOOO");
-    // console.log(startingCoords);
-    // console.log(endingCoords);
-    // console.log(this.props.vehicle);
 
     var apiGraphHopper = process.env.REACT_APP_GRAPHHOPPER;
-
-    // var lat = localStorage.getItem("lat");
-    // var lng = localStorage.getItem("long");
 
     let leafletElement = L.Routing.control({
       waypoints: [
         L.latLng(startingCoords[0], startingCoords[1]),
         L.latLng(endingCoords[0], endingCoords[1]),
-        // L.latLng(27.68, 85.321),
-        // L.latLng(27.7, 85.331),
       ],
       router: L.Routing.graphHopper(apiGraphHopper, {
         urlParameters: {
           vehicle: vehicle,
         },
       }),
-    }).addTo(map.leafletElement);
+    });
+
+    console.log("createLeafletElement: What is leaflet element?!");
+    console.log(leafletElement);
+
+    this.setState((prevState) => ({
+      leafletElements: [...prevState.leafletElements, leafletElement],
+    }));
+
+    if (this.props.generated < 1) {
+      leafletElement.spliceWaypoints(0, 2);
+    }
+
+    leafletElement.addTo(map.leafletElement);
     return leafletElement.getPlan();
   }
 }

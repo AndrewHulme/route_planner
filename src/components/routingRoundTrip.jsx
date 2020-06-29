@@ -5,9 +5,24 @@ import { withLeaflet } from "react-leaflet";
 import "lrm-graphhopper";
 
 class RoutingRoundTrip extends MapLayer {
-  render() {
-    this.createLeafletElement();
-    return "Hi";
+  state = {
+    leafletElement: "",
+    leafletElements: [],
+  };
+
+  componentDidUpdate(prevProps) {
+    console.log(this.state.leafletElements);
+    console.log(this.props.roundTripGenerated);
+
+    if (prevProps.roundTripGenerated !== this.props.roundTripGenerated) {
+      this.createLeafletElement();
+
+      if (this.state.leafletElements.length !== 0) {
+        this.state.leafletElements.forEach((element) =>
+          element.getPlan().setWaypoints([])
+        );
+      }
+    }
   }
 
   createLeafletElement() {
@@ -37,7 +52,18 @@ class RoutingRoundTrip extends MapLayer {
           vehicle: vehicle,
         },
       }),
-    }).addTo(map.leafletElement);
+    });
+
+    this.setState((prevState) => ({
+      leafletElements: [...prevState.leafletElements, leafletElement],
+    }));
+
+    if (this.props.roundTripGenerated < 1) {
+      leafletElement.getPlan().setWaypoints([]);
+    }
+
+    leafletElement.addTo(map.leafletElement);
+
     return leafletElement.getPlan();
   }
 }
