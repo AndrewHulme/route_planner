@@ -17,7 +17,7 @@ class Form extends Component {
     roundTripCoords: [[], []],
     endingLat: null,
     endingLon: null,
-    userName: "user"
+    userName: 'user',
   };
   constructor(props) {
     super(props);
@@ -36,7 +36,7 @@ class Form extends Component {
       endingCoordinates: [this.state.endingLat, this.state.endingLon],
       vehicleType: this.state.vehicle,
       id: Date.now(),
-      userName: this.props.user.email
+      userName: this.props.user.email,
     });
   };
 
