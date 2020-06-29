@@ -33,9 +33,19 @@ class Form extends Component {
         vehicle: item.vehicleType,
       });
     } else {
+      let startCoordinates = [];
+      item.startingCoordinates.forEach((element) => {
+        return startCoordinates.push(Number(element));
+      });
+      let endtCoordinates = [];
+      item.endingCoordinates.forEach((element) => {
+        return endtCoordinates.push(Number(element));
+      });
+      console.log('Strat Coord', startCoordinates);
+      console.log('End Coord', endtCoordinates);
       this.setState({
-        startingCoords: Number(item.startingCoordinates),
-        endingCoords: item.endingCoordinates,
+        startingCoords: startCoordinates,
+        endingCoords: endtCoordinates,
         vehicle: item.vehicleType,
       });
       console.log(this.state.startingCoords);
@@ -58,8 +68,8 @@ class Form extends Component {
         ? this.state.roundTripLength
         : this.state.distance,
       roundTripCoordinates: JSON.stringify(this.state.roundTripCoords),
-      startingCoordinates: [this.state.startingLon, this.state.startingLat],
-      endingCoordinates: [this.state.endingLon, this.state.endingLat],
+      startingCoordinates: [this.state.startingLat, this.state.startingLon],
+      endingCoordinates: [this.state.endingLat, this.state.endingLon],
       vehicleType: this.state.vehicle,
       id: Date.now(),
       userName: this.props.user.email,
