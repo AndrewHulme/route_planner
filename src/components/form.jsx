@@ -218,13 +218,14 @@ class Form extends Component {
         .then((data) => {
           this.setState({
             distance: data.features[0].properties.summary.distance,
+            generated: this.state.generated + 1,
           });
         })
         // Catch any errors we hit and update the app
         .catch((error) => this.setState({ error, isLoading: false }));
-      this.setState({
-        generated: this.state.generated + 1,
-      });
+      // this.setState({
+      //   generated: this.state.generated + 1,
+      // });
     };
 
     asyncWrapper();
