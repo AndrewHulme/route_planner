@@ -56,7 +56,7 @@ class RoutingRoundTrip extends MapLayer {
     } else if (roundTripCoords.length < 1550) {
       waypointNumber = 50;
     } else {
-      waypointNumber = 200;
+      waypointNumber = 100;
     }
 
     roundTripCoords.forEach((item, i) => {
