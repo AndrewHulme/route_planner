@@ -61,6 +61,7 @@ class ReturnedFromDB extends React.Component {
     let db = fire.firestore();
     let arr = [];
     db.collection('routes')
+      .orderBy('id')
       .get()
       .then((snapshot) => {
         snapshot.docs.forEach((item, i) => {
@@ -91,9 +92,10 @@ class ReturnedFromDB extends React.Component {
   }
 
   render() {
+    let db = this.state.data.reverse();
     return (
       <ul>
-        {this.state.data.map((item, i) => {
+        {db.map((item, i) => {
           return (
             <div onClick={() => this.displaySavedRoute(item.id)}>
               <div key={i} className="savedMapDiv row">

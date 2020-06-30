@@ -5,18 +5,17 @@ import 'lrm-graphhopper';
 import { withLeaflet } from 'react-leaflet';
 
 class Routing extends MapLayer {
-
   state = {
-    leafletElement: "",
+    leafletElement: '',
     leafletElements: [],
   };
   componentDidUpdate(prevProps) {
     console.log(this.state.leafletElements);
     console.log(this.props.generated);
 
+    console.log('Props :', prevProps.generated, this.props.generated);
     if (prevProps.generated !== this.props.generated) {
       this.createLeafletElement();
-
       if (this.state.leafletElements.length !== 0) {
         this.state.leafletElements.forEach((element) =>
           element.spliceWaypoints(0, 2)
@@ -41,7 +40,7 @@ class Routing extends MapLayer {
       }),
     });
 
-    console.log("createLeafletElement: What is leaflet element?!");
+    console.log('createLeafletElement: What is leaflet element?!');
     console.log(leafletElement);
 
     this.setState((prevState) => ({

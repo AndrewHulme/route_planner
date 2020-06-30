@@ -31,8 +31,12 @@ class Form extends Component {
   // };
 
   displayRoute = (item) => {
+    this.setState({
+      generated: 0,
+      roundTripGenerated: 0,
+    });
     if (item.roundTrip) {
-      console.log('inside form');
+      console.log('how many times you can see me?');
       this.setState({
         generated: 0,
         roundTripGenerated: this.state.roundTripGenerated + 1,
@@ -41,6 +45,7 @@ class Form extends Component {
       });
       console.log(this.state);
     } else {
+      console.log(' IM TSRAIGHT LINE?');
       let startCoordinates = [];
       item.startingCoordinates.forEach((element) => {
         return startCoordinates.push(Number(element));
