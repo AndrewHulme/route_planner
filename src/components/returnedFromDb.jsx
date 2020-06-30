@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import fire from './firebase';
 import Moment from 'react-moment';
+import DeleteIcon from '@material-ui/icons/Delete';
 
 class ReturnedFromDB extends React.Component {
   constructor() {
@@ -95,28 +96,25 @@ class ReturnedFromDB extends React.Component {
   render() {
     let db = this.state.data.reverse();
     return (
-      <ul>
+      <div className="list-container">
         {db.map((item, i) => {
-          if (item.userName == this.props.user.email) {
+          if (this.props.user && item.userName == this.props.user.email) {
             return (
-              <div onClick={() => this.displaySavedRoute(item.id)}>
-                <div key={i} className="savedMapDiv row">
-                  <div className="col map-el">
-                    <p>User: {item.userName}</p>
-                  </div>
-                  <div className="col map-el">
-                    <p>Id: {item.id}</p>
-                  </div>
-                  <div className="col map-el">
+              <div onClick={() => this.displaySavedRoute(item.id)} className="list-item">
+                <div key={i} className="savedMapDiv">
+                <div className="col map-el description">
+                  <p>{item.description}</p>
+                </div>
+                  <div className="map-el">
                     <Moment fromNow>{this.convertDate(item.id)}</Moment>
                   </div>
-                  <div className="col map-el">
+                  <div className="map-el">
                     <button
                       type="button"
                       className="close"
                       onClick={(event) => this.removeMap(item.id, event)}
                     >
-                      <span aria-hidden="true">&times;</span>
+                      <DeleteIcon />
                     </button>
                   </div>
                 </div>
@@ -124,7 +122,7 @@ class ReturnedFromDB extends React.Component {
             );
           }
         })}
-      </ul>
+      </div>
     );
   }
 }

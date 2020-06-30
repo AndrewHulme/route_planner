@@ -21,6 +21,7 @@ class Form extends Component {
     endingLon: null,
     userName: 'user',
     zoom: 13,
+    description: ""
   };
 
   constructor(props) {
@@ -83,6 +84,7 @@ class Form extends Component {
       vehicleType: this.state.vehicle,
       id: dbID,
       userName: this.props.user.email,
+      description: this.state.description
     });
   };
 
@@ -117,6 +119,12 @@ class Form extends Component {
         this.state.buttonText == 'Add endpoint' ? 'Round Trip' : 'Add endpoint',
     });
   };
+
+  descriptionHandler = (event) => {
+    this.setState({
+      description: event.target.value
+    })
+  }
 
   locationHandler = (event) => {
     this.setState({
@@ -324,7 +332,7 @@ class Form extends Component {
     }
 
     return (
-      <div>
+      <div className="main-container">
         <div className="row">
           {this.props.user ? (
             <div className="col">
@@ -370,8 +378,6 @@ class Form extends Component {
                 Use My Location
               </button>
             </div>
-
-            <br />
 
             <div className="form-row">
               <div className="col">
@@ -503,14 +509,27 @@ class Form extends Component {
           zoom={this.state.zoom}
         />
 
-        <button
-          value="saveRoute"
-          id="saveRoute"
-          className="btn btn-warning"
-          onClick={this.saveToDB}
-        >
-          Save To DB
-        </button>
+        <div className="row">
+          <div className="col">
+            <input
+              type="text"
+              className="form-control"
+              placeholder="Description here..."
+              name="description"
+              onChange={this.descriptionHandler}
+            />
+          </div>
+
+
+          <button
+            value="saveRoute"
+            id="saveRoute"
+            className="btn btn-warning"
+            onClick={this.saveToDB}
+          >
+            Save route
+          </button>
+        </div>
       </div>
     );
   }

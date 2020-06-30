@@ -49,11 +49,11 @@ class NavBar extends Component {
     return (
       <>
         <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
-          <Navbar.Brand href="#home"> Donut routing</Navbar.Brand>
+          <Navbar.Brand href="#home">🍩 Donut routing</Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="mr-auto">
-              <Nav.Link href="#features">Features</Nav.Link>
+              <Nav.Link href="#features">My Routes</Nav.Link>
             </Nav>
             <form >
               <div className='row m-2'>
