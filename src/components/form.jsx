@@ -31,11 +31,14 @@ class Form extends Component {
   // };
 
   displayRoute = (item) => {
+
     if (item.roundTrip) {
+        console.log("inside form")
       this.setState({
         roundTripCoords: JSON.parse(item.roundTripCoordinates),
         vehicle: item.vehicleType,
       });
+      console.log(this.state)
     } else {
       let startCoordinates = [];
       item.startingCoordinates.forEach((element) => {

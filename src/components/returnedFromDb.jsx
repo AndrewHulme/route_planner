@@ -95,7 +95,7 @@ class ReturnedFromDB extends React.Component {
       <ul>
         {this.state.data.map((item, i) => {
           return (
-            <p onClick={() => this.displaySavedRoute(item.id)}>
+            <div onClick={() => this.displaySavedRoute(item.id)}>
               <div key={i} className="savedMapDiv row">
                 <div className="col">
                   <p>User: {item.userName}</p>
@@ -116,7 +116,7 @@ class ReturnedFromDB extends React.Component {
                   </button>
                 </div>
               </div>
-            </p>
+            </div>
           );
         })}
       </ul>

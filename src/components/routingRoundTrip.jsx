@@ -13,6 +13,7 @@ class RoutingRoundTrip extends MapLayer {
   componentDidUpdate(prevProps) {
     console.log(this.state.leafletElements);
     console.log(this.props.roundTripGenerated);
+    console.log(this.props.roundTripCoords)
 
     if (prevProps.roundTripGenerated !== this.props.roundTripGenerated) {
       this.createLeafletElement();
