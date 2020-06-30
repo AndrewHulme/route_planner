@@ -59,10 +59,7 @@ class Form extends Component {
     let db = fire.firestore();
     let dbID = String(Date.now());
     let add = !this.state.addToList;
-    this.setState({
-      key: Math.random(),
-      addToList: 'add',
-    });
+    this.updateMapContainer();
     db.collection('routes').add({
       roundTrip: this.state.roundTrip,
       distance: this.state.roundTripLength
@@ -75,6 +72,14 @@ class Form extends Component {
       id: dbID,
       userName: this.props.user.email,
     });
+  };
+
+  updateMapContainer = () => {
+    console.log('hey form update map container');
+    this.setState({
+      key: Math.random(),
+    });
+    console.log(this.state.key);
   };
 
   logout() {
@@ -461,6 +466,7 @@ class Form extends Component {
           key={this.state.key}
           displayRoute={this.displayRoute}
           removeMap={this.removeMap}
+          updateMapContainer={this.updateMapContainer}
         />
 
         <LeafletMapContainer

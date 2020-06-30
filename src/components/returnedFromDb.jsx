@@ -7,6 +7,7 @@ class ReturnedFromDB extends React.Component {
     super();
     this.state = {
       data: [],
+      key: '',
     };
   }
 
@@ -14,7 +15,8 @@ class ReturnedFromDB extends React.Component {
     this.renderRouteData();
   }
 
-  removeMap = (id) => {
+  removeMap = (id, event) => {
+    event.stopPropagation();
     console.log(id);
     // this.props.removeMap(id);
     let db = fire.firestore();
@@ -27,6 +29,7 @@ class ReturnedFromDB extends React.Component {
           doc.ref
             .delete()
             .then(() => {
+              this.props.updateMapContainer();
               console.log('Document successfully deleted!');
             })
             .catch(function (error) {
@@ -92,7 +95,7 @@ class ReturnedFromDB extends React.Component {
       <ul>
         {this.state.data.map((item, i) => {
           return (
-            <a onClick={() => this.displaySavedRoute(item.id)}>
+            <p onClick={() => this.displaySavedRoute(item.id)}>
               <div key={i} className="savedMapDiv row">
                 <div className="col">
                   <p>User: {item.userName}</p>
@@ -107,13 +110,13 @@ class ReturnedFromDB extends React.Component {
                   <button
                     type="button"
                     className="close"
-                    onClick={() => this.removeMap(item.id)}
+                    onClick={(event) => this.removeMap(item.id, event)}
                   >
                     <span aria-hidden="true">&times;</span>
                   </button>
                 </div>
               </div>
-            </a>
+            </p>
           );
         })}
       </ul>
