@@ -25,7 +25,7 @@ class Form extends Component {
 
   constructor(props) {
     super(props);
-    this.logout = this.logout.bind(this);
+
   }
 
   // removeMap = (id) => {
@@ -95,9 +95,7 @@ class Form extends Component {
     console.log(this.state.key);
   };
 
-  logout() {
-    fire.auth().signOut();
-  }
+
 
   componentDidMount() {
     navigator.geolocation.getCurrentPosition((position) => {

@@ -54,26 +54,13 @@ class NavBar extends Component {
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="mr-auto">
               <Nav.Link href="#features">Features</Nav.Link>
-              <NavDropdown title="Dropdown" id="collasible-nav-dropdown">
-                <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.2">
-                  Another action
-                </NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.3">
-                  Something
-                </NavDropdown.Item>
-                <NavDropdown.Divider />
-                <NavDropdown.Item href="#action/3.4">
-                  Separated link
-                </NavDropdown.Item>
-              </NavDropdown>
             </Nav>
             <form >
-              <div className='row'>
+              <div className='row m-2'>
 
               {this.props.user ? (
                 <div className="col">
-                  <button className="btn btn-danger" onClick={this.logout}>
+                  <button className="btn btn-danger btn-sm" onClick={this.logout}>
                     Logout
                   </button>
                 </div>
@@ -102,16 +89,15 @@ class NavBar extends Component {
                     placeholder="Password"
                   />
                 </div>
-                <div className="col">
-                  <button type="submit" onClick={this.login} class="btn btn-primary">
+                <div className="">
+                  <button type="submit" onClick={this.login} class="btn btn-primary btn-sm">
                     Login
                   </button>
                 </div>
-                <div className='col'>
+                <div className=''>
                   <button
                     onClick={this.signup}
-                    style={{ marginLeft: '25px' }}
-                    className="btn btn-success"
+                    className="btn btn-success btn-sm"
                   >
                     Signup
                   </button>
