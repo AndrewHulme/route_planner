@@ -17,7 +17,25 @@ class ReturnedFromDB extends React.Component {
     console.log(id);
     // this.props.removeMap(id);
     let db = fire.firestore();
-    db.collection('routes').doc(id).delete();
+    let collectionRef = db.collection('routes');
+    collectionRef
+      .where('id', '==', id)
+      .get()
+      .then((querySnapshot) => {
+        querySnapshot.forEach((doc) => {
+          doc.ref
+            .delete()
+            .then(() => {
+              console.log('Document successfully deleted!');
+            })
+            .catch(function (error) {
+              console.error('Error removing document: ', error);
+            });
+        });
+      })
+      .catch(function (error) {
+        console.log('Error getting documents: ', error);
+      });
   };
 
   displaySavedRoute = (id) => {
