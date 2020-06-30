@@ -31,13 +31,16 @@ class Form extends Component {
   // };
 
   displayRoute = (item) => {
+
     if (item.roundTrip) {
+        console.log("inside form")
       this.setState({
         generated: 0,
         roundTripGenerated: this.state.roundTripGenerated + 1,
         roundTripCoords: JSON.parse(item.roundTripCoordinates),
         vehicle: item.vehicleType,
       });
+      console.log(this.state)
     } else {
       let startCoordinates = [];
       item.startingCoordinates.forEach((element) => {
@@ -219,13 +222,14 @@ class Form extends Component {
         .then((data) => {
           this.setState({
             distance: data.features[0].properties.summary.distance,
+            generated: this.state.generated + 1,
           });
         })
         // Catch any errors we hit and update the app
         .catch((error) => this.setState({ error, isLoading: false }));
-      this.setState({
-        generated: this.state.generated + 1,
-      });
+      // this.setState({
+      //   generated: this.state.generated + 1,
+      // });
     };
 
     asyncWrapper();
