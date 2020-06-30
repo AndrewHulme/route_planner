@@ -20,6 +20,7 @@ class Form extends Component {
     endingLat: null,
     endingLon: null,
     userName: "user",
+    zoom: 13,
   };
   constructor(props) {
     super(props);
@@ -483,6 +484,7 @@ class Form extends Component {
           lng={this.state.lng}
           generated={this.state.generated}
           roundTripGenerated={this.state.roundTripGenerated}
+          zoom={this.state.zoom}
         />
 
         <button

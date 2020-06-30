@@ -12,7 +12,7 @@ class LeafletMapContainer extends Component {
     // lng: -0.1195,
     startingCoords: this.props.startingCoords,
     endingCoords: this.props.endingCoords,
-    zoom: 13,
+    // zoom: 13,
     isMapInit: false,
   };
 
@@ -34,7 +34,7 @@ class LeafletMapContainer extends Component {
     // }
     const position = [this.props.lat, this.props.lng];
     return (
-      <Map center={position} zoom={this.state.zoom} ref={this.saveMap}>
+      <Map center={position} zoom={this.props.zoom} ref={this.saveMap}>
         <TileLayer
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
