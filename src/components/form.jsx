@@ -58,6 +58,11 @@ class Form extends Component {
   saveToDB = () => {
     let db = fire.firestore();
     let dbID = String(Date.now());
+    let add = !this.state.addToList;
+    this.setState({
+      key: Math.random(),
+      addToList: 'add',
+    });
     db.collection('routes').add({
       roundTrip: this.state.roundTrip,
       distance: this.state.roundTripLength
@@ -453,6 +458,7 @@ class Form extends Component {
         </button>
 
         <ReturnedFromDB
+          key={this.state.key}
           displayRoute={this.displayRoute}
           removeMap={this.removeMap}
         />
