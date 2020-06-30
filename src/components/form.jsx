@@ -22,6 +22,7 @@ class Form extends Component {
     userName: "user",
     zoom: 13,
   };
+
   constructor(props) {
     super(props);
     this.logout = this.logout.bind(this);
