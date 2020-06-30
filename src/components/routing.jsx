@@ -1,19 +1,16 @@
-import { MapLayer } from 'react-leaflet';
-import L from 'leaflet';
-import 'leaflet-routing-machine';
-import 'lrm-graphhopper';
-import { withLeaflet } from 'react-leaflet';
+import { MapLayer } from "react-leaflet";
+import L from "leaflet";
+import "leaflet-routing-machine";
+import "lrm-graphhopper";
+import { withLeaflet } from "react-leaflet";
 
 class Routing extends MapLayer {
   state = {
-    leafletElement: '',
+    leafletElement: "",
     leafletElements: [],
   };
   componentDidUpdate(prevProps) {
-    console.log(this.state.leafletElements);
-    console.log(this.props.generated);
-
-    console.log('Props :', prevProps.generated, this.props.generated);
+    console.log("Props :", prevProps.generated, this.props.generated);
     if (prevProps.generated !== this.props.generated) {
       this.createLeafletElement();
       if (this.state.leafletElements.length !== 0) {
@@ -25,13 +22,14 @@ class Routing extends MapLayer {
   }
 
   createLeafletElement() {
-    const { map, startingCoords, endingCoords, vehicle } = this.props;
+    console.log(this.props.generated);
+    const { map, journeyCoords, vehicle } = this.props;
     var apiGraphHopper = process.env.REACT_APP_GRAPHHOPPER;
 
     let leafletElement = L.Routing.control({
       waypoints: [
-        L.latLng(startingCoords[0], startingCoords[1]),
-        L.latLng(endingCoords[0], endingCoords[1]),
+        L.latLng(journeyCoords[0][0], journeyCoords[0][1]),
+        L.latLng(journeyCoords[1][0], journeyCoords[1][1]),
       ],
       router: L.Routing.graphHopper(apiGraphHopper, {
         urlParameters: {
@@ -40,7 +38,7 @@ class Routing extends MapLayer {
       }),
     });
 
-    console.log('createLeafletElement: What is leaflet element?!');
+    console.log("createLeafletElement: What is leaflet element?!");
     console.log(leafletElement);
 
     this.setState((prevState) => ({

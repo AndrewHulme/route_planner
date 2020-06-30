@@ -8,8 +8,9 @@ import RoutingRoundTrip from "./routingRoundTrip";
 
 class LeafletMapContainer extends Component {
   state = {
-    startingCoords: this.props.startingCoords,
-    endingCoords: this.props.endingCoords,
+    journeyCoords: this.props.journeyCoords,
+    // startingCoords: this.props.journeyCoords[0],
+    // endingCoords: this.props.journeyCoords[1],
     isMapInit: false,
   };
 
@@ -28,17 +29,16 @@ class LeafletMapContainer extends Component {
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
         />
-        {this.props.startingCoords[0] !== undefined &&
-          this.props.endingCoords[0] !== undefined &&
-          this.state.isMapInit && (
-            <Routing
-              map={this.map}
-              startingCoords={this.props.startingCoords}
-              endingCoords={this.props.endingCoords}
-              vehicle={this.props.vehicle}
-              generated={this.props.generated}
-            />
-          )}
+        {this.props.journeyCoords !== undefined && this.state.isMapInit && (
+          <Routing
+            map={this.map}
+            // startingCoords={this.props.startingCoords}
+            // endingCoords={this.props.endingCoords}
+            journeyCoords={this.props.journeyCoords}
+            vehicle={this.props.vehicle}
+            generated={this.props.generated}
+          />
+        )}
         {this.props.roundTripCoords != undefined && this.state.isMapInit && (
           <RoutingRoundTrip
             map={this.map}
