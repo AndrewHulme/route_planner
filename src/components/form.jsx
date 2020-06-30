@@ -33,14 +33,21 @@ class Form extends Component {
   // };
 
   displayRoute = (item) => {
+    this.setState({
+      generated: 0,
+      roundTripGenerated: 0,
+    });
     if (item.roundTrip) {
+      console.log('how many times you can see me?');
       this.setState({
         generated: 0,
         roundTripGenerated: this.state.roundTripGenerated + 1,
         roundTripCoords: JSON.parse(item.roundTripCoordinates),
         vehicle: item.vehicleType,
       });
+      console.log(this.state);
     } else {
+      console.log(' IM TSRAIGHT LINE?');
       let startCoordinates = [];
       item.startingCoordinates.forEach((element) => {
         return startCoordinates.push(Number(element));
@@ -64,7 +71,9 @@ class Form extends Component {
   saveToDB = () => {
     let db = fire.firestore();
     let dbID = String(Date.now());
-    db.collection("routes").add({
+    let add = !this.state.addToList;
+    this.updateMapContainer();
+    db.collection('routes').add({
       roundTrip: this.state.roundTrip,
       distance: this.state.roundTripLength
         ? this.state.roundTripLength
@@ -76,6 +85,14 @@ class Form extends Component {
       id: dbID,
       userName: this.props.user.email,
     });
+  };
+
+  updateMapContainer = () => {
+    console.log('hey form update map container');
+    this.setState({
+      key: Math.random(),
+    });
+    console.log(this.state.key);
   };
 
   logout() {
@@ -215,13 +232,14 @@ class Form extends Component {
         .then((data) => {
           this.setState({
             distance: data.features[0].properties.summary.distance,
+            generated: this.state.generated + 1,
           });
         })
         // Catch any errors we hit and update the app
         .catch((error) => this.setState({ error, isLoading: false }));
-      this.setState({
-        generated: this.state.generated + 1,
-      });
+      // this.setState({
+      //   generated: this.state.generated + 1,
+      // });
     };
 
     asyncWrapper();
@@ -472,8 +490,10 @@ class Form extends Component {
         </button>
 
         <ReturnedFromDB
+          key={this.state.key}
           displayRoute={this.displayRoute}
           removeMap={this.removeMap}
+          updateMapContainer={this.updateMapContainer}
         />
 
         <LeafletMapContainer
