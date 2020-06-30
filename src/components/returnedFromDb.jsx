@@ -99,16 +99,16 @@ class ReturnedFromDB extends React.Component {
           return (
             <div onClick={() => this.displaySavedRoute(item.id)}>
               <div key={i} className="savedMapDiv row">
-                <div className="col">
+                <div className="col map-el">
                   <p>User: {item.userName}</p>
                 </div>
-                <div className="col">
+                <div className="col map-el">
                   <p>Id: {item.id}</p>
                 </div>
-                <div className="col">
+                <div className="col map-el">
                   <Moment fromNow>{this.convertDate(item.id)}</Moment>
                 </div>
-                <div className="col">
+                <div className="col map-el">
                   <button
                     type="button"
                     className="close"

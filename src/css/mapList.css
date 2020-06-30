@@ -1,0 +1,18 @@
+.savedMapDiv:hover {
+  background: rgba(215, 215, 215, 0.5);
+  cursor: pointer;
+  width: 85vw;
+}
+
+.savedMapDiv {
+  cursor: pointer;
+  width: 80%;
+  text-align: left;
+  /* overflow: hidden; */
+}
+
+.map-el {
+  margin: 0 5px;
+  overflow-y: hidden;
+  white-space: nowrap;
+}
