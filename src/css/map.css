@@ -22,10 +22,11 @@
   overflow: hidden;
   border-radius: 20px;
   border: none;
+  display: none;
 }
 
-.leaflet-routing-container:first-of-type {
-  display: none;
+.leaflet-routing-container:last-of-type {
+  display: block;
 }
 
 a.leaflet-control-zoom-in,
