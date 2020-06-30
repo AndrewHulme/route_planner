@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import fire from './firebase';
+import Moment from 'react-moment';
 
 class ReturnedFromDB extends React.Component {
   constructor() {
@@ -69,6 +70,23 @@ class ReturnedFromDB extends React.Component {
       });
   };
 
+  convertDate(time) {
+    let date = new Date(parseInt(time));
+    let formatted_date =
+      date.getFullYear() +
+      '-' +
+      (date.getMonth() + 1) +
+      '-' +
+      date.getDate() +
+      ' ' +
+      date.getHours() +
+      ':' +
+      date.getMinutes() +
+      ':' +
+      date.getSeconds();
+    return formatted_date;
+  }
+
   render() {
     return (
       <ul>
@@ -81,6 +99,9 @@ class ReturnedFromDB extends React.Component {
                 </div>
                 <div className="col">
                   <p>Id: {item.id}</p>
+                </div>
+                <div className="col">
+                  <Moment fromNow>{this.convertDate(item.id)}</Moment>
                 </div>
                 <div className="col">
                   <button
