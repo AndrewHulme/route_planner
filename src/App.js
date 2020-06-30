@@ -35,11 +35,10 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <NavBar />
+        <NavBar user={this.state.user}/>
         <Flash />
-        {this.state.user ? <Form user={this.state.user} /> : <Login />}
-        {/* <Login />
-        <Form /> */}
+
+        <Form user={this.state.user}/>
       </div>
     );
   }

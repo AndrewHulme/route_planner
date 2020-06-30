@@ -331,14 +331,13 @@ class Form extends Component {
     return (
       <div>
         <div className="row">
+        {this.props.user ? (
           <div className="col">
             <p>Welcome: {this.props.user.email}</p>
           </div>
-          <div className="col">
-            <button className="btn btn-danger" onClick={this.logout}>
-              Logout
-            </button>
-          </div>
+          ) : ("")
+        }
+
         </div>
         {this.state.roundTrip == true ? (
           <form id="roundTripForm" onSubmit={this.handleSubmitRoundTrip}>
