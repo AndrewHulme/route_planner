@@ -21,10 +21,10 @@ class Form extends Component {
     endingLon: null,
     userName: "user",
     zoom: 13,
-    description: '',
-    roundTripStart: '',
-    startingpoint: '',
-    endpoint: '',
+    description: "",
+    roundTripStart: "",
+    startingpoint: "",
+    endpoint: "",
     message: "",
   };
 
@@ -68,6 +68,12 @@ class Form extends Component {
         vehicle: item.vehicleType,
       });
     }
+  };
+
+  hideAlert = () => {
+    this.setState({
+      errorIsActive: false,
+    });
   };
 
   saveToDB = () => {
@@ -261,7 +267,7 @@ class Form extends Component {
         .then((response) => response.json())
         // ...then we update the users state
         .then((data) => {
-          console.log(data)
+          console.log(data);
           this.setState({
             distance: data.features[0].properties.summary.distance,
             generated: this.state.generated + 1,
@@ -550,10 +556,13 @@ class Form extends Component {
           />
         )}
 
-        <Flash
-          message={this.state.message}
-          isActive={this.state.errorIsActive}
-        />
+        {this.state.errorIsActive && (
+          <Flash
+            message={this.state.message}
+            isActive={this.state.errorIsActive}
+            hideAlert={this.hideAlert}
+          />
+        )}
 
         <LeafletMapContainer
           journeyCoords={[
