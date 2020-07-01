@@ -102,9 +102,28 @@ class ReturnedFromDB extends React.Component {
             return (
               <div onClick={() => this.displaySavedRoute(item.id)} className="list-item">
                 <div key={i} className="savedMapDiv">
-                <div className="col map-el description">
-                  <p>{item.description}</p>
-                </div>
+                  <div className="col map-el description">
+                    <p>{item.description}</p>
+                  </div>
+
+                  { item.roundTrip && (
+                    <div className="col map-el">
+                      <p>Starting point: {item.roundTripStart}</p>
+                    </div>
+                  )}
+                  { !item.roundTrip && (
+                    <div className="col map-el">
+                      <p>Starting point: {item.startingPoint}</p>
+                      <p>Ending point: {item.endPoint}</p>
+                    </div>
+                  )}
+
+                  <div className="col map-el">
+                    <p>Activity: {item.vehicleType}</p>
+                  </div>
+                    <div className="col map-el description">
+                      <p>Distance: {item.distance}</p>
+                    </div>
                   <div className="map-el">
                     <Moment fromNow>{this.convertDate(item.id)}</Moment>
                   </div>

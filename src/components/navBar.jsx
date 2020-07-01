@@ -12,24 +12,26 @@ class NavBar extends Component {
     this.state = {
       email: '',
       password: '',
-      toggleMyMaps: true,
+      toggleMyMaps: false,
     };
   }
 
   toggleMyMaps = () => {
-    let toggleMyMaps = !this.state.toggleMyMaps;
+      console.log(this.state.toggleMyMaps)
+    let opposite = !this.state.toggleMyMaps;
     this.setState({
-      toggleMyMaps: toggleMyMaps,
+      toggleMyMaps: opposite,
     });
+    console.log(this.state.toggleMyMaps);
     this.props.toggleMyMaps(this.state.toggleMyMaps);
-    // console.log(this.state.toggleMyMaps);
+
   };
 
   homePageView = () => {
     this.setState({
       toggleMyMaps: false,
     });
-    this.props.toggleMyMaps(this.state.toggleMyMaps);
+    this.props.toggleMyMaps(false);
   };
 
   handleChange(e) {
@@ -79,7 +81,7 @@ class NavBar extends Component {
             {this.props.user && (
               <Nav className="mr-auto">
                 <Nav.Link onClick={this.toggleMyMaps} href="">
-                  {this.state.toggleMyMaps ? 'My Routes' : 'Find Route'}
+                  {!this.state.toggleMyMaps ? 'My Routes' : 'Find Route'}
                 </Nav.Link>
               </Nav>
             )}

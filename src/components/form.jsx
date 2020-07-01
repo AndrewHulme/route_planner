@@ -22,6 +22,9 @@ class Form extends Component {
     userName: 'user',
     zoom: 13,
     description: '',
+    roundTripStart: '',
+    startingpoint: '',
+    endpoint: ''
   };
 
   constructor(props) {
@@ -85,6 +88,9 @@ class Form extends Component {
       id: dbID,
       userName: this.props.user.email,
       description: this.state.description,
+      roundTripStart: this.state.roundTripStart,
+      startingPoint: this.state.startingpoint,
+      endPoint: this.state.endpoint,
     });
   };
 
