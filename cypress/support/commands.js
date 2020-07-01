@@ -35,7 +35,22 @@ Cypress.Commands.add('mockGeolocation', (latitude = null, longitude = null) => {
 Cypress.Commands.add('generateRoute', () => {
   const startInput = 'W1 C1DE';
   const endpoint = 'London Eye';
+  cy.get('#addEndPoint').click();
   cy.get('input[name="startingpoint"]').type(startInput);
   cy.get('input[name="endpoint"]').type(endpoint);
-  cy.get('#secondButton').click();
+  cy.get('#roundTripButton').click();
 });
+
+Cypress.Commands.add('userLogin', () => {
+  cy.get('#exampleInputEmail1').type('dummy@dummy.com');
+  cy.get('#exampleInputPassword1').type('password');
+  cy.get('#logInButton').click();
+});
+
+// Cypress.lifecycle({
+//   clearApp: true, // leave this on
+//   clearInternals: true // leave this on
+//   clearCookies: true // nope
+//   clearLocalStorage: true // nope
+//   clearSessionStorage: true // nope
+// })

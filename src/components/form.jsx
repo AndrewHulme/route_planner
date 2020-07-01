@@ -6,7 +6,7 @@ import Flash from "./flash";
 
 class Form extends Component {
   state = {
-    vehicle: "car",
+    vehicle: "foot",
     lat: 51.5033,
     lng: -0.1195,
     roundTrip: true,
@@ -22,6 +22,10 @@ class Form extends Component {
     userName: "user",
     zoom: 13,
     description: "",
+    roundTripStart: "",
+    startingpoint: "",
+    endpoint: "",
+    message: "",
   };
 
   constructor(props) {
@@ -38,7 +42,6 @@ class Form extends Component {
       roundTripGenerated: 0,
     });
     if (item.roundTrip) {
-      console.log("how many times you can see me?");
       this.setState({
         generated: 0,
         roundTripGenerated: this.state.roundTripGenerated + 1,
@@ -47,7 +50,6 @@ class Form extends Component {
       });
       console.log(this.state);
     } else {
-      console.log(" IM TSRAIGHT LINE?");
       let startCoordinates = [];
       item.startingCoordinates.forEach((element) => {
         return startCoordinates.push(Number(element));
@@ -68,6 +70,12 @@ class Form extends Component {
     }
   };
 
+  hideAlert = () => {
+    this.setState({
+      errorIsActive: false,
+    });
+  };
+
   saveToDB = () => {
     let db = fire.firestore();
     let dbID = String(Date.now());
@@ -75,9 +83,10 @@ class Form extends Component {
     this.updateMapContainer();
     db.collection("routes").add({
       roundTrip: this.state.roundTrip,
-      distance: this.state.roundTripLength
-        ? this.state.roundTripLength
-        : this.state.distance,
+      // distance: this.state.roundTripLength
+      //   ? this.state.roundTripLength
+      //   : this.state.distance,
+      distance: this.state.distance,
       roundTripCoordinates: JSON.stringify(this.state.roundTripCoords),
       startingCoordinates: [this.state.startingLat, this.state.startingLon],
       endingCoordinates: [this.state.endingLat, this.state.endingLon],
@@ -85,11 +94,19 @@ class Form extends Component {
       id: dbID,
       userName: this.props.user.email,
       description: this.state.description,
+      roundTripStart: this.state.roundTripStart,
+      startingPoint: this.state.startingpoint,
+      endPoint: this.state.endpoint,
+    });
+    this.setState({
+      message: "Route saved",
+      errorIsActive: true,
+      description: "",
     });
   };
 
   updateMapContainer = () => {
-    console.log("hey form update map container");
+
     this.setState({
       key: Math.random(),
     });
@@ -200,18 +217,37 @@ class Form extends Component {
       await fetch(startingURL)
         .then((response) => response.json())
         .then((data) =>
-          this.setState({
-            startingLat: data[0].lat,
-            startingLon: data[0].lon,
-          })
+          data[0] !== undefined
+            ? this.setState({
+                startingLat: data[0].lat,
+                startingLon: data[0].lon,
+                message: "",
+                errorIsActive: false,
+              })
+            : this.setState({
+                message: "Error starting address could not be found.",
+                errorIsActive: true,
+                startingLat: "",
+                startingLon: "",
+              })
         );
       await fetch(endingURL)
         .then((response) => response.json())
         .then((data) =>
-          this.setState({
-            endingLat: data[0].lat,
-            endingLon: data[0].lon,
-          })
+          data[0] !== undefined && this.state.errorIsActive === false
+            ? this.setState({
+                endingLat: data[0].lat,
+                endingLon: data[0].lon,
+                message: "",
+                errorIsActive: false,
+              })
+            : this.setState({
+                message: "Error address could not be found.",
+                errorIsActive: true,
+                startingLat: "",
+                startingLon: "",
+                generated: 0,
+              })
         );
 
       var routeURL =
@@ -233,6 +269,7 @@ class Form extends Component {
         .then((response) => response.json())
         // ...then we update the users state
         .then((data) => {
+          console.log(data);
           this.setState({
             distance: data.features[0].properties.summary.distance,
             generated: this.state.generated + 1,
@@ -263,10 +300,19 @@ class Form extends Component {
       await fetch(startingURL)
         .then((response) => response.json())
         .then((data) =>
-          this.setState({
-            startingLat: data[0].lat,
-            startingLon: data[0].lon,
-          })
+          data[0] !== undefined
+            ? this.setState({
+                startingLat: data[0].lat,
+                startingLon: data[0].lon,
+                message: "",
+                errorIsActive: false,
+              })
+            : this.setState({
+                message: "Error no address could be found.",
+                errorIsActive: true,
+                startingLat: "",
+                startingLon: "",
+              })
         );
       await fetch(
         `https://api.openrouteservice.org/v2/directions/driving-car/geojson`,
@@ -293,9 +339,18 @@ class Form extends Component {
       )
         .then((resp) => resp.json())
         .then((data) => {
-          this.setState({
-            roundTripCoords: data.features[0].geometry.coordinates,
-          });
+          data.features !== undefined
+            ? this.setState({
+                roundTripCoords: data.features[0].geometry.coordinates,
+                distance: data.features[0].properties.summary.distance,
+                message: "",
+                errorIsActive: false,
+              })
+            : this.setState({
+                message: "Error no address could be found.",
+                errorIsActive: true,
+                roundTripCoords: "",
+              });
           this.setState({
             generateButton: "Randomise",
             seed: this.state.seed + 1,
@@ -315,6 +370,7 @@ class Form extends Component {
       lng,
       roundTripLength,
       endpoint,
+      description,
     } = this.state;
     var displayStartingPoint,
       displayRoundStartingPoint = "";
@@ -333,11 +389,25 @@ class Form extends Component {
 
     return (
       <div className="main-container">
+
         <div className="main-form">
           {!this.props.toggleMyMaps && (
             <div>
               <div id="userWelcome" className="row">
                 {this.props.user ? (
+
+        
+                <div className="col">
+                  <p id="welcome-message">Welcome: {this.props.user.email}</p>
+                </div>
+              ) : (
+                ""
+              )}
+            </div>
+            {this.state.roundTrip == true ? (
+              <form id="roundTripForm" onSubmit={this.handleSubmitRoundTrip}>
+                <div className="form-row">
+
                   <div className="col">
                     <p>Welcome: {this.props.user.email}</p>
                   </div>
@@ -380,6 +450,7 @@ class Form extends Component {
                     >
                       Use My Location
                     </button>
+
                   </div>
 
                   <div className="form-row">
@@ -448,6 +519,7 @@ class Form extends Component {
                     >
                       Use My Location
                     </button>
+
                   </div>
 
                   <div className="form-row">
@@ -505,6 +577,14 @@ class Form extends Component {
           />
         )}
 
+        {this.state.errorIsActive && (
+          <Flash
+            message={this.state.message}
+            isActive={this.state.errorIsActive}
+            hideAlert={this.hideAlert}
+          />
+        )}
+
         <LeafletMapContainer
           journeyCoords={[
             [this.state.startingLat, this.state.startingLon],
@@ -520,26 +600,30 @@ class Form extends Component {
           zoom={this.state.zoom}
         />
 
-        <div id="saveRouteID" className="row">
-          <div className="col">
-            <input
-              type="text"
-              className="form-control"
-              placeholder="Description here..."
-              name="description"
-              onChange={this.descriptionHandler}
-            />
-          </div>
 
-          <button
-            value="saveRoute"
-            id="saveRoute"
-            className="btn btn-warning"
-            onClick={this.saveToDB}
-          >
-            Save route
-          </button>
-        </div>
+        {!this.props.toggleMyMaps && this.props.user && (
+          <div id="saveRouteID" className="row">
+            <div className="col">
+              <input
+                type="text"
+                className="form-control"
+                placeholder="Description here..."
+                value={description}
+                name="description"
+                onChange={this.descriptionHandler}
+              />
+            </div>
+
+            <button
+              value="saveRoute"
+              id="saveRoute"
+              className="btn btn-warning"
+              onClick={this.saveToDB}
+            >
+              Save route
+            </button>
+          </div>
+        )}
       </div>
     );
   }

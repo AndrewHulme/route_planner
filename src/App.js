@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import './css/app.css';
 import fire from './components/firebase.jsx';
 import Form from './components/form.jsx';
-import Login from './components/login.jsx';
 import Flash from './components/flash.jsx';
 import NavBar from './components/navBar.jsx';
 

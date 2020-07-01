@@ -12,17 +12,25 @@ class NavBar extends Component {
     this.state = {
       email: '',
       password: '',
-      toggleMyMaps: true,
+      toggleMyMaps: false,
     };
   }
 
   toggleMyMaps = () => {
-    let toggleMyMaps = !this.state.toggleMyMaps;
-    this.setState({
-      toggleMyMaps: toggleMyMaps,
-    });
-    this.props.toggleMyMaps(this.state.toggleMyMaps);
     // console.log(this.state.toggleMyMaps);
+    let opposite = !this.state.toggleMyMaps;
+    this.setState({
+      toggleMyMaps: opposite,
+    });
+    // console.log(this.state.toggleMyMaps);
+    this.props.toggleMyMaps(opposite);
+  };
+
+  homePageView = () => {
+    this.setState({
+      toggleMyMaps: false,
+    });
+    this.props.toggleMyMaps(false);
   };
 
   handleChange(e) {
@@ -60,24 +68,41 @@ class NavBar extends Component {
     return (
       <>
         <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
-          <Navbar.Brand href="#home">🍩 Donut routing</Navbar.Brand>
+          <Navbar.Brand
+            onClick={this.homePageView}
+            className="main-logo"
+            href=""
+          >
+            🍩 Donut routing
+          </Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
-            <Nav className="mr-auto">
-              <Nav.Link onClick={this.toggleMyMaps} href="">
-                My Routes
-              </Nav.Link>
-            </Nav>
             <form>
               <div className="row m-2">
                 {this.props.user ? (
-                  <div className="col">
-                    <button
-                      className="btn btn-danger btn-sm"
-                      onClick={this.logout}
-                    >
-                      Logout
-                    </button>
+                  <div className="row">
+                    <div className="col">
+                      <Nav className="mr-auto">
+                        <Nav.Link
+                          id="my-routes"
+                          onClick={this.toggleMyMaps}
+                          href=""
+                        >
+                          {!this.state.toggleMyMaps
+                            ? 'My Routes'
+                            : 'Find Route'}
+                        </Nav.Link>
+                      </Nav>
+                    </div>
+                    <div className="">
+                      <button
+                        className="btn btn-danger btn-sm"
+                        onClick={this.logout}
+                        id="logOutButton"
+                      >
+                        Logout
+                      </button>
+                    </div>
                   </div>
                 ) : (
                   <>
@@ -108,6 +133,7 @@ class NavBar extends Component {
                       <button
                         type="submit"
                         onClick={this.login}
+                        id="logInButton"
                         class="btn btn-primary btn-sm"
                       >
                         Login
@@ -116,6 +142,7 @@ class NavBar extends Component {
                     <div className="">
                       <button
                         onClick={this.signup}
+                        id="signUpButton"
                         className="btn btn-success btn-sm"
                       >
                         Signup

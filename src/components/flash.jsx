@@ -1,24 +1,21 @@
 import React, { Component } from "react";
 import FlashMessage from "react-flash-message";
 
-
 class Flash extends Component {
   constructor(props) {
     super(props);
     this.state = {
       message: "Flash Message",
-      isActive: false,
+      //isActive: this.props.isActive,
     };
   }
 
-  hideAlert() {
-    this.setState({
-      isActive: false,
-    });
-  }
+  hideAlert = () => {
+    this.props.hideAlert();
+  };
 
   render() {
-    if (this.state.isActive) {
+    if (this.props.isActive) {
       return (
         <div
           className="alert alert-warning alert-dismissible flash"
@@ -33,7 +30,7 @@ class Flash extends Component {
           >
             <span aria-hidden="true">&times;</span>
           </button>
-          {this.state.message}
+          {this.props.message}
         </div>
       );
     }

@@ -1,9 +1,11 @@
 @import-normalize;
-@import "map.css";
-@import "button.css";
-@import "mapList.css";
-@import "form.css";
-@import "flash.css";
+
+@import 'map.css';
+@import 'button.css';
+@import 'mapList.css';
+@import 'form.css';
+@import 'flash.css';
+@import 'navBar.css';
 
 *,
 *::before,
