@@ -97,7 +97,7 @@ class ReturnedFromDB extends React.Component {
     return (
       <ul>
         {db.map((item, i) => {
-          if (item.userName == this.props.user.email) {
+          if (this.props.user && item.userName == this.props.user.email) {
             return (
               <div onClick={() => this.displaySavedRoute(item.id)}>
                 <div key={i} className="savedMapDiv row">
