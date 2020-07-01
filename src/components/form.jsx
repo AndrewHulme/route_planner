@@ -268,9 +268,14 @@ class Form extends Component {
             ? this.setState({
                 startingLat: data[0].lat,
                 startingLon: data[0].lon,
+                // message: "",
+                // errorIsActive: false,
               })
             : this.setState({
                 message: "Error no address could be found.",
+                errorIsActive: true,
+                startingLat: "",
+                startingLon: "",
               })
         );
       await fetch(
@@ -298,12 +303,16 @@ class Form extends Component {
       )
         .then((resp) => resp.json())
         .then((data) => {
-          data[0] !== undefined
+          data.features !== undefined
             ? this.setState({
                 roundTripCoords: data.features[0].geometry.coordinates,
+                // message: "",
+                // errorIsActive: false,
               })
             : this.setState({
                 message: "Error no address could be found.",
+                errorIsActive: true,
+                roundTripCoords: "",
               });
           this.setState({
             generateButton: "Randomise",
@@ -512,7 +521,10 @@ class Form extends Component {
           />
         )}
 
-        <Flash message={this.state.message} />
+        <Flash
+          message={this.state.message}
+          isActive={this.state.errorIsActive}
+        />
 
         <LeafletMapContainer
           journeyCoords={[
