@@ -26,6 +26,8 @@ class Form extends Component {
     startingpoint: "",
     endpoint: "",
     message: "",
+    // mainFormDisplay: true,
+    // dbFormDisplay: false,
   };
 
   constructor(props) {
@@ -370,7 +372,10 @@ class Form extends Component {
       roundTripLength,
       endpoint,
       description,
+      // mainFormDisplay,
+      // dbFormDisplay,
     } = this.state;
+
     var displayStartingPoint,
       displayRoundStartingPoint = "";
 
@@ -388,7 +393,10 @@ class Form extends Component {
 
     return (
       <div className="main-container">
-        <div className="main-form">
+        <div
+          className="main-form"
+          style={{ display: this.props.toggleMyMaps ? "none" : "block" }}
+        >
           {!this.props.toggleMyMaps && (
             <div>
               <div className="row" id="userWelcome">
@@ -553,6 +561,8 @@ class Form extends Component {
             removeMap={this.removeMap}
             updateMapContainer={this.updateMapContainer}
             user={this.props.user}
+            mainFormDisplay={this.props.mainFormDisplay}
+            toggleMyMaps={this.props.toggleMyMaps}
           />
         )}
         {this.state.errorIsActive && (

@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
-import './css/app.css';
-import fire from './components/firebase.jsx';
-import Form from './components/form.jsx';
-import Flash from './components/flash.jsx';
-import NavBar from './components/navBar.jsx';
+import React, { Component } from "react";
+import "./css/app.css";
+import fire from "./components/firebase.jsx";
+import Form from "./components/form.jsx";
+import Flash from "./components/flash.jsx";
+import NavBar from "./components/navBar.jsx";
 
 class App extends Component {
   constructor() {
@@ -32,10 +32,10 @@ class App extends Component {
       console.log(user);
       if (user) {
         this.setState({ user });
-        localStorage.setItem('user', user.uid);
+        localStorage.setItem("user", user.uid);
       } else {
         this.setState({ user: null });
-        localStorage.removeItem('user');
+        localStorage.removeItem("user");
       }
     });
   }
@@ -43,10 +43,20 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <NavBar toggleMyMaps={this.toggleMyMaps} user={this.state.user} />
+        <NavBar
+          toggleMyMaps={this.toggleMyMaps}
+          user={this.state.user}
+          mainFormDisplay={this.state.mainFormDisplay}
+          toggleMainFormDisplay={this.toggleMainFormDisplay}
+        />
         <Flash user={this.state.user} />
 
-        <Form toggleMyMaps={this.state.toggleMyMaps} user={this.state.user} />
+        <Form
+          toggleMyMaps={this.state.toggleMyMaps}
+          user={this.state.user}
+          mainFormDisplay={this.state.mainFormDisplay}
+          toggleMainFormDisplay={this.toggleMainFormDisplay}
+        />
       </div>
     );
   }
