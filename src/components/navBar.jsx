@@ -60,73 +60,66 @@ class NavBar extends Component {
     return (
       <>
         <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
-          <Navbar.Brand href="#home"> Donut routing</Navbar.Brand>
+          <Navbar.Brand href="#home">🍩 Donut routing</Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
-            <div className="col">
-              <Nav className="mr-auto">
-                <Nav.Link onClick={this.toggleMyMaps} href="">
-                  My Maps
-                </Nav.Link>
-              </Nav>
-            </div>
-            <div className="row m-2">
-              <form>
-                {this.props.user ? (
-                  <div className="col">
-                    <button
-                      className="btn btn-danger btn-sm"
-                      onClick={this.logout}
-                    >
-                      Logout
-                    </button>
-                  </div>
-                ) : (
-                  <>
-                    <div class="form-group col">
-                      <input
-                        value={this.state.email}
-                        onChange={this.handleChange}
-                        type="email"
-                        name="email"
-                        class="form-control"
-                        id="exampleInputEmail1"
-                        aria-describedby="emailHelp"
-                        placeholder="Enter email"
-                      />
-                    </div>
-                    <div class="form-group col">
-                      <input
-                        value={this.state.password}
-                        onChange={this.handleChange}
-                        type="password"
-                        name="password"
-                        class="form-control"
-                        id="exampleInputPassword1"
-                        placeholder="Password"
-                      />
-                    </div>
-                    <div className="">
-                      <button
-                        type="submit"
-                        onClick={this.login}
-                        class="btn btn-primary btn-sm"
-                      >
-                        Login
-                      </button>
-                    </div>
-                    <div className="">
-                      <button
-                        onClick={this.signup}
-                        className="btn btn-success btn-sm"
-                      >
-                        Signup
-                      </button>
-                    </div>
-                  </>
-                )}
-              </form>
-            </div>
+
+            <Nav className="mr-auto">
+              <Nav.Link href="#features">My Routes</Nav.Link>
+            </Nav>
+            <form >
+              <div className='row m-2'>
+
+              {this.props.user ? (
+                <div className="col">
+                  <button className="btn btn-danger btn-sm" onClick={this.logout}>
+                    Logout
+                  </button>
+                </div>
+              ) : (
+                <>
+                <div class="form-group col">
+                  <input
+                    value={this.state.email}
+                    onChange={this.handleChange}
+                    type="email"
+                    name="email"
+                    class="form-control"
+                    id="exampleInputEmail1"
+                    aria-describedby="emailHelp"
+                    placeholder="Enter email"
+                  />
+                </div>
+                <div class="form-group col">
+                  <input
+                    value={this.state.password}
+                    onChange={this.handleChange}
+                    type="password"
+                    name="password"
+                    class="form-control"
+                    id="exampleInputPassword1"
+                    placeholder="Password"
+                  />
+                </div>
+                <div className="">
+                  <button type="submit" onClick={this.login} class="btn btn-primary btn-sm">
+                    Login
+                  </button>
+                </div>
+                <div className=''>
+                  <button
+                    onClick={this.signup}
+                    className="btn btn-success btn-sm"
+                  >
+                    Signup
+                  </button>
+                </div>
+                </>
+              )}
+
+              </div>
+            </form>
+
           </Navbar.Collapse>
         </Navbar>
       </>
