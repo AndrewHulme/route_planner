@@ -13,10 +13,11 @@ describe('ReturnedFromDb', () => {
     cy.get('input[name="description"]').type('My Route');
     cy.get('#saveRoute').click();
     cy.get('#roundTripButton').should('have.value', 'Randomise');
+    cy.get('.close').click();
     cy.get('#my-routes').click();
     cy.contains('My Route');
     cy.get('.description').should('be.visible');
-    cy.get('.dustbin').click();
+    cy.get('.close').click();
     cy.get('.description').should('not.be.visible');
 
     cy.get('#logOutButton').click();

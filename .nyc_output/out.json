@@ -219,11 +219,21 @@
       },
       "18": {
         "start": {
-          "line": 53,
+          "line": 54,
           "column": 4
         },
         "end": {
-          "line": 53,
+          "line": 58,
+          "column": 33
+        }
+      },
+      "19": {
+        "start": {
+          "line": 60,
+          "column": 4
+        },
+        "end": {
+          "line": 60,
           "column": 36
         }
       }
@@ -295,7 +305,7 @@
             "column": 25
           },
           "end": {
-            "line": 54,
+            "line": 61,
             "column": 3
           }
         },
@@ -438,8 +448,8 @@
     },
     "s": {
       "0": 94,
-      "1": 301,
-      "2": 301,
+      "1": 297,
+      "2": 297,
       "3": 0,
       "4": 0,
       "5": 0,
@@ -455,10 +465,11 @@
       "15": 94,
       "16": 94,
       "17": 94,
-      "18": 94
+      "18": 94,
+      "19": 94
     },
     "f": {
-      "0": 301,
+      "0": 297,
       "1": 0,
       "2": 94,
       "3": 0
@@ -466,7 +477,7 @@
     "b": {
       "0": [
         0,
-        301
+        297
       ],
       "1": [
         0,
@@ -478,7 +489,7 @@
       ]
     },
     "_coverageSchema": "43e27e138ebf9cfc5966b082cf9a028302ed4184",
-    "hash": "866a9dfba3de209d28b2985d24ca79c23e4c3529"
+    "hash": "4a4475658f11c03c602f732eb458b78ecb6b08f6"
   },
   "/Users/ed/Projects/Makers/week11-12/route_planner/src/components/routingRoundTrip.jsx": {
     "path": "/Users/ed/Projects/Makers/week11-12/route_planner/src/components/routingRoundTrip.jsx",
@@ -1630,17 +1641,17 @@
     },
     "s": {
       "0": 94,
-      "1": 307,
-      "2": 6,
-      "3": 6,
+      "1": 301,
+      "2": 4,
+      "3": 4,
       "4": 0,
       "5": 0,
-      "6": 100,
-      "7": 100,
-      "8": 100,
-      "9": 100,
-      "10": 100,
-      "11": 100,
+      "6": 98,
+      "7": 98,
+      "8": 98,
+      "9": 98,
+      "10": 98,
+      "11": 98,
       "12": 96,
       "13": 96,
       "14": 96,
@@ -1669,34 +1680,34 @@
       "37": 150,
       "38": 150,
       "39": 96,
-      "40": 100,
-      "41": 100,
-      "42": 100,
-      "43": 12,
-      "44": 100,
+      "40": 98,
+      "41": 98,
+      "42": 98,
+      "43": 8,
+      "44": 98,
       "45": 94,
-      "46": 100,
-      "47": 100
+      "46": 98,
+      "47": 98
     },
     "f": {
-      "0": 307,
+      "0": 301,
       "1": 0,
-      "2": 100,
+      "2": 98,
       "3": 1290,
-      "4": 12
+      "4": 8
     },
     "b": {
       "0": [
-        6,
-        301
+        4,
+        297
       ],
       "1": [
         0,
-        6
+        4
       ],
       "2": [
         96,
-        4
+        2
       ],
       "3": [
         94,
@@ -1744,7 +1755,7 @@
       ],
       "14": [
         94,
-        6
+        4
       ]
     },
     "_coverageSchema": "43e27e138ebf9cfc5966b082cf9a028302ed4184",
@@ -1755,61 +1766,61 @@
     "statementMap": {
       "0": {
         "start": {
-          "line": 10,
+          "line": 11,
           "column": 10
         },
         "end": {
-          "line": 15,
+          "line": 16,
           "column": 3
         }
       },
       "1": {
         "start": {
-          "line": 17,
+          "line": 18,
           "column": 12
         },
         "end": {
-          "line": 22,
+          "line": 23,
           "column": 3
         }
       },
       "2": {
         "start": {
-          "line": 18,
+          "line": 19,
           "column": 4
         },
         "end": {
-          "line": 18,
+          "line": 19,
           "column": 19
         }
       },
       "3": {
         "start": {
-          "line": 19,
+          "line": 20,
           "column": 4
         },
         "end": {
-          "line": 21,
+          "line": 22,
           "column": 7
         }
       },
       "4": {
         "start": {
-          "line": 25,
+          "line": 26,
           "column": 21
         },
         "end": {
-          "line": 25,
+          "line": 26,
           "column": 53
         }
       },
       "5": {
         "start": {
-          "line": 26,
+          "line": 28,
           "column": 4
         },
         "end": {
-          "line": 51,
+          "line": 53,
           "column": 6
         }
       }
@@ -1819,60 +1830,60 @@
         "name": "(anonymous_0)",
         "decl": {
           "start": {
-            "line": 17,
+            "line": 18,
             "column": 12
           },
           "end": {
-            "line": 17,
+            "line": 18,
             "column": 13
           }
         },
         "loc": {
           "start": {
-            "line": 17,
+            "line": 18,
             "column": 21
           },
           "end": {
-            "line": 22,
+            "line": 23,
             "column": 3
           }
         },
-        "line": 17
+        "line": 18
       },
       "1": {
         "name": "(anonymous_1)",
         "decl": {
           "start": {
-            "line": 24,
+            "line": 25,
             "column": 2
           },
           "end": {
-            "line": 24,
+            "line": 25,
             "column": 3
           }
         },
         "loc": {
           "start": {
-            "line": 24,
+            "line": 25,
             "column": 11
           },
           "end": {
-            "line": 52,
+            "line": 54,
             "column": 3
           }
         },
-        "line": 24
+        "line": 25
       }
     },
     "branchMap": {
       "0": {
         "loc": {
           "start": {
-            "line": 32,
+            "line": 34,
             "column": 9
           },
           "end": {
-            "line": 41,
+            "line": 43,
             "column": 9
           }
         },
@@ -1880,45 +1891,45 @@
         "locations": [
           {
             "start": {
-              "line": 32,
+              "line": 34,
               "column": 9
             },
             "end": {
-              "line": 32,
+              "line": 34,
               "column": 47
             }
           },
           {
             "start": {
-              "line": 32,
+              "line": 34,
               "column": 51
             },
             "end": {
-              "line": 32,
+              "line": 34,
               "column": 71
             }
           },
           {
             "start": {
-              "line": 33,
+              "line": 35,
               "column": 10
             },
             "end": {
-              "line": 40,
+              "line": 42,
               "column": 12
             }
           }
         ],
-        "line": 32
+        "line": 34
       },
       "1": {
         "loc": {
           "start": {
-            "line": 42,
+            "line": 44,
             "column": 9
           },
           "end": {
-            "line": 49,
+            "line": 51,
             "column": 9
           }
         },
@@ -1926,36 +1937,36 @@
         "locations": [
           {
             "start": {
-              "line": 42,
+              "line": 44,
               "column": 9
             },
             "end": {
-              "line": 42,
+              "line": 44,
               "column": 48
             }
           },
           {
             "start": {
-              "line": 42,
+              "line": 44,
               "column": 52
             },
             "end": {
-              "line": 42,
+              "line": 44,
               "column": 72
             }
           },
           {
             "start": {
-              "line": 43,
+              "line": 45,
               "column": 10
             },
             "end": {
-              "line": 48,
+              "line": 50,
               "column": 12
             }
           }
         ],
-        "line": 42
+        "line": 44
       }
     },
     "s": {
@@ -1963,27 +1974,27 @@
       "1": 94,
       "2": 47,
       "3": 47,
-      "4": 790,
-      "5": 790
+      "4": 782,
+      "5": 782
     },
     "f": {
       "0": 47,
-      "1": 790
+      "1": 782
     },
     "b": {
       "0": [
-        790,
-        790,
-        696
+        782,
+        782,
+        688
       ],
       "1": [
-        790,
-        790,
-        696
+        782,
+        782,
+        688
       ]
     },
     "_coverageSchema": "43e27e138ebf9cfc5966b082cf9a028302ed4184",
-    "hash": "c5179946f325a4cb4b79edfa3c4fe24f68211475"
+    "hash": "abe0d5606b57ed1691444e57719ec8a0e9d9e2bd"
   },
   "/Users/ed/Projects/Makers/week11-12/route_planner/src/components/returnedFromDb.jsx": {
     "path": "/Users/ed/Projects/Makers/week11-12/route_planner/src/components/returnedFromDb.jsx",
@@ -3273,24 +3284,24 @@
       }
     },
     "s": {
-      "0": 104,
-      "1": 104,
-      "2": 104,
+      "0": 102,
+      "1": 102,
+      "2": 102,
       "3": 2,
-      "4": 144,
-      "5": 22,
+      "4": 134,
+      "5": 12,
       "6": 2,
       "7": 122
     },
     "f": {
-      "0": 104,
+      "0": 102,
       "1": 2,
-      "2": 144,
+      "2": 134,
       "3": 2
     },
     "b": {
       "0": [
-        22,
+        12,
         122
       ]
     },
@@ -4196,7 +4207,7 @@
           "column": 4
         },
         "end": {
-          "line": 608,
+          "line": 602,
           "column": 6
         }
       }
@@ -5012,7 +5023,7 @@
             "column": 11
           },
           "end": {
-            "line": 609,
+            "line": 603,
             "column": 3
           }
         },
@@ -5347,119 +5358,119 @@
       "9": {
         "loc": {
           "start": {
-            "line": 391,
-            "column": 9
+            "line": 392,
+            "column": 11
           },
           "end": {
-            "line": 549,
-            "column": 9
+            "line": 546,
+            "column": 11
           }
         },
         "type": "binary-expr",
         "locations": [
           {
             "start": {
-              "line": 391,
-              "column": 9
-            },
-            "end": {
-              "line": 391,
-              "column": 33
-            }
-          },
-          {
-            "start": {
               "line": 392,
-              "column": 10
+              "column": 11
             },
             "end": {
-              "line": 548,
-              "column": 16
-            }
-          }
-        ],
-        "line": 391
-      },
-      "10": {
-        "loc": {
-          "start": {
-            "line": 394,
-            "column": 15
-          },
-          "end": {
-            "line": 400,
-            "column": 15
-          }
-        },
-        "type": "cond-expr",
-        "locations": [
-          {
-            "start": {
-              "line": 395,
-              "column": 16
-            },
-            "end": {
-              "line": 397,
-              "column": 22
+              "line": 392,
+              "column": 35
             }
           },
           {
             "start": {
-              "line": 399,
-              "column": 16
+              "line": 393,
+              "column": 12
             },
             "end": {
-              "line": 399,
+              "line": 545,
               "column": 18
             }
           }
         ],
-        "line": 394
+        "line": 392
       },
-      "11": {
+      "10": {
         "loc": {
           "start": {
-            "line": 402,
-            "column": 13
+            "line": 395,
+            "column": 17
           },
           "end": {
-            "line": 539,
-            "column": 13
+            "line": 401,
+            "column": 17
           }
         },
         "type": "cond-expr",
         "locations": [
           {
             "start": {
-              "line": 403,
-              "column": 14
+              "line": 396,
+              "column": 18
             },
             "end": {
-              "line": 470,
-              "column": 21
+              "line": 398,
+              "column": 24
             }
           },
           {
             "start": {
-              "line": 472,
-              "column": 14
+              "line": 400,
+              "column": 18
             },
             "end": {
-              "line": 538,
-              "column": 21
+              "line": 400,
+              "column": 20
             }
           }
         ],
-        "line": 402
+        "line": 395
+      },
+      "11": {
+        "loc": {
+          "start": {
+            "line": 403,
+            "column": 15
+          },
+          "end": {
+            "line": 536,
+            "column": 15
+          }
+        },
+        "type": "cond-expr",
+        "locations": [
+          {
+            "start": {
+              "line": 404,
+              "column": 16
+            },
+            "end": {
+              "line": 469,
+              "column": 23
+            }
+          },
+          {
+            "start": {
+              "line": 471,
+              "column": 16
+            },
+            "end": {
+              "line": 535,
+              "column": 23
+            }
+          }
+        ],
+        "line": 403
       },
       "12": {
         "loc": {
           "start": {
-            "line": 551,
+            "line": 549,
             "column": 9
           },
           "end": {
-            "line": 559,
+            "line": 557,
             "column": 9
           }
         },
@@ -5467,35 +5478,35 @@
         "locations": [
           {
             "start": {
-              "line": 551,
+              "line": 549,
               "column": 9
             },
             "end": {
-              "line": 551,
+              "line": 549,
               "column": 32
             }
           },
           {
             "start": {
-              "line": 552,
+              "line": 550,
               "column": 10
             },
             "end": {
-              "line": 558,
+              "line": 556,
               "column": 12
             }
           }
         ],
-        "line": 551
+        "line": 549
       },
       "13": {
         "loc": {
           "start": {
-            "line": 561,
+            "line": 558,
             "column": 9
           },
           "end": {
-            "line": 567,
+            "line": 564,
             "column": 9
           }
         },
@@ -5503,35 +5514,35 @@
         "locations": [
           {
             "start": {
-              "line": 561,
+              "line": 558,
               "column": 9
             },
             "end": {
-              "line": 561,
+              "line": 558,
               "column": 33
             }
           },
           {
             "start": {
-              "line": 562,
+              "line": 559,
               "column": 10
             },
             "end": {
-              "line": 566,
+              "line": 563,
               "column": 12
             }
           }
         ],
-        "line": 561
+        "line": 558
       },
       "14": {
         "loc": {
           "start": {
-            "line": 584,
+            "line": 579,
             "column": 9
           },
           "end": {
-            "line": 606,
+            "line": 600,
             "column": 9
           }
         },
@@ -5539,36 +5550,36 @@
         "locations": [
           {
             "start": {
-              "line": 584,
+              "line": 579,
               "column": 9
             },
             "end": {
-              "line": 584,
+              "line": 579,
               "column": 33
             }
           },
           {
             "start": {
-              "line": 584,
+              "line": 579,
               "column": 37
             },
             "end": {
-              "line": 584,
+              "line": 579,
               "column": 52
             }
           },
           {
             "start": {
-              "line": 585,
+              "line": 580,
               "column": 10
             },
             "end": {
-              "line": 605,
+              "line": 599,
               "column": 16
             }
           }
         ],
-        "line": 584
+        "line": 579
       }
     },
     "s": {
@@ -5646,22 +5657,22 @@
       "71": 12,
       "72": 12,
       "73": 12,
-      "74": 9,
+      "74": 10,
       "75": 8,
       "76": 8,
-      "77": 6,
-      "78": 6,
-      "79": 6,
+      "77": 4,
+      "78": 4,
+      "79": 4,
       "80": 12,
-      "81": 696,
-      "82": 696,
-      "83": 696,
+      "81": 688,
+      "82": 688,
+      "83": 688,
       "84": 4,
-      "85": 692,
-      "86": 696,
+      "85": 684,
+      "86": 688,
       "87": 38,
-      "88": 658,
-      "89": 696
+      "88": 650,
+      "89": 688
     },
     "f": {
       "0": 94,
@@ -5693,11 +5704,11 @@
       "26": 0,
       "27": 12,
       "28": 12,
-      "29": 9,
+      "29": 10,
       "30": 8,
-      "31": 6,
-      "32": 6,
-      "33": 696
+      "31": 4,
+      "32": 4,
+      "33": 688
     },
     "b": {
       "0": [
@@ -5721,49 +5732,49 @@
         0
       ],
       "5": [
-        5,
-        3
+        6,
+        2
       ],
       "6": [
         2,
-        4
+        2
       ],
       "7": [
         4,
-        692
+        684
       ],
       "8": [
         38,
-        658
+        650
       ],
       "9": [
-        696,
-        696
+        688,
+        688
       ],
       "10": [
-        188,
-        508
+        196,
+        492
       ],
       "11": [
-        564,
+        556,
         132
       ],
       "12": [
-        696,
+        688,
         0
       ],
       "13": [
-        696,
-        22
+        688,
+        12
       ],
       "14": [
-        696,
-        696,
-        188
+        688,
+        688,
+        196
       ]
     },
     "_coverageSchema": "43e27e138ebf9cfc5966b082cf9a028302ed4184",
-    "hash": "42a8f38556d5e12dc6e10157900092064a1c1259"
+    "hash": "28d81b661881a3528944df1f9f816b3b049bcfab"
   },
   "/Users/ed/Projects/Makers/week11-12/route_planner/src/components/navBar.jsx": {
     "path": "/Users/ed/Projects/Makers/week11-12/route_planner/src/components/navBar.jsx",

@@ -1,17 +1,17 @@
 @import-normalize;
 
-@import 'map.css';
-@import 'button.css';
-@import 'mapList.css';
-@import 'form.css';
+/* @import 'map.css'; */
+/* @import 'button.css'; */
+/* @import 'mapList.css'; */
+/* @import 'form.css'; */
 @import 'flash.css';
-@import 'navBar.css';
+/* @import 'navBar.css'; */
 
 *,
 *::before,
 *::after {
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
+    'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   box-sizing: border-box;
 }
 body {
