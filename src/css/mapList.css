@@ -1,5 +1,5 @@
 .savedMapDiv {
-  box-shadow: 2px 2px 4px rgba(0,0,0,.2);
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
   border-radius: 5px;
   cursor: pointer;
   /* width: 80%; */
@@ -19,16 +19,20 @@
   /* white-space: nowrap; */
 }
 .description {
-
 }
 p {
   margin-bottom: 0 !important;
 }
 .list-container {
   display: flex;
+  /* background-color: burlywood; */
 }
-.listItem {
+.list-item {
+  margin: 10px;
   display: flex;
   flex-direction: column;
-
+  max-height: 40px;
+  min-width: auto;
+  overflow: hidden;
+  /* width: 200px; */
 }

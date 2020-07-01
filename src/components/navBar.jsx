@@ -79,17 +79,8 @@ class NavBar extends Component {
           <Navbar.Collapse id="responsive-navbar-nav">
             <form>
               <div className="row m-2">
-                {this.props.user && (
-                  <div>
-                    <Nav className="mr-auto">
-                      <Nav.Link onClick={this.toggleMyMaps} href="">
-                        {!this.state.toggleMyMaps ? 'My Routes' : 'Find Route'}
-                      </Nav.Link>
-                    </Nav>
-                  </div>
-                )}
                 {this.props.user ? (
-                  <div className="row user-nav">
+                  <div className="row">
                     <div className="col">
                       <Nav className="mr-auto">
                         <Nav.Link onClick={this.toggleMyMaps} href="">
@@ -99,7 +90,7 @@ class NavBar extends Component {
                         </Nav.Link>
                       </Nav>
                     </div>
-                    <div className="col">
+                    <div className="">
                       <button
                         className="btn btn-danger btn-sm"
                         onClick={this.logout}
