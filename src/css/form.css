@@ -4,3 +4,19 @@
 .main-container {
   padding: 2rem;
 }
+
+.main-form {
+  opacity: 1;
+  border-style: ridge;
+  /* z-index: 1000; */
+
+  display: block;
+  width: 600px;
+  height: 100%;
+  max-width: 100%;
+  float: left;
+}
+
+#userWelcome {
+  text-align: center;
+}
