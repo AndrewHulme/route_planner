@@ -23,7 +23,7 @@ describe('Routing', () => {
 
       cy.get('#roundTripMyLocation').click();
       cy.get('input[name="roundTripLength"]').type(length);
-      cy.get('select[cy-name="roundVehiclechoice"]')
+      cy.get('select[cy-name="vehicleChoice"]')
         .select('Walking')
         .should('have.value', 'foot');
       cy.get('#roundTripButton').click();

@@ -35,7 +35,8 @@ Cypress.Commands.add('mockGeolocation', (latitude = null, longitude = null) => {
 Cypress.Commands.add('generateRoute', () => {
   const startInput = 'W1 C1DE';
   const endpoint = 'London Eye';
+  cy.get('#addEndPoint').click();
   cy.get('input[name="startingpoint"]').type(startInput);
   cy.get('input[name="endpoint"]').type(endpoint);
-  cy.get('#secondButton').click();
+  cy.get('#roundTripButton').click();
 });

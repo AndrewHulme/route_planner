@@ -128,6 +128,7 @@ class NavBar extends Component {
                       <button
                         type="submit"
                         onClick={this.login}
+                        id="logInButton"
                         class="btn btn-primary btn-sm"
                       >
                         Login
@@ -136,6 +137,7 @@ class NavBar extends Component {
                     <div className="">
                       <button
                         onClick={this.signup}
+                        id="signUpButton"
                         className="btn btn-success btn-sm"
                       >
                         Signup
