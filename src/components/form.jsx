@@ -21,7 +21,10 @@ class Form extends Component {
     endingLon: null,
     userName: "user",
     zoom: 13,
-    description: "",
+    description: '',
+    roundTripStart: '',
+    startingpoint: '',
+    endpoint: '',
     message: "",
   };
 
@@ -74,9 +77,10 @@ class Form extends Component {
     this.updateMapContainer();
     db.collection("routes").add({
       roundTrip: this.state.roundTrip,
-      distance: this.state.roundTripLength
-        ? this.state.roundTripLength
-        : this.state.distance,
+      // distance: this.state.roundTripLength
+      //   ? this.state.roundTripLength
+      //   : this.state.distance,
+      distance: this.state.distance,
       roundTripCoordinates: JSON.stringify(this.state.roundTripCoords),
       startingCoordinates: [this.state.startingLat, this.state.startingLon],
       endingCoordinates: [this.state.endingLat, this.state.endingLon],
@@ -84,6 +88,9 @@ class Form extends Component {
       id: dbID,
       userName: this.props.user.email,
       description: this.state.description,
+      roundTripStart: this.state.roundTripStart,
+      startingPoint: this.state.startingpoint,
+      endPoint: this.state.endpoint,
     });
     this.setState({
       message: "Route saved",
@@ -254,6 +261,7 @@ class Form extends Component {
         .then((response) => response.json())
         // ...then we update the users state
         .then((data) => {
+          console.log(data)
           this.setState({
             distance: data.features[0].properties.summary.distance,
             generated: this.state.generated + 1,
@@ -326,6 +334,7 @@ class Form extends Component {
           data.features !== undefined
             ? this.setState({
                 roundTripCoords: data.features[0].geometry.coordinates,
+                distance: data.features[0].properties.summary.distance,
                 message: "",
                 errorIsActive: false,
               })

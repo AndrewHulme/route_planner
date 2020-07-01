@@ -12,24 +12,25 @@ class NavBar extends Component {
     this.state = {
       email: '',
       password: '',
-      toggleMyMaps: true,
+      toggleMyMaps: false,
     };
   }
 
   toggleMyMaps = () => {
-    let toggleMyMaps = !this.state.toggleMyMaps;
-    this.setState({
-      toggleMyMaps: toggleMyMaps,
-    });
-    this.props.toggleMyMaps(this.state.toggleMyMaps);
     // console.log(this.state.toggleMyMaps);
+    let opposite = !this.state.toggleMyMaps;
+    this.setState({
+      toggleMyMaps: opposite,
+    });
+    // console.log(this.state.toggleMyMaps);
+    this.props.toggleMyMaps(opposite);
   };
 
   homePageView = () => {
     this.setState({
       toggleMyMaps: false,
     });
-    this.props.toggleMyMaps(this.state.toggleMyMaps);
+    this.props.toggleMyMaps(false);
   };
 
   handleChange(e) {
@@ -76,23 +77,27 @@ class NavBar extends Component {
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
-            {this.props.user && (
-              <Nav className="mr-auto">
-                <Nav.Link onClick={this.toggleMyMaps} href="">
-                  {this.state.toggleMyMaps ? 'My Routes' : 'Find Route'}
-                </Nav.Link>
-              </Nav>
-            )}
             <form>
               <div className="row m-2">
                 {this.props.user ? (
-                  <div className="col">
-                    <button
-                      className="btn btn-danger btn-sm"
-                      onClick={this.logout}
-                    >
-                      Logout
-                    </button>
+                  <div className="row">
+                    <div className="col">
+                      <Nav className="mr-auto">
+                        <Nav.Link onClick={this.toggleMyMaps} href="">
+                          {!this.state.toggleMyMaps
+                            ? 'My Routes'
+                            : 'Find Route'}
+                        </Nav.Link>
+                      </Nav>
+                    </div>
+                    <div className="">
+                      <button
+                        className="btn btn-danger btn-sm"
+                        onClick={this.logout}
+                      >
+                        Logout
+                      </button>
+                    </div>
                   </div>
                 ) : (
                   <>
