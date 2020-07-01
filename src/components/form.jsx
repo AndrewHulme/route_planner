@@ -393,7 +393,7 @@ class Form extends Component {
             <div className="row">
               {this.props.user ? (
                 <div className="col">
-                  <p>Welcome: {this.props.user.email}</p>
+                  <p id="welcome-message">Welcome: {this.props.user.email}</p>
                 </div>
               ) : (
                 ""

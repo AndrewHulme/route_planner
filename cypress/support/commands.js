@@ -40,3 +40,11 @@ Cypress.Commands.add('generateRoute', () => {
   cy.get('input[name="endpoint"]').type(endpoint);
   cy.get('#roundTripButton').click();
 });
+
+// Cypress.lifecycle({
+//   clearApp: true, // leave this on
+//   clearInternals: true // leave this on
+//   clearCookies: true // nope
+//   clearLocalStorage: true // nope
+//   clearSessionStorage: true // nope
+// })

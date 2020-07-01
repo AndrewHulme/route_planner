@@ -121,7 +121,6 @@ class ReturnedFromDB extends React.Component {
                     </div>
                   )}
 
- 
                   <div className="col map-el">
                     <p>Activity: {item.vehicleType}</p>
                   </div>

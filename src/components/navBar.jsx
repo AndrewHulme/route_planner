@@ -83,7 +83,7 @@ class NavBar extends Component {
                   <div className="row">
                     <div className="col">
                       <Nav className="mr-auto">
-                        <Nav.Link onClick={this.toggleMyMaps} href="">
+                        <Nav.Link id="my-routes" onClick={this.toggleMyMaps} href="">
                           {!this.state.toggleMyMaps
                             ? 'My Routes'
                             : 'Find Route'}
