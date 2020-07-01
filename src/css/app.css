@@ -1,4 +1,5 @@
 @import-normalize;
+
 @import 'map.css';
 @import 'button.css';
 @import 'mapList.css';
@@ -9,8 +10,8 @@
 *,
 *::before,
 *::after {
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
-    'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
   box-sizing: border-box;
 }
 body {
@@ -19,4 +20,11 @@ body {
 }
 html {
   font-size: 20px;
+}
+
+.navbar {
+  /* position: absolute; */
+  height: 50px;
+  top: 10%;
+  font-size: 15px;
 }
