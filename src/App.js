@@ -11,7 +11,7 @@ class App extends Component {
     super();
     this.state = {
       user: null,
-      // toggleMyMaps: false,
+      toggleMyMaps: false,
     };
     this.authListener = this.authListener.bind(this);
   }
