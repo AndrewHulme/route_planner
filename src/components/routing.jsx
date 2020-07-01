@@ -50,6 +50,13 @@ class Routing extends MapLayer {
     }
 
     leafletElement.addTo(map.leafletElement);
+
+    L.control
+      .zoom({
+        position: "bottomright",
+      })
+      .addTo(map.leafletElement);
+
     return leafletElement.getPlan();
   }
 }

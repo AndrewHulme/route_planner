@@ -2,5 +2,33 @@
   margin-bottom: 0;
 }
 .main-container {
-  padding: 2rem;
+  position: relative;
+}
+
+.main-form {
+  opacity: 1;
+  border-style: ridge;
+
+  /* display: block; */
+  display: block;
+  width: 600px;
+  height: 100%;
+  max-width: 100%;
+  float: left;
+
+  background-color: white;
+  transform: scale(0.7, 0.7);
+  transform-origin: top left;
+
+  /* left: 100px; */
+  /* position: absolute; */
+  /* left: auto; */
+}
+
+#userWelcome {
+  text-align: center;
+}
+
+#saveRouteID {
+  display: none;
 }
