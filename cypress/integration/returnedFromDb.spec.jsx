@@ -3,9 +3,9 @@ describe('ReturnedFromDb', () => {
     cy.visit('http://localhost:3000');
     cy.clearCookies();
     cy.clearLocalStorage();
-    cy.userLogin();
   });
   it('should generate,show and saved a trip', () => {
+    cy.userLogin();
     cy.get('input[name="roundTripStart"]').type('London Eye');
     cy.get('input[name="roundTripLength"]').type('5000');
     cy.get('select[cy-name="vehicleChoice"]').select('Cycling');
