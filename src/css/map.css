@@ -36,7 +36,7 @@
 .leaflet-routing-container {
   height: 250px;
   width: 200px;
-  top: 100px;
+  top: 40px;
   overflow: hidden;
   border-radius: 20px;
   border: none;
@@ -52,12 +52,17 @@
 }
 
 .leaflet-control-zoom {
-  position: absolute;
+  display: none;
+}
+
+.leaflet-control-zoom:first-of-type {
+  display: block;
+}
+/* position: absolute;
   top: 75px;
-  left: 900px;
+  float: right;
   /* bottom: 0;
   right: 0; */
-}
 
 a.leaflet-control-zoom-in,
 a.leaflet-control-zoom-out,
