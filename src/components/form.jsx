@@ -85,6 +85,10 @@ class Form extends Component {
       userName: this.props.user.email,
       description: this.state.description,
     });
+    this.setState({
+      message: "Route saved",
+      errorIsActive: true,
+    });
   };
 
   updateMapContainer = () => {
