@@ -518,26 +518,28 @@ class Form extends Component {
           zoom={this.state.zoom}
         />
 
-        <div className="row">
-          <div className="col">
-            <input
-              type="text"
-              className="form-control"
-              placeholder="Description here..."
-              name="description"
-              onChange={this.descriptionHandler}
-            />
-          </div>
+        {!this.props.toggleMyMaps && this.props.user && (
+          <div className="row">
+            <div className="col">
+              <input
+                type="text"
+                className="form-control"
+                placeholder="Description here..."
+                name="description"
+                onChange={this.descriptionHandler}
+              />
+            </div>
 
-          <button
-            value="saveRoute"
-            id="saveRoute"
-            className="btn btn-warning"
-            onClick={this.saveToDB}
-          >
-            Save route
-          </button>
-        </div>
+            <button
+              value="saveRoute"
+              id="saveRoute"
+              className="btn btn-warning"
+              onClick={this.saveToDB}
+            >
+              Save route
+            </button>
+          </div>
+        )}
       </div>
     );
   }

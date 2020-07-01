@@ -25,6 +25,13 @@ class NavBar extends Component {
     // console.log(this.state.toggleMyMaps);
   };
 
+  homePageView = () => {
+    this.setState({
+      toggleMyMaps: false,
+    });
+    this.props.toggleMyMaps(this.state.toggleMyMaps);
+  };
+
   handleChange(e) {
     this.setState({ [e.target.name]: e.target.value });
   }
@@ -60,14 +67,22 @@ class NavBar extends Component {
     return (
       <>
         <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
-          <Navbar.Brand href="#home">🍩 Donut routing</Navbar.Brand>
+          <Navbar.Brand
+            onClick={this.homePageView}
+            className="main-logo"
+            href=""
+          >
+            🍩 Donut routing
+          </Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
-            <Nav className="mr-auto">
-              <Nav.Link onClick={this.toggleMyMaps} href="">
-                My Routes
-              </Nav.Link>
-            </Nav>
+            {this.props.user && (
+              <Nav className="mr-auto">
+                <Nav.Link onClick={this.toggleMyMaps} href="">
+                  {this.state.toggleMyMaps ? 'My Routes' : 'Find Route'}
+                </Nav.Link>
+              </Nav>
+            )}
             <form>
               <div className="row m-2">
                 {this.props.user ? (
