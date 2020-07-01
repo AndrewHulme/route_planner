@@ -106,7 +106,6 @@ class Form extends Component {
   };
 
   updateMapContainer = () => {
-
     this.setState({
       key: Math.random(),
     });
@@ -389,27 +388,13 @@ class Form extends Component {
 
     return (
       <div className="main-container">
-
         <div className="main-form">
           {!this.props.toggleMyMaps && (
             <div>
-              <div id="userWelcome" className="row">
+              <div className="row" id="userWelcome">
                 {this.props.user ? (
-
-        
-                <div className="col">
-                  <p id="welcome-message">Welcome: {this.props.user.email}</p>
-                </div>
-              ) : (
-                ""
-              )}
-            </div>
-            {this.state.roundTrip == true ? (
-              <form id="roundTripForm" onSubmit={this.handleSubmitRoundTrip}>
-                <div className="form-row">
-
                   <div className="col">
-                    <p>Welcome: {this.props.user.email}</p>
+                    <p id="welcome-message">Welcome: {this.props.user.email}</p>
                   </div>
                 ) : (
                   ""
@@ -439,7 +424,6 @@ class Form extends Component {
                       />
                     </div>
                   </div>
-
                   <div className="form-group">
                     <button
                       id="roundTripMyLocation"
@@ -450,9 +434,7 @@ class Form extends Component {
                     >
                       Use My Location
                     </button>
-
                   </div>
-
                   <div className="form-row">
                     <div className="col">
                       <label htmlFor="demo_overview_minimal"></label>
@@ -509,7 +491,6 @@ class Form extends Component {
                       />
                     </div>
                   </div>
-
                   <div className="form-group">
                     <button
                       onClick={this.locationHandler}
@@ -519,9 +500,7 @@ class Form extends Component {
                     >
                       Use My Location
                     </button>
-
                   </div>
-
                   <div className="form-row">
                     <div className="col">
                       <label for="demo_overview_minimal"></label>
@@ -576,7 +555,6 @@ class Form extends Component {
             user={this.props.user}
           />
         )}
-
         {this.state.errorIsActive && (
           <Flash
             message={this.state.message}
@@ -584,7 +562,6 @@ class Form extends Component {
             hideAlert={this.hideAlert}
           />
         )}
-
         <LeafletMapContainer
           journeyCoords={[
             [this.state.startingLat, this.state.startingLon],
@@ -599,10 +576,8 @@ class Form extends Component {
           roundTripGenerated={this.state.roundTripGenerated}
           zoom={this.state.zoom}
         />
-
-
         {!this.props.toggleMyMaps && this.props.user && (
-          <div id="saveRouteID" className="row">
+          <div className="row" id="saveRouteID">
             <div className="col">
               <input
                 type="text"
@@ -613,7 +588,6 @@ class Form extends Component {
                 onChange={this.descriptionHandler}
               />
             </div>
-
             <button
               value="saveRoute"
               id="saveRoute"
