@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import FlashMessage from 'react-flash-message';
+// import FlashMessage from 'react-flash-message';
 
 class Flash extends Component {
   constructor(props) {
@@ -19,7 +19,10 @@ class Flash extends Component {
   render() {
     if (this.state.isActive) {
       return (
-        <div className="alert alert-warning alert-dismissible" role="alert">
+        <div
+          className="alert alert-warning alert-dismissible flash"
+          role="alert"
+        >
           <button
             type="button"
             className="close"
