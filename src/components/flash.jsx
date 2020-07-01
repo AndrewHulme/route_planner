@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import FlashMessage from "react-flash-message";
 
-
 class Flash extends Component {
   constructor(props) {
     super(props);
@@ -11,9 +10,9 @@ class Flash extends Component {
     };
   }
 
-  hideAlert() {
+  showAlert() {
     this.setState({
-      isActive: false,
+      isActive: true,
     });
   }
 

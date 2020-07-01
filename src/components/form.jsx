@@ -22,6 +22,7 @@ class Form extends Component {
     userName: "user",
     zoom: 13,
     description: "",
+    message: "",
   };
 
   constructor(props) {
@@ -263,10 +264,14 @@ class Form extends Component {
       await fetch(startingURL)
         .then((response) => response.json())
         .then((data) =>
-          this.setState({
-            startingLat: data[0].lat,
-            startingLon: data[0].lon,
-          })
+          data[0] !== undefined
+            ? this.setState({
+                startingLat: data[0].lat,
+                startingLon: data[0].lon,
+              })
+            : this.setState({
+                message: "Error no address could be found.",
+              })
         );
       await fetch(
         `https://api.openrouteservice.org/v2/directions/driving-car/geojson`,
@@ -293,9 +298,13 @@ class Form extends Component {
       )
         .then((resp) => resp.json())
         .then((data) => {
-          this.setState({
-            roundTripCoords: data.features[0].geometry.coordinates,
-          });
+          data[0] !== undefined
+            ? this.setState({
+                roundTripCoords: data.features[0].geometry.coordinates,
+              })
+            : this.setState({
+                message: "Error no address could be found.",
+              });
           this.setState({
             generateButton: "Randomise",
             seed: this.state.seed + 1,
@@ -502,6 +511,8 @@ class Form extends Component {
             user={this.props.user}
           />
         )}
+
+        <Flash message={this.state.message} />
 
         <LeafletMapContainer
           journeyCoords={[
