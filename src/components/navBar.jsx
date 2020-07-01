@@ -77,23 +77,36 @@ class NavBar extends Component {
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
-            {this.props.user && (
-              <Nav className="mr-auto">
-                <Nav.Link onClick={this.toggleMyMaps} href="">
-                  {!this.state.toggleMyMaps ? 'My Routes' : 'Find Route'}
-                </Nav.Link>
-              </Nav>
-            )}
             <form>
               <div className="row m-2">
+                {this.props.user && (
+                  <div>
+                    <Nav className="mr-auto">
+                      <Nav.Link onClick={this.toggleMyMaps} href="">
+                        {!this.state.toggleMyMaps ? 'My Routes' : 'Find Route'}
+                      </Nav.Link>
+                    </Nav>
+                  </div>
+                )}
                 {this.props.user ? (
-                  <div className="col">
-                    <button
-                      className="btn btn-danger btn-sm"
-                      onClick={this.logout}
-                    >
-                      Logout
-                    </button>
+                  <div className="row user-nav">
+                    <div className="col">
+                      <Nav className="mr-auto">
+                        <Nav.Link onClick={this.toggleMyMaps} href="">
+                          {!this.state.toggleMyMaps
+                            ? 'My Routes'
+                            : 'Find Route'}
+                        </Nav.Link>
+                      </Nav>
+                    </div>
+                    <div className="col">
+                      <button
+                        className="btn btn-danger btn-sm"
+                        onClick={this.logout}
+                      >
+                        Logout
+                      </button>
+                    </div>
                   </div>
                 ) : (
                   <>

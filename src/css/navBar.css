@@ -1,3 +1,7 @@
 .main-logo:hover {
   cursor: pointer;
 }
+
+.user-nav {
+  margin-left: auto;
+}
