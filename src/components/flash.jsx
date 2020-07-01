@@ -1,12 +1,13 @@
-import React, { Component } from 'react';
-// import FlashMessage from 'react-flash-message';
+import React, { Component } from "react";
+import FlashMessage from "react-flash-message";
+
 
 class Flash extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      message: 'Flash Message',
-      isActive: true,
+      message: "Flash Message",
+      isActive: false,
     };
   }
 

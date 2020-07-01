@@ -37,7 +37,7 @@ class Form extends Component {
       roundTripGenerated: 0,
     });
     if (item.roundTrip) {
-      console.log('how many times you can see me?');
+      console.log("how many times you can see me?");
       this.setState({
         generated: 0,
         roundTripGenerated: this.state.roundTripGenerated + 1,
@@ -46,7 +46,7 @@ class Form extends Component {
       });
       console.log(this.state);
     } else {
-      console.log(' IM TSRAIGHT LINE?');
+      console.log(" IM TSRAIGHT LINE?");
       let startCoordinates = [];
       item.startingCoordinates.forEach((element) => {
         return startCoordinates.push(Number(element));
@@ -72,7 +72,7 @@ class Form extends Component {
     let dbID = String(Date.now());
     let add = !this.state.addToList;
     this.updateMapContainer();
-    db.collection('routes').add({
+    db.collection("routes").add({
       roundTrip: this.state.roundTrip,
       distance: this.state.roundTripLength
         ? this.state.roundTripLength
@@ -87,7 +87,7 @@ class Form extends Component {
   };
 
   updateMapContainer = () => {
-    console.log('hey form update map container');
+    console.log("hey form update map container");
     this.setState({
       key: Math.random(),
     });
@@ -498,8 +498,11 @@ class Form extends Component {
         )}
 
         <LeafletMapContainer
-          startingCoords={[this.state.startingLat, this.state.startingLon]}
-          endingCoords={[this.state.endingLat, this.state.endingLon]}
+          journeyCoords={[
+            [this.state.startingLat, this.state.startingLon],
+            [this.state.endingLat, this.state.endingLon],
+          ]}
+          // endingCoords={[this.state.endingLat, this.state.endingLon]}
           roundTripCoords={this.state.roundTripCoords}
           vehicle={this.state.vehicle}
           lat={this.state.lat}
