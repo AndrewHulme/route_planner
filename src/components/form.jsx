@@ -26,8 +26,6 @@ class Form extends Component {
     startingpoint: "",
     endpoint: "",
     message: "",
-    // mainFormDisplay: true,
-    // dbFormDisplay: false,
   };
 
   constructor(props) {
@@ -372,8 +370,6 @@ class Form extends Component {
       roundTripLength,
       endpoint,
       description,
-      // mainFormDisplay,
-      // dbFormDisplay,
     } = this.state;
 
     var displayStartingPoint,
@@ -561,7 +557,6 @@ class Form extends Component {
             removeMap={this.removeMap}
             updateMapContainer={this.updateMapContainer}
             user={this.props.user}
-            mainFormDisplay={this.props.mainFormDisplay}
             toggleMyMaps={this.props.toggleMyMaps}
           />
         )}

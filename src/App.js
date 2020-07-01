@@ -43,20 +43,10 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <NavBar
-          toggleMyMaps={this.toggleMyMaps}
-          user={this.state.user}
-          mainFormDisplay={this.state.mainFormDisplay}
-          toggleMainFormDisplay={this.toggleMainFormDisplay}
-        />
+        <NavBar toggleMyMaps={this.toggleMyMaps} user={this.state.user} />
         <Flash user={this.state.user} />
 
-        <Form
-          toggleMyMaps={this.state.toggleMyMaps}
-          user={this.state.user}
-          mainFormDisplay={this.state.mainFormDisplay}
-          toggleMainFormDisplay={this.toggleMainFormDisplay}
-        />
+        <Form toggleMyMaps={this.state.toggleMyMaps} user={this.state.user} />
       </div>
     );
   }
