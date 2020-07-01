@@ -5,7 +5,7 @@ describe('NavBar', () => {
     beforeEach(() => {
       cy.visit('http://localhost:3000');
       cy.clearCookies();
-      cy.clearLocalStorage()
+      cy.clearLocalStorage();
     });
     it('able to see log in form', () => {
       cy.get('#exampleInputEmail1').should('have.value', '');
@@ -13,14 +13,29 @@ describe('NavBar', () => {
       cy.get('#logInButton').should('not.be.disabled');
       cy.get('#signUpButton').should('not.be.disabled');
     });
-    // it('should show Logout button when logged in', () => {
-    //   cy.clearCookies();
-    //   cy.clearLocalStorage()
-    //
-    //   cy.get('#exampleInputEmail1').type('dummy@dummy.com');
-    //   cy.get('#exampleInputPassword1').type('password');
-    //   cy.get('#logInButton').click();
-    //   cy.get('#welcome-message').should('be.visible');
-    // })
+
+    it('should show Logout button when logged in', () => {
+      cy.userLogin();
+      cy.get('#welcome-message').should('be.visible');
+      cy.get('.description').should('not.be.visible');
+      cy.get('#logOutButton').should('be.visible');
+
+      cy.get('#logOutButton').click();
+    });
+
+    context('Network Requests', () => {
+      beforeEach(() => {
+        cy.visit('http://localhost:3000');
+      });
+      it('cy.server() network requests and responses', () => {
+        cy.userLogin();
+        cy.server().should((server) => {
+          expect(server.method).to.eq('GET');
+          expect(server.status).to.eq(200);
+        });
+
+        cy.get('#logOutButton').click();
+      });
+    });
   });
 });

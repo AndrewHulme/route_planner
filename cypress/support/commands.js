@@ -41,6 +41,12 @@ Cypress.Commands.add('generateRoute', () => {
   cy.get('#roundTripButton').click();
 });
 
+Cypress.Commands.add('userLogin', () => {
+  cy.get('#exampleInputEmail1').type('dummy@dummy.com');
+  cy.get('#exampleInputPassword1').type('password');
+  cy.get('#logInButton').click();
+});
+
 // Cypress.lifecycle({
 //   clearApp: true, // leave this on
 //   clearInternals: true // leave this on

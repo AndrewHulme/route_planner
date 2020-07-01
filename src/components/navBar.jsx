@@ -83,7 +83,11 @@ class NavBar extends Component {
                   <div className="row">
                     <div className="col">
                       <Nav className="mr-auto">
-                        <Nav.Link id="my-routes" onClick={this.toggleMyMaps} href="">
+                        <Nav.Link
+                          id="my-routes"
+                          onClick={this.toggleMyMaps}
+                          href=""
+                        >
                           {!this.state.toggleMyMaps
                             ? 'My Routes'
                             : 'Find Route'}
@@ -94,6 +98,7 @@ class NavBar extends Component {
                       <button
                         className="btn btn-danger btn-sm"
                         onClick={this.logout}
+                        id="logOutButton"
                       >
                         Logout
                       </button>
