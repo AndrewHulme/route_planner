@@ -4,12 +4,14 @@ import fire from './components/firebase.jsx';
 import Form from './components/form.jsx';
 import Login from './components/login.jsx';
 import Flash from './components/flash.jsx';
+import NavBar from './components/navBar.jsx';
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
       user: null,
+      toggleMyMaps: false,
     };
     this.authListener = this.authListener.bind(this);
   }
@@ -17,6 +19,14 @@ class App extends Component {
   componentDidMount() {
     this.authListener();
   }
+
+  toggleMyMaps = (value) => {
+    let toggleMyMaps = value;
+    this.setState({
+      toggleMyMaps: toggleMyMaps,
+    });
+    // console.log(this.state.toggleMyMaps);
+  };
 
   authListener() {
     fire.auth().onAuthStateChanged((user) => {
@@ -34,10 +44,10 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Flash />
-        {this.state.user ? <Form user={this.state.user} /> : <Login />}
-        {/* <Login />
-        <Form /> */}
+        <NavBar toggleMyMaps={this.toggleMyMaps} user={this.state.user} />
+        <Flash user={this.state.user} />
+
+        <Form toggleMyMaps={this.state.toggleMyMaps} user={this.state.user} />
       </div>
     );
   }

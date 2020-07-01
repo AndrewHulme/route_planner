@@ -88,6 +88,7 @@ class ReturnedFromDB extends React.Component {
       date.getMinutes() +
       ':' +
       date.getSeconds();
+    console.log(this.props.user.email);
     return formatted_date;
   }
 
@@ -96,30 +97,32 @@ class ReturnedFromDB extends React.Component {
     return (
       <ul>
         {db.map((item, i) => {
-          return (
-            <div onClick={() => this.displaySavedRoute(item.id)}>
-              <div key={i} className="savedMapDiv row">
-                <div className="col map-el">
-                  <p>User: {item.userName}</p>
-                </div>
-                <div className="col map-el">
-                  <p>Id: {item.id}</p>
-                </div>
-                <div className="col map-el">
-                  <Moment fromNow>{this.convertDate(item.id)}</Moment>
-                </div>
-                <div className="col map-el">
-                  <button
-                    type="button"
-                    className="close"
-                    onClick={(event) => this.removeMap(item.id, event)}
-                  >
-                    <span aria-hidden="true">&times;</span>
-                  </button>
+          if (this.props.user && item.userName == this.props.user.email) {
+            return (
+              <div onClick={() => this.displaySavedRoute(item.id)}>
+                <div key={i} className="savedMapDiv row">
+                  <div className="col map-el">
+                    <p>User: {item.userName}</p>
+                  </div>
+                  <div className="col map-el">
+                    <p>Id: {item.id}</p>
+                  </div>
+                  <div className="col map-el">
+                    <Moment fromNow>{this.convertDate(item.id)}</Moment>
+                  </div>
+                  <div className="col map-el">
+                    <button
+                      type="button"
+                      className="close"
+                      onClick={(event) => this.removeMap(item.id, event)}
+                    >
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
                 </div>
               </div>
-            </div>
-          );
+            );
+          }
         })}
       </ul>
     );
