@@ -101,6 +101,7 @@ class Form extends Component {
     this.setState({
       message: "Route saved",
       errorIsActive: true,
+      description: "",
     });
   };
 
@@ -368,6 +369,7 @@ class Form extends Component {
       lng,
       roundTripLength,
       endpoint,
+      description,
     } = this.state;
     var displayStartingPoint,
       displayRoundStartingPoint = "";
@@ -586,6 +588,7 @@ class Form extends Component {
                 type="text"
                 className="form-control"
                 placeholder="Description here..."
+                value={description}
                 name="description"
                 onChange={this.descriptionHandler}
               />
