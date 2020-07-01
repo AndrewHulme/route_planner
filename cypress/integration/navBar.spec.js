@@ -15,6 +15,7 @@ describe('NavBar', () => {
     });
 
     it('should show Logout button when logged in', () => {
+      cy.get('#logOutButton').click();
       cy.userLogin();
       cy.get('#welcome-message').should('be.visible');
       cy.get('.description').should('not.be.visible');
