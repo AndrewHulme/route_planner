@@ -39,7 +39,6 @@ class Form extends Component {
       roundTripGenerated: 0,
     });
     if (item.roundTrip) {
-      console.log("how many times you can see me?");
       this.setState({
         generated: 0,
         roundTripGenerated: this.state.roundTripGenerated + 1,
@@ -48,7 +47,6 @@ class Form extends Component {
       });
       console.log(this.state);
     } else {
-      console.log(" IM TSRAIGHT LINE?");
       let startCoordinates = [];
       item.startingCoordinates.forEach((element) => {
         return startCoordinates.push(Number(element));
@@ -90,7 +88,6 @@ class Form extends Component {
   };
 
   updateMapContainer = () => {
-    console.log("hey form update map container");
     this.setState({
       key: Math.random(),
     });
@@ -201,18 +198,37 @@ class Form extends Component {
       await fetch(startingURL)
         .then((response) => response.json())
         .then((data) =>
-          this.setState({
-            startingLat: data[0].lat,
-            startingLon: data[0].lon,
-          })
+          data[0] !== undefined
+            ? this.setState({
+                startingLat: data[0].lat,
+                startingLon: data[0].lon,
+                message: "",
+                errorIsActive: false,
+              })
+            : this.setState({
+                message: "Error starting address could not be found.",
+                errorIsActive: true,
+                startingLat: "",
+                startingLon: "",
+              })
         );
       await fetch(endingURL)
         .then((response) => response.json())
         .then((data) =>
-          this.setState({
-            endingLat: data[0].lat,
-            endingLon: data[0].lon,
-          })
+          data[0] !== undefined && this.state.errorIsActive === false
+            ? this.setState({
+                endingLat: data[0].lat,
+                endingLon: data[0].lon,
+                message: "",
+                errorIsActive: false,
+              })
+            : this.setState({
+                message: "Error address could not be found.",
+                errorIsActive: true,
+                startingLat: "",
+                startingLon: "",
+                generated: 0,
+              })
         );
 
       var routeURL =
@@ -268,8 +284,8 @@ class Form extends Component {
             ? this.setState({
                 startingLat: data[0].lat,
                 startingLon: data[0].lon,
-                // message: "",
-                // errorIsActive: false,
+                message: "",
+                errorIsActive: false,
               })
             : this.setState({
                 message: "Error no address could be found.",
@@ -306,8 +322,8 @@ class Form extends Component {
           data.features !== undefined
             ? this.setState({
                 roundTripCoords: data.features[0].geometry.coordinates,
-                // message: "",
-                // errorIsActive: false,
+                message: "",
+                errorIsActive: false,
               })
             : this.setState({
                 message: "Error no address could be found.",
