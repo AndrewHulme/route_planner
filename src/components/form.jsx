@@ -21,15 +21,11 @@ class Form extends Component {
     endingLon: null,
     userName: "user",
     zoom: 13,
-<<<<<<< HEAD
     description: '',
     roundTripStart: '',
     startingpoint: '',
-    endpoint: ''
-=======
-    description: "",
+    endpoint: '',
     message: "",
->>>>>>> 1ced6e46671979bbc7f92ce029f22e18db09eee2
   };
 
   constructor(props) {
@@ -335,18 +331,10 @@ class Form extends Component {
       )
         .then((resp) => resp.json())
         .then((data) => {
-<<<<<<< HEAD
-          console.log(data)
-          this.setState({
-            roundTripCoords: data.features[0].geometry.coordinates,
-            distance: data.features[0].properties.summary.distance,
-          });
-          this.setState({
-            generateButton: 'Randomise',
-=======
           data.features !== undefined
             ? this.setState({
                 roundTripCoords: data.features[0].geometry.coordinates,
+                distance: data.features[0].properties.summary.distance,
                 message: "",
                 errorIsActive: false,
               })
@@ -357,7 +345,6 @@ class Form extends Component {
               });
           this.setState({
             generateButton: "Randomise",
->>>>>>> 1ced6e46671979bbc7f92ce029f22e18db09eee2
             seed: this.state.seed + 1,
             roundTripGenerated: this.state.roundTripGenerated + 1,
           });
