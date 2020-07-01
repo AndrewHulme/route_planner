@@ -12,8 +12,19 @@ class NavBar extends Component {
     this.state = {
       email: '',
       password: '',
+      toggleMyMaps: true,
     };
   }
+
+  toggleMyMaps = () => {
+    let toggleMyMaps = !this.state.toggleMyMaps;
+    this.setState({
+      toggleMyMaps: toggleMyMaps,
+    });
+    this.props.toggleMyMaps(this.state.toggleMyMaps);
+    // console.log(this.state.toggleMyMaps);
+  };
+
   handleChange(e) {
     this.setState({ [e.target.name]: e.target.value });
   }
@@ -52,6 +63,7 @@ class NavBar extends Component {
           <Navbar.Brand href="#home">🍩 Donut routing</Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
+
             <Nav className="mr-auto">
               <Nav.Link href="#features">My Routes</Nav.Link>
             </Nav>
@@ -107,8 +119,8 @@ class NavBar extends Component {
 
               </div>
             </form>
-          </Navbar.Collapse>
 
+          </Navbar.Collapse>
         </Navbar>
       </>
     );
