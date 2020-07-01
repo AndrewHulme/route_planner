@@ -5,8 +5,9 @@
   /* width: 80%; */
   text-align: left;
   margin: 1rem;
-  padding: 5px;
+  padding: 8px;
   /* overflow: hidden; */
+  position: relative;
 }
 .savedMapDiv:hover {
   background: rgba(215, 215, 215, 0.5);
@@ -35,4 +36,13 @@ p {
   min-width: auto;
   overflow: hidden;
   /* width: 200px; */
+}
+.dustbin {
+  position: absolute;
+  right: 5px;
+  bottom: 5px;
+}
+.description {
+  margin-bottom: 8px;
+  font-weight: bolder;
 }

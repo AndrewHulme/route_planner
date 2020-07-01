@@ -78,9 +78,10 @@ class Form extends Component {
     this.updateMapContainer();
     db.collection('routes').add({
       roundTrip: this.state.roundTrip,
-      distance: this.state.roundTripLength
-        ? this.state.roundTripLength
-        : this.state.distance,
+      // distance: this.state.roundTripLength
+      //   ? this.state.roundTripLength
+      //   : this.state.distance,
+      distance: this.state.distance,
       roundTripCoordinates: JSON.stringify(this.state.roundTripCoords),
       startingCoordinates: [this.state.startingLat, this.state.startingLon],
       endingCoordinates: [this.state.endingLat, this.state.endingLon],
@@ -239,6 +240,7 @@ class Form extends Component {
         .then((response) => response.json())
         // ...then we update the users state
         .then((data) => {
+          console.log(data)
           this.setState({
             distance: data.features[0].properties.summary.distance,
             generated: this.state.generated + 1,
@@ -299,8 +301,10 @@ class Form extends Component {
       )
         .then((resp) => resp.json())
         .then((data) => {
+          console.log(data)
           this.setState({
             roundTripCoords: data.features[0].geometry.coordinates,
+            distance: data.features[0].properties.summary.distance,
           });
           this.setState({
             generateButton: 'Randomise',

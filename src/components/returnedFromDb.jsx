@@ -121,16 +121,16 @@ class ReturnedFromDB extends React.Component {
                     </div>
                   )}
 
-                  <div className="col map-el list-item">
+                  <div className="col map-el">
                     <p>Activity: {item.vehicleType}</p>
                   </div>
-                  <div className="col map-el list-item">
-                    <p>Distance: {item.distance}</p>
+                  <div className="col map-el">
+                    <p>Distance: {(item.distance * 0.001).toFixed(2)} km</p>
                   </div>
-                  <div className="map-el list-item">
+                  <div className="col map-el"><span>Saved </span>
                     <Moment fromNow>{this.convertDate(item.id)}</Moment>
                   </div>
-                  <div className="map-el">
+                  <div className="dustbin">
                     <button
                       type="button"
                       className="close"
