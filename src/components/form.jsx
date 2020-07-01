@@ -1,17 +1,17 @@
-import React, { Component } from 'react';
-import LeafletMapContainer from './mapleaflet.jsx';
-import ReturnedFromDB from './returnedFromDb.jsx';
-import fire from './firebase';
-import Flash from './flash';
+import React, { Component } from "react";
+import LeafletMapContainer from "./mapleaflet.jsx";
+import ReturnedFromDB from "./returnedFromDb.jsx";
+import fire from "./firebase";
+import Flash from "./flash";
 
 class Form extends Component {
   state = {
-    vehicle: 'car',
+    vehicle: "foot",
     lat: 51.5033,
     lng: -0.1195,
     roundTrip: true,
-    buttonText: 'Add endpoint',
-    generateButton: 'Generate',
+    buttonText: "Add endpoint",
+    generateButton: "Generate",
     seed: 1,
     generated: 0,
     roundTripGenerated: 0,
@@ -19,12 +19,13 @@ class Form extends Component {
     roundTripCoords: [[], []],
     endingLat: null,
     endingLon: null,
-    userName: 'user',
+    userName: "user",
     zoom: 13,
     description: '',
     roundTripStart: '',
     startingpoint: '',
-    endpoint: ''
+    endpoint: '',
+    message: "",
   };
 
   constructor(props) {
@@ -41,7 +42,6 @@ class Form extends Component {
       roundTripGenerated: 0,
     });
     if (item.roundTrip) {
-      console.log('how many times you can see me?');
       this.setState({
         generated: 0,
         roundTripGenerated: this.state.roundTripGenerated + 1,
@@ -50,7 +50,6 @@ class Form extends Component {
       });
       console.log(this.state);
     } else {
-      console.log(' IM TSRAIGHT LINE?');
       let startCoordinates = [];
       item.startingCoordinates.forEach((element) => {
         return startCoordinates.push(Number(element));
@@ -76,7 +75,7 @@ class Form extends Component {
     let dbID = String(Date.now());
     let add = !this.state.addToList;
     this.updateMapContainer();
-    db.collection('routes').add({
+    db.collection("routes").add({
       roundTrip: this.state.roundTrip,
       // distance: this.state.roundTripLength
       //   ? this.state.roundTripLength
@@ -93,10 +92,13 @@ class Form extends Component {
       startingPoint: this.state.startingpoint,
       endPoint: this.state.endpoint,
     });
+    this.setState({
+      message: "Route saved",
+      errorIsActive: true,
+    });
   };
 
   updateMapContainer = () => {
-    console.log('hey form update map container');
     this.setState({
       key: Math.random(),
     });
@@ -116,14 +118,14 @@ class Form extends Component {
     let form = !this.state.roundTrip;
     this.setState({
       roundTripGenerated: 0,
-      startingpoint: '',
-      endpoint: '',
-      roundTripStart: '',
-      roundTripLength: '',
+      startingpoint: "",
+      endpoint: "",
+      roundTripStart: "",
+      roundTripLength: "",
       generated: 0,
       roundTrip: form,
       buttonText:
-        this.state.buttonText == 'Add endpoint' ? 'Round Trip' : 'Add endpoint',
+        this.state.buttonText == "Add endpoint" ? "Round Trip" : "Add endpoint",
     });
   };
 
@@ -160,14 +162,14 @@ class Form extends Component {
   roundTripStartHandler = (event) => {
     this.setState({
       roundTripStart: event.target.value,
-      generateButton: 'Generate',
+      generateButton: "Generate",
       seed: 1,
     });
   };
   roundTripLengthHandler = (event) => {
     this.setState({
       roundTripLength: event.target.value,
-      generateButton: 'Generate',
+      generateButton: "Generate",
       seed: 1,
     });
   };
@@ -184,41 +186,60 @@ class Form extends Component {
     var apiKey = process.env.REACT_APP_ROUTE_API_KEY;
     var geocodingKey = process.env.REACT_APP_GEOCODING_API_KEY;
 
-    var transportType = 'driving-car';
+    var transportType = "driving-car";
 
     // var startCoordinates = "8.681495,49.41461";
     // var endCoordinates = "8.687872,49.420318";
 
     var startingURL =
-      'https://eu1.locationiq.com/v1/search.php?key=' +
+      "https://eu1.locationiq.com/v1/search.php?key=" +
       geocodingKey +
-      '&q=' +
+      "&q=" +
       this.state.startingpoint +
-      '&format=json';
+      "&format=json";
 
     var endingURL =
-      'https://eu1.locationiq.com/v1/search.php?key=' +
+      "https://eu1.locationiq.com/v1/search.php?key=" +
       geocodingKey +
-      '&q=' +
+      "&q=" +
       this.state.endpoint +
-      '&format=json';
+      "&format=json";
 
     const asyncWrapper = async () => {
       await fetch(startingURL)
         .then((response) => response.json())
         .then((data) =>
-          this.setState({
-            startingLat: data[0].lat,
-            startingLon: data[0].lon,
-          })
+          data[0] !== undefined
+            ? this.setState({
+                startingLat: data[0].lat,
+                startingLon: data[0].lon,
+                message: "",
+                errorIsActive: false,
+              })
+            : this.setState({
+                message: "Error starting address could not be found.",
+                errorIsActive: true,
+                startingLat: "",
+                startingLon: "",
+              })
         );
       await fetch(endingURL)
         .then((response) => response.json())
         .then((data) =>
-          this.setState({
-            endingLat: data[0].lat,
-            endingLon: data[0].lon,
-          })
+          data[0] !== undefined && this.state.errorIsActive === false
+            ? this.setState({
+                endingLat: data[0].lat,
+                endingLon: data[0].lon,
+                message: "",
+                errorIsActive: false,
+              })
+            : this.setState({
+                message: "Error address could not be found.",
+                errorIsActive: true,
+                startingLat: "",
+                startingLon: "",
+                generated: 0,
+              })
         );
 
       var routeURL =
@@ -228,11 +249,11 @@ class Form extends Component {
         apiKey +
         `&start=` +
         this.state.startingLon +
-        ',' +
+        "," +
         this.state.startingLat +
         `&end=` +
         this.state.endingLon +
-        ',' +
+        "," +
         this.state.endingLat;
 
       await fetch(routeURL)
@@ -261,53 +282,69 @@ class Form extends Component {
 
     var geocodingKey = process.env.REACT_APP_GEOCODING_API_KEY;
     var startingURL =
-      'https://eu1.locationiq.com/v1/search.php?key=' +
+      "https://eu1.locationiq.com/v1/search.php?key=" +
       geocodingKey +
-      '&q=' +
+      "&q=" +
       this.state.roundTripStart +
-      '&format=json';
+      "&format=json";
 
     const asyncWrapper = async () => {
       await fetch(startingURL)
         .then((response) => response.json())
         .then((data) =>
-          this.setState({
-            startingLat: data[0].lat,
-            startingLon: data[0].lon,
-          })
+          data[0] !== undefined
+            ? this.setState({
+                startingLat: data[0].lat,
+                startingLon: data[0].lon,
+                message: "",
+                errorIsActive: false,
+              })
+            : this.setState({
+                message: "Error no address could be found.",
+                errorIsActive: true,
+                startingLat: "",
+                startingLon: "",
+              })
         );
       await fetch(
         `https://api.openrouteservice.org/v2/directions/driving-car/geojson`,
         {
-          method: 'POST',
+          method: "POST",
           headers: {
-            'Content-Type': 'application/json; charset=utf-8',
+            "Content-Type": "application/json; charset=utf-8",
             Accept:
-              'application/geo+json, application/gpx+xml, img/png; charset=utf-8',
+              "application/geo+json, application/gpx+xml, img/png; charset=utf-8",
             Authorization:
-              '5b3ce3597851110001cf6248b4be2ae5777840a697277752138f89c2',
+              "5b3ce3597851110001cf6248b4be2ae5777840a697277752138f89c2",
           },
           body:
             '{"coordinates":[[' +
             this.state.startingLon +
-            ',' +
+            "," +
             this.state.startingLat +
             ']],"options":{"round_trip":{"length":' +
             this.state.roundTripLength +
             ',"points":3,"seed":' +
             this.state.seed +
-            '}}}',
+            "}}}",
         }
       )
         .then((resp) => resp.json())
         .then((data) => {
-          console.log(data)
+          data.features !== undefined
+            ? this.setState({
+                roundTripCoords: data.features[0].geometry.coordinates,
+                distance: data.features[0].properties.summary.distance,
+                message: "",
+                errorIsActive: false,
+              })
+            : this.setState({
+                message: "Error no address could be found.",
+                errorIsActive: true,
+                roundTripCoords: "",
+              });
           this.setState({
-            roundTripCoords: data.features[0].geometry.coordinates,
-            distance: data.features[0].properties.summary.distance,
-          });
-          this.setState({
-            generateButton: 'Randomise',
+            generateButton: "Randomise",
             seed: this.state.seed + 1,
             roundTripGenerated: this.state.roundTripGenerated + 1,
           });
@@ -327,16 +364,16 @@ class Form extends Component {
       endpoint,
     } = this.state;
     var displayStartingPoint,
-      displayRoundStartingPoint = '';
+      displayRoundStartingPoint = "";
 
     if (startingpoint === `${lat}, ${lng}`) {
-      displayStartingPoint = 'My Location';
+      displayStartingPoint = "My Location";
     } else {
       displayStartingPoint = this.state.startingpoint;
     }
 
     if (roundTripStart === `${lat}, ${lng}`) {
-      displayRoundStartingPoint = 'My Location';
+      displayRoundStartingPoint = "My Location";
     } else {
       displayRoundStartingPoint = this.state.roundTripStart;
     }
@@ -351,7 +388,7 @@ class Form extends Component {
                   <p>Welcome: {this.props.user.email}</p>
                 </div>
               ) : (
-                ''
+                ""
               )}
             </div>
             {this.state.roundTrip == true ? (
@@ -402,7 +439,7 @@ class Form extends Component {
                       value={this.state.value}
                       onChange={this.vehicleChangeHandler}
                     >
-                      {' '}
+                      {" "}
                       <option selected disabled>
                         Mode of Transport
                       </option>
@@ -470,7 +507,7 @@ class Form extends Component {
                       value={this.state.value}
                       onChange={this.vehicleChangeHandler}
                     >
-                      {' '}
+                      {" "}
                       <option selected disabled>
                         Mode of Transport
                       </option>
@@ -512,6 +549,11 @@ class Form extends Component {
             user={this.props.user}
           />
         )}
+
+        <Flash
+          message={this.state.message}
+          isActive={this.state.errorIsActive}
+        />
 
         <LeafletMapContainer
           journeyCoords={[
