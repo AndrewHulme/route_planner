@@ -29,6 +29,10 @@
   display: block;
 }
 
+.leaflet-routing-container:nth-child(-n + 4) {
+  display: none;
+}
+
 a.leaflet-control-zoom-in,
 a.leaflet-control-zoom-out,
 a.leaflet-control-zoom-in.leaflet-disabled,
