@@ -9,7 +9,7 @@
   opacity: 1;
   border-style: ridge;
 
-  display: block;
+  /* display: block; */
   width: 600px;
   height: 100%;
   max-width: 100%;
@@ -17,7 +17,7 @@
 
   border-radius: 10px;
 
-  background-color: white;
+  background-color: #fcfcfc;
   transform: scale(0.7, 0.7);
   transform-origin: top left;
 
@@ -29,7 +29,7 @@
   opacity: 1;
   border-style: ridge;
 
-  display: block;
+  /* display: block; */
   width: 600px;
   height: 100%;
   max-width: 100%;
@@ -37,7 +37,7 @@
 
   border-radius: 10px;
 
-  background-color: white;
+  background-color: #fcfcfc;
   transform: scale(0.7, 0.7);
   transform-origin: top left;
 

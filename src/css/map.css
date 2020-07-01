@@ -75,3 +75,7 @@ a.leaflet-control-zoom-out.leaflet-disabled {
   /* bottom: 0; */
   /* right: 0; */
 }
+
+.leaflet-left {
+  display: none;
+}
