@@ -21,10 +21,10 @@ class Form extends Component {
     endingLon: null,
     userName: "user",
     zoom: 13,
-    description: '',
-    roundTripStart: '',
-    startingpoint: '',
-    endpoint: '',
+    description: "",
+    roundTripStart: "",
+    startingpoint: "",
+    endpoint: "",
     message: "",
   };
 
@@ -70,6 +70,12 @@ class Form extends Component {
     }
   };
 
+  hideAlert = () => {
+    this.setState({
+      errorIsActive: false,
+    });
+  };
+
   saveToDB = () => {
     let db = fire.firestore();
     let dbID = String(Date.now());
@@ -95,6 +101,7 @@ class Form extends Component {
     this.setState({
       message: "Route saved",
       errorIsActive: true,
+      description: "",
     });
   };
 
@@ -261,7 +268,7 @@ class Form extends Component {
         .then((response) => response.json())
         // ...then we update the users state
         .then((data) => {
-          console.log(data)
+          console.log(data);
           this.setState({
             distance: data.features[0].properties.summary.distance,
             generated: this.state.generated + 1,
@@ -362,6 +369,7 @@ class Form extends Component {
       lng,
       roundTripLength,
       endpoint,
+      description,
     } = this.state;
     var displayStartingPoint,
       displayRoundStartingPoint = "";
@@ -550,10 +558,13 @@ class Form extends Component {
           />
         )}
 
-        <Flash
-          message={this.state.message}
-          isActive={this.state.errorIsActive}
-        />
+        {this.state.errorIsActive && (
+          <Flash
+            message={this.state.message}
+            isActive={this.state.errorIsActive}
+            hideAlert={this.hideAlert}
+          />
+        )}
 
         <LeafletMapContainer
           journeyCoords={[
@@ -577,6 +588,7 @@ class Form extends Component {
                 type="text"
                 className="form-control"
                 placeholder="Description here..."
+                value={description}
                 name="description"
                 onChange={this.descriptionHandler}
               />

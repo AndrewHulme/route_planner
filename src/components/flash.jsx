@@ -6,15 +6,13 @@ class Flash extends Component {
     super(props);
     this.state = {
       message: "Flash Message",
-      isActive: this.props.isActive,
+      //isActive: this.props.isActive,
     };
   }
 
-  hideAlert() {
-    this.setState({
-      isActive: false,
-    });
-  }
+  hideAlert = () => {
+    this.props.hideAlert();
+  };
 
   render() {
     if (this.props.isActive) {
