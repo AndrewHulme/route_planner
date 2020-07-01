@@ -36,6 +36,7 @@
 .leaflet-routing-container {
   height: 250px;
   width: 200px;
+  top: 100px;
   overflow: hidden;
   border-radius: 20px;
   border: none;
@@ -50,9 +51,23 @@
   display: none;
 }
 
+.leaflet-control-zoom {
+  position: absolute;
+  top: 75px;
+  left: 900px;
+  /* bottom: 0;
+  right: 0; */
+}
+
 a.leaflet-control-zoom-in,
 a.leaflet-control-zoom-out,
 a.leaflet-control-zoom-in.leaflet-disabled,
 a.leaflet-control-zoom-out.leaflet-disabled {
   background: #007bff;
+
+  /* position: relative;
+  top: 200px;
+  left: 16px; */
+  /* bottom: 0; */
+  /* right: 0; */
 }

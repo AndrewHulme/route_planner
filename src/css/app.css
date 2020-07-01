@@ -20,6 +20,9 @@ html {
   font-size: 20px;
 }
 
-/* .navbar {
-  position: absolute;
-} */
+.navbar {
+  /* position: absolute; */
+  height: 50px;
+  top: 10%;
+  font-size: 15px;
+}

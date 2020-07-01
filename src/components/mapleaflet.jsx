@@ -3,6 +3,7 @@ import React, { Component } from "react";
 import { Map, TileLayer } from "react-leaflet";
 // import { Icon } from "leaflet";
 import "../css/app.css";
+import L from "leaflet";
 import Routing from "./routing";
 import RoutingRoundTrip from "./routingRoundTrip";
 
@@ -23,6 +24,7 @@ class LeafletMapContainer extends Component {
 
   render() {
     const position = [this.props.lat, this.props.lng];
+
     return (
       <Map center={position} zoom={this.props.zoom} ref={this.saveMap}>
         <TileLayer
