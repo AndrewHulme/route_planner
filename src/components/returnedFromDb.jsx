@@ -96,7 +96,7 @@ class ReturnedFromDB extends React.Component {
   render() {
     let db = this.state.data.reverse();
     return (
-      <div className="list-container">
+      <div>
         <div
           className="db-form"
           style={{ display: this.props.toggleMyMaps ? "block" : "none" }}
@@ -111,6 +111,7 @@ class ReturnedFromDB extends React.Component {
                   <div key={i} className="savedMapDiv">
                     <div className="col map-el description">
                       <p>{item.description}</p>
+                      <div className="underline"></div>
                     </div>
 
                     {item.roundTrip && (
