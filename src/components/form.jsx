@@ -407,7 +407,7 @@ class Form extends Component {
               {this.state.roundTrip == true ? (
                 <form id="roundTripForm" onSubmit={this.handleSubmitRoundTrip}>
                   <div className="form-row">
-                    <div className="col">
+                    <div className="col" id="inputBox">
                       <input
                         type="text"
                         className="form-control"
@@ -417,7 +417,7 @@ class Form extends Component {
                         value={displayRoundStartingPoint}
                       />
                     </div>
-                    <div className="col">
+                    <div className="col" id="inputBox">
                       <input
                         type="text"
                         className="form-control"
@@ -433,14 +433,14 @@ class Form extends Component {
                       id="roundTripMyLocation"
                       onClick={this.roundTripLocationHandler}
                       type="button"
-                      className="btn btn-sm btn-secondary"
+                      className="btn btn-secondary buttons"
                       value="myRoundLocation"
                     >
                       Use My Location
                     </button>
                   </div>
-                  <div className="form-row">
-                    <div className="col">
+                  <div className="form-row" id="generateRoute">
+                    <div className="col" id="inputBox">
                       <label htmlFor="demo_overview_minimal"></label>
                       <select
                         class="form-control"
@@ -460,12 +460,12 @@ class Form extends Component {
                         <option value="hike">Hiking</option>
                       </select>
                     </div>
-                    <div className="col m-3">
+                    <div className="col">
                       <input
                         id="roundTripButton"
                         className="form-control"
                         type="submit"
-                        className="btn btn-primary"
+                        className="btn btn-primary buttons"
                         value={this.state.generateButton}
                       />
                     </div>
@@ -531,7 +531,7 @@ class Form extends Component {
                         id="roundTripButton"
                         className="form-control"
                         type="submit"
-                        className="btn btn-primary"
+                        className="btn btn-primary buttons"
                         value="Generate"
                       />
                     </div>
@@ -541,7 +541,7 @@ class Form extends Component {
               <button
                 value="Add endpoint"
                 id="addEndPoint"
-                className="btn btn-danger"
+                className="btn btn-danger buttons"
                 onClick={this.formHandler}
               >
                 {this.state.buttonText}
@@ -552,7 +552,7 @@ class Form extends Component {
           {!this.props.toggleMyMaps &&
             this.props.user &&
             (this.state.roundTripGenerated > 0 || this.state.generated > 0) && (
-              <div className="row" id="saveRouteID">
+              <div className="form-row" id="saveRouteID">
                 <div className="col">
                   <input
                     type="text"
@@ -566,7 +566,7 @@ class Form extends Component {
                 <button
                   value="saveRoute"
                   id="saveRoute"
-                  className="btn btn-warning"
+                  className="btn btn-warning buttons"
                   onClick={this.saveToDB}
                 >
                   Save route

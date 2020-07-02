@@ -7,6 +7,13 @@
   margin: 20px;
   box-shadow: 0 0 10px 10px rgba(200, 200, 200, 0.4);
 } */
+.leaflet-routing-container h3 {
+  /* position: absolute; */
+  top: 0;
+  right: 0;
+  font-size: 15px;
+  font-weight: bolder;
+}
 
 .leaflet-container {
   position: fixed;
@@ -15,9 +22,11 @@
   top: 0;
   left: 0;
   width: 100%;
+  font-size: 14px;
+  font-family: inherit;
 
   /* height: 100%; */
-  height: 93.5vh;
+  height: 95.5vh;
   margin-top: 50px;
 
   background: rgba(255, 255, 255, 0.5);
@@ -35,16 +44,19 @@
 
 .leaflet-routing-container {
   height: 250px;
-  width: 200px;
-  /* top: 40px; */
+  width: 210px;
+  top: 40px;
   overflow: hidden;
-  border-radius: 20px;
-  border: none;
   display: none;
+  background-color: #fcfcfc;
 }
 
 .leaflet-routing-container:last-of-type {
   display: block;
+}
+.leaflet-bar,
+.leaflet-control {
+  background-color: #fcfcfc;
 }
 
 .leaflet-routing-container:nth-child(-n + 4) {
@@ -64,12 +76,15 @@
   float: right;
   /* bottom: 0;
   right: 0; */
+.leaflet-routing-alt {
+  background-color: #fcfcfc;
+}
 
 a.leaflet-control-zoom-in,
 a.leaflet-control-zoom-out,
 a.leaflet-control-zoom-in.leaflet-disabled,
 a.leaflet-control-zoom-out.leaflet-disabled {
-  background: #007bff;
+  background: #fcfcfc;
 
   /* position: relative;
   top: 200px;
