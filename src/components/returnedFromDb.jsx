@@ -96,7 +96,7 @@ class ReturnedFromDB extends React.Component {
   render() {
     let db = this.state.data.reverse();
     return (
-      <div className="list-container">
+      <div>
         <div
           className="db-form"
           style={{ display: this.props.toggleMyMaps ? "block" : "none" }}
@@ -104,10 +104,7 @@ class ReturnedFromDB extends React.Component {
           {db.map((item, i) => {
             if (this.props.user && item.userName == this.props.user.email) {
               return (
-                <div
-                  onClick={() => this.displaySavedRoute(item.id)}
-                  className="list-container"
-                >
+                <div onClick={() => this.displaySavedRoute(item.id)}>
                   <div key={i} className="savedMapDiv">
                     <div className="col map-el description">
                       <p>{item.description}</p>
