@@ -17,6 +17,9 @@ class NavBar extends Component {
   }
 
   toggleMyMaps = () => {
+    this.props.resetGeneratedValue();
+    this.props.resetRoundTripGeneratedValue();
+
     // console.log(this.state.toggleMyMaps);
     let opposite = !this.state.toggleMyMaps;
     this.setState({
@@ -44,7 +47,7 @@ class NavBar extends Component {
       .signInWithEmailAndPassword(this.state.email, this.state.password)
       .then((u) => {})
       .catch((error) => {
-        console.log(error);
+        // console.log(error);
       });
   }
 
@@ -55,10 +58,10 @@ class NavBar extends Component {
       .createUserWithEmailAndPassword(this.state.email, this.state.password)
       .then((u) => {})
       .then((u) => {
-        console.log(u);
+        // console.log(u);
       })
       .catch((error) => {
-        console.log(error);
+        // console.log(error);
       });
   }
   logout() {

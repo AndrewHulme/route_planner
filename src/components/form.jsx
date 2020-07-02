@@ -44,7 +44,7 @@ class Form extends Component {
         roundTripCoords: JSON.parse(item.roundTripCoordinates),
         vehicle: item.vehicleType,
       });
-      console.log(this.state);
+      // console.log(this.state);
     } else {
       let startCoordinates = [];
       item.startingCoordinates.forEach((element) => {
@@ -107,7 +107,7 @@ class Form extends Component {
     this.setState({
       key: Math.random(),
     });
-    console.log(this.state.key);
+    // console.log(this.state.key);
   };
 
   componentDidMount() {
@@ -267,7 +267,7 @@ class Form extends Component {
         .then((response) => response.json())
         // ...then we update the users state
         .then((data) => {
-          console.log(data);
+          // console.log(data);
 
           this.props.addOneGeneratedValue();
 

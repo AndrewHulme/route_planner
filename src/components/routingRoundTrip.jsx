@@ -23,6 +23,8 @@ class RoutingRoundTrip extends MapLayer {
   }
 
   createLeafletElement() {
+    console.log("Rounding createLeafletElement");
+
     // console.log("yeye:");
     // console.log(this.props.roundTripGenerated);
     const { map, roundTripCoords, vehicle } = this.props;
@@ -75,7 +77,7 @@ class RoutingRoundTrip extends MapLayer {
       );
     }
 
-    console.log(roundTripCoords);
+    // console.log(roundTripCoords);
 
     let leafletElement = L.Routing.control({
       waypoints: waypointsArr,

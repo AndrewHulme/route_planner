@@ -22,7 +22,9 @@ class Routing extends MapLayer {
   }
 
   createLeafletElement() {
-    console.log(this.props.generated);
+    console.log("Normal createLeafletElement");
+
+    // console.log(this.props.generated);
     const { map, journeyCoords, vehicle } = this.props;
     var apiGraphHopper = process.env.REACT_APP_GRAPHHOPPER;
 
@@ -38,8 +40,8 @@ class Routing extends MapLayer {
       }),
     });
 
-    console.log("createLeafletElement: What is leaflet element?!");
-    console.log(leafletElement);
+    // console.log("createLeafletElement: What is leaflet element?!");
+    // console.log(leafletElement);
 
     this.setState((prevState) => ({
       leafletElements: [...prevState.leafletElements, leafletElement],
