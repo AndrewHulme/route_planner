@@ -13,7 +13,6 @@
   right: 0;
   font-size: 15px;
   font-weight: bolder;
-
 }
 
 .leaflet-container {
@@ -26,9 +25,8 @@
   font-size: 14px;
   font-family: inherit;
 
-
   /* height: 100%; */
-  height: 93.5vh;
+  height: 95.5vh;
   margin-top: 50px;
 
   background: rgba(255, 255, 255, 0.5);
@@ -56,7 +54,8 @@
 .leaflet-routing-container:last-of-type {
   display: block;
 }
-.leaflet-bar, .leaflet-control {
+.leaflet-bar,
+.leaflet-control {
   background-color: #fcfcfc;
 }
 
