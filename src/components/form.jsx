@@ -323,7 +323,7 @@ class Form extends Component {
             "," +
             this.state.startingLat +
             ']],"options":{"round_trip":{"length":' +
-            this.state.roundTripLength +
+            this.state.roundTripLength * 1000 +
             ',"points":3,"seed":' +
             this.state.seed +
             "}}}",
@@ -414,7 +414,7 @@ class Form extends Component {
                       <input
                         type="text"
                         className="form-control"
-                        placeholder="Length of trip"
+                        placeholder="Length of trip(Km)"
                         name="roundTripLength"
                         value={roundTripLength}
                         onChange={this.roundTripLengthHandler}
