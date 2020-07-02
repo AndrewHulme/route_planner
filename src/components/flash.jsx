@@ -6,7 +6,6 @@ class Flash extends Component {
     super(props);
     this.state = {
       message: "Flash Message",
-      //isActive: this.props.isActive,
     };
   }
 

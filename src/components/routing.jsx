@@ -10,7 +10,6 @@ class Routing extends MapLayer {
     leafletElements: [],
   };
   componentDidUpdate(prevProps) {
-    console.log("Props :", prevProps.generated, this.props.generated);
     if (prevProps.generated !== this.props.generated) {
       this.createLeafletElement();
       if (this.state.leafletElements.length !== 0) {
@@ -22,7 +21,6 @@ class Routing extends MapLayer {
   }
 
   createLeafletElement() {
-    console.log(this.props.generated);
     const { map, journeyCoords, vehicle } = this.props;
     var apiGraphHopper = process.env.REACT_APP_GRAPHHOPPER;
 
@@ -37,9 +35,6 @@ class Routing extends MapLayer {
         },
       }),
     });
-
-    console.log("createLeafletElement: What is leaflet element?!");
-    console.log(leafletElement);
 
     this.setState((prevState) => ({
       leafletElements: [...prevState.leafletElements, leafletElement],

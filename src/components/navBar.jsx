@@ -11,20 +11,18 @@ class NavBar extends Component {
     this.signup = this.signup.bind(this);
     this.logout = this.logout.bind(this);
     this.state = {
-      email: '',
-      password: '',
+      email: "",
+      password: "",
       toggleMyMaps: false,
       message: "",
     };
   }
 
   toggleMyMaps = () => {
-    // console.log(this.state.toggleMyMaps);
     let opposite = !this.state.toggleMyMaps;
     this.setState({
       toggleMyMaps: opposite,
     });
-    // console.log(this.state.toggleMyMaps);
     this.props.toggleMyMaps(opposite);
   };
 
@@ -68,14 +66,12 @@ class NavBar extends Component {
     fire.auth().signOut();
   }
   hideAlert = () => {
-    console.log("You called?");
     this.setState({
       errorIsActive: false,
     });
   };
   render() {
     {
-      console.log(this.state);
     }
     return (
       <div>
@@ -103,8 +99,8 @@ class NavBar extends Component {
                             href=""
                           >
                             {!this.state.toggleMyMaps
-                              ? 'My Routes'
-                              : 'Find Route'}
+                              ? "My Routes"
+                              : "Find Route"}
                           </Nav.Link>
                         </Nav>
                       </div>

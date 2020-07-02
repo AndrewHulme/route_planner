@@ -32,10 +32,6 @@ class Form extends Component {
     super(props);
   }
 
-  // removeMap = (id) => {
-  //   console.log(id);
-  // };
-
   displayRoute = (item) => {
     this.setState({
       generated: 0,
@@ -48,7 +44,6 @@ class Form extends Component {
         roundTripCoords: JSON.parse(item.roundTripCoordinates),
         vehicle: item.vehicleType,
       });
-      console.log(this.state);
     } else {
       let startCoordinates = [];
       item.startingCoordinates.forEach((element) => {
@@ -71,7 +66,6 @@ class Form extends Component {
   };
 
   hideAlert = () => {
-    console.log("Do i work doe?");
     this.setState({
       errorIsActive: false,
     });
@@ -110,7 +104,6 @@ class Form extends Component {
     this.setState({
       key: Math.random(),
     });
-    console.log(this.state.key);
   };
 
   componentDidMount() {
@@ -269,7 +262,6 @@ class Form extends Component {
         .then((response) => response.json())
         // ...then we update the users state
         .then((data) => {
-          console.log(data);
           this.setState({
             distance: data.features[0].properties.summary.distance,
             generated: this.state.generated + 1,

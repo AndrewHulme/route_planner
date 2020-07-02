@@ -44,7 +44,6 @@ class ReturnedFromDB extends React.Component {
   };
 
   displaySavedRoute = (id) => {
-    console.log(id);
     let db = fire.firestore();
     db.collection("routes")
       .where("id", "==", id)
@@ -53,7 +52,6 @@ class ReturnedFromDB extends React.Component {
         this.setState({
           route: snapshot.docs[0].data(),
         });
-        console.log(this.state.route);
         this.props.displayRoute(this.state.route);
       });
   };
@@ -71,7 +69,6 @@ class ReturnedFromDB extends React.Component {
         this.setState({
           data: arr,
         });
-        console.log(this.state.data);
       });
   };
 
@@ -89,7 +86,6 @@ class ReturnedFromDB extends React.Component {
       date.getMinutes() +
       ":" +
       date.getSeconds();
-    console.log(this.props.user.email);
     return formatted_date;
   }
 

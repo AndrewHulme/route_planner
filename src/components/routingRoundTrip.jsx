@@ -23,8 +23,6 @@ class RoutingRoundTrip extends MapLayer {
   }
 
   createLeafletElement() {
-    console.log("yeye:");
-    console.log(this.props.roundTripGenerated);
     const { map, roundTripCoords, vehicle } = this.props;
     var apiGraphHopper = process.env.REACT_APP_GRAPHHOPPER;
 
@@ -33,8 +31,6 @@ class RoutingRoundTrip extends MapLayer {
       waypointsArr.push(L.latLng(roundTripCoords[0][1], roundTripCoords[0][0]));
 
       let waypointNumber = 5;
-
-      // console.log(waypointsArr);
 
       if (roundTripCoords.length < 200) {
         waypointNumber = 5;
@@ -74,8 +70,6 @@ class RoutingRoundTrip extends MapLayer {
         )
       );
     }
-
-    console.log(roundTripCoords);
 
     let leafletElement = L.Routing.control({
       waypoints: waypointsArr,
