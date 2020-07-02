@@ -9,6 +9,7 @@
 }
 
 .navbar {
+  padding-bottom: 0%;
   /* max-height: 50px; */
 }
 .navbar-collapse {
@@ -33,13 +34,14 @@
   margin-bottom: 0;
 }
 
-input[type='email'],
-input[type='password'] {
+#exampleInputEmail1,
+#exampleInputPassword1 {
   font-size: 0.8em;
 }
 
 #my-routes {
-  padding-top: 2%;
+  margin-top: 7%;
+  margin-bottom: 7%;
   color: #ffff;
 }
 
