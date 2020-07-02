@@ -1,6 +1,7 @@
-import React, { Component } from 'react';
-import { Nav, Navbar, NavDropdown } from 'react-bootstrap';
-import fire from './firebase';
+import React, { Component } from "react";
+import { Nav, Navbar, NavDropdown } from "react-bootstrap";
+import fire from "./firebase";
+import Flash from "./flash";
 
 class NavBar extends Component {
   constructor(props) {
@@ -13,6 +14,7 @@ class NavBar extends Component {
       email: '',
       password: '',
       toggleMyMaps: false,
+      message: "",
     };
   }
 
@@ -42,9 +44,11 @@ class NavBar extends Component {
     fire
       .auth()
       .signInWithEmailAndPassword(this.state.email, this.state.password)
-      .then((u) => {})
+      .then((u) => {
+        this.setState({ message: "", errorIsActive: false });
+      })
       .catch((error) => {
-        console.log(error);
+        this.setState({ message: error.message, errorIsActive: true });
       });
   }
 
@@ -53,20 +57,28 @@ class NavBar extends Component {
     fire
       .auth()
       .createUserWithEmailAndPassword(this.state.email, this.state.password)
-      .then((u) => {})
       .then((u) => {
-        console.log(u);
+        this.setState({ message: "", errorIsActive: false });
       })
       .catch((error) => {
-        console.log(error);
+        this.setState({ message: error.message, errorIsActive: true });
       });
   }
   logout() {
     fire.auth().signOut();
   }
+  hideAlert = () => {
+    console.log("You called?");
+    this.setState({
+      errorIsActive: false,
+    });
+  };
   render() {
+    {
+      console.log(this.state);
+    }
     return (
-      <>
+      <div>
         <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
           <Navbar.Brand
             onClick={this.homePageView}
@@ -157,7 +169,12 @@ class NavBar extends Component {
             </div>
           </Navbar.Collapse>
         </Navbar>
-      </>
+        <Flash
+          isActive={this.state.errorIsActive}
+          message={this.state.message}
+          hideAlert={this.hideAlert}
+        />
+      </div>
     );
   }
 }
