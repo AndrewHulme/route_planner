@@ -43,7 +43,7 @@ describe('NavBar', () => {
 
     it('should be able to toggle view by clicking logo icon', () => {
       cy.userLogin();
-      cy.saveRoute();
+      cy.saveRoundRoute();
       cy.get('#my-routes').click();
       cy.get('.savedMapDiv').should('be.visible');
       cy.get('.description').should('have.text', 'My Route');

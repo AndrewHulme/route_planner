@@ -17,12 +17,10 @@ class NavBar extends Component {
   }
 
   toggleMyMaps = () => {
-    // console.log(this.state.toggleMyMaps);
     let opposite = !this.state.toggleMyMaps;
     this.setState({
       toggleMyMaps: opposite,
     });
-    // console.log(this.state.toggleMyMaps);
     this.props.toggleMyMaps(opposite);
   };
 

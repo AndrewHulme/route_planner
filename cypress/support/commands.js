@@ -47,7 +47,7 @@ Cypress.Commands.add('userLogin', () => {
   cy.get('#logInButton').click();
 });
 
-Cypress.Commands.add('saveRoute', () => {
+Cypress.Commands.add('saveRoundRoute', () => {
   cy.get('input[name="roundTripStart"]').type('London Eye');
   cy.get('input[name="roundTripLength"]').type('5000');
   cy.get('select[cy-name="vehicleChoice"]').select('Cycling');
@@ -55,6 +55,17 @@ Cypress.Commands.add('saveRoute', () => {
   cy.get('input[name="description"]').type('My Route');
   cy.get('#saveRoute').click();
   cy.get('#roundTripButton').should('have.value', 'Randomise');
+  cy.get('.close').click();
+});
+
+Cypress.Commands.add('saveRoute', () => {
+  cy.get('#addEndPoint').click();
+  cy.get('input[name="startingpoint"]').type('London Eye');
+  cy.get('input[name="endpoint"]').type('London Bridge');
+  cy.get('select[cy-name="roundVehiclechoice"]').select('Cycling');
+  cy.get('#roundTripButton').click();
+  cy.get('input[name="description"]').type('My Route');
+  cy.get('#saveRoute').click();
   cy.get('.close').click();
 });
 
