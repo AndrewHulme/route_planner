@@ -3,6 +3,7 @@ import LeafletMapContainer from "./mapleaflet.jsx";
 import ReturnedFromDB from "./returnedFromDb.jsx";
 import fire from "./firebase";
 import Flash from "./flash";
+import Slider from "./slider";
 
 class Form extends Component {
   state = {
@@ -420,6 +421,8 @@ class Form extends Component {
                         onChange={this.roundTripLengthHandler}
                       />
                     </div>
+
+                    <Slider />
                   </div>
                   <div className="form-group">
                     <button
