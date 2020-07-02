@@ -79,9 +79,9 @@ class NavBar extends Component {
           <Navbar.Collapse id="responsive-navbar-nav">
             <div className="user-nav">
               <form>
-                <div className="row">
+                <div className="row user-login-container">
                   {this.props.user ? (
-                    <div className="row">
+                    <div className="row user-login-container">
                       <div className="col">
                         <Nav className="container-fluid">
                           <Nav.Link
@@ -108,7 +108,7 @@ class NavBar extends Component {
                     </div>
                   ) : (
                     <>
-                      <div class="form-group col">
+                      <div class="col">
                         <input
                           value={this.state.email}
                           onChange={this.handleChange}
@@ -120,7 +120,7 @@ class NavBar extends Component {
                           placeholder="Enter email"
                         />
                       </div>
-                      <div class="form-group col">
+                      <div class="col">
                         <input
                           value={this.state.password}
                           onChange={this.handleChange}
