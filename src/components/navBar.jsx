@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Nav, Navbar, NavDropdown } from "react-bootstrap";
 import fire from "./firebase";
+import Flash from "./flash";
 
 class NavBar extends Component {
   constructor(props) {
@@ -13,6 +14,8 @@ class NavBar extends Component {
       email: "",
       password: "",
       toggleMyMaps: false,
+      message: "",
+      isActive: false,
     };
   }
 
@@ -44,7 +47,8 @@ class NavBar extends Component {
       .signInWithEmailAndPassword(this.state.email, this.state.password)
       .then((u) => {})
       .catch((error) => {
-        console.log(error);
+        console.log(error.message);
+        this.setState({ message: error.message, isActive: true });
       });
   }
 
@@ -64,9 +68,17 @@ class NavBar extends Component {
   logout() {
     fire.auth().signOut();
   }
+  hideAlert = () => {
+    this.setState({
+      IsActive: false,
+    });
+  };
   render() {
+    {
+      console.log(this.state);
+    }
     return (
-      <>
+      <div>
         <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
           <Navbar.Brand
             onClick={this.homePageView}
@@ -155,7 +167,12 @@ class NavBar extends Component {
             </form>
           </Navbar.Collapse>
         </Navbar>
-      </>
+        <Flash
+          isActive={this.state.isActive}
+          message={this.state.message}
+          hideAlert={this.hideAlert}
+        />
+      </div>
     );
   }
 }
