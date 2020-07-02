@@ -4,11 +4,13 @@ The final project created by team JAZE ([Jed Stanton](https://github.com/JStant9
 
 Check out our app at [http://myrouteplanner.surge.sh/](http://myrouteplanner.surge.sh/)
 
-[Specification](#specification) | [Features](#features) | [Tech Stack](#tech-stack) | [Installation](#installation) | [Running tests](#running-tests) | [Development Process](#development-process) | [Further development](#further-development)
+[Specification](#specification) | [Tech Stack](#tech-stack) | [Installation](#installation) | [Running tests](#running-tests) | [Development Process](#development-process) | [Further development](#further-development)
 
 # Specification
 
 The app aims to solve the problem of the user who wants to find a circular route for outdoor activities (walking, cycling, hiking).
+The user can view the map and search for routes without logging in, either circular routes, or routes between a start and end point. Different activity types can be selected, and the result can be randomised.
+Once the user is logged in, favourite routes can be saved in *My Routes* and can be viewed on the map, or they can be removed from the list.
 
 # Tech Stack:
 
@@ -51,13 +53,14 @@ We had daily stand-ups and retrospectives to update each other on the tasks comp
 
 View [our project board here](https://github.com/AndrewHulme/route_planner/projects/1), and [our learning journal here](https://github.com/AndrewHulme/route_planner/wiki).
 
-## Planning phase
+## Initial planning
 We agreed to create an app that can be used to search for routes with the main focus on finding circular routes.
 This is an actual problem we faced when we tried to plan routes for cycling or walking, as it is currently not possible to plan circular routes on other web mapping services without providing multiple waypoints.
 We knew we wanted to have a React frontend, and the majority of the app will be on the frontend, but we also needed a light backend and decided to go for Firebase.
+We created mockups and diagrams to visualise the MVP and the flow of information within the app.
 
 ## MVP
-Our MVP was to have an interface with a map, and a form where the user can input a starting and endpoint, these points get converted to geographic coordinates and the route displayed on the map.
+Our aim for the MVP was to have an interface with a map, and a form where the user can input a starting and endpoint, these points get converted to geographic coordinates and the route displayed on the map. We achieved this by the end of the first 2-day sprint.
 
 ## Adding features to MVP
 With a working MVP we moved on and decided to add a database where the user can save routes.
