@@ -1,17 +1,17 @@
-import React, { Component } from "react";
-import LeafletMapContainer from "./mapleaflet.jsx";
-import ReturnedFromDB from "./returnedFromDb.jsx";
-import fire from "./firebase";
-import Flash from "./flash";
+import React, { Component } from 'react';
+import LeafletMapContainer from './mapleaflet.jsx';
+import ReturnedFromDB from './returnedFromDb.jsx';
+import fire from './firebase';
+import Flash from './flash';
 
 class Form extends Component {
   state = {
-    vehicle: "foot",
+    vehicle: 'foot',
     lat: 51.5033,
     lng: -0.1195,
     roundTrip: true,
-    buttonText: "Add endpoint",
-    generateButton: "Generate",
+    buttonText: 'Add endpoint',
+    generateButton: 'Generate',
     seed: 1,
     generated: 0,
     roundTripGenerated: 0,
@@ -19,13 +19,13 @@ class Form extends Component {
     roundTripCoords: [[], []],
     endingLat: null,
     endingLon: null,
-    userName: "user",
+    userName: 'user',
     zoom: 13,
-    description: "",
-    roundTripStart: "",
-    startingpoint: "",
-    endpoint: "",
-    message: "",
+    description: '',
+    roundTripStart: '',
+    startingpoint: '',
+    endpoint: '',
+    message: '',
   };
 
   constructor(props) {
@@ -76,7 +76,7 @@ class Form extends Component {
     let dbID = String(Date.now());
     let add = !this.state.addToList;
     this.updateMapContainer();
-    db.collection("routes").add({
+    db.collection('routes').add({
       roundTrip: this.state.roundTrip,
       // distance: this.state.roundTripLength
       //   ? this.state.roundTripLength
@@ -94,9 +94,9 @@ class Form extends Component {
       endPoint: this.state.endpoint,
     });
     this.setState({
-      message: "Route saved",
+      message: 'Route saved',
       errorIsActive: true,
-      description: "",
+      description: '',
     });
   };
 
@@ -119,14 +119,14 @@ class Form extends Component {
     let form = !this.state.roundTrip;
     this.setState({
       roundTripGenerated: 0,
-      startingpoint: "",
-      endpoint: "",
-      roundTripStart: "",
-      roundTripLength: "",
+      startingpoint: '',
+      endpoint: '',
+      roundTripStart: '',
+      roundTripLength: '',
       generated: 0,
       roundTrip: form,
       buttonText:
-        this.state.buttonText == "Add endpoint" ? "Round Trip" : "Add endpoint",
+        this.state.buttonText == 'Add endpoint' ? 'Round Trip' : 'Add endpoint',
     });
   };
 
@@ -163,14 +163,14 @@ class Form extends Component {
   roundTripStartHandler = (event) => {
     this.setState({
       roundTripStart: event.target.value,
-      generateButton: "Generate",
+      generateButton: 'Generate',
       seed: 1,
     });
   };
   roundTripLengthHandler = (event) => {
     this.setState({
       roundTripLength: event.target.value,
-      generateButton: "Generate",
+      generateButton: 'Generate',
       seed: 1,
     });
   };
@@ -187,24 +187,24 @@ class Form extends Component {
     var apiKey = process.env.REACT_APP_ROUTE_API_KEY;
     var geocodingKey = process.env.REACT_APP_GEOCODING_API_KEY;
 
-    var transportType = "driving-car";
+    var transportType = 'driving-car';
 
     // var startCoordinates = "8.681495,49.41461";
     // var endCoordinates = "8.687872,49.420318";
 
     var startingURL =
-      "https://eu1.locationiq.com/v1/search.php?key=" +
+      'https://eu1.locationiq.com/v1/search.php?key=' +
       geocodingKey +
-      "&q=" +
+      '&q=' +
       this.state.startingpoint +
-      "&format=json";
+      '&format=json';
 
     var endingURL =
-      "https://eu1.locationiq.com/v1/search.php?key=" +
+      'https://eu1.locationiq.com/v1/search.php?key=' +
       geocodingKey +
-      "&q=" +
+      '&q=' +
       this.state.endpoint +
-      "&format=json";
+      '&format=json';
 
     const asyncWrapper = async () => {
       await fetch(startingURL)
@@ -214,14 +214,14 @@ class Form extends Component {
             ? this.setState({
                 startingLat: data[0].lat,
                 startingLon: data[0].lon,
-                message: "",
+                message: '',
                 errorIsActive: false,
               })
             : this.setState({
-                message: "Error starting address could not be found.",
+                message: 'Error starting address could not be found.',
                 errorIsActive: true,
-                startingLat: "",
-                startingLon: "",
+                startingLat: '',
+                startingLon: '',
               })
         );
       await fetch(endingURL)
@@ -231,14 +231,14 @@ class Form extends Component {
             ? this.setState({
                 endingLat: data[0].lat,
                 endingLon: data[0].lon,
-                message: "",
+                message: '',
                 errorIsActive: false,
               })
             : this.setState({
-                message: "Error address could not be found.",
+                message: 'Error address could not be found.',
                 errorIsActive: true,
-                startingLat: "",
-                startingLon: "",
+                startingLat: '',
+                startingLon: '',
                 generated: 0,
               })
         );
@@ -250,11 +250,11 @@ class Form extends Component {
         apiKey +
         `&start=` +
         this.state.startingLon +
-        "," +
+        ',' +
         this.state.startingLat +
         `&end=` +
         this.state.endingLon +
-        "," +
+        ',' +
         this.state.endingLat;
 
       await fetch(routeURL)
@@ -282,11 +282,11 @@ class Form extends Component {
 
     var geocodingKey = process.env.REACT_APP_GEOCODING_API_KEY;
     var startingURL =
-      "https://eu1.locationiq.com/v1/search.php?key=" +
+      'https://eu1.locationiq.com/v1/search.php?key=' +
       geocodingKey +
-      "&q=" +
+      '&q=' +
       this.state.roundTripStart +
-      "&format=json";
+      '&format=json';
 
     const asyncWrapper = async () => {
       await fetch(startingURL)
@@ -296,37 +296,37 @@ class Form extends Component {
             ? this.setState({
                 startingLat: data[0].lat,
                 startingLon: data[0].lon,
-                message: "",
+                message: '',
                 errorIsActive: false,
               })
             : this.setState({
-                message: "Error no address could be found.",
+                message: 'Error no address could be found.',
                 errorIsActive: true,
-                startingLat: "",
-                startingLon: "",
+                startingLat: '',
+                startingLon: '',
               })
         );
       await fetch(
         `https://api.openrouteservice.org/v2/directions/driving-car/geojson`,
         {
-          method: "POST",
+          method: 'POST',
           headers: {
-            "Content-Type": "application/json; charset=utf-8",
+            'Content-Type': 'application/json; charset=utf-8',
             Accept:
-              "application/geo+json, application/gpx+xml, img/png; charset=utf-8",
+              'application/geo+json, application/gpx+xml, img/png; charset=utf-8',
             Authorization:
-              "5b3ce3597851110001cf6248b4be2ae5777840a697277752138f89c2",
+              '5b3ce3597851110001cf6248b4be2ae5777840a697277752138f89c2',
           },
           body:
             '{"coordinates":[[' +
             this.state.startingLon +
-            "," +
+            ',' +
             this.state.startingLat +
             ']],"options":{"round_trip":{"length":' +
             this.state.roundTripLength +
             ',"points":3,"seed":' +
             this.state.seed +
-            "}}}",
+            '}}}',
         }
       )
         .then((resp) => resp.json())
@@ -335,16 +335,16 @@ class Form extends Component {
             ? this.setState({
                 roundTripCoords: data.features[0].geometry.coordinates,
                 distance: data.features[0].properties.summary.distance,
-                message: "",
+                message: '',
                 errorIsActive: false,
               })
             : this.setState({
-                message: "Error no address could be found.",
+                message: 'Error no address could be found.',
                 errorIsActive: true,
-                roundTripCoords: "",
+                roundTripCoords: '',
               });
           this.setState({
-            generateButton: "Randomise",
+            generateButton: 'Randomise',
             seed: this.state.seed + 1,
             roundTripGenerated: this.state.roundTripGenerated + 1,
           });
@@ -366,16 +366,16 @@ class Form extends Component {
     } = this.state;
 
     var displayStartingPoint,
-      displayRoundStartingPoint = "";
+      displayRoundStartingPoint = '';
 
     if (startingpoint === `${lat}, ${lng}`) {
-      displayStartingPoint = "My Location";
+      displayStartingPoint = 'My Location';
     } else {
       displayStartingPoint = this.state.startingpoint;
     }
 
     if (roundTripStart === `${lat}, ${lng}`) {
-      displayRoundStartingPoint = "My Location";
+      displayRoundStartingPoint = 'My Location';
     } else {
       displayRoundStartingPoint = this.state.roundTripStart;
     }
@@ -384,7 +384,7 @@ class Form extends Component {
       <div className="main-container">
         <div
           className="main-form"
-          style={{ display: this.props.toggleMyMaps ? "none" : "block" }}
+          style={{ display: this.props.toggleMyMaps ? 'none' : 'block' }}
         >
           {!this.props.toggleMyMaps && (
             <div>
@@ -394,7 +394,7 @@ class Form extends Component {
                     <p id="welcome-message">Welcome: {this.props.user.email}</p>
                   </div>
                 ) : (
-                  ""
+                  ''
                 )}
               </div>
               {this.state.roundTrip == true ? (
@@ -436,14 +436,14 @@ class Form extends Component {
                     <div className="col" id="inputBox">
                       <label htmlFor="demo_overview_minimal"></label>
                       <select
-                        class="form-control"
+                        class="form-control dropDownList"
                         data-role="select-dropdown"
                         data-profile="minimal"
                         cy-name="vehicleChoice"
                         value={this.state.value}
                         onChange={this.vehicleChangeHandler}
                       >
-                        {" "}
+                        {' '}
                         <option selected value="foot">
                           Walking
                         </option>
@@ -457,7 +457,7 @@ class Form extends Component {
                         id="roundTripButton"
                         className="form-control"
                         type="submit"
-                        className="btn btn-primary buttons"
+                        className="btn btn-primary"
                         value={this.state.generateButton}
                       />
                     </div>
@@ -501,14 +501,14 @@ class Form extends Component {
                     <div className="col" id="inputBox">
                       <label for="demo_overview_minimal"></label>
                       <select
-                        class="form-control"
+                        class="form-control dropDownList"
                         data-role="select-dropdown"
                         data-profile="minimal"
                         cy-name="roundVehiclechoice"
                         value={this.state.value}
                         onChange={this.vehicleChangeHandler}
                       >
-                        {" "}
+                        {' '}
                         <option selected value="foot">
                           Walking
                         </option>
@@ -522,7 +522,7 @@ class Form extends Component {
                         id="roundTripButton"
                         className="form-control"
                         type="submit"
-                        className="btn btn-primary buttons"
+                        className="btn btn-primary"
                         value="Generate"
                       />
                     </div>
