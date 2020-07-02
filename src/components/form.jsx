@@ -548,6 +548,29 @@ class Form extends Component {
               </button>
             </div>
           )}
+
+          {!this.props.toggleMyMaps && this.props.user && (
+            <div className="row" id="saveRouteID">
+              <div className="col">
+                <input
+                  type="text"
+                  className="form-control"
+                  placeholder="Description here..."
+                  value={description}
+                  name="description"
+                  onChange={this.descriptionHandler}
+                />
+              </div>
+              <button
+                value="saveRoute"
+                id="saveRoute"
+                className="btn btn-warning"
+                onClick={this.saveToDB}
+              >
+                Save route
+              </button>
+            </div>
+          )}
         </div>
 
         {this.props.toggleMyMaps && (
@@ -581,28 +604,6 @@ class Form extends Component {
           roundTripGenerated={this.state.roundTripGenerated}
           zoom={this.state.zoom}
         />
-        {!this.props.toggleMyMaps && this.props.user && (
-          <div className="row" id="saveRouteID">
-            <div className="col">
-              <input
-                type="text"
-                className="form-control"
-                placeholder="Description here..."
-                value={description}
-                name="description"
-                onChange={this.descriptionHandler}
-              />
-            </div>
-            <button
-              value="saveRoute"
-              id="saveRoute"
-              className="btn btn-warning"
-              onClick={this.saveToDB}
-            >
-              Save route
-            </button>
-          </div>
-        )}
       </div>
     );
   }
