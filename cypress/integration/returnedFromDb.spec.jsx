@@ -4,7 +4,7 @@ describe('ReturnedFromDb', () => {
     cy.clearCookies();
     cy.clearLocalStorage();
   });
-  it('should generate,show and saved a trip', () => {
+  it('should generate,show and save the trip', () => {
     cy.userLogin();
     cy.saveRoute();
     cy.get('#my-routes').click();

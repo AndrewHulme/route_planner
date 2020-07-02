@@ -57,3 +57,11 @@ Cypress.Commands.add('saveRoute', () => {
   cy.get('#roundTripButton').should('have.value', 'Randomise');
   cy.get('.close').click();
 });
+
+Cypress.Commands.add('logOutUserIfLoggedIn', () => {
+  cy.get('body').then(($body) => {
+    if ($body.text().includes('Logout')) {
+      cy.get('#logOutButton').click();
+    }
+  });
+});
