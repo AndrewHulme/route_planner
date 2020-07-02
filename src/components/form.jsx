@@ -414,7 +414,7 @@ class Form extends Component {
                       <input
                         type="text"
                         className="form-control"
-                        placeholder="Length of trip(Km)"
+                        placeholder="Length of trip (km)"
                         name="roundTripLength"
                         value={roundTripLength}
                         onChange={this.roundTripLengthHandler}
