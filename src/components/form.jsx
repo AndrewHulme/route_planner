@@ -549,28 +549,30 @@ class Form extends Component {
             </div>
           )}
 
-          {!this.props.toggleMyMaps && this.props.user && (
-            <div className="row" id="saveRouteID">
-              <div className="col">
-                <input
-                  type="text"
-                  className="form-control"
-                  placeholder="Description here..."
-                  value={description}
-                  name="description"
-                  onChange={this.descriptionHandler}
-                />
+          {!this.props.toggleMyMaps &&
+            this.props.user &&
+            (this.state.roundTripGenerated > 0 || this.state.generated > 0) && (
+              <div className="row" id="saveRouteID">
+                <div className="col">
+                  <input
+                    type="text"
+                    className="form-control"
+                    placeholder="Description here..."
+                    value={description}
+                    name="description"
+                    onChange={this.descriptionHandler}
+                  />
+                </div>
+                <button
+                  value="saveRoute"
+                  id="saveRoute"
+                  className="btn btn-warning"
+                  onClick={this.saveToDB}
+                >
+                  Save route
+                </button>
               </div>
-              <button
-                value="saveRoute"
-                id="saveRoute"
-                className="btn btn-warning"
-                onClick={this.saveToDB}
-              >
-                Save route
-              </button>
-            </div>
-          )}
+            )}
         </div>
 
         {this.props.toggleMyMaps && (
