@@ -1,3 +1,52 @@
+.main-logo.navbar-brand {
+  font-size: 1.2em;
+  cursor: pointer;
+  /* background-color: darkorange; */
+}
+
 .main-logo:hover {
   cursor: pointer;
+}
+
+.navbar {
+  /* max-height: 50px; */
+}
+.navbar-collapse {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.user-nav {
+  margin-right: 15px;
+}
+
+.form-group {
+  padding-top: 3%;
+}
+
+.form-control {
+  max-width: 160px;
+  max-height: 35px;
+}
+
+.navbar-toggler {
+  margin-bottom: 0;
+}
+
+input[type='email'],
+input[type='password'] {
+  font-size: 0.8em;
+}
+
+#my-routes {
+  padding-top: 2%;
+  color: #ffff;
+}
+
+#logInButton,
+#logOutButton,
+#signUpButton {
+  margin: 1.45em 5px 0 5px;
+  max-height: 30px;
+  font-size: 0.6em;
 }

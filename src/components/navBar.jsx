@@ -1,6 +1,6 @@
-import React, { Component } from "react";
-import { Nav, Navbar, NavDropdown } from "react-bootstrap";
-import fire from "./firebase";
+import React, { Component } from 'react';
+import { Nav, Navbar, NavDropdown } from 'react-bootstrap';
+import fire from './firebase';
 
 class NavBar extends Component {
   constructor(props) {
@@ -10,8 +10,8 @@ class NavBar extends Component {
     this.signup = this.signup.bind(this);
     this.logout = this.logout.bind(this);
     this.state = {
-      email: "",
-      password: "",
+      email: '',
+      password: '',
       toggleMyMaps: false,
     };
   }
@@ -77,82 +77,84 @@ class NavBar extends Component {
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
-            <form>
-              <div className="row m-2">
-                {this.props.user ? (
-                  <div className="row">
-                    <div className="col">
-                      <Nav className="container-fluid">
-                        <Nav.Link
-                          className="ml-auto"
-                          id="my-routes"
-                          onClick={this.toggleMyMaps}
-                          href=""
+            <div className="user-nav">
+              <form>
+                <div className="row">
+                  {this.props.user ? (
+                    <div className="row">
+                      <div className="col">
+                        <Nav className="container-fluid">
+                          <Nav.Link
+                            className="ml-auto"
+                            id="my-routes"
+                            onClick={this.toggleMyMaps}
+                            href=""
+                          >
+                            {!this.state.toggleMyMaps
+                              ? 'My Routes'
+                              : 'Find Route'}
+                          </Nav.Link>
+                        </Nav>
+                      </div>
+                      <div className="">
+                        <button
+                          className="btn btn-danger btn-sm"
+                          onClick={this.logout}
+                          id="logOutButton"
                         >
-                          {!this.state.toggleMyMaps
-                            ? "My Routes"
-                            : "Find Route"}
-                        </Nav.Link>
-                      </Nav>
+                          Logout
+                        </button>
+                      </div>
                     </div>
-                    <div className="">
-                      <button
-                        className="btn btn-danger btn-sm"
-                        onClick={this.logout}
-                        id="logOutButton"
-                      >
-                        Logout
-                      </button>
-                    </div>
-                  </div>
-                ) : (
-                  <>
-                    <div class="form-group col">
-                      <input
-                        value={this.state.email}
-                        onChange={this.handleChange}
-                        type="email"
-                        name="email"
-                        class="form-control"
-                        id="exampleInputEmail1"
-                        aria-describedby="emailHelp"
-                        placeholder="Enter email"
-                      />
-                    </div>
-                    <div class="form-group col">
-                      <input
-                        value={this.state.password}
-                        onChange={this.handleChange}
-                        type="password"
-                        name="password"
-                        class="form-control"
-                        id="exampleInputPassword1"
-                        placeholder="Password"
-                      />
-                    </div>
-                    <div className="">
-                      <button
-                        type="submit"
-                        onClick={this.login}
-                        id="logInButton"
-                        class="btn btn-primary btn-sm"
-                      >
-                        Login
-                      </button>
-                    </div>
-                    <div className="">
-                      <button
-                        onClick={this.signup}
-                        id="signUpButton"
-                        className="btn btn-success btn-sm"
-                      >
-                        Signup
-                      </button>
-                    </div>
-                  </>
-                )}
-              </div>
-            </form>
+                  ) : (
+                    <>
+                      <div class="form-group col">
+                        <input
+                          value={this.state.email}
+                          onChange={this.handleChange}
+                          type="email"
+                          name="email"
+                          class="form-control"
+                          id="exampleInputEmail1"
+                          aria-describedby="emailHelp"
+                          placeholder="Enter email"
+                        />
+                      </div>
+                      <div class="form-group col">
+                        <input
+                          value={this.state.password}
+                          onChange={this.handleChange}
+                          type="password"
+                          name="password"
+                          class="form-control"
+                          id="exampleInputPassword1"
+                          placeholder="Password"
+                        />
+                      </div>
+                      <div className="">
+                        <button
+                          type="submit"
+                          onClick={this.login}
+                          id="logInButton"
+                          class="btn btn-primary btn-sm"
+                        >
+                          Login
+                        </button>
+                      </div>
+                      <div className="">
+                        <button
+                          onClick={this.signup}
+                          id="signUpButton"
+                          className="btn btn-success btn-sm"
+                        >
+                          Signup
+                        </button>
+                      </div>
+                    </>
+                  )}
+                </div>
+              </form>
+            </div>
           </Navbar.Collapse>
         </Navbar>
       </>
