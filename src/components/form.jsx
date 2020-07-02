@@ -71,6 +71,7 @@ class Form extends Component {
   };
 
   hideAlert = () => {
+    console.log("Do i work doe?");
     this.setState({
       errorIsActive: false,
     });

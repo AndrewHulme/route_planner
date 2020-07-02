@@ -15,7 +15,6 @@ class NavBar extends Component {
       password: "",
       toggleMyMaps: false,
       message: "",
-      isActive: false,
     };
   }
 
@@ -45,10 +44,11 @@ class NavBar extends Component {
     fire
       .auth()
       .signInWithEmailAndPassword(this.state.email, this.state.password)
-      .then((u) => {})
+      .then((u) => {
+        this.setState({ message: "", errorIsActive: false });
+      })
       .catch((error) => {
-        console.log(error.message);
-        this.setState({ message: error.message, isActive: true });
+        this.setState({ message: error.message, errorIsActive: true });
       });
   }
 
@@ -57,20 +57,20 @@ class NavBar extends Component {
     fire
       .auth()
       .createUserWithEmailAndPassword(this.state.email, this.state.password)
-      .then((u) => {})
       .then((u) => {
-        console.log(u);
+        this.setState({ message: "", errorIsActive: false });
       })
       .catch((error) => {
-        console.log(error);
+        this.setState({ message: error.message, errorIsActive: true });
       });
   }
   logout() {
     fire.auth().signOut();
   }
   hideAlert = () => {
+    console.log("You called?");
     this.setState({
-      IsActive: false,
+      errorIsActive: false,
     });
   };
   render() {
@@ -168,7 +168,7 @@ class NavBar extends Component {
           </Navbar.Collapse>
         </Navbar>
         <Flash
-          isActive={this.state.isActive}
+          isActive={this.state.errorIsActive}
           message={this.state.message}
           hideAlert={this.hideAlert}
         />
