@@ -23,8 +23,8 @@ class RoutingRoundTrip extends MapLayer {
   }
 
   createLeafletElement() {
-    console.log("yeye:");
-    console.log(this.props.roundTripGenerated);
+    // console.log("yeye:");
+    // console.log(this.props.roundTripGenerated);
     const { map, roundTripCoords, vehicle } = this.props;
     var apiGraphHopper = process.env.REACT_APP_GRAPHHOPPER;
 

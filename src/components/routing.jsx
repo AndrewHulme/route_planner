@@ -10,7 +10,7 @@ class Routing extends MapLayer {
     leafletElements: [],
   };
   componentDidUpdate(prevProps) {
-    console.log("Props :", prevProps.generated, this.props.generated);
+    // console.log("Props :", prevProps.generated, this.props.generated);
     if (prevProps.generated !== this.props.generated) {
       this.createLeafletElement();
       if (this.state.leafletElements.length !== 0) {

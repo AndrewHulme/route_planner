@@ -13,8 +13,8 @@ class Form extends Component {
     buttonText: "Add endpoint",
     generateButton: "Generate",
     seed: 1,
-    generated: 0,
-    roundTripGenerated: 0,
+    // generated: 0,
+    // roundTripGenerated: 0,
     distance: null,
     roundTripCoords: [[], []],
     endingLat: null,
@@ -32,19 +32,15 @@ class Form extends Component {
     super(props);
   }
 
-  // removeMap = (id) => {
-  //   console.log(id);
-  // };
-
   displayRoute = (item) => {
-    this.setState({
-      generated: 0,
-      roundTripGenerated: 0,
-    });
+    this.props.resetGeneratedValue();
+    this.props.resetRoundTripGeneratedValue();
+
     if (item.roundTrip) {
+      this.props.resetGeneratedValue();
+      this.props.addOneRoundTripGeneratedValue();
+
       this.setState({
-        generated: 0,
-        roundTripGenerated: this.state.roundTripGenerated + 1,
         roundTripCoords: JSON.parse(item.roundTripCoordinates),
         vehicle: item.vehicleType,
       });
@@ -58,9 +54,11 @@ class Form extends Component {
       item.endingCoordinates.forEach((element) => {
         return endCoordinates.push(Number(element));
       });
+
+      this.props.resetRoundTripGeneratedValue();
+      this.props.addOneGeneratedValue();
+
       this.setState({
-        roundTripGenerated: 0,
-        generated: this.state.generated + 1,
         startingLat: startCoordinates[0],
         startingLon: startCoordinates[1],
         endingLat: endCoordinates[0],
@@ -123,13 +121,15 @@ class Form extends Component {
 
   formHandler = () => {
     let form = !this.state.roundTrip;
+
+    this.props.resetRoundTripGeneratedValue();
+    this.props.resetGeneratedValue();
+
     this.setState({
-      roundTripGenerated: 0,
       startingpoint: "",
       endpoint: "",
       roundTripStart: "",
       roundTripLength: "",
-      generated: 0,
       roundTrip: form,
       buttonText:
         this.state.buttonText == "Add endpoint" ? "Round Trip" : "Add endpoint",
@@ -245,8 +245,7 @@ class Form extends Component {
                 errorIsActive: true,
                 startingLat: "",
                 startingLon: "",
-                generated: 0,
-              })
+              })(this.props.resetGeneratedValue())
         );
 
       var routeURL =
@@ -269,16 +268,15 @@ class Form extends Component {
         // ...then we update the users state
         .then((data) => {
           console.log(data);
+
+          this.props.addOneGeneratedValue();
+
           this.setState({
             distance: data.features[0].properties.summary.distance,
-            generated: this.state.generated + 1,
           });
         })
         // Catch any errors we hit and update the app
         .catch((error) => this.setState({ error, isLoading: false }));
-      // this.setState({
-      //   generated: this.state.generated + 1,
-      // });
     };
 
     asyncWrapper();
@@ -350,10 +348,12 @@ class Form extends Component {
                 errorIsActive: true,
                 roundTripCoords: "",
               });
+
+          this.props.addOneRoundTripGeneratedValue();
+
           this.setState({
             generateButton: "Randomise",
             seed: this.state.seed + 1,
-            roundTripGenerated: this.state.roundTripGenerated + 1,
           });
         });
     };
@@ -551,7 +551,7 @@ class Form extends Component {
 
           {!this.props.toggleMyMaps &&
             this.props.user &&
-            (this.state.roundTripGenerated > 0 || this.state.generated > 0) && (
+            (this.props.roundTripGenerated > 0 || this.props.generated > 0) && (
               <div className="row" id="saveRouteID">
                 <div className="col">
                   <input
@@ -602,8 +602,8 @@ class Form extends Component {
           vehicle={this.state.vehicle}
           lat={this.state.lat}
           lng={this.state.lng}
-          generated={this.state.generated}
-          roundTripGenerated={this.state.roundTripGenerated}
+          generated={this.props.generated}
+          roundTripGenerated={this.props.roundTripGenerated}
           zoom={this.state.zoom}
         />
       </div>
