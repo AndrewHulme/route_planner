@@ -371,6 +371,7 @@ class Form extends Component {
       endpoint,
       description,
     } = this.state;
+
     var displayStartingPoint,
       displayRoundStartingPoint = "";
 
@@ -388,7 +389,10 @@ class Form extends Component {
 
     return (
       <div className="main-container">
-        <div className="main-form">
+        <div
+          className="main-form"
+          style={{ display: this.props.toggleMyMaps ? "none" : "block" }}
+        >
           {!this.props.toggleMyMaps && (
             <div>
               <div className="row" id="userWelcome">
@@ -544,6 +548,31 @@ class Form extends Component {
               </button>
             </div>
           )}
+
+          {!this.props.toggleMyMaps &&
+            this.props.user &&
+            (this.state.roundTripGenerated > 0 || this.state.generated > 0) && (
+              <div className="row" id="saveRouteID">
+                <div className="col">
+                  <input
+                    type="text"
+                    className="form-control"
+                    placeholder="Description here..."
+                    value={description}
+                    name="description"
+                    onChange={this.descriptionHandler}
+                  />
+                </div>
+                <button
+                  value="saveRoute"
+                  id="saveRoute"
+                  className="btn btn-warning"
+                  onClick={this.saveToDB}
+                >
+                  Save route
+                </button>
+              </div>
+            )}
         </div>
 
         {this.props.toggleMyMaps && (
@@ -553,6 +582,7 @@ class Form extends Component {
             removeMap={this.removeMap}
             updateMapContainer={this.updateMapContainer}
             user={this.props.user}
+            toggleMyMaps={this.props.toggleMyMaps}
           />
         )}
         {this.state.errorIsActive && (
@@ -576,28 +606,6 @@ class Form extends Component {
           roundTripGenerated={this.state.roundTripGenerated}
           zoom={this.state.zoom}
         />
-        {!this.props.toggleMyMaps && this.props.user && (
-          <div className="row" id="saveRouteID">
-            <div className="col">
-              <input
-                type="text"
-                className="form-control"
-                placeholder="Description here..."
-                value={description}
-                name="description"
-                onChange={this.descriptionHandler}
-              />
-            </div>
-            <button
-              value="saveRoute"
-              id="saveRoute"
-              className="btn btn-warning"
-              onClick={this.saveToDB}
-            >
-              Save route
-            </button>
-          </div>
-        )}
       </div>
     );
   }

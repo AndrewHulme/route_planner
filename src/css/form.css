@@ -10,17 +10,37 @@
   border-style: ridge;
 
   /* display: block; */
-  display: block;
   width: 600px;
   height: 100%;
   max-width: 100%;
   float: left;
 
-  background-color: white;
+  border-radius: 10px;
+
+  background-color: #fcfcfc;
   transform: scale(0.7, 0.7);
   transform-origin: top left;
 
-  /* left: 100px; */
+  /* position: absolute; */
+  /* left: auto; */
+}
+
+.db-form {
+  opacity: 1;
+  border-style: ridge;
+
+  /* display: block; */
+  width: 600px;
+  height: 100%;
+  max-width: 100%;
+  float: left;
+
+  border-radius: 10px;
+
+  background-color: #fcfcfc;
+  transform: scale(0.7, 0.7);
+  transform-origin: top left;
+
   /* position: absolute; */
   /* left: auto; */
 }
@@ -29,6 +49,6 @@
   text-align: center;
 }
 
-#saveRouteID {
+/* #saveRouteID {
   display: none;
-}
+} */

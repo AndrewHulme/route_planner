@@ -12,17 +12,17 @@
   position: fixed;
   padding: 0;
   margin: 0;
-
   top: 0;
   left: 0;
-
   width: 100%;
-  height: 100%;
-  background: rgba(255, 255, 255, 0.5);
 
+  /* height: 100%; */
+  height: 93.5vh;
+  margin-top: 50px;
+
+  background: rgba(255, 255, 255, 0.5);
   /* position: relative; */
   z-index: -1;
-  /* opacity: 0.5; */
 }
 
 .leaflet-control-attribution {
@@ -36,7 +36,7 @@
 .leaflet-routing-container {
   height: 250px;
   width: 200px;
-  top: 40px;
+  /* top: 40px; */
   overflow: hidden;
   border-radius: 20px;
   border: none;
@@ -57,6 +57,7 @@
 
 .leaflet-control-zoom:first-of-type {
   display: block;
+  margin-bottom: 40px;
 }
 /* position: absolute;
   top: 75px;
@@ -75,4 +76,8 @@ a.leaflet-control-zoom-out.leaflet-disabled {
   left: 16px; */
   /* bottom: 0; */
   /* right: 0; */
+}
+
+.leaflet-left {
+  display: none;
 }

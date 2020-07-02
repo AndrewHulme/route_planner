@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
-import './css/app.css';
-import fire from './components/firebase.jsx';
-import Form from './components/form.jsx';
-import Flash from './components/flash.jsx';
-import NavBar from './components/navBar.jsx';
+import React, { Component } from "react";
+import "./css/app.css";
+import fire from "./components/firebase.jsx";
+import Form from "./components/form.jsx";
+import Flash from "./components/flash.jsx";
+import NavBar from "./components/navBar.jsx";
 
 class App extends Component {
   constructor() {
@@ -32,10 +32,10 @@ class App extends Component {
       console.log(user);
       if (user) {
         this.setState({ user });
-        localStorage.setItem('user', user.uid);
+        localStorage.setItem("user", user.uid);
       } else {
         this.setState({ user: null });
-        localStorage.removeItem('user');
+        localStorage.removeItem("user");
       }
     });
   }

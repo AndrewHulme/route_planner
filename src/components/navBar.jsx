@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
-import { Nav, Navbar, NavDropdown } from 'react-bootstrap';
-import fire from './firebase';
+import React, { Component } from "react";
+import { Nav, Navbar, NavDropdown } from "react-bootstrap";
+import fire from "./firebase";
 
 class NavBar extends Component {
   constructor(props) {
@@ -10,8 +10,8 @@ class NavBar extends Component {
     this.signup = this.signup.bind(this);
     this.logout = this.logout.bind(this);
     this.state = {
-      email: '',
-      password: '',
+      email: "",
+      password: "",
       toggleMyMaps: false,
     };
   }
@@ -73,7 +73,7 @@ class NavBar extends Component {
             className="main-logo"
             href=""
           >
-            🍩 Donut routing
+            🍩 ThereAndBack
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
@@ -82,15 +82,16 @@ class NavBar extends Component {
                 {this.props.user ? (
                   <div className="row">
                     <div className="col">
-                      <Nav className="mr-auto">
+                      <Nav className="container-fluid">
                         <Nav.Link
+                          className="ml-auto"
                           id="my-routes"
                           onClick={this.toggleMyMaps}
                           href=""
                         >
                           {!this.state.toggleMyMaps
-                            ? 'My Routes'
-                            : 'Find Route'}
+                            ? "My Routes"
+                            : "Find Route"}
                         </Nav.Link>
                       </Nav>
                     </div>

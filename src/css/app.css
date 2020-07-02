@@ -1,11 +1,11 @@
 @import-normalize;
 
-@import 'map.css';
-@import 'button.css';
-@import 'mapList.css';
-@import 'form.css';
-@import 'flash.css';
-@import 'navBar.css';
+@import "map.css";
+@import "button.css";
+@import "mapList.css";
+@import "form.css";
+@import "flash.css";
+@import "navBar.css";
 
 *,
 *::before,
@@ -25,6 +25,11 @@ html {
 .navbar {
   /* position: absolute; */
   height: 50px;
+  max-height: 50px;
   top: 10%;
   font-size: 15px;
 }
+
+/* .moveToRight {
+  right: 100px;
+} */
