@@ -43,9 +43,8 @@
 }
 
 .leaflet-routing-container {
-  height: 250px;
-  width: 210px;
-  top: 40px;
+  height: 280px;
+  width: 250px;
   overflow: hidden;
   display: none;
   background-color: #fcfcfc;

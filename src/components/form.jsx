@@ -452,12 +452,10 @@ class Form extends Component {
                         onChange={this.vehicleChangeHandler}
                       >
                         {" "}
-                        <option selected disabled>
-                          Mode of Transport
-                        </option>
+
+                        <option selected value="foot">Walking</option>
                         <option value="car">Driving</option>
                         <option value="bike">Cycling</option>
-                        <option value="foot">Walking</option>
                         <option value="hike">Hiking</option>
                       </select>
                     </div>
@@ -475,7 +473,7 @@ class Form extends Component {
               ) : (
                 <form onSubmit={this.submitHandler} id="secondForm">
                   <div className="form-row">
-                    <div className="col">
+                    <div className="col" id="inputBox">
                       <input
                         type="text"
                         className="form-control"
@@ -500,14 +498,14 @@ class Form extends Component {
                     <button
                       onClick={this.locationHandler}
                       type="button"
-                      className="btn btn-sm btn-secondary"
+                      className="btn btn-secondary buttons"
                       value="myLocation"
                     >
                       Use My Location
                     </button>
                   </div>
-                  <div className="form-row">
-                    <div className="col">
+                  <div className="form-row" id="generateRoute">
+                    <div className="col" id="inputBox">
                       <label for="demo_overview_minimal"></label>
                       <select
                         class="form-control"
@@ -518,16 +516,14 @@ class Form extends Component {
                         onChange={this.vehicleChangeHandler}
                       >
                         {" "}
-                        <option selected disabled>
-                          Mode of Transport
-                        </option>
+
+                        <option selected value="foot">Walking</option>
                         <option value="car">Driving</option>
                         <option value="bike">Cycling</option>
-                        <option value="foot">Walking</option>
                         <option value="hike">Hiking</option>
                       </select>
                     </div>
-                    <div className="col m-3">
+                    <div className="col">
                       <input
                         id="roundTripButton"
                         className="form-control"
