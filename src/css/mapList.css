@@ -8,10 +8,14 @@
   padding: 8px;
   /* overflow: hidden; */
   position: relative;
+  background-color: #fcfcfc;
+    box-shadow: 0 1px 5px rgba(0,0,0,0.65);
+    transition: 0.3s;
 }
 .savedMapDiv:hover {
-  background: rgba(215, 215, 215, 0.5);
+  background: #f2f2f2;
   cursor: pointer;
+  transform: scale(1.02)
   /* width: 85vw; */
 }
 .map-el {
@@ -26,7 +30,7 @@ p {
 }
 .list-container {
   display: flex;
-  /* background-color: burlywood; */
+  width: 100%;
 }
 .list-item {
   margin: 10px;
@@ -45,4 +49,9 @@ p {
 .description {
   margin-bottom: 8px;
   font-weight: bolder;
+}
+.underline {
+  width: 100%;
+  height: 1px;
+  background-color: grey;
 }

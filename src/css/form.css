@@ -1,43 +1,38 @@
 .form-group {
   margin-bottom: 0;
 }
-.main-container {
+/* .main-container {
   position: relative;
-}
+} */
 
 .main-form {
   opacity: 1;
-  border-style: ridge;
-
+  /* border-style: ridge; */
   /* display: block; */
   width: 600px;
   height: 100%;
   max-width: 100%;
   float: left;
-
-  border-radius: 10px;
-
+  border-radius: 0 0 10px 0;
   background-color: #fcfcfc;
   transform: scale(0.7, 0.7);
   transform-origin: top left;
-
+  box-shadow: 0 1px 5px rgba(0,0,0,0.65);
+  padding: 1rem;
   /* position: absolute; */
   /* left: auto; */
 }
 
 .db-form {
   opacity: 1;
-  border-style: ridge;
-
+  /* border-style: ridge; */
   /* display: block; */
-  width: 600px;
+  width: 500px;
   height: 100%;
   max-width: 100%;
   float: left;
-
   border-radius: 10px;
-
-  background-color: #fcfcfc;
+  background-color: transparent;
   transform: scale(0.7, 0.7);
   transform-origin: top left;
 
@@ -47,8 +42,30 @@
 
 #userWelcome {
   text-align: center;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
 }
 
-/* #saveRouteID {
-  display: none;
-} */
+#saveRoute {
+  /* display: none; */
+}
+#saveRouteID {
+  display: flex;
+  align-items: center;
+}
+#generateRoute {
+  display: flex;
+  align-items: flex-end;
+}
+#inputBox {
+  margin-bottom: 5px;
+}
+.buttons {
+  background-color: #008080 !important;
+  border: none !important;
+  color: white !important;
+}
+.buttons:hover {
+  background-color: #00b3b3 !important;
+    color: white !important;
+}

@@ -108,6 +108,7 @@ class ReturnedFromDB extends React.Component {
                   <div key={i} className="savedMapDiv">
                     <div className="col map-el description">
                       <p>{item.description}</p>
+                      <div className="underline"></div>
                     </div>
 
                     {item.roundTrip && (
