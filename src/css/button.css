@@ -7,5 +7,19 @@
   background-color: #dc2500 !important;
   border: none !important;
   color: white !important;
-  margin-bottom: 7px;
+  margin-bottom: 5px;
+}
+
+#roundTripButton:hover {
+  background-color: #ff2f06 !important;
+}
+
+.buttons {
+  background-color: #008080 !important;
+  border: none !important;
+  color: white !important;
+}
+.buttons:hover {
+  background-color: #00b3b3 !important;
+  color: white !important;
 }
