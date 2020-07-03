@@ -37,8 +37,8 @@ p {
 }
 .dustbin svg {
   position: absolute;
-  right: 5px;
-  bottom: 5px;
+  right: 14px;
+  bottom: 12px;
   fill: #008080 !important;
   opacity: 1;
 }
