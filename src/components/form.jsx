@@ -3,6 +3,8 @@ import LeafletMapContainer from './mapleaflet.jsx';
 import ReturnedFromDB from './returnedFromDb.jsx';
 import fire from './firebase';
 import Flash from './flash';
+import SwapVertIcon from '@material-ui/icons/SwapVert';
+import LocationOnIcon from '@material-ui/icons/LocationOn';
 
 class Form extends Component {
   state = {
@@ -428,8 +430,8 @@ class Form extends Component {
                       type="button"
                       className="btn btn-secondary buttons"
                       value="myRoundLocation"
-                    >
-                      Use My Location
+                    ><LocationOnIcon id="location"/>
+                       Use My Location
                     </button>
                   </div>
                   <div className="form-row" id="generateRoute">
@@ -493,7 +495,7 @@ class Form extends Component {
                       type="button"
                       className="btn btn-secondary buttons"
                       value="myLocation"
-                    >
+                    ><LocationOnIcon />
                       Use My Location
                     </button>
                   </div>
@@ -518,6 +520,7 @@ class Form extends Component {
                       </select>
                     </div>
                     <div className="col">
+
                       <input
                         id="roundTripButton"
                         className="form-control"
@@ -534,7 +537,7 @@ class Form extends Component {
                 id="addEndPoint"
                 className="btn btn-danger buttons"
                 onClick={this.formHandler}
-              >
+              ><SwapVertIcon id="swap"/>
                 {this.state.buttonText}
               </button>
             </div>

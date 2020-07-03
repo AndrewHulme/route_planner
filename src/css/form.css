@@ -27,7 +27,7 @@
   opacity: 1;
   /* border-style: ridge; */
   /* display: block; */
-  width: 500px;
+  width: 450px;
   height: 100%;
   max-width: 100%;
   float: left;
@@ -69,4 +69,10 @@
 .buttons:hover {
   background-color: #00b3b3 !important;
   color: white !important;
+}
+#location, #swap {
+  margin-right: 5px;
+}
+#roundTripMyLocation {
+  margin-top: 10px;
 }
