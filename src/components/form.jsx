@@ -5,6 +5,7 @@ import fire from './firebase';
 import Flash from './flash';
 import SwapVertIcon from '@material-ui/icons/SwapVert';
 import LocationOnIcon from '@material-ui/icons/LocationOn';
+import BookmarkIcon from '@material-ui/icons/Bookmark';
 
 class Form extends Component {
   state = {
@@ -562,7 +563,7 @@ class Form extends Component {
                   id="saveRoute"
                   className="btn btn-warning buttons"
                   onClick={this.saveToDB}
-                >
+                ><BookmarkIcon id="save-icon"/>
                   Save route
                 </button>
               </div>
