@@ -1,5 +1,5 @@
 .form-group {
-  margin-bottom: 0;
+  margin-bottom: 0 !important;
 }
 
 .main-form {
@@ -22,7 +22,7 @@
 
 .db-form {
   opacity: 1;
-  width: 500px;
+  width: 450px;
   height: 100%;
   max-width: 100%;
   float: left;
@@ -54,8 +54,27 @@
 #saveRouteID {
   display: flex;
   align-items: center;
+  margin-top: 20px;
 }
 #generateRoute {
   display: flex;
   align-items: flex-end;
+}
+/* #inputBox {
+  margin-bottom: 5px;
+} */
+.buttons {
+  background-color: #008080 !important;
+  border: none !important;
+  color: white !important;
+}
+.buttons:hover {
+  background-color: #00b3b3 !important;
+  color: white !important;
+}
+#location, #swap, #save-icon {
+  margin-right: 5px;
+}
+#roundTripMyLocation {
+  margin-top: 10px;
 }
