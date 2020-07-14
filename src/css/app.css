@@ -1,5 +1,4 @@
 @import-normalize;
-
 @import 'map.css';
 @import 'button.css';
 @import 'mapList.css';
@@ -21,7 +20,3 @@ body {
 html {
   font-size: 20px;
 }
-
-/* .moveToRight {
-  right: 100px;
-} */
