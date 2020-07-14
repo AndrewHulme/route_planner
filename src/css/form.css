@@ -1,11 +1,8 @@
 .form-group {
   margin-bottom: 0 !important;
 }
-
 .main-form {
   opacity: 1;
-  /* border-style: ridge; */
-  /* display: block; */
   width: 600px;
   height: 100%;
   max-width: 100%;
@@ -16,10 +13,7 @@
   transform-origin: top left;
   box-shadow: 0 1px 5px rgba(0, 0, 0, 0.65);
   padding: 1rem;
-  /* position: absolute; */
-  /* left: auto; */
 }
-
 .db-form {
   opacity: 1;
   width: 450px;
@@ -31,17 +25,9 @@
   transform: scale(0.7, 0.7);
   transform-origin: top left;
 }
-
-#userWelcome {
-  text-align: center;
-  font-size: 1.2rem;
-  margin-bottom: 1rem;
-}
-
 .form-control {
   margin-bottom: 5px;
 }
-
 .form-control.dropDownList {
   margin-bottom: 5px;
   width: 270px;
@@ -50,7 +36,11 @@
   font-family: inherit;
   color: #495057;
 }
-
+#userWelcome {
+  text-align: center;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
 #saveRouteID {
   display: flex;
   align-items: center;
@@ -59,18 +49,6 @@
 #generateRoute {
   display: flex;
   align-items: flex-end;
-}
-/* #inputBox {
-  margin-bottom: 5px;
-} */
-.buttons {
-  background-color: #008080 !important;
-  border: none !important;
-  color: white !important;
-}
-.buttons:hover {
-  background-color: #00b3b3 !important;
-  color: white !important;
 }
 #location, #swap, #save-icon {
   margin-right: 5px;
