@@ -74,11 +74,11 @@ class RoutingRoundTrip extends MapLayer {
     let leafletElement = L.Routing.control({
       waypoints: waypointsArr,
 
-      router: L.Routing.graphHopper(apiGraphHopper, {
-        urlParameters: {
-          vehicle: vehicle,
-        },
-      }),
+      // router: L.Routing.graphHopper(apiGraphHopper, {
+      //   urlParameters: {
+      //     vehicle: vehicle,
+      //   },
+      // }),
     });
 
     this.setState((prevState) => ({

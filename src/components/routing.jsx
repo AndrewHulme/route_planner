@@ -29,11 +29,11 @@ class Routing extends MapLayer {
         L.latLng(journeyCoords[0][0], journeyCoords[0][1]),
         L.latLng(journeyCoords[1][0], journeyCoords[1][1]),
       ],
-      router: L.Routing.graphHopper(apiGraphHopper, {
-        urlParameters: {
-          vehicle: vehicle,
-        },
-      }),
+      // router: L.Routing.graphHopper(apiGraphHopper, {
+      //   urlParameters: {
+      //     vehicle: vehicle,
+      //   },
+      // }),
     });
 
     this.setState((prevState) => ({
