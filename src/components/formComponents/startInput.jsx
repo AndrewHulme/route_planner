@@ -6,7 +6,7 @@ function StartInput(props) {
       <input
         type="text"
         className="form-control"
-        placeholder="Start point for round trip"
+        placeholder={props.placeholder}
         name="startingpoint"
         onChange={props.roundTripStartHandler}
         value={props.displayStartingPoint}

@@ -397,6 +397,7 @@ class Form extends Component {
                     <StartInput
                       roundTripStartHandler={this.roundTripStartHandler}
                       displayStartingPoint={displayStartingPoint}
+                      placeholder={"Start point for round trip"}
                     />
 
                     <div className="col" id="inputBox">
@@ -457,6 +458,12 @@ class Form extends Component {
               ) : (
                 <form onSubmit={this.submitHandler} id="secondForm">
                   <div className="form-row">
+                    {/* <StartInput
+                      roundTripStartHandler={this.startChangeHandler}
+                      displayStartingPoint={displayStartingPoint}
+                      placeholder={"Starting Point"}
+                    /> */}
+
                     <div className="col" id="inputBox">
                       <input
                         type="text"
@@ -467,6 +474,7 @@ class Form extends Component {
                         onChange={this.startChangeHandler}
                       />
                     </div>
+
                     <div className="col">
                       <input
                         type="text"
