@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import fire from "./firebase";
 import Moment from "react-moment";
+import DeleteButton from "./DeleteButton.jsx";
 import DeleteIcon from "@material-ui/icons/Delete";
 
 class ReturnedFromDB extends React.Component {
@@ -18,8 +19,6 @@ class ReturnedFromDB extends React.Component {
 
   removeMap = (id, event) => {
     event.stopPropagation();
-    console.log(id);
-    // this.props.removeMap(id);
     let db = fire.firestore();
     let collectionRef = db.collection("routes");
     collectionRef
@@ -44,7 +43,6 @@ class ReturnedFromDB extends React.Component {
   };
 
   displaySavedRoute = (id) => {
-    console.log(id);
     let db = fire.firestore();
     db.collection("routes")
       .where("id", "==", id)
@@ -53,7 +51,6 @@ class ReturnedFromDB extends React.Component {
         this.setState({
           route: snapshot.docs[0].data(),
         });
-        console.log(this.state.route);
         this.props.displayRoute(this.state.route);
       });
   };
@@ -71,7 +68,6 @@ class ReturnedFromDB extends React.Component {
         this.setState({
           data: arr,
         });
-        console.log(this.state.data);
       });
   };
 
@@ -89,19 +85,21 @@ class ReturnedFromDB extends React.Component {
       date.getMinutes() +
       ":" +
       date.getSeconds();
-    console.log(this.props.user.email);
     return formatted_date;
   }
 
+  listDataReverse = () => {
+    this.state.data.reverse();
+  }
+
   render() {
-    let db = this.state.data.reverse();
     return (
       <div>
         <div
           className="db-form"
           style={{ display: this.props.toggleMyMaps ? "block" : "none" }}
         >
-          {db.map((item, i) => {
+          {this.state.data.reverse().map((item, i) => {
             if (this.props.user && item.userName == this.props.user.email) {
               return (
                 <div onClick={() => this.displaySavedRoute(item.id)}>
@@ -110,7 +108,6 @@ class ReturnedFromDB extends React.Component {
                       <p>{item.description}</p>
                       <div className="underline"></div>
                     </div>
-
                     {item.roundTrip && (
                       <div className="col map-el">
                         <p>Starting point: {item.roundTripStart}</p>
@@ -122,7 +119,6 @@ class ReturnedFromDB extends React.Component {
                         <p>Ending point: {item.endPoint}</p>
                       </div>
                     )}
-
                     <div className="col map-el">
                       <p>Activity: {item.vehicleType}</p>
                     </div>
@@ -134,13 +130,7 @@ class ReturnedFromDB extends React.Component {
                       <Moment fromNow>{this.convertDate(item.id)}</Moment>
                     </div>
                     <div className="dustbin">
-                      <button
-                        type="button"
-                        className="close"
-                        onClick={(event) => this.removeMap(item.id, event)}
-                      >
-                        <DeleteIcon />
-                      </button>
+                      <DeleteButton id={item.id} removeMap={(event) => this.removeMap(item.id, event)} />
                     </div>
                   </div>
                 </div>
