@@ -25,7 +25,7 @@ class Form extends Component {
     userName: "user",
     zoom: 13,
     description: "",
-    roundTripStart: "",
+    // roundTripStart: "",
     startingpoint: "",
     endpoint: "",
     message: "",
@@ -89,7 +89,7 @@ class Form extends Component {
       id: dbID,
       userName: this.props.user.email,
       description: this.state.description,
-      roundTripStart: this.state.roundTripStart,
+      // roundTripStart: this.state.roundTripStart,
       startingPoint: this.state.startingpoint,
       endPoint: this.state.endpoint,
     });
@@ -121,7 +121,7 @@ class Form extends Component {
       roundTripGenerated: 0,
       startingpoint: "",
       endpoint: "",
-      roundTripStart: "",
+      // roundTripStart: "",
       roundTripLength: "",
       generated: 0,
       roundTrip: form,
@@ -142,11 +142,11 @@ class Form extends Component {
     });
   };
 
-  roundTripLocationHandler = (event) => {
-    this.setState({
-      roundTripStart: `${this.state.lat}, ${this.state.lng}`,
-    });
-  };
+  // roundTripLocationHandler = (event) => {
+  //   this.setState({
+  //     roundTripStart: `${this.state.lat}, ${this.state.lng}`,
+  //   });
+  // };
 
   startChangeHandler = (event) => {
     this.setState({
@@ -162,7 +162,7 @@ class Form extends Component {
 
   roundTripStartHandler = (event) => {
     this.setState({
-      roundTripStart: event.target.value,
+      startingpoint: event.target.value,
       generateButton: "Generate",
       seed: 1,
     });
@@ -279,7 +279,7 @@ class Form extends Component {
       "https://eu1.locationiq.com/v1/search.php?key=" +
       geocodingKey +
       "&q=" +
-      this.state.roundTripStart +
+      this.state.startingpoint +
       "&format=json";
 
     const asyncWrapper = async () => {
@@ -350,7 +350,7 @@ class Form extends Component {
 
   render() {
     const {
-      roundTripStart,
+      // roundTripStart,
       startingpoint,
       lat,
       lng,
@@ -359,8 +359,7 @@ class Form extends Component {
       description,
     } = this.state;
 
-    var displayStartingPoint,
-      displayRoundStartingPoint = "";
+    var displayStartingPoint = "";
 
     if (startingpoint === `${lat}, ${lng}`) {
       displayStartingPoint = "My Location";
@@ -368,11 +367,11 @@ class Form extends Component {
       displayStartingPoint = this.state.startingpoint;
     }
 
-    if (roundTripStart === `${lat}, ${lng}`) {
-      displayRoundStartingPoint = "My Location";
-    } else {
-      displayRoundStartingPoint = this.state.roundTripStart;
-    }
+    // if (roundTripStart === `${lat}, ${lng}`) {
+    //   displayRoundStartingPoint = "My Location";
+    // } else {
+    //   displayRoundStartingPoint = this.state.roundTripStart;
+    // }
 
     return (
       <div className="main-container">
@@ -399,9 +398,9 @@ class Form extends Component {
                         type="text"
                         className="form-control"
                         placeholder="Start point for round trip"
-                        name="roundTripStart"
+                        name="startingpoint"
                         onChange={this.roundTripStartHandler}
-                        value={displayRoundStartingPoint}
+                        value={displayStartingPoint}
                       />
                     </div>
                     <div className="col" id="inputBox">
@@ -418,7 +417,7 @@ class Form extends Component {
                   <div className="form-group">
                     <button
                       id="roundTripMyLocation"
-                      onClick={this.roundTripLocationHandler}
+                      onClick={this.locationHandler}
                       type="button"
                       className="btn btn-secondary buttons"
                       value="myRoundLocation"
@@ -493,6 +492,7 @@ class Form extends Component {
                       Use My Location
                     </button>
                   </div>
+
                   <div className="form-row" id="generateRoute">
                     <div className="col" id="inputBox">
                       <label for="demo_overview_minimal"></label>
