@@ -6,6 +6,7 @@ import Flash from "./flash";
 import SwapVertIcon from "@material-ui/icons/SwapVert";
 import LocationOnIcon from "@material-ui/icons/LocationOn";
 import BookmarkIcon from "@material-ui/icons/Bookmark";
+import StartInput from "./formComponents/startInput";
 
 class Form extends Component {
   state = {
@@ -393,16 +394,11 @@ class Form extends Component {
               {this.state.roundTrip == true ? (
                 <form id="roundTripForm" onSubmit={this.handleSubmitRoundTrip}>
                   <div className="form-row">
-                    <div className="col" id="inputBox">
-                      <input
-                        type="text"
-                        className="form-control"
-                        placeholder="Start point for round trip"
-                        name="startingpoint"
-                        onChange={this.roundTripStartHandler}
-                        value={displayStartingPoint}
-                      />
-                    </div>
+                    <StartInput
+                      roundTripStartHandler={this.roundTripStartHandler}
+                      displayStartingPoint={displayStartingPoint}
+                    />
+
                     <div className="col" id="inputBox">
                       <input
                         type="text"
@@ -414,6 +410,7 @@ class Form extends Component {
                       />
                     </div>
                   </div>
+
                   <div className="form-group">
                     <button
                       id="roundTripMyLocation"
