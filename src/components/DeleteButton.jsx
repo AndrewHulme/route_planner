@@ -1,21 +1,16 @@
 import React, { Component } from "react";
 import DeleteIcon from "@material-ui/icons/Delete";
 
-class DeleteButton extends Component {
-  constructor(props) {
-    super(props);
-  }
-  render() {
+function DeleteButton(props) {
     return (
       <button
         type="button"
         className="close"
-        onClick={(event) => this.props.removeMap(event)}
+        onClick={(event) => props.removeMap(event)}
       >
         <DeleteIcon />
       </button>
     )
-  }
 }
 
 export default DeleteButton;
