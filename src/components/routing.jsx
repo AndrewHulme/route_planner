@@ -32,7 +32,10 @@ class Routing extends MapLayer {
         L.latLng(journeyCoords[0][0], journeyCoords[0][1]),
         L.latLng(journeyCoords[1][0], journeyCoords[1][1]),
       ],
-      router: new L.Routing.openrouteservice(apiORS),
+      router: new L.Routing.openrouteservice(apiORS, {
+        profile: "foot-walking",
+      }),
+
       // router: L.Routing.graphHopper(apiGraphHopper, {
       //   urlParameters: {
       //     vehicle: vehicle,
