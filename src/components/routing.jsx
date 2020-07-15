@@ -2,7 +2,8 @@ import { MapLayer } from "react-leaflet";
 import L from "leaflet";
 import "leaflet-routing-machine";
 import "lrm-graphhopper";
-import "lrm-openrouteservice";
+// import "lrm-openrouteservice";
+import "../orslrm.js";
 import { withLeaflet } from "react-leaflet";
 
 class Routing extends MapLayer {

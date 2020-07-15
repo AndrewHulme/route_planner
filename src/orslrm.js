@@ -2,9 +2,9 @@
   "use strict";
 
   // Browserify
-  // var L = require('leaflet');
-  // var corslite = require('corslite');
-  // var polyline = require('polyline');
+  var L = require("leaflet");
+  var corslite = require("@mapbox/corslite");
+  var polyline = require("@mapbox/polyline");
 
   L.Routing = L.Routing || {};
 
