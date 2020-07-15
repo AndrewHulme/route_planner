@@ -2,6 +2,8 @@ import { MapLayer } from "react-leaflet";
 import L from "leaflet";
 import "leaflet-routing-machine";
 import "lrm-graphhopper";
+// import "lrm-openrouteservice";
+import "../orslrm.js";
 import { withLeaflet } from "react-leaflet";
 
 class Routing extends MapLayer {
@@ -22,13 +24,18 @@ class Routing extends MapLayer {
 
   createLeafletElement() {
     const { map, journeyCoords, vehicle } = this.props;
-    var apiGraphHopper = process.env.REACT_APP_GRAPHHOPPER;
+    //var apiGraphHopper = process.env.REACT_APP_GRAPHHOPPER;
+    var apiORS = process.env.REACT_APP_ROUTE_API_KEY;
 
     let leafletElement = L.Routing.control({
       waypoints: [
         L.latLng(journeyCoords[0][0], journeyCoords[0][1]),
         L.latLng(journeyCoords[1][0], journeyCoords[1][1]),
       ],
+      router: new L.Routing.openrouteservice(apiORS, {
+        profile: vehicle,
+      }),
+
       // router: L.Routing.graphHopper(apiGraphHopper, {
       //   urlParameters: {
       //     vehicle: vehicle,
