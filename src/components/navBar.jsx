@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { Nav, Navbar, NavDropdown } from 'react-bootstrap';
 import fire from './firebase';
 import Flash from './flash';
+import NavBarLogo from './navBar/NavBarLogo';
+import NavBarComponent from './navBar/NavBarComponent';
 
 class NavBar extends Component {
   constructor(props) {
@@ -75,14 +77,9 @@ class NavBar extends Component {
   render() {
     return (
       <div>
+        <navBarComponent />
         <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
-          <Navbar.Brand
-            onClick={this.homePageView}
-            className="main-logo"
-            href=""
-          >
-            🍩 ThereAndBack
-          </Navbar.Brand>
+          <NavBarLogo homePageView={this.homePageView} />
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <div className="user-nav">
