@@ -81,9 +81,6 @@ class Form extends Component {
     this.updateMapContainer();
     db.collection("routes").add({
       roundTrip: this.state.roundTrip,
-      // distance: this.state.roundTripLength
-      //   ? this.state.roundTripLength
-      //   : this.state.distance,
       distance: this.state.distance,
       roundTripCoordinates: JSON.stringify(this.state.roundTripCoords),
       startingCoordinates: [this.state.startingLat, this.state.startingLon],
@@ -192,9 +189,6 @@ class Form extends Component {
 
     var transportType = "driving-car";
 
-    // var startCoordinates = "8.681495,49.41461";
-    // var endCoordinates = "8.687872,49.420318";
-
     var startingURL =
       "https://eu1.locationiq.com/v1/search.php?key=" +
       geocodingKey +
@@ -272,9 +266,6 @@ class Form extends Component {
         })
         // Catch any errors we hit and update the app
         .catch((error) => this.setState({ error, isLoading: false }));
-      // this.setState({
-      //   generated: this.state.generated + 1,
-      // });
     };
 
     asyncWrapper();
@@ -595,7 +586,6 @@ class Form extends Component {
             [this.state.startingLat, this.state.startingLon],
             [this.state.endingLat, this.state.endingLon],
           ]}
-          // endingCoords={[this.state.endingLat, this.state.endingLon]}
           roundTripCoords={this.state.roundTripCoords}
           vehicle={this.state.vehicle}
           lat={this.state.lat}
