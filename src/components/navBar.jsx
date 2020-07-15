@@ -1,7 +1,7 @@
-import React, { Component } from "react";
-import { Nav, Navbar, NavDropdown } from "react-bootstrap";
-import fire from "./firebase";
-import Flash from "./flash";
+import React, { Component } from 'react';
+import { Nav, Navbar, NavDropdown } from 'react-bootstrap';
+import fire from './firebase';
+import Flash from './flash';
 
 class NavBar extends Component {
   constructor(props) {
@@ -14,17 +14,16 @@ class NavBar extends Component {
       email: '',
       password: '',
       toggleMyMaps: false,
-      message: "",
+      message: '',
     };
   }
 
   toggleMyMaps = () => {
-    // console.log(this.state.toggleMyMaps);
     let opposite = !this.state.toggleMyMaps;
     this.setState({
       toggleMyMaps: opposite,
     });
-    // console.log(this.state.toggleMyMaps);
+
     this.props.toggleMyMaps(opposite);
   };
 
@@ -45,7 +44,7 @@ class NavBar extends Component {
       .auth()
       .signInWithEmailAndPassword(this.state.email, this.state.password)
       .then((u) => {
-        this.setState({ message: "", errorIsActive: false });
+        this.setState({ message: '', errorIsActive: false });
       })
       .catch((error) => {
         this.setState({ message: error.message, errorIsActive: true });
@@ -58,7 +57,7 @@ class NavBar extends Component {
       .auth()
       .createUserWithEmailAndPassword(this.state.email, this.state.password)
       .then((u) => {
-        this.setState({ message: "", errorIsActive: false });
+        this.setState({ message: '', errorIsActive: false });
       })
       .catch((error) => {
         this.setState({ message: error.message, errorIsActive: true });
@@ -68,15 +67,12 @@ class NavBar extends Component {
     fire.auth().signOut();
   }
   hideAlert = () => {
-    console.log("You called?");
+    console.log('You called?');
     this.setState({
       errorIsActive: false,
     });
   };
   render() {
-    {
-      console.log(this.state);
-    }
     return (
       <div>
         <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
