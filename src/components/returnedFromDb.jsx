@@ -7,6 +7,7 @@ import DeleteIcon from "@material-ui/icons/Delete";
 class ReturnedFromDB extends React.Component {
   constructor() {
     super();
+    this.db = fire.firestore();
     this.state = {
       data: [],
       key: "",
@@ -19,9 +20,7 @@ class ReturnedFromDB extends React.Component {
 
   removeMap = (id, event) => {
     event.stopPropagation();
-    let db = fire.firestore();
-    let collectionRef = db.collection("routes");
-    collectionRef
+    this.db.collection("routes")
       .where("id", "==", id)
       .get()
       .then((querySnapshot) => {
@@ -38,13 +37,12 @@ class ReturnedFromDB extends React.Component {
         });
       })
       .catch(function (error) {
-        console.log("Error getting documents: ", error);
+        console.error("Error getting documents: ", error);
       });
   };
 
   displaySavedRoute = (id) => {
-    let db = fire.firestore();
-    db.collection("routes")
+    this.db.collection("routes")
       .where("id", "==", id)
       .get()
       .then((snapshot) => {
@@ -56,9 +54,8 @@ class ReturnedFromDB extends React.Component {
   };
 
   renderRouteData = () => {
-    let db = fire.firestore();
     let arr = [];
-    db.collection("routes")
+    this.db.collection("routes")
       .orderBy("id")
       .get()
       .then((snapshot) => {
@@ -71,21 +68,14 @@ class ReturnedFromDB extends React.Component {
       });
   };
 
-  convertDate(time) {
-    let date = new Date(parseInt(time));
-    let formatted_date =
-      date.getFullYear() +
-      "-" +
-      (date.getMonth() + 1) +
-      "-" +
-      date.getDate() +
-      " " +
-      date.getHours() +
-      ":" +
-      date.getMinutes() +
-      ":" +
-      date.getSeconds();
-    return formatted_date;
+  convertDate(date) {
+    let convertedDate = new Date(parseInt(date));
+    return convertedDate;
+  }
+
+  convertDistance(distance) {
+    let convertedDistance = (distance * 0.001).toFixed(2);
+    return convertedDistance;
   }
 
   listDataReverse = () => {
@@ -93,44 +83,59 @@ class ReturnedFromDB extends React.Component {
   }
 
   render() {
+    const { removeMap, user, toggleMyMaps } = this.props;
     return (
       <div>
         <div
           className="db-form"
-          style={{ display: this.props.toggleMyMaps ? "block" : "none" }}
+          style={{ display: toggleMyMaps ? "block" : "none" }}
         >
           {this.state.data.reverse().map((item, i) => {
-            if (this.props.user && item.userName == this.props.user.email) {
+            const {
+              description,
+              distance,
+              endPoint,
+              endingCoordinates,
+              id,
+              roundTrip,
+              roundTripCoordinates,
+              roundTripStart,
+              startingCoordinates,
+              startingPoint,
+              userName,
+              vehicleType
+            } = item;
+            if (user && userName == user.email) {
               return (
-                <div onClick={() => this.displaySavedRoute(item.id)}>
+                <div onClick={() => this.displaySavedRoute(id)}>
                   <div key={i} className="savedMapDiv">
                     <div className="col map-el description">
-                      <p>{item.description}</p>
+                      <p>{description}</p>
                       <div className="underline"></div>
                     </div>
-                    {item.roundTrip && (
+                    {roundTrip && (
                       <div className="col map-el">
-                        <p>Starting point: {item.roundTripStart}</p>
+                        <p>Starting point: {roundTripStart}</p>
                       </div>
                     )}
-                    {!item.roundTrip && (
+                    {!roundTrip && (
                       <div className="col map-el">
-                        <p>Starting point: {item.startingPoint}</p>
-                        <p>Ending point: {item.endPoint}</p>
+                        <p>Starting point: {startingPoint}</p>
+                        <p>Ending point: {endPoint}</p>
                       </div>
                     )}
                     <div className="col map-el">
-                      <p>Activity: {item.vehicleType}</p>
+                      <p>Activity: {vehicleType}</p>
                     </div>
                     <div className="col map-el">
-                      <p>Distance: {(item.distance * 0.001).toFixed(2)} km</p>
+                      <p>Distance: {this.convertDistance(distance)} km</p>
                     </div>
                     <div className="col map-el">
                       <span>Saved </span>
-                      <Moment fromNow>{this.convertDate(item.id)}</Moment>
+                      <Moment fromNow>{this.convertDate(id)}</Moment>
                     </div>
                     <div className="dustbin">
-                      <DeleteButton id={item.id} removeMap={(event) => this.removeMap(item.id, event)} />
+                      <DeleteButton id={id} removeMap={(event) => this.removeMap(id, event)} />
                     </div>
                   </div>
                 </div>
