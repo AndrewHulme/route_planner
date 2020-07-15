@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import fire from "./firebase";
 import Moment from "react-moment";
 import DeleteButton from "./DeleteButton.jsx";
-import DeleteIcon from "@material-ui/icons/Delete";
+import SavedRouteCard from "./SavedRouteCard.jsx";
 
 class ReturnedFromDB extends React.Component {
   constructor() {
@@ -68,18 +68,19 @@ class ReturnedFromDB extends React.Component {
       });
   };
 
-  convertDate(date) {
+  convertDate = (date) => {
     let convertedDate = new Date(parseInt(date));
+    console.log(convertedDate)
     return convertedDate;
   }
 
-  convertDistance(distance) {
+  convertDistance = (distance) => {
     let convertedDistance = (distance * 0.001).toFixed(2);
     return convertedDistance;
   }
 
   listDataReverse = () => {
-    this.state.data.reverse();
+    return this.state.data.reverse();
   }
 
   render() {
@@ -90,7 +91,7 @@ class ReturnedFromDB extends React.Component {
           className="db-form"
           style={{ display: toggleMyMaps ? "block" : "none" }}
         >
-          {this.state.data.reverse().map((item, i) => {
+          {this.listDataReverse().map((item, i) => {
             const {
               description,
               distance,
@@ -107,38 +108,23 @@ class ReturnedFromDB extends React.Component {
             } = item;
             if (user && userName == user.email) {
               return (
-                <div onClick={() => this.displaySavedRoute(id)}>
-                  <div key={i} className="savedMapDiv">
-                    <div className="col map-el description">
-                      <p>{description}</p>
-                      <div className="underline"></div>
-                    </div>
-                    {roundTrip && (
-                      <div className="col map-el">
-                        <p>Starting point: {roundTripStart}</p>
-                      </div>
-                    )}
-                    {!roundTrip && (
-                      <div className="col map-el">
-                        <p>Starting point: {startingPoint}</p>
-                        <p>Ending point: {endPoint}</p>
-                      </div>
-                    )}
-                    <div className="col map-el">
-                      <p>Activity: {vehicleType}</p>
-                    </div>
-                    <div className="col map-el">
-                      <p>Distance: {this.convertDistance(distance)} km</p>
-                    </div>
-                    <div className="col map-el">
-                      <span>Saved </span>
-                      <Moment fromNow>{this.convertDate(id)}</Moment>
-                    </div>
-                    <div className="dustbin">
-                      <DeleteButton id={id} removeMap={(event) => this.removeMap(id, event)} />
-                    </div>
-                  </div>
-                </div>
+                <SavedRouteCard
+                  id={id}
+                  i={i}
+                  date={id}
+                  displaySavedRoute={() => this.displaySavedRoute(id)}
+                  distance={distance}
+                  description={description}
+                  roundTripStart={roundTripStart}
+                  startingPoint={startingPoint}
+                  endPoint={endPoint}
+                  vehicleType={vehicleType}
+                  roundTrip={roundTrip}
+                  convertDistance={this.convertDistance(distance)}
+                  convertDate={this.convertDate(id)}
+                  removeMap={(event) => this.removeMap(id, event)}
+                  >
+                </SavedRouteCard>
               );
             }
           })}
