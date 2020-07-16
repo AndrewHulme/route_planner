@@ -8,7 +8,7 @@ function StartInput(props) {
         className="form-control"
         placeholder={props.placeholder}
         name="startingpoint"
-        onChange={props.roundTripStartHandler}
+        onChange={props.startHandler}
         value={props.displayStartingPoint}
       />
     </div>

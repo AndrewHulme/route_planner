@@ -150,6 +150,8 @@ class Form extends Component {
   // };
 
   startChangeHandler = (event) => {
+    console.log("StartChangeHandler");
+
     this.setState({
       startingpoint: event.target.value,
     });
@@ -162,6 +164,8 @@ class Form extends Component {
   };
 
   roundTripStartHandler = (event) => {
+    console.log("RoundStartChangeHandler");
+
     this.setState({
       startingpoint: event.target.value,
       generateButton: "Generate",
@@ -395,7 +399,7 @@ class Form extends Component {
                 <form id="roundTripForm" onSubmit={this.handleSubmitRoundTrip}>
                   <div className="form-row">
                     <StartInput
-                      roundTripStartHandler={this.roundTripStartHandler}
+                      startHandler={this.roundTripStartHandler}
                       displayStartingPoint={displayStartingPoint}
                       placeholder={"Start point for round trip"}
                     />
@@ -458,22 +462,11 @@ class Form extends Component {
               ) : (
                 <form onSubmit={this.submitHandler} id="secondForm">
                   <div className="form-row">
-                    {/* <StartInput
-                      roundTripStartHandler={this.startChangeHandler}
+                    <StartInput
+                      startHandler={this.startChangeHandler}
                       displayStartingPoint={displayStartingPoint}
-                      placeholder={"Starting Point"}
-                    /> */}
-
-                    <div className="col" id="inputBox">
-                      <input
-                        type="text"
-                        className="form-control"
-                        placeholder="Starting Point"
-                        name="startingpoint"
-                        value={displayStartingPoint}
-                        onChange={this.startChangeHandler}
-                      />
-                    </div>
+                      placeholder={"Starting point"}
+                    />
 
                     <div className="col">
                       <input
