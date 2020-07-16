@@ -7,6 +7,7 @@ import SwapVertIcon from "@material-ui/icons/SwapVert";
 import LocationOnIcon from "@material-ui/icons/LocationOn";
 import BookmarkIcon from "@material-ui/icons/Bookmark";
 import StartInput from "./formComponents/startInput";
+import VehicleChoice from "./formComponents/vehicleChoice";
 
 class Form extends Component {
   state = {
@@ -448,6 +449,7 @@ class Form extends Component {
                         <option value="foot-hiking">Hiking</option>
                       </select>
                     </div>
+
                     <div className="col">
                       <input
                         id="roundTripButton"
@@ -492,25 +494,12 @@ class Form extends Component {
                   </div>
 
                   <div className="form-row" id="generateRoute">
-                    <div className="col" id="inputBox">
-                      <label for="demo_overview_minimal"></label>
-                      <select
-                        class="form-control dropDownList"
-                        data-role="select-dropdown"
-                        data-profile="minimal"
-                        cy-name="roundVehiclechoice"
-                        value={this.state.value}
-                        onChange={this.vehicleChangeHandler}
-                      >
-                        {" "}
-                        <option selected value="foot-walking">
-                          Walking
-                        </option>
-                        <option value="driving-car">Driving</option>
-                        <option value="cycling-regular">Cycling</option>
-                        <option value="foot-hiking">Hiking</option>
-                      </select>
-                    </div>
+                    <VehicleChoice
+                      cyName={"roundVehiclechoice"}
+                      value={this.state.value}
+                      vehicleChangeHandler={this.vehicleChangeHandler}
+                    />
+
                     <div className="col">
                       <input
                         id="roundTripButton"
