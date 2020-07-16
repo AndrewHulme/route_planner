@@ -430,25 +430,11 @@ class Form extends Component {
                     </button>
                   </div>
                   <div className="form-row" id="generateRoute">
-                    <div className="col" id="inputBox">
-                      <label htmlFor="demo_overview_minimal"></label>
-                      <select
-                        class="form-control dropDownList"
-                        data-role="select-dropdown"
-                        data-profile="minimal"
-                        cy-name="vehicleChoice"
-                        value={this.state.value}
-                        onChange={this.vehicleChangeHandler}
-                      >
-                        {" "}
-                        <option selected value="foot-walking">
-                          Walking
-                        </option>
-                        <option value="driving-car">Driving</option>
-                        <option value="cycling-regular">Cycling</option>
-                        <option value="foot-hiking">Hiking</option>
-                      </select>
-                    </div>
+                    <VehicleChoice
+                      cyName={"vehicleChoice"}
+                      value={this.state.value}
+                      vehicleChangeHandler={this.vehicleChangeHandler}
+                    />
 
                     <div className="col">
                       <input
