@@ -107,6 +107,7 @@ class ReturnedFromDB extends React.Component {
             if (user && userName == user.email) {
               return (
                 <SavedRouteCard
+                  key={id}
                   id={id}
                   i={i}
                   displaySavedRoute={() => this.displaySavedRoute(id)}

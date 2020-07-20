@@ -1,41 +1,35 @@
 import React, { Component } from "react";
-import Moment from "react-moment";
 import DeleteButton from "./DeleteButton.jsx";
+import StartingPointItem from "./StartingPointItem.jsx";
+import EndingPointItem from "./StartingPointItem.jsx";
+import ActivityItem from "./ActivityItem.jsx";
+import DistanceItem from "./DistanceItem.jsx";
+import SavedDateItem from "./SavedDateItem.jsx";
+import DescriptionItem from "./DescriptionItem.jsx";
 
 function SavedRouteCard(props) {
     return (
-      <div onClick={() => props.displaySavedRoute(props.id)}>
-        <div key={props.i} className="savedMapDiv">
-          <div className="col map-el description">
-            <p>{props.description}</p>
-            <div className="underline"></div>
-          </div>
-          {props.roundTrip && (
-            <div className="col map-el">
-              <p>Starting point: {props.roundTripStart}</p>
-            </div>
+        <div
+          key={props.i}
+          className="savedMapDiv"
+          onClick={() => props.displaySavedRoute(props.id)}
+          >
+          <DescriptionItem description={props.description} />
+          {props.roundTrip ? (
+            <StartingPointItem start={props.roundTripStart}/>
+          ) : (
+            <>
+              <StartingPointItem start={props.startingPoint}/>
+              <EndingPointItem endPoint={props.endPoint} />
+            </>
           )}
-          {!props.roundTrip && (
-            <div className="col map-el">
-              <p>Starting point: {props.startingPoint}</p>
-              <p>Ending point: {props.endPoint}</p>
-            </div>
-          )}
-          <div className="col map-el">
-            <p>Activity: {props.vehicleType}</p>
-          </div>
-          <div className="col map-el">
-            <p>Distance: {props.convertDistance} km</p>
-          </div>
-          <div className="col map-el">
-            <span>Saved </span>
-            <Moment fromNow>{props.convertDate}</Moment>
-          </div>
+          <ActivityItem vehicleType={props.vehicleType} />
+          <DistanceItem distance={props.convertDistance} />
+          <SavedDateItem date={props.convertDate} />
           <div className="dustbin">
             <DeleteButton id={props.id} removeMap={(event) => props.removeMap(event)} />
           </div>
         </div>
-      </div>
     )
 }
 
