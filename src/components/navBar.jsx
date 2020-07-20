@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import { Nav, Navbar, NavDropdown } from 'react-bootstrap';
+import { Navbar } from 'react-bootstrap';
 import fire from './firebase';
 import Flash from './flash';
 import NavBarLogo from './navBar/NavBarLogo';
 import UserAccount from './navBar/UserAccount';
-import NavBarComponent from './navBar/NavBarComponent';
+import MyRoutes from './navBar/MyRoutes';
 import LogOutButton from './navBar/LogOutButton';
 
 class NavBar extends Component {
@@ -79,7 +79,6 @@ class NavBar extends Component {
   render() {
     return (
       <div>
-        <navBarComponent />
         <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
           <NavBarLogo homePageView={this.homePageView} />
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
@@ -88,23 +87,13 @@ class NavBar extends Component {
               <form>
                 <div className="row user-login-container">
                   {this.props.user ? (
-                    <div className="row user-login-container">
-                      <div className="col">
-                        <Nav className="container-fluid">
-                          <Nav.Link
-                            className="ml-auto"
-                            id="my-routes"
-                            onClick={this.toggleMyMaps}
-                            href=""
-                          >
-                            {!this.state.toggleMyMaps
-                              ? 'My Routes'
-                              : 'Find Route'}
-                          </Nav.Link>
-                        </Nav>
-                      </div>
+                    <React.Fragment>
+                      <MyRoutes
+                        toggleMyMaps={this.toggleMyMaps}
+                        logout={this.props.logout}
+                      />
                       <LogOutButton logout={this.logout} />
-                    </div>
+                    </React.Fragment>
                   ) : (
                     <UserAccount
                       email={this.state.email}
