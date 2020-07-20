@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import LogInButton from './LogInButton';
-// import SignUpButton from './SignUpButton';
+import SignUpButton from './SignUpButton';
 
 export default class UserAccount extends Component {
   render() {
@@ -30,17 +30,9 @@ export default class UserAccount extends Component {
           />
         </div>
         <LogInButton login={this.props.login} />
-        {/* <SignUpButton login={this.props.signup} /> */}
+        <SignUpButton login={this.props.signup} />
 
-        <div className="">
-          <button
-            onClick={this.props.signup}
-            id="signUpButton"
-            className="btn btn-success btn-sm"
-          >
-            Signup
-          </button>
-        </div>
+        
       </React.Fragment>
     );
   }
