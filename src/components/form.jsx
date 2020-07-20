@@ -9,6 +9,7 @@ import BookmarkIcon from "@material-ui/icons/Bookmark";
 import StartInput from "./formComponents/startInput";
 import VehicleChoice from "./formComponents/vehicleChoice";
 import UseMyLocation from "./formComponents/useMyLocation";
+import GenerateButton from "./formComponents/generateButton";
 
 class Form extends Component {
   state = {
@@ -128,6 +129,7 @@ class Form extends Component {
       roundTripLength: "",
       generated: 0,
       roundTrip: form,
+      generateButton: "Generate",
       buttonText:
         this.state.buttonText == "Add endpoint" ? "Round Trip" : "Add endpoint",
     });
@@ -374,12 +376,6 @@ class Form extends Component {
       displayStartingPoint = this.state.startingpoint;
     }
 
-    // if (roundTripStart === `${lat}, ${lng}`) {
-    //   displayRoundStartingPoint = "My Location";
-    // } else {
-    //   displayRoundStartingPoint = this.state.roundTripStart;
-    // }
-
     return (
       <div className="main-container">
         <div
@@ -397,6 +393,7 @@ class Form extends Component {
                   ""
                 )}
               </div>
+
               {this.state.roundTrip == true ? (
                 <form id="roundTripForm" onSubmit={this.handleSubmitRoundTrip}>
                   <div className="form-row">
@@ -431,15 +428,7 @@ class Form extends Component {
                       vehicleChangeHandler={this.vehicleChangeHandler}
                     />
 
-                    <div className="col">
-                      <input
-                        id="roundTripButton"
-                        className="form-control"
-                        type="submit"
-                        className="btn btn-primary"
-                        value={this.state.generateButton}
-                      />
-                    </div>
+                    <GenerateButton value={this.state.generateButton} />
                   </div>
                 </form>
               ) : (
@@ -475,18 +464,11 @@ class Form extends Component {
                       vehicleChangeHandler={this.vehicleChangeHandler}
                     />
 
-                    <div className="col">
-                      <input
-                        id="roundTripButton"
-                        className="form-control"
-                        type="submit"
-                        className="btn btn-primary"
-                        value="Generate"
-                      />
-                    </div>
+                    <GenerateButton value={"Generate"} />
                   </div>
                 </form>
               )}
+
               <button
                 value="Add endpoint"
                 id="addEndPoint"
