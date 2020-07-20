@@ -15,7 +15,7 @@
     "firebase": "^7.15.5",
     "google-maps-react": "^2.0.6",
     "istanbul-lib-coverage": "^3.0.0",
-    "jquery": "^1.9.1",
+    "jquery": "^3.5.1",
     "leaflet": "^1.6.0",
     "leaflet-routing-machine": "^3.2.12",
     "lodash": "^4.17.19",
