@@ -5,6 +5,7 @@ import Flash from './flash';
 import NavBarLogo from './navBar/NavBarLogo';
 import UserAccount from './navBar/UserAccount';
 import NavBarComponent from './navBar/NavBarComponent';
+import LogOutButton from './navBar/LogOutButton';
 
 class NavBar extends Component {
   constructor(props) {
@@ -102,26 +103,16 @@ class NavBar extends Component {
                           </Nav.Link>
                         </Nav>
                       </div>
-                      <div className="">
-                        <button
-                          className="btn btn-danger btn-sm"
-                          onClick={this.logout}
-                          id="logOutButton"
-                        >
-                          Logout
-                        </button>
-                      </div>
+                      <LogOutButton logout={this.logout} />
                     </div>
                   ) : (
-                    <>
-                      <UserAccount
-                        email={this.state.email}
-                        password={this.state.password}
-                        login={this.login}
-                        signup={this.signup}
-                        handleChange={this.handleChange}
-                      />
-                    </>
+                    <UserAccount
+                      email={this.state.email}
+                      password={this.state.password}
+                      login={this.login}
+                      signup={this.signup}
+                      handleChange={this.handleChange}
+                    />
                   )}
                 </div>
               </form>
