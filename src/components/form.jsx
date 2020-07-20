@@ -438,16 +438,12 @@ class Form extends Component {
                       name={"startingpoint"}
                     />
 
-                    <div className="col">
-                      <input
-                        type="text"
-                        className="form-control"
-                        placeholder="End Point"
-                        name="endpoint"
-                        value={endpoint}
-                        onChange={this.endChangeHandler}
-                      />
-                    </div>
+                    <TextInput
+                      changeHandler={this.endChangeHandler}
+                      value={endpoint}
+                      placeholder={"End Point"}
+                      name={"endpoint"}
+                    />
                   </div>
 
                   <UseMyLocation
