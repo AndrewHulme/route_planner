@@ -80,8 +80,14 @@ class NavBar extends Component {
 
   render() {
     return (
-      <div>
-        <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+      <React.Fragment>
+        <Navbar
+          className="navbarCustom"
+          collapseOnSelect
+          expand="lg"
+          bg="dark"
+          variant="dark"
+        >
           <NavBarLogo homePageView={this.homePageView} />
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
@@ -111,7 +117,7 @@ class NavBar extends Component {
             </div>
           </Navbar.Collapse>
         </Navbar>
-      </div>
+      </React.Fragment>
     );
   }
 }

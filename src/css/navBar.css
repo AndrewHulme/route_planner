@@ -1,12 +1,12 @@
 .main-logo.navbar-brand {
-  font-size: 1.2em;
   cursor: pointer;
 }
 .main-logo:hover {
   cursor: pointer;
 }
-.navbar {
-  padding-bottom: 0%;
+.navbarCustom {
+  padding: 0rem 1rem !important;
+  background: red;
 }
 .navbar-collapse {
   display: flex;

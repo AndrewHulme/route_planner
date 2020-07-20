@@ -8,8 +8,7 @@ function NavBarLogo(props) {
       className="main-logo"
       href=""
     >
-      {/* <img src={require('../../../images/logo.png')} /> */}
-      🍩 ThereAndBack
+      <img className="logo" src={require('../../../images/logo.png')} />
     </Navbar.Brand>
   );
 }
