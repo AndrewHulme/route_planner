@@ -7,7 +7,7 @@ import SavedRouteCard from "./SavedRouteCard.jsx";
 class ReturnedFromDB extends React.Component {
   constructor() {
     super();
-    this.db = fire.firestore();
+    this.routes = fire.firestore().collection("routes");
     this.state = {
       data: [],
       key: "",
@@ -20,7 +20,7 @@ class ReturnedFromDB extends React.Component {
 
   removeMap = (id, event) => {
     event.stopPropagation();
-    this.db.collection("routes")
+    this.routes
       .where("id", "==", id)
       .get()
       .then((querySnapshot) => {
@@ -29,7 +29,6 @@ class ReturnedFromDB extends React.Component {
             .delete()
             .then(() => {
               this.props.updateMapContainer();
-              console.log("Document successfully deleted!");
             })
             .catch(function (error) {
               console.error("Error removing document: ", error);
@@ -42,7 +41,7 @@ class ReturnedFromDB extends React.Component {
   };
 
   displaySavedRoute = (id) => {
-    this.db.collection("routes")
+    this.routes
       .where("id", "==", id)
       .get()
       .then((snapshot) => {
@@ -55,7 +54,7 @@ class ReturnedFromDB extends React.Component {
 
   renderRouteData = () => {
     let arr = [];
-    this.db.collection("routes")
+    this.routes
       .orderBy("id")
       .get()
       .then((snapshot) => {
@@ -70,7 +69,6 @@ class ReturnedFromDB extends React.Component {
 
   convertDate = (date) => {
     let convertedDate = new Date(parseInt(date));
-    console.log(convertedDate)
     return convertedDate;
   }
 
@@ -111,9 +109,7 @@ class ReturnedFromDB extends React.Component {
                 <SavedRouteCard
                   id={id}
                   i={i}
-                  date={id}
                   displaySavedRoute={() => this.displaySavedRoute(id)}
-                  distance={distance}
                   description={description}
                   roundTripStart={roundTripStart}
                   startingPoint={startingPoint}
