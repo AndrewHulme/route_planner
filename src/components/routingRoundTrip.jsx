@@ -30,30 +30,12 @@ class RoutingRoundTrip extends MapLayer {
     if (roundTripCoords !== "") {
       waypointsArr.push(L.latLng(roundTripCoords[0][1], roundTripCoords[0][0]));
 
-      let waypointNumber = 5;
+      let waypointNumber;
 
-      if (roundTripCoords.length < 200) {
-        waypointNumber = 5;
-      } else if (roundTripCoords.length < 350) {
-        waypointNumber = 10;
-      } else if (roundTripCoords.length < 500) {
-        waypointNumber = 15;
-      } else if (roundTripCoords.length < 650) {
-        waypointNumber = 20;
-      } else if (roundTripCoords.length < 800) {
-        waypointNumber = 25;
-      } else if (roundTripCoords.length < 950) {
-        waypointNumber = 30;
-      } else if (roundTripCoords.length < 1100) {
-        waypointNumber = 35;
-      } else if (roundTripCoords.length < 1250) {
-        waypointNumber = 40;
-      } else if (roundTripCoords.length < 1400) {
-        waypointNumber = 45;
-      } else if (roundTripCoords.length < 1550) {
-        waypointNumber = 50;
-      } else {
+      if (roundTripCoords > 1550) {
         waypointNumber = 100;
+      } else {
+        waypointNumber = 5 + Math.ceil((roundTripCoords - 200) / 150) * 5;
       }
 
       roundTripCoords.forEach((item, i) => {
@@ -73,7 +55,6 @@ class RoutingRoundTrip extends MapLayer {
 
     let leafletElement = L.Routing.control({
       waypoints: waypointsArr,
-
       router: new L.Routing.openrouteservice(apiORS, {
         profile: vehicle,
       }),
