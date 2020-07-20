@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import { Navbar } from 'react-bootstrap';
-import fire from './firebase';
-import Flash from './flash';
-import NavBarLogo from './navBar/NavBarLogo';
-import UserAccount from './navBar/UserAccount';
-import MyRoutes from './navBar/MyRoutes';
-import LogOutButton from './navBar/LogOutButton';
+import fire from '../firebase';
+import Flash from '../flash';
+import NavBarLogo from './navBarComponents/NavBarLogo';
+import UserAccount from './navBarComponents/UserAccount';
+import MyRoutes from './navBarComponents/MyRoutes';
+import LogOutButton from './navBarComponents/LogOutButton';
 
 class NavBar extends Component {
   constructor(props) {

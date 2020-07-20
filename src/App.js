@@ -3,7 +3,7 @@ import './css/app.css';
 import fire from './components/firebase.jsx';
 import Form from './components/form.jsx';
 import Flash from './components/flash.jsx';
-import NavBar from './components/navBar.jsx';
+import NavBar from './components/navBar/navBar.jsx';
 
 class App extends Component {
   constructor() {

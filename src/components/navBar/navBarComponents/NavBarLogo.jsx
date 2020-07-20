@@ -1,9 +1,6 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Navbar } from 'react-bootstrap';
 
-{
-  /* <DeleteButton id={id} removeMap={(event) => this.removeMap(id, event)} /> */
-}
 function NavBarLogo(props) {
   return (
     <Navbar.Brand
