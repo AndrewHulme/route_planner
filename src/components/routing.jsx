@@ -24,7 +24,6 @@ class Routing extends MapLayer {
 
   createLeafletElement() {
     const { map, journeyCoords, vehicle } = this.props;
-    //var apiGraphHopper = process.env.REACT_APP_GRAPHHOPPER;
     var apiORS = process.env.REACT_APP_ROUTE_API_KEY;
 
     let leafletElement = L.Routing.control({
@@ -36,12 +35,6 @@ class Routing extends MapLayer {
         profile: vehicle,
         options: { round_trip: { length: 11, points: 12, seed: 3 } },
       }),
-
-      // router: L.Routing.graphHopper(apiGraphHopper, {
-      //   urlParameters: {
-      //     vehicle: vehicle,
-      //   },
-      // }),
     });
 
     this.setState((prevState) => ({
