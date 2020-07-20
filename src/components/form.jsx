@@ -4,10 +4,11 @@ import ReturnedFromDB from "./returnedFromDb.jsx";
 import fire from "./firebase";
 import Flash from "./flash";
 import SwapVertIcon from "@material-ui/icons/SwapVert";
-import LocationOnIcon from "@material-ui/icons/LocationOn";
+// import LocationOnIcon from "@material-ui/icons/LocationOn";
 import BookmarkIcon from "@material-ui/icons/Bookmark";
 import StartInput from "./formComponents/startInput";
 import VehicleChoice from "./formComponents/vehicleChoice";
+import UseMyLocation from "./formComponents/useMyLocation";
 
 class Form extends Component {
   state = {
@@ -417,18 +418,12 @@ class Form extends Component {
                     </div>
                   </div>
 
-                  <div className="form-group">
-                    <button
-                      id="roundTripMyLocation"
-                      onClick={this.locationHandler}
-                      type="button"
-                      className="btn btn-secondary buttons"
-                      value="myRoundLocation"
-                    >
-                      <LocationOnIcon id="location" />
-                      Use My Location
-                    </button>
-                  </div>
+                  <UseMyLocation
+                    // id={"roundTripMyLocation"}
+                    locationHandler={this.locationHandler}
+                    value={"myRoundLocation"}
+                  />
+
                   <div className="form-row" id="generateRoute">
                     <VehicleChoice
                       cyName={"vehicleChoice"}
@@ -467,17 +462,11 @@ class Form extends Component {
                       />
                     </div>
                   </div>
-                  <div className="form-group">
-                    <button
-                      onClick={this.locationHandler}
-                      type="button"
-                      className="btn btn-secondary buttons"
-                      value="myLocation"
-                    >
-                      <LocationOnIcon />
-                      Use My Location
-                    </button>
-                  </div>
+
+                  <UseMyLocation
+                    locationHandler={this.locationHandler}
+                    value={"myLocation"}
+                  />
 
                   <div className="form-row" id="generateRoute">
                     <VehicleChoice
