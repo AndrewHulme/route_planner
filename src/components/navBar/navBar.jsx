@@ -1,10 +1,11 @@
-import React, { Component } from 'react';
-import { Navbar } from 'react-bootstrap';
-import fire from '../firebase';
-import NavBarLogo from './navBarComponents/NavBarLogo';
-import UserAccount from './navBarComponents/UserAccount';
-import MyRoutes from './navBarComponents/MyRoutes';
-import LogOutButton from './navBarComponents/LogOutButton';
+import React, { Component } from "react";
+import { Navbar } from "react-bootstrap";
+import fire from "../firebase";
+import NavBarLogo from "./navBarComponents/NavBarLogo";
+import UserAccount from "./navBarComponents/UserAccount";
+import MyRoutes from "./navBarComponents/MyRoutes";
+import LogOutButton from "./navBarComponents/LogOutButton";
+import Flash from "../flash";
 
 class NavBar extends Component {
   constructor(props) {
@@ -14,10 +15,10 @@ class NavBar extends Component {
     this.signup = this.signup.bind(this);
     this.logout = this.logout.bind(this);
     this.state = {
-      email: '',
-      password: '',
+      email: "",
+      password: "",
       toggleMyMaps: false,
-      message: '',
+      message: "",
     };
   }
 
@@ -47,7 +48,7 @@ class NavBar extends Component {
       .auth()
       .signInWithEmailAndPassword(this.state.email, this.state.password)
       .then((u) => {
-        this.setState({ message: '', errorIsActive: false });
+        this.setState({ message: "", errorIsActive: false });
       })
       .catch((error) => {
         this.setState({ message: error.message, errorIsActive: true });
@@ -60,7 +61,7 @@ class NavBar extends Component {
       .auth()
       .createUserWithEmailAndPassword(this.state.email, this.state.password)
       .then((u) => {
-        this.setState({ message: '', errorIsActive: false });
+        this.setState({ message: "", errorIsActive: false });
       })
       .catch((error) => {
         this.setState({ message: error.message, errorIsActive: true });
@@ -72,7 +73,7 @@ class NavBar extends Component {
   }
 
   hideAlert = () => {
-    console.log('You called?');
+    console.log("You called?");
     this.setState({
       errorIsActive: false,
     });
@@ -105,6 +106,11 @@ class NavBar extends Component {
                       handleChange={this.handleChange}
                     />
                   )}
+                  <Flash
+                    isActive={this.state.errorIsActive}
+                    message={this.state.message}
+                    hideAlert={this.hideAlert}
+                  />
                 </div>
               </form>
             </div>
