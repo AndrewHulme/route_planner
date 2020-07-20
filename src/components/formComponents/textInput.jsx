@@ -7,7 +7,7 @@ function TextInput(props) {
         type="text"
         className="form-control"
         placeholder={props.placeholder}
-        name="startingpoint"
+        name={props.name}
         onChange={props.changeHandler}
         value={props.value}
       />

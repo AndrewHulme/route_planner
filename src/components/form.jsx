@@ -401,6 +401,7 @@ class Form extends Component {
                       changeHandler={this.roundTripStartHandler}
                       value={displayStartingPoint}
                       placeholder={"Start point for round trip"}
+                      name={"startingpoint"}
                     />
 
                     <div className="col" id="inputBox">
@@ -438,6 +439,7 @@ class Form extends Component {
                       changeHandler={this.startChangeHandler}
                       value={displayStartingPoint}
                       placeholder={"Starting point"}
+                      name={"startingpoint"}
                     />
 
                     <div className="col">
