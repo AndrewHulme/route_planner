@@ -22,7 +22,7 @@ class RoutingRoundTrip extends MapLayer {
     }
   }
 
-  createLeafletElement() {
+createLeafletElement() {
     const { map, roundTripCoords, vehicle } = this.props;
     var apiORS = process.env.REACT_APP_ROUTE_API_KEY;
 
@@ -32,10 +32,11 @@ class RoutingRoundTrip extends MapLayer {
 
       let waypointNumber;
 
-      if (roundTripCoords > 1550) {
+      if (roundTripCoords.length > 1550) {
         waypointNumber = 100;
       } else {
-        waypointNumber = 5 + Math.ceil((roundTripCoords - 200) / 150) * 5;
+        waypointNumber =
+          5 + Math.ceil((roundTripCoords.length - 200) / 150) * 5;
       }
 
       roundTripCoords.forEach((item, i) => {
