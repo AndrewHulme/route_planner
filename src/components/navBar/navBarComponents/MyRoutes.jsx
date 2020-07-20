@@ -14,7 +14,7 @@ export default class MyRoutes extends Component {
                 onClick={this.props.toggleMyMaps}
                 href=""
               >
-                {!this.props.toggleMyMaps ? 'My Routes' : 'Find Route'}
+                {!this.props.toggleMyMapsState ? 'My Routes' : 'Find Route'}
               </Nav.Link>
             </Nav>
           </div>

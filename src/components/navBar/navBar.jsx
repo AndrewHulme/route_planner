@@ -22,12 +22,12 @@ class NavBar extends Component {
   }
 
   toggleMyMaps = () => {
-    let opposite = !this.state.toggleMyMaps;
+    let toggle = !this.state.toggleMyMaps;
     this.setState({
-      toggleMyMaps: opposite,
+      toggleMyMaps: toggle,
     });
 
-    this.props.toggleMyMaps(opposite);
+    this.props.toggleMyMaps(toggle);
   };
 
   homePageView = () => {
@@ -92,6 +92,7 @@ class NavBar extends Component {
                     <React.Fragment>
                       <MyRoutes
                         toggleMyMaps={this.toggleMyMaps}
+                        toggleMyMapsState={this.state.toggleMyMaps}
                         logout={this.props.logout}
                       />
                       <LogOutButton logout={this.logout} />
