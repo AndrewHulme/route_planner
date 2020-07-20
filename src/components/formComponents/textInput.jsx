@@ -1,6 +1,6 @@
 import React from "react";
 
-function StartInput(props) {
+function TextInput(props) {
   return (
     <div className="col" id="inputBox">
       <input
@@ -8,11 +8,11 @@ function StartInput(props) {
         className="form-control"
         placeholder={props.placeholder}
         name="startingpoint"
-        onChange={props.startHandler}
-        value={props.displayStartingPoint}
+        onChange={props.changeHandler}
+        value={props.value}
       />
     </div>
   );
 }
 
-export default StartInput;
+export default TextInput;
