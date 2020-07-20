@@ -66,15 +66,18 @@ class NavBar extends Component {
         this.setState({ message: error.message, errorIsActive: true });
       });
   }
+
   logout() {
     fire.auth().signOut();
   }
+
   hideAlert = () => {
     console.log('You called?');
     this.setState({
       errorIsActive: false,
     });
   };
+
   render() {
     return (
       <div>
