@@ -3,6 +3,7 @@ import { Nav, Navbar, NavDropdown } from 'react-bootstrap';
 import fire from './firebase';
 import Flash from './flash';
 import NavBarLogo from './navBar/NavBarLogo';
+import UserAccount from './navBar/UserAccount';
 import NavBarComponent from './navBar/NavBarComponent';
 
 class NavBar extends Component {
@@ -113,48 +114,13 @@ class NavBar extends Component {
                     </div>
                   ) : (
                     <>
-                      <div class="col">
-                        <input
-                          value={this.state.email}
-                          onChange={this.handleChange}
-                          type="email"
-                          name="email"
-                          class="form-control"
-                          id="exampleInputEmail1"
-                          aria-describedby="emailHelp"
-                          placeholder="Enter email"
-                        />
-                      </div>
-                      <div class="col">
-                        <input
-                          value={this.state.password}
-                          onChange={this.handleChange}
-                          type="password"
-                          name="password"
-                          class="form-control"
-                          id="exampleInputPassword1"
-                          placeholder="Password"
-                        />
-                      </div>
-                      <div className="">
-                        <button
-                          type="submit"
-                          onClick={this.login}
-                          id="logInButton"
-                          class="btn btn-primary btn-sm"
-                        >
-                          Login
-                        </button>
-                      </div>
-                      <div className="">
-                        <button
-                          onClick={this.signup}
-                          id="signUpButton"
-                          className="btn btn-success btn-sm"
-                        >
-                          Signup
-                        </button>
-                      </div>
+                      <UserAccount
+                        email={this.state.email}
+                        password={this.state.password}
+                        login={this.login}
+                        signup={this.signup}
+                        handleChange={this.handleChange}
+                      />
                     </>
                   )}
                 </div>
