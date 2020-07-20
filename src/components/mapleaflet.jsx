@@ -1,17 +1,13 @@
-import React, { Component } from "react";
-// import { render } from "react-dom";
-import { Map, TileLayer } from "react-leaflet";
-// import { Icon } from "leaflet";
-import "../css/app.css";
-import L from "leaflet";
-import Routing from "./routing";
-import RoutingRoundTrip from "./routingRoundTrip";
+import React, { Component } from 'react';
+import { Map, TileLayer } from 'react-leaflet';
+import '../css/app.css';
+import L from 'leaflet';
+import Routing from './routing';
+import RoutingRoundTrip from './routingRoundTrip';
 
 class LeafletMapContainer extends Component {
   state = {
     journeyCoords: this.props.journeyCoords,
-    // startingCoords: this.props.journeyCoords[0],
-    // endingCoords: this.props.journeyCoords[1],
     isMapInit: false,
   };
 
@@ -34,8 +30,6 @@ class LeafletMapContainer extends Component {
         {this.props.journeyCoords !== undefined && this.state.isMapInit && (
           <Routing
             map={this.map}
-            // startingCoords={this.props.startingCoords}
-            // endingCoords={this.props.endingCoords}
             journeyCoords={this.props.journeyCoords}
             vehicle={this.props.vehicle}
             generated={this.props.generated}
