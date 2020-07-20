@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import LeafletMapContainer from "./mapleaflet.jsx";
-import ReturnedFromDB from "./returnedFromDb.jsx";
+import ReturnedFromDB from "./returnedFromDb/returnedFromDb.jsx";
 import fire from "./firebase";
 import Flash from "./flash";
 import SwapVertIcon from "@material-ui/icons/SwapVert";

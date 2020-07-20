@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-import fire from "./firebase";
+import fire from "../firebase";
 import Moment from "react-moment";
-import DeleteButton from "./DeleteButton.jsx";
-import SavedRouteCard from "./SavedRouteCard.jsx";
+import DeleteButton from "./returnedFromDbComponents/DeleteButton.jsx";
+import SavedRouteCard from "./returnedFromDbComponents/SavedRouteCard.jsx";
 
 class ReturnedFromDB extends React.Component {
   constructor() {
