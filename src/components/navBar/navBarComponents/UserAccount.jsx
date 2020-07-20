@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import LogInButton from './LogInButton';
+// import SignUpButton from './SignUpButton';
 
 export default class UserAccount extends Component {
   render() {
@@ -27,16 +29,9 @@ export default class UserAccount extends Component {
             placeholder="Password"
           />
         </div>
-        <div className="">
-          <button
-            type="submit"
-            onClick={this.props.login}
-            id="logInButton"
-            class="btn btn-primary btn-sm"
-          >
-            Login
-          </button>
-        </div>
+        <LogInButton login={this.props.login} />
+        {/* <SignUpButton login={this.props.signup} /> */}
+
         <div className="">
           <button
             onClick={this.props.signup}
