@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Navbar } from 'react-bootstrap';
 import fire from '../firebase';
-import Flash from '../flash';
 import NavBarLogo from './navBarComponents/NavBarLogo';
 import UserAccount from './navBarComponents/UserAccount';
 import MyRoutes from './navBarComponents/MyRoutes';
@@ -108,11 +107,6 @@ class NavBar extends Component {
             </div>
           </Navbar.Collapse>
         </Navbar>
-        <Flash
-          isActive={this.state.errorIsActive}
-          message={this.state.message}
-          hideAlert={this.hideAlert}
-        />
       </div>
     );
   }

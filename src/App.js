@@ -45,7 +45,6 @@ class App extends Component {
       <div className="App">
         <NavBar toggleMyMaps={this.toggleMyMaps} user={this.state.user} />
         <Flash user={this.state.user} />
-
         <Form toggleMyMaps={this.state.toggleMyMaps} user={this.state.user} />
       </div>
     );
