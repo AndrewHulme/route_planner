@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import DeleteButton from "./DeleteButton.jsx";
-import StartingPointItem from "./StartingPointItem.jsx";
-import EndingPointItem from "./StartingPointItem.jsx";
+import PointItem from "./PointItem.jsx";
 import ActivityItem from "./ActivityItem.jsx";
 import DistanceItem from "./DistanceItem.jsx";
 import SavedDateItem from "./SavedDateItem.jsx";
@@ -16,11 +15,11 @@ function SavedRouteCard(props) {
           >
           <DescriptionItem description={props.description} />
           {props.roundTrip ? (
-            <StartingPointItem start={props.roundTripStart}/>
+            <PointItem text="Starting point: " point={props.roundTripStart}/>
           ) : (
             <>
-              <StartingPointItem start={props.startingPoint}/>
-              <EndingPointItem endPoint={props.endPoint} />
+              <PointItem text="Starting point: " point={props.startingPoint}/>
+              <PointItem text="Endpoint: " point={props.endPoint} />
             </>
           )}
           <ActivityItem vehicleType={props.vehicleType} />
