@@ -404,16 +404,12 @@ class Form extends Component {
                       name={"startingpoint"}
                     />
 
-                    <div className="col" id="inputBox">
-                      <input
-                        type="text"
-                        className="form-control"
-                        placeholder="Length of trip (km)"
-                        name="roundTripLength"
-                        value={roundTripLength}
-                        onChange={this.roundTripLengthHandler}
-                      />
-                    </div>
+                    <TextInput
+                      changeHandler={this.roundTripLengthHandler}
+                      value={roundTripLength}
+                      placeholder={"Length of trip (km)"}
+                      name={"roundTripLength"}
+                    />
                   </div>
 
                   <UseMyLocation
