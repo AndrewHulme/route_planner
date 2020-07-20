@@ -24,7 +24,6 @@ class RoutingRoundTrip extends MapLayer {
 
   createLeafletElement() {
     const { map, roundTripCoords, vehicle } = this.props;
-    // var apiGraphHopper = process.env.REACT_APP_GRAPHHOPPER;
     var apiORS = process.env.REACT_APP_ROUTE_API_KEY;
 
     let waypointsArr = [];
@@ -78,12 +77,6 @@ class RoutingRoundTrip extends MapLayer {
       router: new L.Routing.openrouteservice(apiORS, {
         profile: vehicle,
       }),
-
-      // router: L.Routing.graphHopper(apiGraphHopper, {
-      //   urlParameters: {
-      //     vehicle: vehicle,
-      //   },
-      // }),
     });
 
     this.setState((prevState) => ({

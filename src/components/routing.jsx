@@ -34,6 +34,7 @@ class Routing extends MapLayer {
       ],
       router: new L.Routing.openrouteservice(apiORS, {
         profile: vehicle,
+        options: { round_trip: { length: 11, points: 12, seed: 3 } },
       }),
 
       // router: L.Routing.graphHopper(apiGraphHopper, {
