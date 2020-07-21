@@ -17,7 +17,7 @@ class Form extends Component {
     lat: 51.5033,
     lng: -0.1195,
     roundTrip: true,
-    buttonText: "Add endpoint",
+    buttonText: "Add Endpoint",
     generateButton: "Generate",
     seed: 1,
     generated: 0,
@@ -131,7 +131,7 @@ class Form extends Component {
       roundTrip: form,
       generateButton: "Generate",
       buttonText:
-        this.state.buttonText == "Add endpoint" ? "Round Trip" : "Add endpoint",
+        this.state.buttonText == "Add Endpoint" ? "Round Trip" : "Add Endpoint",
     });
   };
 
@@ -464,7 +464,7 @@ class Form extends Component {
               )}
 
               <button
-                value="Add endpoint"
+                // value="Add endpoint"
                 id="addEndPoint"
                 className="btn btn-danger buttons"
                 onClick={this.formHandler}
