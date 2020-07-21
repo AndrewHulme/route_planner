@@ -3,9 +3,12 @@ import LeafletMapContainer from "./mapleaflet.jsx";
 import ReturnedFromDB from "./returnedFromDb/returnedFromDb.jsx";
 import fire from "./firebase";
 import Flash from "./flash";
-import SwapVertIcon from "@material-ui/icons/SwapVert";
-import LocationOnIcon from "@material-ui/icons/LocationOn";
 import BookmarkIcon from "@material-ui/icons/Bookmark";
+import TextInput from "./formComponents/textInput";
+import VehicleChoice from "./formComponents/vehicleChoice";
+import UseMyLocation from "./formComponents/useMyLocation";
+import GenerateButton from "./formComponents/generateButton";
+import ChangeFormType from "./formComponents/changeFormType";
 
 class Form extends Component {
   state = {
@@ -13,7 +16,7 @@ class Form extends Component {
     lat: 51.5033,
     lng: -0.1195,
     roundTrip: true,
-    buttonText: "Add endpoint",
+    buttonText: "Add Endpoint",
     generateButton: "Generate",
     seed: 1,
     generated: 0,
@@ -25,7 +28,6 @@ class Form extends Component {
     userName: "user",
     zoom: 13,
     description: "",
-    roundTripStart: "",
     startingpoint: "",
     endpoint: "",
     message: "",
@@ -81,9 +83,6 @@ class Form extends Component {
     this.updateMapContainer();
     db.collection("routes").add({
       roundTrip: this.state.roundTrip,
-      // distance: this.state.roundTripLength
-      //   ? this.state.roundTripLength
-      //   : this.state.distance,
       distance: this.state.distance,
       roundTripCoordinates: JSON.stringify(this.state.roundTripCoords),
       startingCoordinates: [this.state.startingLat, this.state.startingLon],
@@ -92,7 +91,6 @@ class Form extends Component {
       id: dbID,
       userName: this.props.user.email,
       description: this.state.description,
-      roundTripStart: this.state.roundTripStart,
       startingPoint: this.state.startingpoint,
       endPoint: this.state.endpoint,
     });
@@ -124,12 +122,12 @@ class Form extends Component {
       roundTripGenerated: 0,
       startingpoint: "",
       endpoint: "",
-      roundTripStart: "",
       roundTripLength: "",
       generated: 0,
       roundTrip: form,
+      generateButton: "Generate",
       buttonText:
-        this.state.buttonText == "Add endpoint" ? "Round Trip" : "Add endpoint",
+        this.state.buttonText == "Add Endpoint" ? "Round Trip" : "Add Endpoint",
     });
   };
 
@@ -145,13 +143,9 @@ class Form extends Component {
     });
   };
 
-  roundTripLocationHandler = (event) => {
-    this.setState({
-      roundTripStart: `${this.state.lat}, ${this.state.lng}`,
-    });
-  };
-
   startChangeHandler = (event) => {
+    console.log("StartChangeHandler");
+
     this.setState({
       startingpoint: event.target.value,
     });
@@ -164,8 +158,10 @@ class Form extends Component {
   };
 
   roundTripStartHandler = (event) => {
+    console.log("RoundStartChangeHandler");
+
     this.setState({
-      roundTripStart: event.target.value,
+      startingpoint: event.target.value,
       generateButton: "Generate",
       seed: 1,
     });
@@ -191,9 +187,6 @@ class Form extends Component {
     var geocodingKey = process.env.REACT_APP_GEOCODING_API_KEY;
 
     var transportType = "driving-car";
-
-    // var startCoordinates = "8.681495,49.41461";
-    // var endCoordinates = "8.687872,49.420318";
 
     var startingURL =
       "https://eu1.locationiq.com/v1/search.php?key=" +
@@ -272,9 +265,6 @@ class Form extends Component {
         })
         // Catch any errors we hit and update the app
         .catch((error) => this.setState({ error, isLoading: false }));
-      // this.setState({
-      //   generated: this.state.generated + 1,
-      // });
     };
 
     asyncWrapper();
@@ -288,7 +278,7 @@ class Form extends Component {
       "https://eu1.locationiq.com/v1/search.php?key=" +
       geocodingKey +
       "&q=" +
-      this.state.roundTripStart +
+      this.state.startingpoint +
       "&format=json";
 
     const asyncWrapper = async () => {
@@ -359,7 +349,6 @@ class Form extends Component {
 
   render() {
     const {
-      roundTripStart,
       startingpoint,
       lat,
       lng,
@@ -368,19 +357,12 @@ class Form extends Component {
       description,
     } = this.state;
 
-    var displayStartingPoint,
-      displayRoundStartingPoint = "";
+    var displayStartingPoint = "";
 
     if (startingpoint === `${lat}, ${lng}`) {
       displayStartingPoint = "My Location";
     } else {
       displayStartingPoint = this.state.startingpoint;
-    }
-
-    if (roundTripStart === `${lat}, ${lng}`) {
-      displayRoundStartingPoint = "My Location";
-    } else {
-      displayRoundStartingPoint = this.state.roundTripStart;
     }
 
     return (
@@ -400,149 +382,79 @@ class Form extends Component {
                   ""
                 )}
               </div>
+
               {this.state.roundTrip == true ? (
                 <form id="roundTripForm" onSubmit={this.handleSubmitRoundTrip}>
                   <div className="form-row">
-                    <div className="col" id="inputBox">
-                      <input
-                        type="text"
-                        className="form-control"
-                        placeholder="Start point for round trip"
-                        name="roundTripStart"
-                        onChange={this.roundTripStartHandler}
-                        value={displayRoundStartingPoint}
-                      />
-                    </div>
-                    <div className="col" id="inputBox">
-                      <input
-                        type="text"
-                        className="form-control"
-                        placeholder="Length of trip (km)"
-                        name="roundTripLength"
-                        value={roundTripLength}
-                        onChange={this.roundTripLengthHandler}
-                      />
-                    </div>
+                    <TextInput
+                      changeHandler={this.roundTripStartHandler}
+                      value={displayStartingPoint}
+                      placeholder={"Start point for round trip"}
+                      name={"startingpoint"}
+                    />
+
+                    <TextInput
+                      changeHandler={this.roundTripLengthHandler}
+                      value={roundTripLength}
+                      placeholder={"Length of trip (km)"}
+                      name={"roundTripLength"}
+                    />
                   </div>
-                  <div className="form-group">
-                    <button
-                      id="roundTripMyLocation"
-                      onClick={this.roundTripLocationHandler}
-                      type="button"
-                      className="btn btn-secondary buttons"
-                      value="myRoundLocation"
-                    >
-                      <LocationOnIcon id="location" />
-                      Use My Location
-                    </button>
-                  </div>
+
+                  <UseMyLocation
+                    locationHandler={this.locationHandler}
+                    value={"myRoundLocation"}
+                  />
+
                   <div className="form-row" id="generateRoute">
-                    <div className="col" id="inputBox">
-                      <label htmlFor="demo_overview_minimal"></label>
-                      <select
-                        class="form-control dropDownList"
-                        data-role="select-dropdown"
-                        data-profile="minimal"
-                        cy-name="vehicleChoice"
-                        value={this.state.value}
-                        onChange={this.vehicleChangeHandler}
-                      >
-                        {" "}
-                        <option selected value="foot-walking">
-                          Walking
-                        </option>
-                        <option value="driving-car">Driving</option>
-                        <option value="cycling-regular">Cycling</option>
-                        <option value="foot-hiking">Hiking</option>
-                      </select>
-                    </div>
-                    <div className="col">
-                      <input
-                        id="roundTripButton"
-                        className="form-control"
-                        type="submit"
-                        className="btn btn-primary"
-                        value={this.state.generateButton}
-                      />
-                    </div>
+                    <VehicleChoice
+                      cyName={"vehicleChoice"}
+                      value={this.state.value}
+                      vehicleChangeHandler={this.vehicleChangeHandler}
+                    />
+
+                    <GenerateButton value={this.state.generateButton} />
                   </div>
                 </form>
               ) : (
                 <form onSubmit={this.submitHandler} id="secondForm">
                   <div className="form-row">
-                    <div className="col" id="inputBox">
-                      <input
-                        type="text"
-                        className="form-control"
-                        placeholder="Starting Point"
-                        name="startingpoint"
-                        value={displayStartingPoint}
-                        onChange={this.startChangeHandler}
-                      />
-                    </div>
-                    <div className="col">
-                      <input
-                        type="text"
-                        className="form-control"
-                        placeholder="End Point"
-                        name="endpoint"
-                        value={endpoint}
-                        onChange={this.endChangeHandler}
-                      />
-                    </div>
+                    <TextInput
+                      changeHandler={this.startChangeHandler}
+                      value={displayStartingPoint}
+                      placeholder={"Starting point"}
+                      name={"startingpoint"}
+                    />
+
+                    <TextInput
+                      changeHandler={this.endChangeHandler}
+                      value={endpoint}
+                      placeholder={"End point"}
+                      name={"endpoint"}
+                    />
                   </div>
-                  <div className="form-group">
-                    <button
-                      onClick={this.locationHandler}
-                      type="button"
-                      className="btn btn-secondary buttons"
-                      value="myLocation"
-                    >
-                      <LocationOnIcon />
-                      Use My Location
-                    </button>
-                  </div>
+
+                  <UseMyLocation
+                    locationHandler={this.locationHandler}
+                    value={"myLocation"}
+                  />
+
                   <div className="form-row" id="generateRoute">
-                    <div className="col" id="inputBox">
-                      <label for="demo_overview_minimal"></label>
-                      <select
-                        class="form-control dropDownList"
-                        data-role="select-dropdown"
-                        data-profile="minimal"
-                        cy-name="roundVehiclechoice"
-                        value={this.state.value}
-                        onChange={this.vehicleChangeHandler}
-                      >
-                        {" "}
-                        <option selected value="foot-walking">
-                          Walking
-                        </option>
-                        <option value="driving-car">Driving</option>
-                        <option value="cycling-regular">Cycling</option>
-                        <option value="foot-hiking">Hiking</option>
-                      </select>
-                    </div>
-                    <div className="col">
-                      <input
-                        id="roundTripButton"
-                        className="form-control"
-                        type="submit"
-                        className="btn btn-primary"
-                        value="Generate"
-                      />
-                    </div>
+                    <VehicleChoice
+                      cyName={"roundVehiclechoice"}
+                      value={this.state.value}
+                      vehicleChangeHandler={this.vehicleChangeHandler}
+                    />
+
+                    <GenerateButton value={"Generate"} />
                   </div>
                 </form>
               )}
-              <button
-                value="Add endpoint"
-                id="addEndPoint"
-                className="btn btn-danger buttons"
-                onClick={this.formHandler}
-              >
-                <SwapVertIcon id="swap" />
-                {this.state.buttonText}
-              </button>
+
+              <ChangeFormType
+                formHandler={this.formHandler}
+                buttonText={this.state.buttonText}
+              />
             </div>
           )}
 
@@ -595,7 +507,6 @@ class Form extends Component {
             [this.state.startingLat, this.state.startingLon],
             [this.state.endingLat, this.state.endingLon],
           ]}
-          // endingCoords={[this.state.endingLat, this.state.endingLon]}
           roundTripCoords={this.state.roundTripCoords}
           vehicle={this.state.vehicle}
           lat={this.state.lat}
