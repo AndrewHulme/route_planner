@@ -441,7 +441,7 @@ class Form extends Component {
                     <TextInput
                       changeHandler={this.endChangeHandler}
                       value={endpoint}
-                      placeholder={"End Point"}
+                      placeholder={"End point"}
                       name={"endpoint"}
                     />
                   </div>
