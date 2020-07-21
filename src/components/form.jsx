@@ -3,13 +3,14 @@ import LeafletMapContainer from "./mapleaflet.jsx";
 import ReturnedFromDB from "./returnedFromDb.jsx";
 import fire from "./firebase";
 import Flash from "./flash";
-import SwapVertIcon from "@material-ui/icons/SwapVert";
+// import SwapVertIcon from "@material-ui/icons/SwapVert";
 // import LocationOnIcon from "@material-ui/icons/LocationOn";
 import BookmarkIcon from "@material-ui/icons/Bookmark";
 import TextInput from "./formComponents/textInput";
 import VehicleChoice from "./formComponents/vehicleChoice";
 import UseMyLocation from "./formComponents/useMyLocation";
 import GenerateButton from "./formComponents/generateButton";
+import ChangeFormType from "./formComponents/changeFormType";
 
 class Form extends Component {
   state = {
@@ -463,15 +464,10 @@ class Form extends Component {
                 </form>
               )}
 
-              <button
-                // value="Add endpoint"
-                id="addEndPoint"
-                className="btn btn-danger buttons"
-                onClick={this.formHandler}
-              >
-                <SwapVertIcon id="swap" />
-                {this.state.buttonText}
-              </button>
+              <ChangeFormType
+                formHandler={this.formHandler}
+                buttonText={this.state.buttonText}
+              />
             </div>
           )}
 
