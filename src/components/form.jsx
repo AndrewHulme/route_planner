@@ -3,8 +3,6 @@ import LeafletMapContainer from "./mapleaflet.jsx";
 import ReturnedFromDB from "./returnedFromDb.jsx";
 import fire from "./firebase";
 import Flash from "./flash";
-// import SwapVertIcon from "@material-ui/icons/SwapVert";
-// import LocationOnIcon from "@material-ui/icons/LocationOn";
 import BookmarkIcon from "@material-ui/icons/Bookmark";
 import TextInput from "./formComponents/textInput";
 import VehicleChoice from "./formComponents/vehicleChoice";
@@ -30,7 +28,6 @@ class Form extends Component {
     userName: "user",
     zoom: 13,
     description: "",
-    // roundTripStart: "",
     startingpoint: "",
     endpoint: "",
     message: "",
@@ -94,7 +91,6 @@ class Form extends Component {
       id: dbID,
       userName: this.props.user.email,
       description: this.state.description,
-      // roundTripStart: this.state.roundTripStart,
       startingPoint: this.state.startingpoint,
       endPoint: this.state.endpoint,
     });
@@ -126,7 +122,6 @@ class Form extends Component {
       roundTripGenerated: 0,
       startingpoint: "",
       endpoint: "",
-      // roundTripStart: "",
       roundTripLength: "",
       generated: 0,
       roundTrip: form,
@@ -147,12 +142,6 @@ class Form extends Component {
       startingpoint: `${this.state.lat}, ${this.state.lng}`,
     });
   };
-
-  // roundTripLocationHandler = (event) => {
-  //   this.setState({
-  //     roundTripStart: `${this.state.lat}, ${this.state.lng}`,
-  //   });
-  // };
 
   startChangeHandler = (event) => {
     console.log("StartChangeHandler");
@@ -360,7 +349,6 @@ class Form extends Component {
 
   render() {
     const {
-      // roundTripStart,
       startingpoint,
       lat,
       lng,
@@ -414,7 +402,6 @@ class Form extends Component {
                   </div>
 
                   <UseMyLocation
-                    // id={"roundTripMyLocation"}
                     locationHandler={this.locationHandler}
                     value={"myRoundLocation"}
                   />
