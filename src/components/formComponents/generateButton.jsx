@@ -1,15 +1,19 @@
-import React from "react";
+import React from 'react';
+import LocationOnIcon from '@material-ui/icons/LocationOn';
 
 function GenerateButton(props) {
   return (
     <div className="col">
-      <input
+      <button
         id="roundTripButton"
         className="form-control"
         type="submit"
         className="btn btn-primary"
         value={props.value}
-      />
+      >
+        <LocationOnIcon id="location" />
+        Generate
+      </button>
     </div>
   );
 }

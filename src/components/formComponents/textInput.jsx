@@ -1,8 +1,8 @@
-import React from "react";
+import React from 'react';
 
 function TextInput(props) {
   return (
-    <div className="col" id="inputBox">
+    <div className="col">
       <input
         type="text"
         className="form-control"

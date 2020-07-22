@@ -1,9 +1,8 @@
-import React from "react";
+import React from 'react';
 
 function VehicleChoice(props) {
   return (
-    <div className="col" id="inputBox">
-      <label htmlFor="demo_overview_minimal"></label>
+    <div className="col" id="dropDownSelection">
       <select
         class="form-control dropDownList"
         data-role="select-dropdown"
@@ -12,7 +11,7 @@ function VehicleChoice(props) {
         value={props.value}
         onChange={props.vehicleChangeHandler}
       >
-        {" "}
+        {' '}
         <option selected value="foot-walking">
           Walking
         </option>
