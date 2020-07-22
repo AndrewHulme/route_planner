@@ -1,0 +1,57 @@
+@media only screen and (max-width: 600px) {
+  #welcome-message,
+  #userWelcome.row {
+    display: none;
+  }
+  .main-form {
+    display: flex;
+    transform: none;
+    width: 100vw;
+    padding: 0.2rem;
+  }
+
+  .form-control {
+    margin: 5px;
+  }
+
+  #addEndPoint,
+  #useMyLocation,
+  #roundTripButton,
+  #saveRoute,
+  .dropDownList {
+    font-size: 0.7rem !important;
+    padding: 0.1rem 0.4rem 0.1rem 0rem !important;
+  }
+  input.form-control {
+    font-size: 0.7rem;
+  }
+
+  #swap,
+  #location,
+  #save-icon {
+    margin: 1px;
+    transform: scale(0.8, 0.8);
+  }
+
+  .leaflet-control-container {
+    display: none;
+  }
+
+  .dropDowList {
+    background: red;
+  }
+
+  #roundTripButton {
+    /* position: absolute; */
+    /* right: 100%; */
+    /* z-index: auto; */
+    /* bottom: 0; */
+    /* top: 45vh; */
+    /* transform: translateY(-100%); */
+    /* width: 100%; */
+    /* padding: 0; */
+    /* height: 90px; */
+    /* border-radius: 50%; */
+    /* overflow: hidden; */
+  }
+}

@@ -82,6 +82,7 @@ class NavBar extends Component {
     return (
       <React.Fragment>
         <Navbar
+          sticky="top"
           className="navbarCustom"
           collapseOnSelect
           expand="lg"
@@ -90,7 +91,7 @@ class NavBar extends Component {
         >
           <NavBarLogo homePageView={this.homePageView} />
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-          <Navbar.Collapse id="responsive-navbar-nav">
+          <Navbar.Collapse sticky="top" id="responsive-navbar-nav">
             <div className="user-nav">
               <form>
                 <div className="row user-login-container">

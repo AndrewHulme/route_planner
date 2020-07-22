@@ -7,13 +7,13 @@
   padding: 10px;
   position: relative;
   background-color: #fcfcfc;
-  box-shadow: 0 1px 5px rgba(0,0,0,0.65);
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.65);
   transition: 0.3s;
 }
 .savedMapDiv:hover {
   background: #f2f2f2;
   cursor: pointer;
-  transform: scale(1.02)
+  transform: scale(1.02);
 }
 .map-el {
   overflow-y: hidden;
