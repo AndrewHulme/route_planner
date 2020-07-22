@@ -22,7 +22,7 @@
 .leaflet-routing-container:last-of-type {
   display: block;
 }
-.leaflet-routing-container:nth-child(-n + 4) {
+.leaflet-routing-container:nth-child(-n + 2) {
   display: none;
 }
 .leaflet-routing-container h3 {
