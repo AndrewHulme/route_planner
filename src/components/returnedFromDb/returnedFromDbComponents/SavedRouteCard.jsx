@@ -15,7 +15,7 @@ function SavedRouteCard(props) {
           >
           <DescriptionItem description={props.description} />
           {props.roundTrip ? (
-            <PointItem text="Starting point: " point={props.roundTripStart}/>
+            <PointItem text="Starting point: " point={props.startingPoint}/>
           ) : (
             <>
               <PointItem text="Starting point: " point={props.startingPoint}/>
