@@ -1,0 +1,22 @@
+@media only screen and (max-width: 600px) {
+  .main-form {
+    transform: none;
+    width: 100vw;
+    height: 30vh;
+    padding: 0.5rem;
+  }
+
+  #userWelcome,
+  .form-control {
+    margin: 0;
+  }
+
+  .form-control.dropDownList {
+    margin-bottom: 0;
+    max-width: 150px;
+  }
+
+  #addEndPoint {
+    /* margin-top: -2rem; */
+  }
+}
