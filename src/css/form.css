@@ -22,7 +22,7 @@
   transform: scale(0.7, 0.7);
   transform-origin: top left;
 }
-- .form-control.dropDownList {
+.form-control.dropDownList {
   margin-bottom: 5px;
   width: 270px;
   height: 45px;
@@ -51,4 +51,20 @@
 }
 #roundTripMyLocation {
   margin-top: 10px;
+}
+
+@media screen and (max-width: 736px) and (orientation: portrait) {
+  .form-control.dropDownList {
+    margin-bottom: 5px;
+    width: 150px;
+    height: 45px;
+    font-size: 0.9em;
+    font-family: inherit;
+    color: #495057;
+  }
+
+  #roundTripButton {
+    margin-top: 0px;
+    margin-bottom: 10px;
+  }
 }
