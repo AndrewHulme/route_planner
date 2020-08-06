@@ -38,8 +38,22 @@
 
   .btn {
     width: 100%;
+    font-size: 0.7rem !important;
+    height: 30px;
+    margin: 0px;
+    padding: 2px 8px 2px 0px !important;
 
+    /* padding-bottom: 30px !important; */
     /* text-align: center; */
     /* font-size: small; */
+  }
+
+  #roundTripButton {
+    font-size: 0.7rem !important;
+    height: 30px;
+  }
+
+  #addEndPoint {
+    height: 30px;
   }
 }
