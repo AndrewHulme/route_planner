@@ -60,3 +60,9 @@ a.leaflet-control-zoom-out.leaflet-disabled {
 .leaflet-left {
   display: none;
 }
+
+@media screen and (max-width: 736px) and (orientation: portrait) {
+  .leaflet-routing-container {
+    display: none;
+  }
+}
