@@ -35,4 +35,11 @@
   .dropDowList {
     background: red;
   }
+
+  .btn {
+    width: 100%;
+
+    /* text-align: center; */
+    /* font-size: small; */
+  }
 }
