@@ -1,5 +1,4 @@
-import React from 'react';
-import LocationOnIcon from '@material-ui/icons/LocationOn';
+import React from "react";
 
 function GenerateButton(props) {
   return (
@@ -11,8 +10,7 @@ function GenerateButton(props) {
         className="btn btn-primary"
         value={props.value}
       >
-        <LocationOnIcon id="location" />
-        Generate
+        {props.value}
       </button>
     </div>
   );

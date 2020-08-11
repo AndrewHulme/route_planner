@@ -5,6 +5,8 @@
   opacity: 1;
   width: 600px;
   height: 100%;
+  max-width: 100%;
+  float: left;
   border-radius: 0 0 10px 0;
   background-color: #fcfcfc;
   transform: scale(0.7, 0.7);
@@ -17,6 +19,7 @@
   width: 450px;
   height: 100%;
   max-width: 100%;
+  float: left;
   border-radius: 10px;
   background-color: transparent;
   transform: scale(0.7, 0.7);
