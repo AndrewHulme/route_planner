@@ -10,7 +10,7 @@ describe("Flash", () => {
     cy.clearLocalStorage();
   });
   it("should be able to have flash message in DOM", () => {
-    cy.get('input[name="startingpoint"]').type("London Eye");
+    cy.get('input[name="startingPoint"]').type("London Eye");
     cy.get('input[name="roundTripLength"]').type("hello");
     cy.get('select[cy-name="vehicleChoice"]').select("Cycling");
     cy.get("#roundTripButton").click();

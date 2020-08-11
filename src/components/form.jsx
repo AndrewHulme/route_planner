@@ -28,7 +28,7 @@ class Form extends Component {
     userName: "user",
     zoom: 13,
     description: "",
-    startingpoint: "",
+    startingPoint: "",
     endpoint: "",
     message: "",
   };
@@ -91,7 +91,7 @@ class Form extends Component {
       id: dbID,
       userName: this.props.user.email,
       description: this.state.description,
-      startingPoint: this.state.startingpoint,
+      startingPoint: this.state.startingPoint,
       endPoint: this.state.endpoint,
     });
     this.setState({
@@ -120,7 +120,7 @@ class Form extends Component {
     let form = !this.state.roundTrip;
     this.setState({
       roundTripGenerated: 0,
-      startingpoint: "",
+      startingPoint: "",
       endpoint: "",
       roundTripLength: "",
       generated: 0,
@@ -139,7 +139,7 @@ class Form extends Component {
 
   locationHandler = (event) => {
     this.setState({
-      startingpoint: `${this.state.lat}, ${this.state.lng}`,
+      startingPoint: `${this.state.lat}, ${this.state.lng}`,
     });
   };
 
@@ -147,7 +147,7 @@ class Form extends Component {
     console.log("StartChangeHandler");
 
     this.setState({
-      startingpoint: event.target.value,
+      startingPoint: event.target.value,
     });
   };
 
@@ -161,7 +161,7 @@ class Form extends Component {
     console.log("RoundStartChangeHandler");
 
     this.setState({
-      startingpoint: event.target.value,
+      startingPoint: event.target.value,
       generateButton: "Generate",
       seed: 1,
     });
@@ -192,7 +192,7 @@ class Form extends Component {
       "https://eu1.locationiq.com/v1/search.php?key=" +
       geocodingKey +
       "&q=" +
-      this.state.startingpoint +
+      this.state.startingPoint +
       "&format=json";
 
     var endingURL =
@@ -278,7 +278,7 @@ class Form extends Component {
       "https://eu1.locationiq.com/v1/search.php?key=" +
       geocodingKey +
       "&q=" +
-      this.state.startingpoint +
+      this.state.startingPoint +
       "&format=json";
 
     const asyncWrapper = async () => {
@@ -349,7 +349,7 @@ class Form extends Component {
 
   render() {
     const {
-      startingpoint,
+      startingPoint,
       lat,
       lng,
       roundTripLength,
@@ -359,10 +359,10 @@ class Form extends Component {
 
     var displayStartingPoint = "";
 
-    if (startingpoint === `${lat}, ${lng}`) {
+    if (startingPoint === `${lat}, ${lng}`) {
       displayStartingPoint = "My Location";
     } else {
-      displayStartingPoint = this.state.startingpoint;
+      displayStartingPoint = this.state.startingPoint;
     }
 
     return (
@@ -390,7 +390,7 @@ class Form extends Component {
                       changeHandler={this.roundTripStartHandler}
                       value={displayStartingPoint}
                       placeholder={"Start point for round trip"}
-                      name={"startingpoint"}
+                      name={"startingPoint"}
                     />
 
                     <TextInput
@@ -423,7 +423,7 @@ class Form extends Component {
                       changeHandler={this.startChangeHandler}
                       value={displayStartingPoint}
                       placeholder={"Starting point"}
-                      name={"startingpoint"}
+                      name={"startingPoint"}
                     />
 
                     <TextInput

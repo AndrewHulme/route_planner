@@ -24,27 +24,27 @@
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite("visit", (originalFn, url, options) => { ... })
 
-Cypress.Commands.add('mockGeolocation', (latitude = null, longitude = null) => {
+Cypress.Commands.add("mockGeolocation", (latitude = null, longitude = null) => {
   cy.window().then(($window) => {
-    cy.stub($window.navigator.geolocation, 'getCurrentPosition', (callback) => {
+    cy.stub($window.navigator.geolocation, "getCurrentPosition", (callback) => {
       return callback({ coords: { latitude, longitude } });
     });
   });
 });
 
-Cypress.Commands.add('generateRoute', () => {
-  const startInput = 'W1 C1DE';
-  const endpoint = 'London Eye';
-  cy.get('#addEndPoint').click();
-  cy.get('input[name="startingpoint"]').type(startInput);
+Cypress.Commands.add("generateRoute", () => {
+  const startInput = "W1 C1DE";
+  const endpoint = "London Eye";
+  cy.get("#addEndPoint").click();
+  cy.get('input[name="startingPoint"]').type(startInput);
   cy.get('input[name="endpoint"]').type(endpoint);
-  cy.get('#roundTripButton').click();
+  cy.get("#roundTripButton").click();
 });
 
-Cypress.Commands.add('userLogin', () => {
-  cy.get('#exampleInputEmail1').type('dummy@dummy.com');
-  cy.get('#exampleInputPassword1').type('password');
-  cy.get('#logInButton').click();
+Cypress.Commands.add("userLogin", () => {
+  cy.get("#exampleInputEmail1").type("dummy@dummy.com");
+  cy.get("#exampleInputPassword1").type("password");
+  cy.get("#logInButton").click();
 });
 
 // Cypress.lifecycle({

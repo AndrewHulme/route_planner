@@ -18,14 +18,14 @@ describe("Form", () => {
     });
 
     it("should contain an Add Endpoint button", function () {
-      cy.get("#addEndPoint").should("have.value", "Add endpoint");
+      cy.get("#addEndPoint").should("have.value", "Round Trip");
     });
 
     it("contains an option to choose my own location as a start point", () => {
       cy.get('button[value="myLocation"]').click();
 
       const input = "My Location";
-      cy.get('input[name="startingpoint"]').should("have.value", input);
+      cy.get('input[name="startingPoint"]').should("have.value", input);
     });
   });
 
@@ -34,32 +34,15 @@ describe("Form", () => {
       cy.visit("http://localhost:3000");
     });
 
-    // it("should contain a form", () => {
-    //   const placeholderstart = "Start point for round trip";
-    //   const placeholderlength = "Length of trip";
-
-    //   cy.get('input[name="roundTripStart"]').should(
-    //     "have.placeholder",
-    //     placeholderstart
-    //   );
-    //   cy.get('input[name="roundTripLength"]').should(
-    //     "have.placeholder",
-    //     placeholderlength
-    //   );
-
-    //   // cy.contains("Starting Point");
-    //   // cy.contains("End Point");
-    // });
-
     it("accepts input Startingpoint", () => {
       const input = "Startingpoint";
-      cy.get('input[name="startingpoint"]')
+      cy.get('input[name="startingPoint"]')
         .type(input)
         .should("have.value", input);
     });
 
     it("should have a different form for round trip", function () {
-      cy.get('input[name="startingpoint"]')
+      cy.get('input[name="startingPoint"]')
         .type("Hello")
         .should("have.value", "Hello");
     });
@@ -77,45 +60,45 @@ describe("Form", () => {
     it("contains a vehicle selector with driving option", () => {
       cy.get('select[cy-name="vehicleChoice"]')
         .select("Driving")
-        .should("have.value", "car");
+        .should("have.value", "driving-car");
     });
 
     it("contains a vehicle selector with cycling option", () => {
       cy.get('select[cy-name="vehicleChoice"]')
         .select("Cycling")
-        .should("have.value", "bike");
+        .should("have.value", "cycling-regular");
     });
 
     it("contains a vehicle selector with walking option", () => {
       cy.get('select[cy-name="vehicleChoice"]')
         .select("Walking")
-        .should("have.value", "foot");
+        .should("have.value", "foot-walking");
     });
 
     it("contains a vehicle selector with hiking option", () => {
       cy.get('select[cy-name="vehicleChoice"]')
         .select("Hiking")
-        .should("have.value", "hike");
+        .should("have.value", "foot-hiking");
     });
 
     it("should be able to choose own location as a start point for round trip", () => {
       cy.get('button[value="myRoundLocation"]').click();
 
       const input = "My Location";
-      cy.get('input[name="startingpoint"]').should("have.value", input);
+      cy.get('input[name="startingPoint"]').should("have.value", input);
     });
 
     it("contains a vehicle selector with hiking option for round trip", () => {
       cy.get('select[cy-name="vehicleChoice"]')
         .select("Hiking")
-        .should("have.value", "hike");
+        .should("have.value", "foot-hiking");
     });
 
     it("should change generate to randomise after initial round trip selection", function () {
       const startInput = "London Eye";
       const length = 10000;
 
-      cy.get('input[name="startingpoint"]').type(startInput);
+      cy.get('input[name="startingPoint"]').type(startInput);
       cy.get('input[name="roundTripLength"]').type(length);
       cy.get('select[cy-name="vehicleChoice"]').select("Walking");
       cy.get("#roundTripButton").click();
