@@ -34,23 +34,6 @@ describe("Form", () => {
       cy.visit("http://localhost:3000");
     });
 
-    // it("should contain a form", () => {
-    //   const placeholderstart = "Start point for round trip";
-    //   const placeholderlength = "Length of trip";
-
-    //   cy.get('input[name="roundTripStart"]').should(
-    //     "have.placeholder",
-    //     placeholderstart
-    //   );
-    //   cy.get('input[name="roundTripLength"]').should(
-    //     "have.placeholder",
-    //     placeholderlength
-    //   );
-
-    //   // cy.contains("Starting Point");
-    //   // cy.contains("End Point");
-    // });
-
     it("accepts input Startingpoint", () => {
       const input = "Startingpoint";
       cy.get('input[name="startingPoint"]')
@@ -77,25 +60,25 @@ describe("Form", () => {
     it("contains a vehicle selector with driving option", () => {
       cy.get('select[cy-name="vehicleChoice"]')
         .select("Driving")
-        .should("have.value", "car");
+        .should("have.value", "driving-car");
     });
 
     it("contains a vehicle selector with cycling option", () => {
       cy.get('select[cy-name="vehicleChoice"]')
         .select("Cycling")
-        .should("have.value", "bike");
+        .should("have.value", "cycling-regular");
     });
 
     it("contains a vehicle selector with walking option", () => {
       cy.get('select[cy-name="vehicleChoice"]')
         .select("Walking")
-        .should("have.value", "foot");
+        .should("have.value", "foot-walking");
     });
 
     it("contains a vehicle selector with hiking option", () => {
       cy.get('select[cy-name="vehicleChoice"]')
         .select("Hiking")
-        .should("have.value", "hike");
+        .should("have.value", "foot-hiking");
     });
 
     it("should be able to choose own location as a start point for round trip", () => {
@@ -108,7 +91,7 @@ describe("Form", () => {
     it("contains a vehicle selector with hiking option for round trip", () => {
       cy.get('select[cy-name="vehicleChoice"]')
         .select("Hiking")
-        .should("have.value", "hike");
+        .should("have.value", "foot-hiking");
     });
 
     it("should change generate to randomise after initial round trip selection", function () {
