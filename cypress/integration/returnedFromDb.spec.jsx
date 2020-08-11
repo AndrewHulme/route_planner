@@ -10,7 +10,8 @@ describe("ReturnedFromDb", () => {
     cy.clearLocalStorage();
   });
   it("should generate,show and saved a trip", () => {
-    cy.userLogin();
+
+    // cy.userLogin();
     cy.get('input[name="startingPoint"]').type("London Eye");
     cy.get('input[name="roundTripLength"]').type("5000");
     cy.get('select[cy-name="vehicleChoice"]').select("Cycling");
@@ -21,9 +22,8 @@ describe("ReturnedFromDb", () => {
     cy.get("#my-routes").click();
     cy.contains("My Route");
     cy.get(".description").should("be.visible");
-    cy.get(".dustbin").click();
+    cy.get(".MuiSvgIcon-root").first().click();
     cy.get(".description").should("not.be.visible");
-
     cy.get("#logOutButton").click();
   });
 });
