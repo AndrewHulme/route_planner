@@ -34,23 +34,6 @@ describe('Form', () => {
       cy.visit('http://localhost:3000');
     });
 
-    // it("should contain a form", () => {
-    //   const placeholderstart = "Start point for round trip";
-    //   const placeholderlength = "Length of trip";
-
-    //   cy.get('input[name="roundTripStart"]').should(
-    //     "have.placeholder",
-    //     placeholderstart
-    //   );
-    //   cy.get('input[name="roundTripLength"]').should(
-    //     "have.placeholder",
-    //     placeholderlength
-    //   );
-
-    //   // cy.contains("Starting Point");
-    //   // cy.contains("End Point");
-    // });
-
     it('accepts input Startingpoint', () => {
       const input = 'Startingpoint';
       cy.get('input[name="startingPoint"]')
