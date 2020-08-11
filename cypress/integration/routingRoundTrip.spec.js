@@ -14,7 +14,7 @@ describe("Routing", () => {
       const startInput = "London Eye";
       const length = 10000;
 
-      cy.get('input[name="startingpoint"]').type(startInput);
+      cy.get('input[name="startingPoint"]').type(startInput);
       cy.get('input[name="roundTripLength"]').type(length);
       cy.get("#roundTripButton").click();
       cy.server().should((server) => {
@@ -32,7 +32,7 @@ describe("Routing", () => {
         .select("Walking")
         .should("have.value", "foot");
       cy.get("#roundTripButton").click();
-      cy.get('input[name="startingpoint"]').should("have.value", "My Location");
+      cy.get('input[name="startingPoint"]').should("have.value", "My Location");
     });
   });
 });

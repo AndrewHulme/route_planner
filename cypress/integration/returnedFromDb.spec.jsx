@@ -11,7 +11,7 @@ describe("ReturnedFromDb", () => {
   });
   it("should generate,show and saved a trip", () => {
     cy.userLogin();
-    cy.get('input[name="startingpoint"]').type("London Eye");
+    cy.get('input[name="startingPoint"]').type("London Eye");
     cy.get('input[name="roundTripLength"]').type("5000");
     cy.get('select[cy-name="vehicleChoice"]').select("Cycling");
     cy.get("#roundTripButton").click();
