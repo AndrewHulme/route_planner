@@ -30,7 +30,7 @@ class Flash extends Component {
           >
             <span aria-hidden="true">&times;</span>
           </button>
-          {this.props.message}
+          <p>{this.props.message}</p>
         </div>
       );
     }

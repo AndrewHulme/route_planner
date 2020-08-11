@@ -1,6 +1,6 @@
 {
-  "/Users/student/Documents/Projects/Week11/route_planner/src/components/firebase.jsx": {
-    "path": "/Users/student/Documents/Projects/Week11/route_planner/src/components/firebase.jsx",
+  "C:\\Users\\szony\\Documents\\learning\\course\\FinalProject\\route_planner\\src\\components\\firebase.jsx": {
+    "path": "C:\\Users\\szony\\Documents\\learning\\course\\FinalProject\\route_planner\\src\\components\\firebase.jsx",
     "statementMap": {
       "0": {
         "start": {
@@ -26,20 +26,20 @@
     "fnMap": {},
     "branchMap": {},
     "s": {
-      "0": 48,
-      "1": 48
+      "0": 49,
+      "1": 49
     },
     "f": {},
     "b": {},
     "_coverageSchema": "43e27e138ebf9cfc5966b082cf9a028302ed4184",
-    "hash": "126ee5d36753e9ae1492d597ad5cc7a13387b7af"
+    "hash": "eb7543eb0d9f39830d0883793bf27cfaff688948"
   },
-  "/Users/student/Documents/Projects/Week11/route_planner/src/orslrm.js": {
-    "path": "/Users/student/Documents/Projects/Week11/route_planner/src/orslrm.js",
+  "C:\\Users\\szony\\Documents\\learning\\course\\FinalProject\\route_planner\\src\\orslrm.js": {
+    "path": "C:\\Users\\szony\\Documents\\learning\\course\\FinalProject\\route_planner\\src\\orslrm.js",
     "statementMap": {
       "0": {
         "start": {
-          "line": 1,
+          "line": 2,
           "column": 0
         },
         "end": {
@@ -743,17 +743,17 @@
         "name": "(anonymous_0)",
         "decl": {
           "start": {
-            "line": 1,
+            "line": 2,
             "column": 1
           },
           "end": {
-            "line": 1,
+            "line": 2,
             "column": 2
           }
         },
         "loc": {
           "start": {
-            "line": 1,
+            "line": 2,
             "column": 13
           },
           "end": {
@@ -761,7 +761,7 @@
             "column": 1
           }
         },
-        "line": 1
+        "line": 2
       },
       "1": {
         "name": "(anonymous_1)",
@@ -1307,15 +1307,15 @@
       }
     },
     "s": {
-      "0": 48,
-      "1": 48,
-      "2": 48,
-      "3": 48,
-      "4": 48,
-      "5": 48,
-      "6": 200,
-      "7": 200,
-      "8": 200,
+      "0": 49,
+      "1": 49,
+      "2": 49,
+      "3": 49,
+      "4": 49,
+      "5": 49,
+      "6": 204,
+      "7": 204,
+      "8": 204,
       "9": 0,
       "10": 0,
       "11": 0,
@@ -1374,13 +1374,13 @@
       "64": 0,
       "65": 0,
       "66": 0,
-      "67": 48,
-      "68": 200,
-      "69": 48
+      "67": 49,
+      "68": 204,
+      "69": 49
     },
     "f": {
-      "0": 48,
-      "1": 200,
+      "0": 49,
+      "1": 204,
       "2": 0,
       "3": 0,
       "4": 0,
@@ -1388,15 +1388,15 @@
       "6": 0,
       "7": 0,
       "8": 0,
-      "9": 200
+      "9": 204
     },
     "b": {
       "0": [
-        48,
+        49,
         0
       ],
       "1": [
-        200,
+        204,
         0
       ],
       "2": [
@@ -1429,10 +1429,10 @@
       ]
     },
     "_coverageSchema": "43e27e138ebf9cfc5966b082cf9a028302ed4184",
-    "hash": "843472f7edf20df5c8a0d6f3bb18fec3b0a68025"
+    "hash": "d31e4db939a816f918dcfe6fca9a7498ccf84527"
   },
-  "/Users/student/Documents/Projects/Week11/route_planner/src/components/routing.jsx": {
-    "path": "/Users/student/Documents/Projects/Week11/route_planner/src/components/routing.jsx",
+  "C:\\Users\\szony\\Documents\\learning\\course\\FinalProject\\route_planner\\src\\components\\routing.jsx": {
+    "path": "C:\\Users\\szony\\Documents\\learning\\course\\FinalProject\\route_planner\\src\\components\\routing.jsx",
     "statementMap": {
       "0": {
         "start": {
@@ -1804,48 +1804,48 @@
       }
     },
     "s": {
-      "0": 96,
-      "1": 353,
+      "0": 98,
+      "1": 338,
       "2": 0,
       "3": 0,
       "4": 0,
       "5": 0,
-      "6": 96,
-      "7": 96,
-      "8": 96,
-      "9": 96,
+      "6": 98,
+      "7": 98,
+      "8": 98,
+      "9": 98,
       "10": 0,
-      "11": 96,
-      "12": 96,
-      "13": 96,
-      "14": 96,
-      "15": 96
+      "11": 98,
+      "12": 98,
+      "13": 98,
+      "14": 98,
+      "15": 98
     },
     "f": {
-      "0": 353,
+      "0": 338,
       "1": 0,
-      "2": 96,
+      "2": 98,
       "3": 0
     },
     "b": {
       "0": [
         0,
-        353
+        338
       ],
       "1": [
         0,
         0
       ],
       "2": [
-        96,
+        98,
         0
       ]
     },
     "_coverageSchema": "43e27e138ebf9cfc5966b082cf9a028302ed4184",
-    "hash": "93f96dfbcd2d12d6f79ab7f3c4ea5cd185562404"
+    "hash": "378684df5d0bd67d039701b763a340e079028eec"
   },
-  "/Users/student/Documents/Projects/Week11/route_planner/src/components/routingRoundTrip.jsx": {
-    "path": "/Users/student/Documents/Projects/Week11/route_planner/src/components/routingRoundTrip.jsx",
+  "C:\\Users\\szony\\Documents\\learning\\course\\FinalProject\\route_planner\\src\\components\\routingRoundTrip.jsx": {
+    "path": "C:\\Users\\szony\\Documents\\learning\\course\\FinalProject\\route_planner\\src\\components\\routingRoundTrip.jsx",
     "statementMap": {
       "0": {
         "start": {
@@ -2449,71 +2449,71 @@
       }
     },
     "s": {
-      "0": 96,
-      "1": 361,
+      "0": 98,
+      "1": 346,
       "2": 8,
       "3": 8,
       "4": 0,
       "5": 0,
-      "6": 104,
-      "7": 104,
-      "8": 104,
-      "9": 104,
-      "10": 96,
-      "11": 96,
+      "6": 106,
+      "7": 106,
+      "8": 106,
+      "9": 106,
+      "10": 98,
+      "11": 98,
       "12": 0,
-      "13": 96,
-      "14": 96,
-      "15": 192,
+      "13": 98,
+      "14": 98,
+      "15": 196,
       "16": 0,
       "17": 0,
-      "18": 96,
-      "19": 104,
-      "20": 104,
+      "18": 98,
+      "19": 106,
+      "20": 106,
       "21": 16,
-      "22": 104,
-      "23": 96,
-      "24": 104,
-      "25": 104
+      "22": 106,
+      "23": 98,
+      "24": 106,
+      "25": 106
     },
     "f": {
-      "0": 361,
+      "0": 346,
       "1": 0,
-      "2": 104,
-      "3": 192,
+      "2": 106,
+      "3": 196,
       "4": 16
     },
     "b": {
       "0": [
         8,
-        353
+        338
       ],
       "1": [
         0,
         8
       ],
       "2": [
-        96,
+        98,
         8
       ],
       "3": [
         0,
-        96
+        98
       ],
       "4": [
         0,
-        192
+        196
       ],
       "5": [
-        96,
+        98,
         8
       ]
     },
     "_coverageSchema": "43e27e138ebf9cfc5966b082cf9a028302ed4184",
-    "hash": "9db98e88401c13dd87404b7ecb913b3d3a62545d"
+    "hash": "df5a2a1ef79ddee7465eddb8b42ec49f71335894"
   },
-  "/Users/student/Documents/Projects/Week11/route_planner/src/components/mapleaflet.jsx": {
-    "path": "/Users/student/Documents/Projects/Week11/route_planner/src/components/mapleaflet.jsx",
+  "C:\\Users\\szony\\Documents\\learning\\course\\FinalProject\\route_planner\\src\\components\\mapleaflet.jsx": {
+    "path": "C:\\Users\\szony\\Documents\\learning\\course\\FinalProject\\route_planner\\src\\components\\mapleaflet.jsx",
     "statementMap": {
       "0": {
         "start": {
@@ -2721,34 +2721,34 @@
       }
     },
     "s": {
-      "0": 96,
-      "1": 96,
-      "2": 48,
-      "3": 48,
-      "4": 898,
-      "5": 898
+      "0": 98,
+      "1": 98,
+      "2": 49,
+      "3": 49,
+      "4": 872,
+      "5": 872
     },
     "f": {
-      "0": 48,
-      "1": 898
+      "0": 49,
+      "1": 872
     },
     "b": {
       "0": [
-        898,
-        898,
-        802
+        872,
+        872,
+        774
       ],
       "1": [
-        898,
-        898,
-        802
+        872,
+        872,
+        774
       ]
     },
     "_coverageSchema": "43e27e138ebf9cfc5966b082cf9a028302ed4184",
-    "hash": "9a3f42c88c88e4644d72a2012cbacd63e37e60df"
+    "hash": "a48868b258826248d7ac9380b8e14927091e454b"
   },
-  "/Users/student/Documents/Projects/Week11/route_planner/src/components/returnedFromDb/returnedFromDbComponents/DeleteButton.jsx": {
-    "path": "/Users/student/Documents/Projects/Week11/route_planner/src/components/returnedFromDb/returnedFromDbComponents/DeleteButton.jsx",
+  "C:\\Users\\szony\\Documents\\learning\\course\\FinalProject\\route_planner\\src\\components\\returnedFromDb\\returnedFromDbComponents\\DeleteButton.jsx": {
+    "path": "C:\\Users\\szony\\Documents\\learning\\course\\FinalProject\\route_planner\\src\\components\\returnedFromDb\\returnedFromDbComponents\\DeleteButton.jsx",
     "statementMap": {
       "0": {
         "start": {
@@ -2823,19 +2823,19 @@
     },
     "branchMap": {},
     "s": {
-      "0": 0,
-      "1": 0
+      "0": 15,
+      "1": 1
     },
     "f": {
-      "0": 0,
-      "1": 0
+      "0": 15,
+      "1": 1
     },
     "b": {},
     "_coverageSchema": "43e27e138ebf9cfc5966b082cf9a028302ed4184",
-    "hash": "67774bb9f851e73a833feb0ad1cb93d34fe1e454"
+    "hash": "299bc386f424181a7094b6c52f69274ad05d5672"
   },
-  "/Users/student/Documents/Projects/Week11/route_planner/src/components/returnedFromDb/returnedFromDbComponents/PointItem.jsx": {
-    "path": "/Users/student/Documents/Projects/Week11/route_planner/src/components/returnedFromDb/returnedFromDbComponents/PointItem.jsx",
+  "C:\\Users\\szony\\Documents\\learning\\course\\FinalProject\\route_planner\\src\\components\\returnedFromDb\\returnedFromDbComponents\\PointItem.jsx": {
+    "path": "C:\\Users\\szony\\Documents\\learning\\course\\FinalProject\\route_planner\\src\\components\\returnedFromDb\\returnedFromDbComponents\\PointItem.jsx",
     "statementMap": {
       "0": {
         "start": {
@@ -2876,17 +2876,17 @@
     },
     "branchMap": {},
     "s": {
-      "0": 0
+      "0": 15
     },
     "f": {
-      "0": 0
+      "0": 15
     },
     "b": {},
     "_coverageSchema": "43e27e138ebf9cfc5966b082cf9a028302ed4184",
-    "hash": "f859d7eb93601a7c0fe2283b37b6158be45f68bc"
+    "hash": "f8276e8fd4aafd70a8f05c19b413fb86c686af11"
   },
-  "/Users/student/Documents/Projects/Week11/route_planner/src/components/returnedFromDb/returnedFromDbComponents/ActivityItem.jsx": {
-    "path": "/Users/student/Documents/Projects/Week11/route_planner/src/components/returnedFromDb/returnedFromDbComponents/ActivityItem.jsx",
+  "C:\\Users\\szony\\Documents\\learning\\course\\FinalProject\\route_planner\\src\\components\\returnedFromDb\\returnedFromDbComponents\\ActivityItem.jsx": {
+    "path": "C:\\Users\\szony\\Documents\\learning\\course\\FinalProject\\route_planner\\src\\components\\returnedFromDb\\returnedFromDbComponents\\ActivityItem.jsx",
     "statementMap": {
       "0": {
         "start": {
@@ -2927,17 +2927,17 @@
     },
     "branchMap": {},
     "s": {
-      "0": 0
+      "0": 15
     },
     "f": {
-      "0": 0
+      "0": 15
     },
     "b": {},
     "_coverageSchema": "43e27e138ebf9cfc5966b082cf9a028302ed4184",
-    "hash": "d9887380f7f7772b02a9a31a7bf551363f1fd64c"
+    "hash": "c6ba76ecb4db8abd01c951e35930f3e39d211788"
   },
-  "/Users/student/Documents/Projects/Week11/route_planner/src/components/returnedFromDb/returnedFromDbComponents/DistanceItem.jsx": {
-    "path": "/Users/student/Documents/Projects/Week11/route_planner/src/components/returnedFromDb/returnedFromDbComponents/DistanceItem.jsx",
+  "C:\\Users\\szony\\Documents\\learning\\course\\FinalProject\\route_planner\\src\\components\\returnedFromDb\\returnedFromDbComponents\\DistanceItem.jsx": {
+    "path": "C:\\Users\\szony\\Documents\\learning\\course\\FinalProject\\route_planner\\src\\components\\returnedFromDb\\returnedFromDbComponents\\DistanceItem.jsx",
     "statementMap": {
       "0": {
         "start": {
@@ -2978,17 +2978,17 @@
     },
     "branchMap": {},
     "s": {
-      "0": 0
+      "0": 15
     },
     "f": {
-      "0": 0
+      "0": 15
     },
     "b": {},
     "_coverageSchema": "43e27e138ebf9cfc5966b082cf9a028302ed4184",
-    "hash": "6735c4de234a2dbea8631c2e92cc8c88e487a87d"
+    "hash": "5e9b480545572215f61414e88718b63f2b14273a"
   },
-  "/Users/student/Documents/Projects/Week11/route_planner/src/components/returnedFromDb/returnedFromDbComponents/SavedDateItem.jsx": {
-    "path": "/Users/student/Documents/Projects/Week11/route_planner/src/components/returnedFromDb/returnedFromDbComponents/SavedDateItem.jsx",
+  "C:\\Users\\szony\\Documents\\learning\\course\\FinalProject\\route_planner\\src\\components\\returnedFromDb\\returnedFromDbComponents\\SavedDateItem.jsx": {
+    "path": "C:\\Users\\szony\\Documents\\learning\\course\\FinalProject\\route_planner\\src\\components\\returnedFromDb\\returnedFromDbComponents\\SavedDateItem.jsx",
     "statementMap": {
       "0": {
         "start": {
@@ -3029,17 +3029,17 @@
     },
     "branchMap": {},
     "s": {
-      "0": 0
+      "0": 15
     },
     "f": {
-      "0": 0
+      "0": 15
     },
     "b": {},
     "_coverageSchema": "43e27e138ebf9cfc5966b082cf9a028302ed4184",
-    "hash": "360e8975b2e1da7fca73e5a5c78523ea04527485"
+    "hash": "3bbfc72bfecc4fe2cebcd392c61b0bc334925f90"
   },
-  "/Users/student/Documents/Projects/Week11/route_planner/src/components/returnedFromDb/returnedFromDbComponents/DescriptionItem.jsx": {
-    "path": "/Users/student/Documents/Projects/Week11/route_planner/src/components/returnedFromDb/returnedFromDbComponents/DescriptionItem.jsx",
+  "C:\\Users\\szony\\Documents\\learning\\course\\FinalProject\\route_planner\\src\\components\\returnedFromDb\\returnedFromDbComponents\\DescriptionItem.jsx": {
+    "path": "C:\\Users\\szony\\Documents\\learning\\course\\FinalProject\\route_planner\\src\\components\\returnedFromDb\\returnedFromDbComponents\\DescriptionItem.jsx",
     "statementMap": {
       "0": {
         "start": {
@@ -3080,17 +3080,17 @@
     },
     "branchMap": {},
     "s": {
-      "0": 0
+      "0": 15
     },
     "f": {
-      "0": 0
+      "0": 15
     },
     "b": {},
     "_coverageSchema": "43e27e138ebf9cfc5966b082cf9a028302ed4184",
-    "hash": "0a546b032ed9c34f30d17fb4f1efe5841bf229b4"
+    "hash": "1556b72319ddc6ef46a6e654b1be7630e9bc9caf"
   },
-  "/Users/student/Documents/Projects/Week11/route_planner/src/components/returnedFromDb/returnedFromDbComponents/SavedRouteCard.jsx": {
-    "path": "/Users/student/Documents/Projects/Week11/route_planner/src/components/returnedFromDb/returnedFromDbComponents/SavedRouteCard.jsx",
+  "C:\\Users\\szony\\Documents\\learning\\course\\FinalProject\\route_planner\\src\\components\\returnedFromDb\\returnedFromDbComponents\\SavedRouteCard.jsx": {
+    "path": "C:\\Users\\szony\\Documents\\learning\\course\\FinalProject\\route_planner\\src\\components\\returnedFromDb\\returnedFromDbComponents\\SavedRouteCard.jsx",
     "statementMap": {
       "0": {
         "start": {
@@ -3236,26 +3236,26 @@
       }
     },
     "s": {
-      "0": 0,
+      "0": 15,
       "1": 0,
-      "2": 0
+      "2": 1
     },
     "f": {
-      "0": 0,
+      "0": 15,
       "1": 0,
-      "2": 0
+      "2": 1
     },
     "b": {
       "0": [
-        0,
+        15,
         0
       ]
     },
     "_coverageSchema": "43e27e138ebf9cfc5966b082cf9a028302ed4184",
-    "hash": "b73e61687e08edd553565cfb3d87096225a8575b"
+    "hash": "69e180aa976636cbf53ec3837b5afc78ee6ed288"
   },
-  "/Users/student/Documents/Projects/Week11/route_planner/src/components/returnedFromDb/returnedFromDb.jsx": {
-    "path": "/Users/student/Documents/Projects/Week11/route_planner/src/components/returnedFromDb/returnedFromDb.jsx",
+  "C:\\Users\\szony\\Documents\\learning\\course\\FinalProject\\route_planner\\src\\components\\returnedFromDb\\returnedFromDb.jsx": {
+    "path": "C:\\Users\\szony\\Documents\\learning\\course\\FinalProject\\route_planner\\src\\components\\returnedFromDb\\returnedFromDb.jsx",
     "statementMap": {
       "0": {
         "start": {
@@ -4221,85 +4221,85 @@
       }
     },
     "s": {
-      "0": 0,
-      "1": 0,
-      "2": 0,
-      "3": 0,
-      "4": 0,
-      "5": 0,
-      "6": 0,
-      "7": 0,
-      "8": 0,
-      "9": 0,
+      "0": 4,
+      "1": 4,
+      "2": 4,
+      "3": 2,
+      "4": 4,
+      "5": 1,
+      "6": 1,
+      "7": 1,
+      "8": 1,
+      "9": 1,
       "10": 0,
       "11": 0,
-      "12": 0,
+      "12": 4,
       "13": 0,
       "14": 0,
       "15": 0,
-      "16": 0,
-      "17": 0,
-      "18": 0,
-      "19": 0,
-      "20": 0,
-      "21": 0,
-      "22": 0,
-      "23": 0,
-      "24": 0,
-      "25": 0,
-      "26": 0,
-      "27": 0,
-      "28": 0,
-      "29": 0,
-      "30": 0,
-      "31": 0,
-      "32": 0,
-      "33": 0,
-      "34": 0,
+      "16": 4,
+      "17": 2,
+      "18": 2,
+      "19": 2,
+      "20": 55,
+      "21": 2,
+      "22": 4,
+      "23": 30,
+      "24": 30,
+      "25": 4,
+      "26": 30,
+      "27": 30,
+      "28": 4,
+      "29": 8,
+      "30": 8,
+      "31": 8,
+      "32": 110,
+      "33": 110,
+      "34": 30,
       "35": 0,
-      "36": 0
+      "36": 1
     },
     "f": {
-      "0": 0,
-      "1": 0,
-      "2": 0,
-      "3": 0,
-      "4": 0,
-      "5": 0,
+      "0": 4,
+      "1": 2,
+      "2": 1,
+      "3": 1,
+      "4": 1,
+      "5": 1,
       "6": 0,
       "7": 0,
       "8": 0,
       "9": 0,
-      "10": 0,
-      "11": 0,
-      "12": 0,
-      "13": 0,
-      "14": 0,
-      "15": 0,
-      "16": 0,
-      "17": 0,
+      "10": 2,
+      "11": 2,
+      "12": 55,
+      "13": 30,
+      "14": 30,
+      "15": 8,
+      "16": 8,
+      "17": 110,
       "18": 0,
-      "19": 0
+      "19": 1
     },
     "b": {
       "0": [
-        0,
+        8,
         0
       ],
       "1": [
-        0,
-        0
+        30,
+        80
       ],
       "2": [
-        0,
-        0
+        110,
+        110
       ]
     },
     "_coverageSchema": "43e27e138ebf9cfc5966b082cf9a028302ed4184",
-    "hash": "6f858d86745889f6cbb6194f0589c08eadd8a3cb"
+    "hash": "08200da4ca79b155328c682e4fbb11d1165ef9e6"
   },
-  "/Users/student/Documents/Projects/Week11/route_planner/src/components/flash.jsx": {
-    "path": "/Users/student/Documents/Projects/Week11/route_planner/src/components/flash.jsx",
+  "C:\\Users\\szony\\Documents\\learning\\course\\FinalProject\\route_planner\\src\\components\\flash.jsx": {
+    "path": "C:\\Users\\szony\\Documents\\learning\\course\\FinalProject\\route_planner\\src\\components\\flash.jsx",
     "statementMap": {
       "0": {
         "start": {
@@ -4519,32 +4519,32 @@
       }
     },
     "s": {
-      "0": 116,
-      "1": 116,
-      "2": 116,
-      "3": 0,
-      "4": 214,
-      "5": 56,
-      "6": 0,
-      "7": 158
+      "0": 118,
+      "1": 118,
+      "2": 118,
+      "3": 2,
+      "4": 224,
+      "5": 62,
+      "6": 2,
+      "7": 162
     },
     "f": {
-      "0": 116,
-      "1": 0,
-      "2": 214,
-      "3": 0
+      "0": 118,
+      "1": 2,
+      "2": 224,
+      "3": 2
     },
     "b": {
       "0": [
-        56,
-        158
+        62,
+        162
       ]
     },
     "_coverageSchema": "43e27e138ebf9cfc5966b082cf9a028302ed4184",
-    "hash": "485db0e2237c2ad408b79c3e82bd54dea718f368"
+    "hash": "77341b80281f1af9cc8e1b8cc35f4f4e3d6bb787"
   },
-  "/Users/student/Documents/Projects/Week11/route_planner/src/components/formComponents/textInput.jsx": {
-    "path": "/Users/student/Documents/Projects/Week11/route_planner/src/components/formComponents/textInput.jsx",
+  "C:\\Users\\szony\\Documents\\learning\\course\\FinalProject\\route_planner\\src\\components\\formComponents\\textInput.jsx": {
+    "path": "C:\\Users\\szony\\Documents\\learning\\course\\FinalProject\\route_planner\\src\\components\\formComponents\\textInput.jsx",
     "statementMap": {
       "0": {
         "start": {
@@ -4585,17 +4585,17 @@
     },
     "branchMap": {},
     "s": {
-      "0": 802
+      "0": 770
     },
     "f": {
-      "0": 802
+      "0": 770
     },
     "b": {},
     "_coverageSchema": "43e27e138ebf9cfc5966b082cf9a028302ed4184",
-    "hash": "9288ec7375afa239f17efd074b3d882fa2a493e8"
+    "hash": "49d47b7acdf81bf35131fbf20364902c4d65baf8"
   },
-  "/Users/student/Documents/Projects/Week11/route_planner/src/components/formComponents/vehicleChoice.jsx": {
-    "path": "/Users/student/Documents/Projects/Week11/route_planner/src/components/formComponents/vehicleChoice.jsx",
+  "C:\\Users\\szony\\Documents\\learning\\course\\FinalProject\\route_planner\\src\\components\\formComponents\\vehicleChoice.jsx": {
+    "path": "C:\\Users\\szony\\Documents\\learning\\course\\FinalProject\\route_planner\\src\\components\\formComponents\\vehicleChoice.jsx",
     "statementMap": {
       "0": {
         "start": {
@@ -4636,17 +4636,17 @@
     },
     "branchMap": {},
     "s": {
-      "0": 401
+      "0": 385
     },
     "f": {
-      "0": 401
+      "0": 385
     },
     "b": {},
     "_coverageSchema": "43e27e138ebf9cfc5966b082cf9a028302ed4184",
-    "hash": "ed419ebe79b646c00817c7d12b186f36abc39f1f"
+    "hash": "dd44387651ac645d079110aaba874758b7b86253"
   },
-  "/Users/student/Documents/Projects/Week11/route_planner/src/components/formComponents/useMyLocation.jsx": {
-    "path": "/Users/student/Documents/Projects/Week11/route_planner/src/components/formComponents/useMyLocation.jsx",
+  "C:\\Users\\szony\\Documents\\learning\\course\\FinalProject\\route_planner\\src\\components\\formComponents\\useMyLocation.jsx": {
+    "path": "C:\\Users\\szony\\Documents\\learning\\course\\FinalProject\\route_planner\\src\\components\\formComponents\\useMyLocation.jsx",
     "statementMap": {
       "0": {
         "start": {
@@ -4687,17 +4687,17 @@
     },
     "branchMap": {},
     "s": {
-      "0": 401
+      "0": 385
     },
     "f": {
-      "0": 401
+      "0": 385
     },
     "b": {},
     "_coverageSchema": "43e27e138ebf9cfc5966b082cf9a028302ed4184",
-    "hash": "003fa27b176f735214b9ac2faf715a52ac4f8698"
+    "hash": "66eace00fab0d10ce5c81281772c5cbf7daf2d6b"
   },
-  "/Users/student/Documents/Projects/Week11/route_planner/src/components/formComponents/generateButton.jsx": {
-    "path": "/Users/student/Documents/Projects/Week11/route_planner/src/components/formComponents/generateButton.jsx",
+  "C:\\Users\\szony\\Documents\\learning\\course\\FinalProject\\route_planner\\src\\components\\formComponents\\generateButton.jsx": {
+    "path": "C:\\Users\\szony\\Documents\\learning\\course\\FinalProject\\route_planner\\src\\components\\formComponents\\generateButton.jsx",
     "statementMap": {
       "0": {
         "start": {
@@ -4738,17 +4738,17 @@
     },
     "branchMap": {},
     "s": {
-      "0": 401
+      "0": 385
     },
     "f": {
-      "0": 401
+      "0": 385
     },
     "b": {},
     "_coverageSchema": "43e27e138ebf9cfc5966b082cf9a028302ed4184",
-    "hash": "7ef01484a1f14c134b5b4d0f3acfb6a56f863049"
+    "hash": "d1ba17fa510c49f674b9831c8959b414815e1eaf"
   },
-  "/Users/student/Documents/Projects/Week11/route_planner/src/components/formComponents/changeFormType.jsx": {
-    "path": "/Users/student/Documents/Projects/Week11/route_planner/src/components/formComponents/changeFormType.jsx",
+  "C:\\Users\\szony\\Documents\\learning\\course\\FinalProject\\route_planner\\src\\components\\formComponents\\changeFormType.jsx": {
+    "path": "C:\\Users\\szony\\Documents\\learning\\course\\FinalProject\\route_planner\\src\\components\\formComponents\\changeFormType.jsx",
     "statementMap": {
       "0": {
         "start": {
@@ -4789,17 +4789,17 @@
     },
     "branchMap": {},
     "s": {
-      "0": 401
+      "0": 385
     },
     "f": {
-      "0": 401
+      "0": 385
     },
     "b": {},
     "_coverageSchema": "43e27e138ebf9cfc5966b082cf9a028302ed4184",
-    "hash": "3e587179861bbaedbde9b655352edc25cf12b6ae"
+    "hash": "b2f0f612e1216bc3d6a657e85b58fb9d40d4eccf"
   },
-  "/Users/student/Documents/Projects/Week11/route_planner/src/components/form.jsx": {
-    "path": "/Users/student/Documents/Projects/Week11/route_planner/src/components/form.jsx",
+  "C:\\Users\\szony\\Documents\\learning\\course\\FinalProject\\route_planner\\src\\components\\form.jsx": {
+    "path": "C:\\Users\\szony\\Documents\\learning\\course\\FinalProject\\route_planner\\src\\components\\form.jsx",
     "statementMap": {
       "0": {
         "start": {
@@ -7009,9 +7009,9 @@
       }
     },
     "s": {
-      "0": 96,
-      "1": 96,
-      "2": 96,
+      "0": 98,
+      "1": 98,
+      "2": 98,
       "3": 0,
       "4": 0,
       "5": 0,
@@ -7022,112 +7022,112 @@
       "10": 0,
       "11": 0,
       "12": 0,
-      "13": 96,
-      "14": 0,
-      "15": 96,
-      "16": 0,
-      "17": 0,
-      "18": 0,
-      "19": 0,
-      "20": 0,
-      "21": 0,
-      "22": 96,
-      "23": 0,
-      "24": 48,
-      "25": 48,
-      "26": 96,
-      "27": 9,
-      "28": 9,
-      "29": 96,
+      "13": 98,
+      "14": 2,
+      "15": 98,
+      "16": 1,
+      "17": 1,
+      "18": 1,
+      "19": 1,
+      "20": 1,
+      "21": 1,
+      "22": 98,
+      "23": 2,
+      "24": 49,
+      "25": 49,
+      "26": 98,
+      "27": 8,
+      "28": 8,
+      "29": 98,
       "30": 8,
-      "31": 96,
+      "31": 98,
       "32": 4,
-      "33": 96,
-      "34": 21,
-      "35": 21,
-      "36": 96,
-      "37": 46,
-      "38": 96,
+      "33": 98,
+      "34": 14,
+      "35": 14,
+      "36": 98,
+      "37": 36,
+      "38": 98,
       "39": 106,
       "40": 106,
-      "41": 96,
+      "41": 98,
       "42": 34,
-      "43": 96,
+      "43": 98,
       "44": 15,
-      "45": 96,
-      "46": 3,
-      "47": 3,
-      "48": 3,
-      "49": 3,
-      "50": 3,
-      "51": 3,
-      "52": 3,
-      "53": 3,
+      "45": 98,
+      "46": 2,
+      "47": 2,
+      "48": 2,
+      "49": 2,
+      "50": 2,
+      "51": 2,
+      "52": 2,
+      "53": 2,
       "54": 2,
       "55": 2,
       "56": 2,
-      "57": 1,
-      "58": 1,
-      "59": 1,
-      "60": 1,
-      "61": 1,
+      "57": 0,
+      "58": 0,
+      "59": 0,
+      "60": 0,
+      "61": 0,
       "62": 0,
-      "63": 1,
-      "64": 3,
-      "65": 96,
+      "63": 0,
+      "64": 2,
+      "65": 98,
       "66": 11,
       "67": 11,
       "68": 11,
       "69": 11,
       "70": 11,
       "71": 11,
-      "72": 11,
-      "73": 11,
-      "74": 8,
+      "72": 10,
+      "73": 10,
+      "74": 9,
       "75": 8,
       "76": 8,
       "77": 11,
-      "78": 802,
-      "79": 802,
-      "80": 802,
+      "78": 774,
+      "79": 774,
+      "80": 774,
       "81": 10,
-      "82": 792,
-      "83": 802
+      "82": 764,
+      "83": 774
     },
     "f": {
-      "0": 96,
+      "0": 98,
       "1": 0,
       "2": 0,
       "3": 0,
-      "4": 0,
-      "5": 0,
-      "6": 0,
-      "7": 48,
-      "8": 48,
-      "9": 9,
+      "4": 2,
+      "5": 1,
+      "6": 2,
+      "7": 49,
+      "8": 49,
+      "9": 8,
       "10": 8,
       "11": 4,
-      "12": 21,
-      "13": 46,
+      "12": 14,
+      "13": 36,
       "14": 106,
       "15": 34,
       "16": 15,
-      "17": 3,
-      "18": 3,
+      "17": 2,
+      "18": 2,
       "19": 2,
       "20": 2,
-      "21": 1,
-      "22": 1,
-      "23": 1,
+      "21": 0,
+      "22": 0,
+      "23": 0,
       "24": 0,
-      "25": 1,
+      "25": 0,
       "26": 11,
       "27": 11,
       "28": 11,
-      "29": 11,
-      "30": 8,
+      "29": 10,
+      "30": 9,
       "31": 8,
-      "32": 802
+      "32": 774
     },
     "b": {
       "0": [
@@ -7135,7 +7135,7 @@
         0
       ],
       "1": [
-        9,
+        8,
         0
       ],
       "2": [
@@ -7143,15 +7143,15 @@
         0
       ],
       "3": [
-        1,
+        0,
         0
       ],
       "4": [
-        1,
-        1
+        0,
+        0
       ],
       "5": [
-        7,
+        6,
         4
       ],
       "6": [
@@ -7160,45 +7160,45 @@
       ],
       "7": [
         10,
-        792
+        764
       ],
       "8": [
-        0,
-        802
+        4,
+        770
       ],
       "9": [
-        802,
-        802
+        774,
+        770
       ],
       "10": [
-        254,
-        548
+        340,
+        430
       ],
       "11": [
-        622,
-        180
+        632,
+        138
       ],
       "12": [
-        802,
-        802,
-        254,
-        226,
-        28
+        774,
+        770,
+        340,
+        306,
+        34
       ],
       "13": [
-        802,
-        0
+        774,
+        4
       ],
       "14": [
-        802,
-        56
+        774,
+        62
       ]
     },
     "_coverageSchema": "43e27e138ebf9cfc5966b082cf9a028302ed4184",
-    "hash": "bf1b9cbe9256c078a4e736f419a4a92335e7449c"
+    "hash": "bdded7b29e883fb82ff50474929afebc16e05e0e"
   },
-  "/Users/student/Documents/Projects/Week11/route_planner/src/components/navBar/navBarComponents/NavBarLogo.jsx": {
-    "path": "/Users/student/Documents/Projects/Week11/route_planner/src/components/navBar/navBarComponents/NavBarLogo.jsx",
+  "C:\\Users\\szony\\Documents\\learning\\course\\FinalProject\\route_planner\\src\\components\\navBar\\navBarComponents\\NavBarLogo.jsx": {
+    "path": "C:\\Users\\szony\\Documents\\learning\\course\\FinalProject\\route_planner\\src\\components\\navBar\\navBarComponents\\NavBarLogo.jsx",
     "statementMap": {
       "0": {
         "start": {
@@ -7273,19 +7273,19 @@
     },
     "branchMap": {},
     "s": {
-      "0": 103,
+      "0": 91,
       "1": 0
     },
     "f": {
-      "0": 103,
+      "0": 91,
       "1": 0
     },
     "b": {},
     "_coverageSchema": "43e27e138ebf9cfc5966b082cf9a028302ed4184",
-    "hash": "12a671db351419a913dc7650f7766515d986b22b"
+    "hash": "c157613c1711450fa643e9e07ad7f552448afa03"
   },
-  "/Users/student/Documents/Projects/Week11/route_planner/src/components/navBar/navBarComponents/LogInButton.jsx": {
-    "path": "/Users/student/Documents/Projects/Week11/route_planner/src/components/navBar/navBarComponents/LogInButton.jsx",
+  "C:\\Users\\szony\\Documents\\learning\\course\\FinalProject\\route_planner\\src\\components\\navBar\\navBarComponents\\LogInButton.jsx": {
+    "path": "C:\\Users\\szony\\Documents\\learning\\course\\FinalProject\\route_planner\\src\\components\\navBar\\navBarComponents\\LogInButton.jsx",
     "statementMap": {
       "0": {
         "start": {
@@ -7326,17 +7326,17 @@
     },
     "branchMap": {},
     "s": {
-      "0": 146
+      "0": 118
     },
     "f": {
-      "0": 146
+      "0": 118
     },
     "b": {},
     "_coverageSchema": "43e27e138ebf9cfc5966b082cf9a028302ed4184",
-    "hash": "ffbe302bf99c9dc52a57d73b1b6adaa7932b9261"
+    "hash": "224979544b476f60d2f80e4803f361334e9935ac"
   },
-  "/Users/student/Documents/Projects/Week11/route_planner/src/components/navBar/navBarComponents/SignUpButton.jsx": {
-    "path": "/Users/student/Documents/Projects/Week11/route_planner/src/components/navBar/navBarComponents/SignUpButton.jsx",
+  "C:\\Users\\szony\\Documents\\learning\\course\\FinalProject\\route_planner\\src\\components\\navBar\\navBarComponents\\SignUpButton.jsx": {
+    "path": "C:\\Users\\szony\\Documents\\learning\\course\\FinalProject\\route_planner\\src\\components\\navBar\\navBarComponents\\SignUpButton.jsx",
     "statementMap": {
       "0": {
         "start": {
@@ -7377,17 +7377,17 @@
     },
     "branchMap": {},
     "s": {
-      "0": 146
+      "0": 118
     },
     "f": {
-      "0": 146
+      "0": 118
     },
     "b": {},
     "_coverageSchema": "43e27e138ebf9cfc5966b082cf9a028302ed4184",
-    "hash": "bf550529c781d549a1c3205e77cd0dca6c711992"
+    "hash": "1aa1c21888a4b3bcb77fd9e006233bd48c384ce6"
   },
-  "/Users/student/Documents/Projects/Week11/route_planner/src/components/navBar/navBarComponents/UserAccount.jsx": {
-    "path": "/Users/student/Documents/Projects/Week11/route_planner/src/components/navBar/navBarComponents/UserAccount.jsx",
+  "C:\\Users\\szony\\Documents\\learning\\course\\FinalProject\\route_planner\\src\\components\\navBar\\navBarComponents\\UserAccount.jsx": {
+    "path": "C:\\Users\\szony\\Documents\\learning\\course\\FinalProject\\route_planner\\src\\components\\navBar\\navBarComponents\\UserAccount.jsx",
     "statementMap": {
       "0": {
         "start": {
@@ -7428,17 +7428,17 @@
     },
     "branchMap": {},
     "s": {
-      "0": 146
+      "0": 118
     },
     "f": {
-      "0": 146
+      "0": 118
     },
     "b": {},
     "_coverageSchema": "43e27e138ebf9cfc5966b082cf9a028302ed4184",
-    "hash": "3aa7e11152d9900d02c7f985e75c3b87d1d5d8f0"
+    "hash": "f83b308efc12c657293fea95e70ea9278901c10f"
   },
-  "/Users/student/Documents/Projects/Week11/route_planner/src/components/navBar/navBarComponents/MyRoutes.jsx": {
-    "path": "/Users/student/Documents/Projects/Week11/route_planner/src/components/navBar/navBarComponents/MyRoutes.jsx",
+  "C:\\Users\\szony\\Documents\\learning\\course\\FinalProject\\route_planner\\src\\components\\navBar\\navBarComponents\\MyRoutes.jsx": {
+    "path": "C:\\Users\\szony\\Documents\\learning\\course\\FinalProject\\route_planner\\src\\components\\navBar\\navBarComponents\\MyRoutes.jsx",
     "statementMap": {
       "0": {
         "start": {
@@ -7516,22 +7516,22 @@
       }
     },
     "s": {
-      "0": 60
+      "0": 64
     },
     "f": {
-      "0": 60
+      "0": 64
     },
     "b": {
       "0": [
-        60,
-        0
+        62,
+        2
       ]
     },
     "_coverageSchema": "43e27e138ebf9cfc5966b082cf9a028302ed4184",
-    "hash": "98dee26cd9cd8681dd1b76d8d56edede13411b09"
+    "hash": "cfd136e3ff62d1e360959d36bbc866d399a301c0"
   },
-  "/Users/student/Documents/Projects/Week11/route_planner/src/components/navBar/navBarComponents/LogOutButton.jsx": {
-    "path": "/Users/student/Documents/Projects/Week11/route_planner/src/components/navBar/navBarComponents/LogOutButton.jsx",
+  "C:\\Users\\szony\\Documents\\learning\\course\\FinalProject\\route_planner\\src\\components\\navBar\\navBarComponents\\LogOutButton.jsx": {
+    "path": "C:\\Users\\szony\\Documents\\learning\\course\\FinalProject\\route_planner\\src\\components\\navBar\\navBarComponents\\LogOutButton.jsx",
     "statementMap": {
       "0": {
         "start": {
@@ -7572,17 +7572,17 @@
     },
     "branchMap": {},
     "s": {
-      "0": 60
+      "0": 64
     },
     "f": {
-      "0": 60
+      "0": 64
     },
     "b": {},
     "_coverageSchema": "43e27e138ebf9cfc5966b082cf9a028302ed4184",
-    "hash": "e90aca68c3d71bc9b3dee7a39dd019e92674a2ed"
+    "hash": "cbd22482d8319fe02033f5b4fffd4feb1055edad"
   },
-  "/Users/student/Documents/Projects/Week11/route_planner/src/components/navBar/navBar.jsx": {
-    "path": "/Users/student/Documents/Projects/Week11/route_planner/src/components/navBar/navBar.jsx",
+  "C:\\Users\\szony\\Documents\\learning\\course\\FinalProject\\route_planner\\src\\components\\navBar\\navBar.jsx": {
+    "path": "C:\\Users\\szony\\Documents\\learning\\course\\FinalProject\\route_planner\\src\\components\\navBar\\navBar.jsx",
     "statementMap": {
       "0": {
         "start": {
@@ -8208,60 +8208,60 @@
       }
     },
     "s": {
-      "0": 96,
-      "1": 96,
-      "2": 96,
-      "3": 96,
-      "4": 96,
-      "5": 96,
-      "6": 96,
-      "7": 0,
-      "8": 0,
-      "9": 0,
-      "10": 96,
+      "0": 98,
+      "1": 98,
+      "2": 98,
+      "3": 98,
+      "4": 98,
+      "5": 98,
+      "6": 98,
+      "7": 1,
+      "8": 1,
+      "9": 1,
+      "10": 98,
       "11": 0,
       "12": 0,
-      "13": 23,
-      "14": 1,
-      "15": 1,
-      "16": 1,
+      "13": 10,
+      "14": 0,
+      "15": 0,
+      "16": 0,
       "17": 0,
       "18": 0,
       "19": 0,
       "20": 0,
       "21": 0,
-      "22": 0,
-      "23": 96,
+      "22": 1,
+      "23": 98,
       "24": 0,
       "25": 0,
-      "26": 206
+      "26": 182
     },
     "f": {
-      "0": 96,
-      "1": 0,
+      "0": 98,
+      "1": 1,
       "2": 0,
-      "3": 23,
-      "4": 1,
-      "5": 1,
+      "3": 10,
+      "4": 0,
+      "5": 0,
       "6": 0,
       "7": 0,
       "8": 0,
       "9": 0,
-      "10": 0,
+      "10": 1,
       "11": 0,
-      "12": 206
+      "12": 182
     },
     "b": {
       "0": [
-        60,
-        146
+        64,
+        118
       ]
     },
     "_coverageSchema": "43e27e138ebf9cfc5966b082cf9a028302ed4184",
-    "hash": "1ab4bf2b9cb78fa3d504013ffaa1b4be3bb48469"
+    "hash": "c91cb93fd1f793b96192f44ea6467e165581b343"
   },
-  "/Users/student/Documents/Projects/Week11/route_planner/src/App.js": {
-    "path": "/Users/student/Documents/Projects/Week11/route_planner/src/App.js",
+  "C:\\Users\\szony\\Documents\\learning\\course\\FinalProject\\route_planner\\src\\App.js": {
+    "path": "C:\\Users\\szony\\Documents\\learning\\course\\FinalProject\\route_planner\\src\\App.js",
     "statementMap": {
       "0": {
         "start": {
@@ -8599,41 +8599,41 @@
       }
     },
     "s": {
-      "0": 96,
-      "1": 96,
-      "2": 96,
-      "3": 48,
-      "4": 96,
-      "5": 0,
-      "6": 0,
-      "7": 48,
+      "0": 98,
+      "1": 98,
+      "2": 98,
+      "3": 49,
+      "4": 98,
+      "5": 1,
+      "6": 1,
+      "7": 49,
       "8": 31,
       "9": 31,
-      "10": 30,
-      "11": 30,
-      "12": 1,
-      "13": 1,
-      "14": 158
+      "10": 31,
+      "11": 31,
+      "12": 0,
+      "13": 0,
+      "14": 162
     },
     "f": {
-      "0": 96,
-      "1": 48,
-      "2": 0,
-      "3": 48,
+      "0": 98,
+      "1": 49,
+      "2": 1,
+      "3": 49,
       "4": 31,
-      "5": 158
+      "5": 162
     },
     "b": {
       "0": [
-        30,
-        1
+        31,
+        0
       ]
     },
     "_coverageSchema": "43e27e138ebf9cfc5966b082cf9a028302ed4184",
-    "hash": "a7201e75ff696eaed0f514d5fb8f0b2fb4b38a77"
+    "hash": "4c3df914f239a7dbca90febaa43e15f453e31182"
   },
-  "/Users/student/Documents/Projects/Week11/route_planner/src/index.js": {
-    "path": "/Users/student/Documents/Projects/Week11/route_planner/src/index.js",
+  "C:\\Users\\szony\\Documents\\learning\\course\\FinalProject\\route_planner\\src\\index.js": {
+    "path": "C:\\Users\\szony\\Documents\\learning\\course\\FinalProject\\route_planner\\src\\index.js",
     "statementMap": {
       "0": {
         "start": {
@@ -8649,11 +8649,11 @@
     "fnMap": {},
     "branchMap": {},
     "s": {
-      "0": 48
+      "0": 49
     },
     "f": {},
     "b": {},
     "_coverageSchema": "43e27e138ebf9cfc5966b082cf9a028302ed4184",
-    "hash": "1bfec79b1600213e5cec2d76957718e0144e6769"
+    "hash": "d77946f496beb5beb4109183c49dccdc2028f7d7"
   }
 }

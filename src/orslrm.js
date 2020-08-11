@@ -1,5 +1,5 @@
-(function () {
   "use strict";
+(function () {
 
   // Browserify
   var L = require("leaflet");
