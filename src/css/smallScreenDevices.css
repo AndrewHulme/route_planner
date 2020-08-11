@@ -25,7 +25,6 @@
   input.form-control {
     font-size: 0.7rem;
   }
-
   #swap,
   #location,
   #save-icon {
@@ -41,17 +40,24 @@
     background: red;
   }
 
+  .btn {
+    width: 100%;
+    font-size: 0.7rem !important;
+    height: 30px;
+    margin: 0px;
+    padding: 2px 8px 2px 0px !important;
+
+    /* padding-bottom: 30px !important; */
+    /* text-align: center; */
+    /* font-size: small; */
+  }
+
   #roundTripButton {
-    /* position: absolute; */
-    /* right: 100%; */
-    /* z-index: auto; */
-    /* bottom: 0; */
-    /* top: 45vh; */
-    /* transform: translateY(-100%); */
-    /* width: 100%; */
-    /* padding: 0; */
-    /* height: 90px; */
-    /* border-radius: 50%; */
-    /* overflow: hidden; */
+    font-size: 0.7rem !important;
+    height: 30px;
+  }
+
+  #addEndPoint {
+    height: 30px;
   }
 }
