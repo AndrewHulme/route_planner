@@ -1,6 +1,6 @@
 {
-  "/Users/student/Documents/Projects/Week11/route_planner/src/components/firebase.jsx": {
-    "path": "/Users/student/Documents/Projects/Week11/route_planner/src/components/firebase.jsx",
+  "/Users/ed/Projects/Makers/week11-12/route_planner/src/components/firebase.jsx": {
+    "path": "/Users/ed/Projects/Makers/week11-12/route_planner/src/components/firebase.jsx",
     "statementMap": {
       "0": {
         "start": {
@@ -26,16 +26,16 @@
     "fnMap": {},
     "branchMap": {},
     "s": {
-      "0": 46,
-      "1": 46
+      "0": 29,
+      "1": 29
     },
     "f": {},
     "b": {},
     "_coverageSchema": "43e27e138ebf9cfc5966b082cf9a028302ed4184",
-    "hash": "126ee5d36753e9ae1492d597ad5cc7a13387b7af"
+    "hash": "e8f5f51390e90bb14a22c197e267efa872fb2629"
   },
-  "/Users/student/Documents/Projects/Week11/route_planner/src/orslrm.js": {
-    "path": "/Users/student/Documents/Projects/Week11/route_planner/src/orslrm.js",
+  "/Users/ed/Projects/Makers/week11-12/route_planner/src/orslrm.js": {
+    "path": "/Users/ed/Projects/Makers/week11-12/route_planner/src/orslrm.js",
     "statementMap": {
       "0": {
         "start": {
@@ -1307,15 +1307,15 @@
       }
     },
     "s": {
-      "0": 46,
-      "1": 46,
-      "2": 46,
-      "3": 46,
-      "4": 46,
-      "5": 46,
-      "6": 186,
-      "7": 186,
-      "8": 186,
+      "0": 29,
+      "1": 29,
+      "2": 29,
+      "3": 29,
+      "4": 29,
+      "5": 29,
+      "6": 118,
+      "7": 118,
+      "8": 118,
       "9": 0,
       "10": 0,
       "11": 0,
@@ -1374,13 +1374,13 @@
       "64": 0,
       "65": 0,
       "66": 0,
-      "67": 46,
-      "68": 186,
-      "69": 46
+      "67": 29,
+      "68": 118,
+      "69": 29
     },
     "f": {
-      "0": 46,
-      "1": 186,
+      "0": 29,
+      "1": 118,
       "2": 0,
       "3": 0,
       "4": 0,
@@ -1388,15 +1388,15 @@
       "6": 0,
       "7": 0,
       "8": 0,
-      "9": 186
+      "9": 118
     },
     "b": {
       "0": [
-        46,
+        29,
         0
       ],
       "1": [
-        186,
+        118,
         0
       ],
       "2": [
@@ -1429,10 +1429,10 @@
       ]
     },
     "_coverageSchema": "43e27e138ebf9cfc5966b082cf9a028302ed4184",
-    "hash": "843472f7edf20df5c8a0d6f3bb18fec3b0a68025"
+    "hash": "b723cddacc833a559ab39e38c44b34f438c47d02"
   },
-  "/Users/student/Documents/Projects/Week11/route_planner/src/components/routing.jsx": {
-    "path": "/Users/student/Documents/Projects/Week11/route_planner/src/components/routing.jsx",
+  "/Users/ed/Projects/Makers/week11-12/route_planner/src/components/routing.jsx": {
+    "path": "/Users/ed/Projects/Makers/week11-12/route_planner/src/components/routing.jsx",
     "statementMap": {
       "0": {
         "start": {
@@ -1804,48 +1804,48 @@
       }
     },
     "s": {
-      "0": 92,
-      "1": 113,
+      "0": 58,
+      "1": 121,
       "2": 0,
       "3": 0,
       "4": 0,
       "5": 0,
-      "6": 92,
-      "7": 92,
-      "8": 92,
-      "9": 92,
+      "6": 58,
+      "7": 58,
+      "8": 58,
+      "9": 58,
       "10": 0,
-      "11": 92,
-      "12": 92,
-      "13": 92,
-      "14": 92,
-      "15": 92
+      "11": 58,
+      "12": 58,
+      "13": 58,
+      "14": 58,
+      "15": 58
     },
     "f": {
-      "0": 113,
+      "0": 121,
       "1": 0,
-      "2": 92,
+      "2": 58,
       "3": 0
     },
     "b": {
       "0": [
         0,
-        113
+        121
       ],
       "1": [
         0,
         0
       ],
       "2": [
-        92,
+        58,
         0
       ]
     },
     "_coverageSchema": "43e27e138ebf9cfc5966b082cf9a028302ed4184",
-    "hash": "93f96dfbcd2d12d6f79ab7f3c4ea5cd185562404"
+    "hash": "a098acb6b99ee07f5fd481c3882a15da0b1d3d3a"
   },
-  "/Users/student/Documents/Projects/Week11/route_planner/src/components/routingRoundTrip.jsx": {
-    "path": "/Users/student/Documents/Projects/Week11/route_planner/src/components/routingRoundTrip.jsx",
+  "/Users/ed/Projects/Makers/week11-12/route_planner/src/components/routingRoundTrip.jsx": {
+    "path": "/Users/ed/Projects/Makers/week11-12/route_planner/src/components/routingRoundTrip.jsx",
     "statementMap": {
       "0": {
         "start": {
@@ -2449,71 +2449,71 @@
       }
     },
     "s": {
-      "0": 92,
-      "1": 115,
+      "0": 58,
+      "1": 123,
       "2": 2,
       "3": 2,
       "4": 0,
       "5": 0,
-      "6": 94,
-      "7": 94,
-      "8": 94,
-      "9": 94,
-      "10": 92,
-      "11": 92,
+      "6": 60,
+      "7": 60,
+      "8": 60,
+      "9": 60,
+      "10": 58,
+      "11": 58,
       "12": 0,
-      "13": 92,
-      "14": 92,
-      "15": 184,
+      "13": 58,
+      "14": 58,
+      "15": 116,
       "16": 0,
       "17": 0,
-      "18": 92,
-      "19": 94,
-      "20": 94,
+      "18": 58,
+      "19": 60,
+      "20": 60,
       "21": 4,
-      "22": 94,
-      "23": 92,
-      "24": 94,
-      "25": 94
+      "22": 60,
+      "23": 58,
+      "24": 60,
+      "25": 60
     },
     "f": {
-      "0": 115,
+      "0": 123,
       "1": 0,
-      "2": 94,
-      "3": 184,
+      "2": 60,
+      "3": 116,
       "4": 4
     },
     "b": {
       "0": [
         2,
-        113
+        121
       ],
       "1": [
         0,
         2
       ],
       "2": [
-        92,
+        58,
         2
       ],
       "3": [
         0,
-        92
+        58
       ],
       "4": [
         0,
-        184
+        116
       ],
       "5": [
-        92,
+        58,
         2
       ]
     },
     "_coverageSchema": "43e27e138ebf9cfc5966b082cf9a028302ed4184",
-    "hash": "9db98e88401c13dd87404b7ecb913b3d3a62545d"
+    "hash": "caca2dec615e91c2ff0f0b95cf10b67e8328978c"
   },
-  "/Users/student/Documents/Projects/Week11/route_planner/src/components/mapleaflet.jsx": {
-    "path": "/Users/student/Documents/Projects/Week11/route_planner/src/components/mapleaflet.jsx",
+  "/Users/ed/Projects/Makers/week11-12/route_planner/src/components/mapleaflet.jsx": {
+    "path": "/Users/ed/Projects/Makers/week11-12/route_planner/src/components/mapleaflet.jsx",
     "statementMap": {
       "0": {
         "start": {
@@ -2721,34 +2721,34 @@
       }
     },
     "s": {
-      "0": 92,
-      "1": 92,
-      "2": 46,
-      "3": 46,
-      "4": 410,
-      "5": 410
+      "0": 58,
+      "1": 58,
+      "2": 29,
+      "3": 29,
+      "4": 358,
+      "5": 358
     },
     "f": {
-      "0": 46,
-      "1": 410
+      "0": 29,
+      "1": 358
     },
     "b": {
       "0": [
-        410,
-        410,
-        318
+        358,
+        358,
+        300
       ],
       "1": [
-        410,
-        410,
-        318
+        358,
+        358,
+        300
       ]
     },
     "_coverageSchema": "43e27e138ebf9cfc5966b082cf9a028302ed4184",
-    "hash": "9a3f42c88c88e4644d72a2012cbacd63e37e60df"
+    "hash": "beb056c8fe0aa9d135dfc3d71d4b88a1d83af855"
   },
-  "/Users/student/Documents/Projects/Week11/route_planner/src/components/returnedFromDb/returnedFromDbComponents/DeleteButton.jsx": {
-    "path": "/Users/student/Documents/Projects/Week11/route_planner/src/components/returnedFromDb/returnedFromDbComponents/DeleteButton.jsx",
+  "/Users/ed/Projects/Makers/week11-12/route_planner/src/components/returnedFromDb/returnedFromDbComponents/DeleteButton.jsx": {
+    "path": "/Users/ed/Projects/Makers/week11-12/route_planner/src/components/returnedFromDb/returnedFromDbComponents/DeleteButton.jsx",
     "statementMap": {
       "0": {
         "start": {
@@ -2832,10 +2832,10 @@
     },
     "b": {},
     "_coverageSchema": "43e27e138ebf9cfc5966b082cf9a028302ed4184",
-    "hash": "67774bb9f851e73a833feb0ad1cb93d34fe1e454"
+    "hash": "ef51a322e3367b2619cdb9592dd819fad4db07cd"
   },
-  "/Users/student/Documents/Projects/Week11/route_planner/src/components/returnedFromDb/returnedFromDbComponents/PointItem.jsx": {
-    "path": "/Users/student/Documents/Projects/Week11/route_planner/src/components/returnedFromDb/returnedFromDbComponents/PointItem.jsx",
+  "/Users/ed/Projects/Makers/week11-12/route_planner/src/components/returnedFromDb/returnedFromDbComponents/PointItem.jsx": {
+    "path": "/Users/ed/Projects/Makers/week11-12/route_planner/src/components/returnedFromDb/returnedFromDbComponents/PointItem.jsx",
     "statementMap": {
       "0": {
         "start": {
@@ -2883,10 +2883,10 @@
     },
     "b": {},
     "_coverageSchema": "43e27e138ebf9cfc5966b082cf9a028302ed4184",
-    "hash": "f859d7eb93601a7c0fe2283b37b6158be45f68bc"
+    "hash": "8f92e72e4213fa32b81f46405e50a84e422f1464"
   },
-  "/Users/student/Documents/Projects/Week11/route_planner/src/components/returnedFromDb/returnedFromDbComponents/ActivityItem.jsx": {
-    "path": "/Users/student/Documents/Projects/Week11/route_planner/src/components/returnedFromDb/returnedFromDbComponents/ActivityItem.jsx",
+  "/Users/ed/Projects/Makers/week11-12/route_planner/src/components/returnedFromDb/returnedFromDbComponents/ActivityItem.jsx": {
+    "path": "/Users/ed/Projects/Makers/week11-12/route_planner/src/components/returnedFromDb/returnedFromDbComponents/ActivityItem.jsx",
     "statementMap": {
       "0": {
         "start": {
@@ -2934,10 +2934,10 @@
     },
     "b": {},
     "_coverageSchema": "43e27e138ebf9cfc5966b082cf9a028302ed4184",
-    "hash": "d9887380f7f7772b02a9a31a7bf551363f1fd64c"
+    "hash": "b4f4f5920f0f5e00541efe006dbadc87e2d1ec06"
   },
-  "/Users/student/Documents/Projects/Week11/route_planner/src/components/returnedFromDb/returnedFromDbComponents/DistanceItem.jsx": {
-    "path": "/Users/student/Documents/Projects/Week11/route_planner/src/components/returnedFromDb/returnedFromDbComponents/DistanceItem.jsx",
+  "/Users/ed/Projects/Makers/week11-12/route_planner/src/components/returnedFromDb/returnedFromDbComponents/DistanceItem.jsx": {
+    "path": "/Users/ed/Projects/Makers/week11-12/route_planner/src/components/returnedFromDb/returnedFromDbComponents/DistanceItem.jsx",
     "statementMap": {
       "0": {
         "start": {
@@ -2985,10 +2985,10 @@
     },
     "b": {},
     "_coverageSchema": "43e27e138ebf9cfc5966b082cf9a028302ed4184",
-    "hash": "6735c4de234a2dbea8631c2e92cc8c88e487a87d"
+    "hash": "4109ab352cd1361fd72600c25f0aa35f203bc2ce"
   },
-  "/Users/student/Documents/Projects/Week11/route_planner/src/components/returnedFromDb/returnedFromDbComponents/SavedDateItem.jsx": {
-    "path": "/Users/student/Documents/Projects/Week11/route_planner/src/components/returnedFromDb/returnedFromDbComponents/SavedDateItem.jsx",
+  "/Users/ed/Projects/Makers/week11-12/route_planner/src/components/returnedFromDb/returnedFromDbComponents/SavedDateItem.jsx": {
+    "path": "/Users/ed/Projects/Makers/week11-12/route_planner/src/components/returnedFromDb/returnedFromDbComponents/SavedDateItem.jsx",
     "statementMap": {
       "0": {
         "start": {
@@ -3036,10 +3036,10 @@
     },
     "b": {},
     "_coverageSchema": "43e27e138ebf9cfc5966b082cf9a028302ed4184",
-    "hash": "360e8975b2e1da7fca73e5a5c78523ea04527485"
+    "hash": "2ebb918862df654480278e0bb17eae8246191c90"
   },
-  "/Users/student/Documents/Projects/Week11/route_planner/src/components/returnedFromDb/returnedFromDbComponents/DescriptionItem.jsx": {
-    "path": "/Users/student/Documents/Projects/Week11/route_planner/src/components/returnedFromDb/returnedFromDbComponents/DescriptionItem.jsx",
+  "/Users/ed/Projects/Makers/week11-12/route_planner/src/components/returnedFromDb/returnedFromDbComponents/DescriptionItem.jsx": {
+    "path": "/Users/ed/Projects/Makers/week11-12/route_planner/src/components/returnedFromDb/returnedFromDbComponents/DescriptionItem.jsx",
     "statementMap": {
       "0": {
         "start": {
@@ -3087,10 +3087,10 @@
     },
     "b": {},
     "_coverageSchema": "43e27e138ebf9cfc5966b082cf9a028302ed4184",
-    "hash": "0a546b032ed9c34f30d17fb4f1efe5841bf229b4"
+    "hash": "a041428bb094f4fde07c45ff40db339f1119340c"
   },
-  "/Users/student/Documents/Projects/Week11/route_planner/src/components/returnedFromDb/returnedFromDbComponents/SavedRouteCard.jsx": {
-    "path": "/Users/student/Documents/Projects/Week11/route_planner/src/components/returnedFromDb/returnedFromDbComponents/SavedRouteCard.jsx",
+  "/Users/ed/Projects/Makers/week11-12/route_planner/src/components/returnedFromDb/returnedFromDbComponents/SavedRouteCard.jsx": {
+    "path": "/Users/ed/Projects/Makers/week11-12/route_planner/src/components/returnedFromDb/returnedFromDbComponents/SavedRouteCard.jsx",
     "statementMap": {
       "0": {
         "start": {
@@ -3252,10 +3252,10 @@
       ]
     },
     "_coverageSchema": "43e27e138ebf9cfc5966b082cf9a028302ed4184",
-    "hash": "b73e61687e08edd553565cfb3d87096225a8575b"
+    "hash": "d62dc8a0b6dd9fd5f39452afc2e1bae5c1c0b317"
   },
-  "/Users/student/Documents/Projects/Week11/route_planner/src/components/returnedFromDb/returnedFromDb.jsx": {
-    "path": "/Users/student/Documents/Projects/Week11/route_planner/src/components/returnedFromDb/returnedFromDb.jsx",
+  "/Users/ed/Projects/Makers/week11-12/route_planner/src/components/returnedFromDb/returnedFromDb.jsx": {
+    "path": "/Users/ed/Projects/Makers/week11-12/route_planner/src/components/returnedFromDb/returnedFromDb.jsx",
     "statementMap": {
       "0": {
         "start": {
@@ -4296,10 +4296,10 @@
       ]
     },
     "_coverageSchema": "43e27e138ebf9cfc5966b082cf9a028302ed4184",
-    "hash": "6f858d86745889f6cbb6194f0589c08eadd8a3cb"
+    "hash": "f9f0d7d389fd09bd77cdfd6984d5f89557c9a058"
   },
-  "/Users/student/Documents/Projects/Week11/route_planner/src/components/flash.jsx": {
-    "path": "/Users/student/Documents/Projects/Week11/route_planner/src/components/flash.jsx",
+  "/Users/ed/Projects/Makers/week11-12/route_planner/src/components/flash.jsx": {
+    "path": "/Users/ed/Projects/Makers/week11-12/route_planner/src/components/flash.jsx",
     "statementMap": {
       "0": {
         "start": {
@@ -4519,32 +4519,32 @@
       }
     },
     "s": {
-      "0": 96,
-      "1": 96,
-      "2": 96,
+      "0": 64,
+      "1": 64,
+      "2": 64,
       "3": 0,
-      "4": 152,
-      "5": 12,
+      "4": 92,
+      "5": 14,
       "6": 0,
-      "7": 140
+      "7": 78
     },
     "f": {
-      "0": 96,
+      "0": 64,
       "1": 0,
-      "2": 152,
+      "2": 92,
       "3": 0
     },
     "b": {
       "0": [
-        12,
-        140
+        14,
+        78
       ]
     },
     "_coverageSchema": "43e27e138ebf9cfc5966b082cf9a028302ed4184",
-    "hash": "485db0e2237c2ad408b79c3e82bd54dea718f368"
+    "hash": "a124ba7ec5da7ecdb03f8b1cfa27acd1a4e9f61e"
   },
-  "/Users/student/Documents/Projects/Week11/route_planner/src/components/formComponents/textInput.jsx": {
-    "path": "/Users/student/Documents/Projects/Week11/route_planner/src/components/formComponents/textInput.jsx",
+  "/Users/ed/Projects/Makers/week11-12/route_planner/src/components/formComponents/textInput.jsx": {
+    "path": "/Users/ed/Projects/Makers/week11-12/route_planner/src/components/formComponents/textInput.jsx",
     "statementMap": {
       "0": {
         "start": {
@@ -4585,17 +4585,17 @@
     },
     "branchMap": {},
     "s": {
-      "0": 318
+      "0": 300
     },
     "f": {
-      "0": 318
+      "0": 300
     },
     "b": {},
     "_coverageSchema": "43e27e138ebf9cfc5966b082cf9a028302ed4184",
-    "hash": "9288ec7375afa239f17efd074b3d882fa2a493e8"
+    "hash": "79449aca1224848abaf475570771436632981789"
   },
-  "/Users/student/Documents/Projects/Week11/route_planner/src/components/formComponents/vehicleChoice.jsx": {
-    "path": "/Users/student/Documents/Projects/Week11/route_planner/src/components/formComponents/vehicleChoice.jsx",
+  "/Users/ed/Projects/Makers/week11-12/route_planner/src/components/formComponents/vehicleChoice.jsx": {
+    "path": "/Users/ed/Projects/Makers/week11-12/route_planner/src/components/formComponents/vehicleChoice.jsx",
     "statementMap": {
       "0": {
         "start": {
@@ -4636,17 +4636,17 @@
     },
     "branchMap": {},
     "s": {
-      "0": 159
+      "0": 150
     },
     "f": {
-      "0": 159
+      "0": 150
     },
     "b": {},
     "_coverageSchema": "43e27e138ebf9cfc5966b082cf9a028302ed4184",
-    "hash": "ed419ebe79b646c00817c7d12b186f36abc39f1f"
+    "hash": "d159c75f99f290c1d753a1237883e2ff2a2dbaf2"
   },
-  "/Users/student/Documents/Projects/Week11/route_planner/src/components/formComponents/useMyLocation.jsx": {
-    "path": "/Users/student/Documents/Projects/Week11/route_planner/src/components/formComponents/useMyLocation.jsx",
+  "/Users/ed/Projects/Makers/week11-12/route_planner/src/components/formComponents/useMyLocation.jsx": {
+    "path": "/Users/ed/Projects/Makers/week11-12/route_planner/src/components/formComponents/useMyLocation.jsx",
     "statementMap": {
       "0": {
         "start": {
@@ -4687,17 +4687,17 @@
     },
     "branchMap": {},
     "s": {
-      "0": 159
+      "0": 150
     },
     "f": {
-      "0": 159
+      "0": 150
     },
     "b": {},
     "_coverageSchema": "43e27e138ebf9cfc5966b082cf9a028302ed4184",
-    "hash": "003fa27b176f735214b9ac2faf715a52ac4f8698"
+    "hash": "e0e19fc6f100d4bc4a5020352a638b5c5b929014"
   },
-  "/Users/student/Documents/Projects/Week11/route_planner/src/components/formComponents/generateButton.jsx": {
-    "path": "/Users/student/Documents/Projects/Week11/route_planner/src/components/formComponents/generateButton.jsx",
+  "/Users/ed/Projects/Makers/week11-12/route_planner/src/components/formComponents/generateButton.jsx": {
+    "path": "/Users/ed/Projects/Makers/week11-12/route_planner/src/components/formComponents/generateButton.jsx",
     "statementMap": {
       "0": {
         "start": {
@@ -4738,17 +4738,17 @@
     },
     "branchMap": {},
     "s": {
-      "0": 159
+      "0": 150
     },
     "f": {
-      "0": 159
+      "0": 150
     },
     "b": {},
     "_coverageSchema": "43e27e138ebf9cfc5966b082cf9a028302ed4184",
-    "hash": "7ef01484a1f14c134b5b4d0f3acfb6a56f863049"
+    "hash": "abb5e9b1bfc8fad39db77cc43c4e91ff285663cf"
   },
-  "/Users/student/Documents/Projects/Week11/route_planner/src/components/formComponents/changeFormType.jsx": {
-    "path": "/Users/student/Documents/Projects/Week11/route_planner/src/components/formComponents/changeFormType.jsx",
+  "/Users/ed/Projects/Makers/week11-12/route_planner/src/components/formComponents/changeFormType.jsx": {
+    "path": "/Users/ed/Projects/Makers/week11-12/route_planner/src/components/formComponents/changeFormType.jsx",
     "statementMap": {
       "0": {
         "start": {
@@ -4789,17 +4789,17 @@
     },
     "branchMap": {},
     "s": {
-      "0": 159
+      "0": 150
     },
     "f": {
-      "0": 159
+      "0": 150
     },
     "b": {},
     "_coverageSchema": "43e27e138ebf9cfc5966b082cf9a028302ed4184",
-    "hash": "3e587179861bbaedbde9b655352edc25cf12b6ae"
+    "hash": "db7949f183dcc58f29e95b6b73135ee00edce7f3"
   },
-  "/Users/student/Documents/Projects/Week11/route_planner/src/components/form.jsx": {
-    "path": "/Users/student/Documents/Projects/Week11/route_planner/src/components/form.jsx",
+  "/Users/ed/Projects/Makers/week11-12/route_planner/src/components/form.jsx": {
+    "path": "/Users/ed/Projects/Makers/week11-12/route_planner/src/components/form.jsx",
     "statementMap": {
       "0": {
         "start": {
@@ -7009,9 +7009,9 @@
       }
     },
     "s": {
-      "0": 92,
-      "1": 92,
-      "2": 92,
+      "0": 58,
+      "1": 58,
+      "2": 58,
       "3": 0,
       "4": 0,
       "5": 0,
@@ -7022,39 +7022,39 @@
       "10": 0,
       "11": 0,
       "12": 0,
-      "13": 92,
+      "13": 58,
       "14": 0,
-      "15": 92,
+      "15": 58,
       "16": 0,
       "17": 0,
       "18": 0,
       "19": 0,
       "20": 0,
       "21": 0,
-      "22": 92,
+      "22": 58,
       "23": 0,
-      "24": 46,
-      "25": 44,
-      "26": 92,
-      "27": 9,
-      "28": 9,
-      "29": 92,
+      "24": 29,
+      "25": 0,
+      "26": 58,
+      "27": 6,
+      "28": 6,
+      "29": 58,
       "30": 0,
-      "31": 92,
+      "31": 58,
       "32": 4,
-      "33": 92,
+      "33": 58,
       "34": 0,
       "35": 0,
-      "36": 92,
+      "36": 58,
       "37": 16,
-      "38": 92,
-      "39": 0,
-      "40": 0,
-      "41": 92,
-      "42": 0,
-      "43": 92,
-      "44": 10,
-      "45": 92,
+      "38": 58,
+      "39": 56,
+      "40": 56,
+      "41": 58,
+      "42": 10,
+      "43": 58,
+      "44": 12,
+      "45": 58,
       "46": 0,
       "47": 0,
       "48": 0,
@@ -7074,44 +7074,44 @@
       "62": 0,
       "63": 0,
       "64": 0,
-      "65": 92,
-      "66": 4,
-      "67": 4,
-      "68": 4,
-      "69": 4,
-      "70": 4,
+      "65": 58,
+      "66": 6,
+      "67": 6,
+      "68": 6,
+      "69": 6,
+      "70": 6,
       "71": 4,
-      "72": 2,
-      "73": 2,
+      "72": 3,
+      "73": 3,
       "74": 2,
       "75": 2,
       "76": 2,
-      "77": 4,
-      "78": 318,
-      "79": 318,
-      "80": 318,
-      "81": 8,
-      "82": 310,
-      "83": 318
+      "77": 6,
+      "78": 300,
+      "79": 300,
+      "80": 300,
+      "81": 10,
+      "82": 290,
+      "83": 300
     },
     "f": {
-      "0": 92,
+      "0": 58,
       "1": 0,
       "2": 0,
       "3": 0,
       "4": 0,
       "5": 0,
       "6": 0,
-      "7": 46,
-      "8": 44,
-      "9": 9,
+      "7": 29,
+      "8": 0,
+      "9": 6,
       "10": 0,
       "11": 4,
       "12": 0,
       "13": 16,
-      "14": 0,
-      "15": 0,
-      "16": 10,
+      "14": 56,
+      "15": 10,
+      "16": 12,
       "17": 0,
       "18": 0,
       "19": 0,
@@ -7121,13 +7121,13 @@
       "23": 0,
       "24": 0,
       "25": 0,
-      "26": 4,
-      "27": 4,
+      "26": 6,
+      "27": 6,
       "28": 4,
-      "29": 2,
+      "29": 3,
       "30": 2,
       "31": 2,
-      "32": 318
+      "32": 300
     },
     "b": {
       "0": [
@@ -7135,7 +7135,7 @@
         0
       ],
       "1": [
-        9,
+        6,
         0
       ],
       "2": [
@@ -7152,53 +7152,53 @@
       ],
       "5": [
         0,
-        2
+        3
       ],
       "6": [
         0,
         2
       ],
       "7": [
-        8,
-        310
+        10,
+        290
       ],
       "8": [
         0,
-        318
+        300
       ],
       "9": [
-        318,
-        318
+        300,
+        300
       ],
       "10": [
-        48,
-        270
+        64,
+        236
       ],
       "11": [
-        248,
-        70
+        242,
+        58
       ],
       "12": [
-        318,
-        318,
-        48,
-        48,
-        0
+        300,
+        300,
+        64,
+        60,
+        4
       ],
       "13": [
-        318,
+        300,
         0
       ],
       "14": [
-        318,
-        12
+        300,
+        14
       ]
     },
     "_coverageSchema": "43e27e138ebf9cfc5966b082cf9a028302ed4184",
-    "hash": "bf1b9cbe9256c078a4e736f419a4a92335e7449c"
+    "hash": "812143fc1389034c7cdff01cbb550326aa2f03f6"
   },
-  "/Users/student/Documents/Projects/Week11/route_planner/src/components/navBar/navBarComponents/NavBarLogo.jsx": {
-    "path": "/Users/student/Documents/Projects/Week11/route_planner/src/components/navBar/navBarComponents/NavBarLogo.jsx",
+  "/Users/ed/Projects/Makers/week11-12/route_planner/src/components/navBar/navBarComponents/NavBarLogo.jsx": {
+    "path": "/Users/ed/Projects/Makers/week11-12/route_planner/src/components/navBar/navBarComponents/NavBarLogo.jsx",
     "statementMap": {
       "0": {
         "start": {
@@ -7273,19 +7273,19 @@
     },
     "branchMap": {},
     "s": {
-      "0": 138,
+      "0": 39,
       "1": 0
     },
     "f": {
-      "0": 138,
+      "0": 39,
       "1": 0
     },
     "b": {},
     "_coverageSchema": "43e27e138ebf9cfc5966b082cf9a028302ed4184",
-    "hash": "12a671db351419a913dc7650f7766515d986b22b"
+    "hash": "4778c50e790e46eb5bee8433ee72f7aa79a4981a"
   },
-  "/Users/student/Documents/Projects/Week11/route_planner/src/components/navBar/navBarComponents/LogInButton.jsx": {
-    "path": "/Users/student/Documents/Projects/Week11/route_planner/src/components/navBar/navBarComponents/LogInButton.jsx",
+  "/Users/ed/Projects/Makers/week11-12/route_planner/src/components/navBar/navBarComponents/LogInButton.jsx": {
+    "path": "/Users/ed/Projects/Makers/week11-12/route_planner/src/components/navBar/navBarComponents/LogInButton.jsx",
     "statementMap": {
       "0": {
         "start": {
@@ -7326,17 +7326,17 @@
     },
     "branchMap": {},
     "s": {
-      "0": 228
+      "0": 58
     },
     "f": {
-      "0": 228
+      "0": 58
     },
     "b": {},
     "_coverageSchema": "43e27e138ebf9cfc5966b082cf9a028302ed4184",
-    "hash": "ffbe302bf99c9dc52a57d73b1b6adaa7932b9261"
+    "hash": "da4b516146e811bdb4f2f7fc9f121fb37e111783"
   },
-  "/Users/student/Documents/Projects/Week11/route_planner/src/components/navBar/navBarComponents/SignUpButton.jsx": {
-    "path": "/Users/student/Documents/Projects/Week11/route_planner/src/components/navBar/navBarComponents/SignUpButton.jsx",
+  "/Users/ed/Projects/Makers/week11-12/route_planner/src/components/navBar/navBarComponents/SignUpButton.jsx": {
+    "path": "/Users/ed/Projects/Makers/week11-12/route_planner/src/components/navBar/navBarComponents/SignUpButton.jsx",
     "statementMap": {
       "0": {
         "start": {
@@ -7377,17 +7377,17 @@
     },
     "branchMap": {},
     "s": {
-      "0": 228
+      "0": 58
     },
     "f": {
-      "0": 228
+      "0": 58
     },
     "b": {},
     "_coverageSchema": "43e27e138ebf9cfc5966b082cf9a028302ed4184",
-    "hash": "bf550529c781d549a1c3205e77cd0dca6c711992"
+    "hash": "9a617820ec72b2b52803c75a197955f5d94deaf8"
   },
-  "/Users/student/Documents/Projects/Week11/route_planner/src/components/navBar/navBarComponents/UserAccount.jsx": {
-    "path": "/Users/student/Documents/Projects/Week11/route_planner/src/components/navBar/navBarComponents/UserAccount.jsx",
+  "/Users/ed/Projects/Makers/week11-12/route_planner/src/components/navBar/navBarComponents/UserAccount.jsx": {
+    "path": "/Users/ed/Projects/Makers/week11-12/route_planner/src/components/navBar/navBarComponents/UserAccount.jsx",
     "statementMap": {
       "0": {
         "start": {
@@ -7428,17 +7428,17 @@
     },
     "branchMap": {},
     "s": {
-      "0": 228
+      "0": 58
     },
     "f": {
-      "0": 228
+      "0": 58
     },
     "b": {},
     "_coverageSchema": "43e27e138ebf9cfc5966b082cf9a028302ed4184",
-    "hash": "3aa7e11152d9900d02c7f985e75c3b87d1d5d8f0"
+    "hash": "07015a74234ae518814e9bff194d45daffa1f659"
   },
-  "/Users/student/Documents/Projects/Week11/route_planner/src/components/navBar/navBarComponents/MyRoutes.jsx": {
-    "path": "/Users/student/Documents/Projects/Week11/route_planner/src/components/navBar/navBarComponents/MyRoutes.jsx",
+  "/Users/ed/Projects/Makers/week11-12/route_planner/src/components/navBar/navBarComponents/MyRoutes.jsx": {
+    "path": "/Users/ed/Projects/Makers/week11-12/route_planner/src/components/navBar/navBarComponents/MyRoutes.jsx",
     "statementMap": {
       "0": {
         "start": {
@@ -7516,22 +7516,22 @@
       }
     },
     "s": {
-      "0": 48
+      "0": 20
     },
     "f": {
-      "0": 48
+      "0": 20
     },
     "b": {
       "0": [
-        48,
+        20,
         0
       ]
     },
     "_coverageSchema": "43e27e138ebf9cfc5966b082cf9a028302ed4184",
-    "hash": "98dee26cd9cd8681dd1b76d8d56edede13411b09"
+    "hash": "651ac370d6c3480e15c98a9eabae41b8140dbacd"
   },
-  "/Users/student/Documents/Projects/Week11/route_planner/src/components/navBar/navBarComponents/LogOutButton.jsx": {
-    "path": "/Users/student/Documents/Projects/Week11/route_planner/src/components/navBar/navBarComponents/LogOutButton.jsx",
+  "/Users/ed/Projects/Makers/week11-12/route_planner/src/components/navBar/navBarComponents/LogOutButton.jsx": {
+    "path": "/Users/ed/Projects/Makers/week11-12/route_planner/src/components/navBar/navBarComponents/LogOutButton.jsx",
     "statementMap": {
       "0": {
         "start": {
@@ -7572,17 +7572,17 @@
     },
     "branchMap": {},
     "s": {
-      "0": 48
+      "0": 20
     },
     "f": {
-      "0": 48
+      "0": 20
     },
     "b": {},
     "_coverageSchema": "43e27e138ebf9cfc5966b082cf9a028302ed4184",
-    "hash": "e90aca68c3d71bc9b3dee7a39dd019e92674a2ed"
+    "hash": "121f3881357321a8d21c647315533e118933e607"
   },
-  "/Users/student/Documents/Projects/Week11/route_planner/src/components/navBar/navBar.jsx": {
-    "path": "/Users/student/Documents/Projects/Week11/route_planner/src/components/navBar/navBar.jsx",
+  "/Users/ed/Projects/Makers/week11-12/route_planner/src/components/navBar/navBar.jsx": {
+    "path": "/Users/ed/Projects/Makers/week11-12/route_planner/src/components/navBar/navBar.jsx",
     "statementMap": {
       "0": {
         "start": {
@@ -8208,20 +8208,20 @@
       }
     },
     "s": {
-      "0": 92,
-      "1": 92,
-      "2": 92,
-      "3": 92,
-      "4": 92,
-      "5": 92,
-      "6": 92,
+      "0": 58,
+      "1": 58,
+      "2": 58,
+      "3": 58,
+      "4": 58,
+      "5": 58,
+      "6": 58,
       "7": 0,
       "8": 0,
       "9": 0,
-      "10": 92,
+      "10": 58,
       "11": 0,
       "12": 0,
-      "13": 68,
+      "13": 0,
       "14": 0,
       "15": 0,
       "16": 0,
@@ -8231,16 +8231,16 @@
       "20": 0,
       "21": 0,
       "22": 0,
-      "23": 92,
+      "23": 58,
       "24": 0,
       "25": 0,
-      "26": 276
+      "26": 78
     },
     "f": {
-      "0": 92,
+      "0": 58,
       "1": 0,
       "2": 0,
-      "3": 68,
+      "3": 0,
       "4": 0,
       "5": 0,
       "6": 0,
@@ -8249,19 +8249,19 @@
       "9": 0,
       "10": 0,
       "11": 0,
-      "12": 276
+      "12": 78
     },
     "b": {
       "0": [
-        48,
-        228
+        20,
+        58
       ]
     },
     "_coverageSchema": "43e27e138ebf9cfc5966b082cf9a028302ed4184",
-    "hash": "1ab4bf2b9cb78fa3d504013ffaa1b4be3bb48469"
+    "hash": "2f34140eb7d819b15455fa031716977eb9539599"
   },
-  "/Users/student/Documents/Projects/Week11/route_planner/src/App.js": {
-    "path": "/Users/student/Documents/Projects/Week11/route_planner/src/App.js",
+  "/Users/ed/Projects/Makers/week11-12/route_planner/src/App.js": {
+    "path": "/Users/ed/Projects/Makers/week11-12/route_planner/src/App.js",
     "statementMap": {
       "0": {
         "start": {
@@ -8599,41 +8599,41 @@
       }
     },
     "s": {
-      "0": 92,
-      "1": 92,
-      "2": 92,
-      "3": 46,
-      "4": 92,
+      "0": 58,
+      "1": 58,
+      "2": 58,
+      "3": 29,
+      "4": 58,
       "5": 0,
       "6": 0,
-      "7": 46,
-      "8": 24,
-      "9": 24,
-      "10": 24,
-      "11": 24,
+      "7": 29,
+      "8": 10,
+      "9": 10,
+      "10": 10,
+      "11": 10,
       "12": 0,
       "13": 0,
-      "14": 140
+      "14": 78
     },
     "f": {
-      "0": 92,
-      "1": 46,
+      "0": 58,
+      "1": 29,
       "2": 0,
-      "3": 46,
-      "4": 24,
-      "5": 140
+      "3": 29,
+      "4": 10,
+      "5": 78
     },
     "b": {
       "0": [
-        24,
+        10,
         0
       ]
     },
     "_coverageSchema": "43e27e138ebf9cfc5966b082cf9a028302ed4184",
-    "hash": "a7201e75ff696eaed0f514d5fb8f0b2fb4b38a77"
+    "hash": "9f014c582a8b3b52e884f85b92392cb501968296"
   },
-  "/Users/student/Documents/Projects/Week11/route_planner/src/index.js": {
-    "path": "/Users/student/Documents/Projects/Week11/route_planner/src/index.js",
+  "/Users/ed/Projects/Makers/week11-12/route_planner/src/index.js": {
+    "path": "/Users/ed/Projects/Makers/week11-12/route_planner/src/index.js",
     "statementMap": {
       "0": {
         "start": {
@@ -8649,11 +8649,11 @@
     "fnMap": {},
     "branchMap": {},
     "s": {
-      "0": 46
+      "0": 29
     },
     "f": {},
     "b": {},
     "_coverageSchema": "43e27e138ebf9cfc5966b082cf9a028302ed4184",
-    "hash": "1bfec79b1600213e5cec2d76957718e0144e6769"
+    "hash": "88dd307b5b6b1e8e27221769315f562c69098605"
   }
 }
