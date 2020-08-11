@@ -18,7 +18,7 @@ describe("Form", () => {
     });
 
     it("should contain an Add Endpoint button", function () {
-      cy.get("#addEndPoint").should("have.value", "Add endpoint");
+      cy.get("#addEndPoint").should("have.value", "Round Trip");
     });
 
     it("contains an option to choose my own location as a start point", () => {

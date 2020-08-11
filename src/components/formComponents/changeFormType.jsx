@@ -8,6 +8,7 @@ function ChangeFormType(props) {
       id="addEndPoint"
       className="btn btn-danger buttons"
       onClick={props.formHandler}
+      value={props.buttonText}
     >
       <SwapVertIcon id="swap" />
       {props.buttonText}
