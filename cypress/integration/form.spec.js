@@ -1,5 +1,10 @@
 /// <reference types='cypress' />
 
+Cypress.on("uncaught:exception", (err, runnable) => {
+  console.log(err);
+  return false;
+});
+
 describe("Form", () => {
   context("Contains DOM Elements for Normal Trips", () => {
     beforeEach(() => {
@@ -48,13 +53,13 @@ describe("Form", () => {
 
     it("accepts input Startingpoint", () => {
       const input = "Startingpoint";
-      cy.get('input[name="roundTripStart"]')
+      cy.get('input[name="startingpoint"]')
         .type(input)
         .should("have.value", input);
     });
 
     it("should have a different form for round trip", function () {
-      cy.get('input[name="roundTripStart"]')
+      cy.get('input[name="startingpoint"]')
         .type("Hello")
         .should("have.value", "Hello");
     });
@@ -97,7 +102,7 @@ describe("Form", () => {
       cy.get('button[value="myRoundLocation"]').click();
 
       const input = "My Location";
-      cy.get('input[name="roundTripStart"]').should("have.value", input);
+      cy.get('input[name="startingpoint"]').should("have.value", input);
     });
 
     it("contains a vehicle selector with hiking option for round trip", () => {
@@ -110,7 +115,7 @@ describe("Form", () => {
       const startInput = "London Eye";
       const length = 10000;
 
-      cy.get('input[name="roundTripStart"]').type(startInput);
+      cy.get('input[name="startingpoint"]').type(startInput);
       cy.get('input[name="roundTripLength"]').type(length);
       cy.get('select[cy-name="vehicleChoice"]').select("Walking");
       cy.get("#roundTripButton").click();
