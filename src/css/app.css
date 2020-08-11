@@ -8,7 +8,7 @@
 @import "logo.css";
 @import "smallScreenDevices.css";
 
-*,
+*
 *::before,
 *::after {
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",

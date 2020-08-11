@@ -5,8 +5,6 @@
   opacity: 1;
   width: 600px;
   height: 100%;
-  max-width: 100%;
-  float: left;
   border-radius: 0 0 10px 0;
   background-color: #fcfcfc;
   transform: scale(0.7, 0.7);
@@ -19,14 +17,10 @@
   width: 450px;
   height: 100%;
   max-width: 100%;
-  float: left;
   border-radius: 10px;
   background-color: transparent;
   transform: scale(0.7, 0.7);
   transform-origin: top left;
-}
-.form-control {
-  margin-bottom: 5px;
 }
 .form-control.dropDownList {
   margin-bottom: 5px;
@@ -68,6 +62,7 @@
     font-family: inherit;
     color: #495057;
   }
+
   #roundTripButton {
     margin-top: 0px;
     margin-bottom: 10px;

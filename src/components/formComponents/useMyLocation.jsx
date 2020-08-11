@@ -1,11 +1,11 @@
-import React from "react";
-import LocationOnIcon from "@material-ui/icons/LocationOn";
+import React from 'react';
+import LocationOnIcon from '@material-ui/icons/LocationOn';
 
 function UseMyLocation(props) {
   return (
     <div className="form-group">
       <button
-        // id="roundTripMyLocation"
+        id="useMyLocation"
         onClick={props.locationHandler}
         type="button"
         className="btn btn-secondary buttons"

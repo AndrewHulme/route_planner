@@ -9,9 +9,11 @@
     width: 100vw;
     padding: 0.2rem;
   }
+
   .form-control {
     margin: 5px;
   }
+
   #addEndPoint,
   #useMyLocation,
   #roundTripButton,
@@ -29,9 +31,11 @@
     margin: 1px;
     transform: scale(0.8, 0.8);
   }
+
   .leaflet-control-container {
     display: none;
   }
+
   .dropDowList {
     background: red;
   }
