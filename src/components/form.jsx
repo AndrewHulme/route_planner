@@ -29,7 +29,7 @@ class Form extends Component {
     zoom: 13,
     description: "",
     startingPoint: "",
-    endpoint: "",
+    endPoint: "",
     message: "",
   };
 
@@ -92,7 +92,7 @@ class Form extends Component {
       userName: this.props.user.email,
       description: this.state.description,
       startingPoint: this.state.startingPoint,
-      endPoint: this.state.endpoint,
+      endPoint: this.state.endPoint,
     });
     this.setState({
       message: "Route saved",
@@ -121,7 +121,7 @@ class Form extends Component {
     this.setState({
       roundTripGenerated: 0,
       startingPoint: "",
-      endpoint: "",
+      endPoint: "",
       roundTripLength: "",
       generated: 0,
       roundTrip: form,
@@ -153,7 +153,7 @@ class Form extends Component {
 
   endChangeHandler = (event) => {
     this.setState({
-      endpoint: event.target.value,
+      endPoint: event.target.value,
     });
   };
 
@@ -199,7 +199,7 @@ class Form extends Component {
       "https://eu1.locationiq.com/v1/search.php?key=" +
       geocodingKey +
       "&q=" +
-      this.state.endpoint +
+      this.state.endPoint +
       "&format=json";
 
     const asyncWrapper = async () => {
@@ -353,7 +353,7 @@ class Form extends Component {
       lat,
       lng,
       roundTripLength,
-      endpoint,
+      endPoint,
       description,
     } = this.state;
 
@@ -428,9 +428,9 @@ class Form extends Component {
 
                     <TextInput
                       changeHandler={this.endChangeHandler}
-                      value={endpoint}
+                      value={endPoint}
                       placeholder={"End point"}
-                      name={"endpoint"}
+                      name={"endPoint"}
                     />
                   </div>
 
