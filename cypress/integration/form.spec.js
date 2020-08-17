@@ -14,7 +14,7 @@ describe("Form", () => {
 
     it("accepts input Endpoint", () => {
       const input = "Endpoint";
-      cy.get('input[name="endpoint"]').type(input).should("have.value", input);
+      cy.get('input[name="endPoint"]').type(input).should("have.value", input);
     });
 
     it("should contain an Add Endpoint button", function () {
