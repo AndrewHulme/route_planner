@@ -10,7 +10,7 @@ Check out our app at [http://myrouteplanner.surge.sh/](http://myrouteplanner.sur
 
 The app aims to solve the problem of the user who wants to find a circular route for outdoor activities (walking, cycling, hiking).
 The user can view the map and search for routes without logging in, either circular routes, or routes between a start and end point. Different activity types can be selected, and the result can be randomised.
-Once the user is logged in, favourite routes can be saved in *My Routes* and can be viewed on the map, or they can be removed from the list.
+Once the user is logged in, favourite routes can be saved in _My Routes_ and can be viewed on the map, or they can be removed from the list.
 
 # Tech Stack:
 
@@ -26,23 +26,24 @@ Once the user is logged in, favourite routes can be saved in *My Routes* and can
 
 # Installation
 
-* Clone this repository
-`$ git clone https://github.com/AndrewHulme/route_planner.git`
-* Navigate to local repository
-`$ cd route-planner`
-* Install npm if you don't already have it
-* Install all dependencies
-`$ npm install`
-* Start the server
-`$ npm start`
-* Navigate to [http://localhost:3000](http://localhost:3000) in your browser
+- Clone this repository
+  `$ git clone https://github.com/AndrewHulme/route_planner.git`
+- Navigate to local repository
+  `$ cd route-planner`
+- Install npm if you don't already have it
+- Install all dependencies
+  `$ npm install`
+- Start the server
+  `$ npm start`
+- Navigate to [http://localhost:3000](http://localhost:3000) in your browser
 
 # Running tests
-* Start the server in the terminal if it is not running yet:
-`$ npm start`
-* Start Cypress to run the tests:
-`$ npx cypress open`
-* Click on `Run all specs`
+
+- Start the server in the terminal if it is not running yet:
+  `$ npm start`
+- Start Cypress to run the tests:
+  `$ npx cypress open`
+- Click on `Run all specs`
 
 # Development Process
 
@@ -54,15 +55,18 @@ We had daily stand-ups and retrospectives to update each other on the tasks comp
 View [our project board here](https://github.com/AndrewHulme/route_planner/projects/1), and [our learning journal here](https://github.com/AndrewHulme/route_planner/wiki).
 
 ## Initial planning
+
 We agreed to create an app that can be used to search for routes with the main focus on finding circular routes.
 This is an actual problem we faced when we tried to plan routes for cycling or walking, as it is currently not possible to plan circular routes on other web mapping services without providing multiple waypoints.
 We knew we wanted to have a React frontend, and the majority of the app will be on the frontend, but we also needed a light backend and decided to go for Firebase.
 We created mockups and diagrams to visualise the MVP and the flow of information within the app.
 
 ## MVP
-Our aim for the MVP was to have an interface with a map, and a form where the user can input a starting and endpoint, these points get converted to geographic coordinates and the route displayed on the map. We achieved this by the end of the first 2-day sprint.
+
+Our aim for the MVP was to have an interface with a map, and a form where the user can input a start and end point, these points get converted to geographic coordinates and the route displayed on the map. We achieved this by the end of the first 2-day sprint.
 
 ## Adding features to MVP
+
 With a working MVP we moved on and decided to add a database where the user can save routes.
 We also setup authentication to the app with Firebase.
 
@@ -131,6 +135,7 @@ I can add friends to my profile
 # Further development
 
 We are planning to extend the app with extra features:
-* show user's location in realtime
-* add friends & be able to see their saved routes
-* make it into a mobile app
+
+- show user's location in realtime
+- add friends & be able to see their saved routes
+- make it into a mobile app
