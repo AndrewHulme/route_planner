@@ -2,7 +2,7 @@
 
 The final project created by team JAZE ([Jed Stanton](https://github.com/JStant95), [Andrew Hulme](https://github.com/AndrewHulme), [Zsofia Szonyi](https://github.com/ZsofiaS), [Ed Ancerys](https://github.com/EdAncerys)) at Makers Academy.
 
-Check out our app at [http://myrouteplanner.surge.sh/](http://myrouteplanner.surge.sh/)
+Check out our app at [https://thereandback.surge.sh/](https://thereandback.surge.sh/)
 
 [Specification](#specification) | [Tech Stack](#tech-stack) | [Installation](#installation) | [Running tests](#running-tests) | [Development Process](#development-process) | [Further development](#further-development)
 
