@@ -22,7 +22,7 @@ class RoutingRoundTrip extends MapLayer {
     }
   }
 
-createLeafletElement() {
+  createLeafletElement() {
     const { map, roundTripCoords, vehicle } = this.props;
     var apiORS = process.env.REACT_APP_ROUTE_API_KEY;
 
@@ -56,7 +56,7 @@ createLeafletElement() {
 
     let leafletElement = L.Routing.control({
       waypoints: waypointsArr,
-      router: new L.Routing.openrouteservice(apiORS, {
+      router: new L.Routing.openrouteserviceV2(apiORS, {
         profile: vehicle,
       }),
     });

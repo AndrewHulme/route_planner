@@ -1,79 +1,78 @@
-  "use strict";
+var openrouteservice = require("openrouteservice-js");
+
 (function () {
+  "use strict";
 
   // Browserify
   var L = require("leaflet");
-  var corslite = require("@mapbox/corslite");
-  var polyline = require("@mapbox/polyline");
+  var polyline = require("polyline");
+
+  // var L = require("leaflet");
+  // var corslite = require("@mapbox/corslite");
+  // var polyline = require("@mapbox/polyline");
 
   L.Routing = L.Routing || {};
 
-  L.Routing.OpenRouteService = L.Class.extend({
-    options: {
-      serviceUrl: "https://api.openrouteservice.org/directions",
-      timeout: 30 * 1000,
-      urlParameters: {},
-    },
-
-    initialize: function (apiKey, options) {
+  L.Routing.OpenRouteServiceV2 = L.Class.extend({
+    /**
+     * Contructor
+     * @param {String} apiKey Api key (you can get it from official website https://openrouteservice.org/)
+     * @param {Object} orsOptions Options for calculate the route (Valid options https://openrouteservice.org/dev/#/api-docs/v2/directions/{profile}/post)
+     */
+    initialize: function (apiKey, orsOptions, options) {
       this._apiKey = apiKey;
-      this._profile = options.profile || "driving-car";
+      this._orsOptions = orsOptions;
       L.Util.setOptions(this, options);
     },
+    /**
+     * First to execute, calculetes the route and send it to print
+     * @param {Object} waypoints Destinations
+     * @param {Object} callback
+     * @param {Object} context
+     */
+    route: function (waypoints, callback, context) {
+      var wps = [];
 
-    route: function (waypoints, callback, context, options) {
-      var timedOut = false,
-        wps = [],
-        url,
-        timer,
-        wp,
-        i;
+      // Creates the object with the API_key
+      // Import JS from https://github.com/GIScience/openrouteservice-js
+      let orsDirections = new openrouteservice.Directions({
+        api_key: this._apiKey,
+      });
 
-      options = options || {};
-      url = this.buildRouteUrl(waypoints, options);
-      console.log("url", url);
+      // Change the coordenades from LatLng to LngLat and save it on the object
+      let coordinates = [];
+      waypoints.forEach((element) => {
+        coordinates.push([element.latLng.lng, element.latLng.lat]);
+      });
 
-      timer = setTimeout(function () {
-        timedOut = true;
-        callback.call(context || callback, {
-          status: -1,
-          message: "OpenRoueService request timed out.",
+      this._orsOptions.coordinates = coordinates;
+
+      // Calculates the route
+      orsDirections
+        .calculate(this._orsOptions)
+        .then(
+          L.bind(function (json) {
+            // Add your own result handling here if needed
+            let routes = JSON.parse(JSON.stringify(json));
+
+            // Printamos la ruta
+            this._routeDone(routes, wps, callback, context);
+          }, this)
+        )
+        .catch(function (err) {
+          // Error!
+          console.error(err);
         });
-      }, this.options.timeout);
-
-      for (i = 0; i < waypoints.length; i++) {
-        wp = waypoints[i];
-        wps.push({
-          latLng: wp.latLng,
-          name: wp.name,
-          options: wp.options,
-        });
-      }
-
-      corslite(
-        url,
-        L.bind(function (err, resp) {
-          var data;
-
-          clearTimeout(timer);
-          if (!timedOut) {
-            if (!err) {
-              // try {
-              data = JSON.parse(resp.responseText);
-              this._routeDone(data, wps, callback, context);
-            } else {
-              callback.call(context || callback, {
-                status: -1,
-                message: "HTTP request failed: " + err,
-              });
-            }
-          }
-        }, this)
-      );
 
       return this;
     },
-
+    /**
+     * Route calculated, now print to map
+     * @param {Object} response JSON response
+     * @param {Object} inputWaypoints Waypoint to put
+     * @param {Object} callback
+     * @param {Object} context
+     */
     _routeDone: function (response, inputWaypoints, callback, context) {
       var alts = [],
         waypoints,
@@ -88,7 +87,6 @@
         leg,
         steps,
         step,
-        maneuver,
         startingSearchIndex,
         instruction,
         path;
@@ -127,7 +125,7 @@
         }
 
         alts.push({
-          name: "Routing option " + i,
+          name: "Route: " + (i + 1),
           coordinates: coordinates,
           instructions: instructions,
           summary: {
@@ -141,51 +139,62 @@
 
       callback.call(context, null, alts);
     },
+    /**
+     * Code from https://github.com/GIScience/openrouteservice-docs#geometry-decoding
+     * Decode an x,y or x,y,z encoded polyline
+     * @param {*} encodedPolyline
+     * @param {Boolean} includeElevation - true for x,y,z polyline
+     * @returns {Array} of coordinates
+     */
+    _decodePolyline: function (encodedPolyline, includeElevation = false) {
+      // array that holds the points
+      let points = [];
+      let index = 0;
+      const len = encodedPolyline.length;
+      let lat = 0;
+      let lng = 0;
+      let ele = 0;
+      while (index < len) {
+        let b;
+        let shift = 0;
+        let result = 0;
+        do {
+          b = encodedPolyline.charAt(index++).charCodeAt(0) - 63; // finds ascii
+          // and subtract it by 63
+          result |= (b & 0x1f) << shift;
+          shift += 5;
+        } while (b >= 0x20);
 
-    _decodePolyline: function (geometry) {
-      var polylineDefined = polyline.fromGeoJSON(geometry);
-      var coords = polyline.decode(polylineDefined, 5),
-        latlngs = new Array(coords.length),
-        i;
-      for (i = 0; i < coords.length; i++) {
-        latlngs[i] = new L.LatLng(coords[i][0], coords[i][1]);
+        lat += (result & 1) !== 0 ? ~(result >> 1) : result >> 1;
+        shift = 0;
+        result = 0;
+        do {
+          b = encodedPolyline.charAt(index++).charCodeAt(0) - 63;
+          result |= (b & 0x1f) << shift;
+          shift += 5;
+        } while (b >= 0x20);
+        lng += (result & 1) !== 0 ? ~(result >> 1) : result >> 1;
+
+        if (includeElevation) {
+          shift = 0;
+          result = 0;
+          do {
+            b = encodedPolyline.charAt(index++).charCodeAt(0) - 63;
+            result |= (b & 0x1f) << shift;
+            shift += 5;
+          } while (b >= 0x20);
+          ele += (result & 1) !== 0 ? ~(result >> 1) : result >> 1;
+        }
+        try {
+          let location = [lat / 1e5, lng / 1e5];
+          if (includeElevation) location.push(ele / 100);
+          points.push(location);
+        } catch (e) {
+          console.log(e);
+        }
       }
-
-      return latlngs;
+      return points;
     },
-
-    buildRouteUrl: function (waypoints, options) {
-      var computeInstructions = true,
-        locs = [],
-        i,
-        baseUrl;
-
-      for (i = 0; i < waypoints.length; i++) {
-        locs.push(waypoints[i].latLng.lng + "%2C" + waypoints[i].latLng.lat);
-      }
-
-      baseUrl = this.options.serviceUrl + "?coordinates=" + locs.join("%7C");
-
-      return (
-        baseUrl +
-        L.Util.getParamString(
-          L.extend(
-            {
-              instructions: true,
-              instructions_format: "text",
-              geometry_format: "geojson",
-              preference: "recommended",
-              units: "m",
-              profile: this._profile,
-              api_key: this._apiKey,
-            },
-            this.options.urlParameters
-          ),
-          baseUrl
-        )
-      );
-    },
-
     _convertInstructions: function (step, coordinates) {
       return {
         text: step.instruction,
@@ -196,11 +205,10 @@
     },
   });
 
-  L.Routing.openrouteservice = function (apiKey, options) {
-    return new L.Routing.OpenRouteService(apiKey, options);
+  L.Routing.openrouteserviceV2 = function (apiKey, orsOptions, options) {
+    return new L.Routing.OpenRouteServiceV2(apiKey, orsOptions, options);
   };
 
-  console.log("I've loaded");
   // Browserify
-  // module.exports = L.Routing.OpenRouteService;
+  // module.exports = L.Routing.OpenRouteServiceV2;
 })();
