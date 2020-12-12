@@ -30,7 +30,7 @@ export default class UserAccount extends Component {
           />
         </div>
         <LogInButton login={this.props.login} />
-        <SignUpButton login={this.props.signup} />
+        <SignUpButton signup={this.props.signup} />
       </React.Fragment>
     );
   }

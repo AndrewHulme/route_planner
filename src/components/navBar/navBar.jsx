@@ -43,32 +43,39 @@ class NavBar extends Component {
 
   login(e) {
     e.preventDefault();
+    console.log('click');
     fire
       .auth()
       .signInWithEmailAndPassword(this.state.email, this.state.password)
       .then((u) => {
         this.setState({ message: '', errorIsActive: false });
+        console.log('LogIn Detailes', this.state.email, this.email.password);
       })
       .catch((error) => {
         this.setState({ message: error.message, errorIsActive: true });
+        console.log('Log in error');
       });
   }
 
   signup(e) {
     e.preventDefault();
+    console.log('click');
     fire
       .auth()
       .createUserWithEmailAndPassword(this.state.email, this.state.password)
       .then((u) => {
         this.setState({ message: '', errorIsActive: false });
+        console.log('SignUp Details', this.state.email, this.email.password);
       })
       .catch((error) => {
         this.setState({ message: error.message, errorIsActive: true });
+        console.log('SignUp Error');
       });
   }
 
   logout() {
     fire.auth().signOut();
+    console.log('LogOut');
   }
 
   hideAlert = () => {
