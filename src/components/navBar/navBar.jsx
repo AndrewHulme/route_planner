@@ -1,10 +1,10 @@
-import React, { Component } from 'react';
-import { Navbar } from 'react-bootstrap';
-import fire from '../firebase';
-import NavBarLogo from './navBarComponents/NavBarLogo';
-import UserAccount from './navBarComponents/UserAccount';
-import MyRoutes from './navBarComponents/MyRoutes';
-import LogOutButton from './navBarComponents/LogOutButton';
+import React, { Component } from "react";
+import { Navbar } from "react-bootstrap";
+import fire from "../firebase";
+import NavBarLogo from "./navBarComponents/NavBarLogo";
+import UserAccount from "./navBarComponents/UserAccount";
+import MyRoutes from "./navBarComponents/MyRoutes";
+import LogOutButton from "./navBarComponents/LogOutButton";
 
 class NavBar extends Component {
   constructor(props) {
@@ -14,10 +14,10 @@ class NavBar extends Component {
     this.signup = this.signup.bind(this);
     this.logout = this.logout.bind(this);
     this.state = {
-      email: '',
-      password: '',
+      email: "",
+      password: "",
       toggleMyMaps: false,
-      message: '',
+      message: "",
     };
   }
 
@@ -43,43 +43,43 @@ class NavBar extends Component {
 
   login(e) {
     e.preventDefault();
-    console.log('click');
+
     fire
       .auth()
       .signInWithEmailAndPassword(this.state.email, this.state.password)
       .then((u) => {
-        this.setState({ message: '', errorIsActive: false });
-        console.log('LogIn Detailes', this.state.email, this.email.password);
+        this.setState({ message: "", errorIsActive: false });
+        console.log("LogIn Detailes", this.state.email, this.email.password);
       })
       .catch((error) => {
         this.setState({ message: error.message, errorIsActive: true });
-        console.log('Log in error');
+        console.log("Log in error");
       });
   }
 
   signup(e) {
     e.preventDefault();
-    console.log('click');
+
     fire
       .auth()
       .createUserWithEmailAndPassword(this.state.email, this.state.password)
       .then((u) => {
-        this.setState({ message: '', errorIsActive: false });
-        console.log('SignUp Details', this.state.email, this.email.password);
+        this.setState({ message: "", errorIsActive: false });
+        console.log("SignUp Details", this.state.email, this.email.password);
       })
       .catch((error) => {
         this.setState({ message: error.message, errorIsActive: true });
-        console.log('SignUp Error');
+        console.log("SignUp Error");
       });
   }
 
   logout() {
     fire.auth().signOut();
-    console.log('LogOut');
+    console.log("LogOut");
   }
 
   hideAlert = () => {
-    console.log('You called?');
+    console.log("You called?");
     this.setState({
       errorIsActive: false,
     });
