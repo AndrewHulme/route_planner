@@ -5,6 +5,11 @@ import L from "leaflet";
 import Routing from "./routing";
 import RoutingRoundTrip from "./routingRoundTrip";
 
+const markerIcon = new L.Icon({
+  iconUrl: require("../images/currentLocationMarker2.webp"),
+  iconSize: [45, 45],
+});
+
 class LeafletMapContainer extends Component {
   state = {
     journeyCoords: this.props.journeyCoords,
@@ -28,7 +33,7 @@ class LeafletMapContainer extends Component {
           attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
         />
 
-        <Marker position={position}></Marker>
+        <Marker icon={markerIcon} position={position}></Marker>
 
         {this.props.journeyCoords !== undefined && this.state.isMapInit && (
           <Routing
