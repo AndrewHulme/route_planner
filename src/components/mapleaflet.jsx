@@ -8,6 +8,7 @@ import RoutingRoundTrip from "./routingRoundTrip";
 const markerIcon = new L.Icon({
   iconUrl: require("../images/currentLocationMarker2.webp"),
   iconSize: [45, 45],
+  iconAnchor: [21, 46],
 });
 
 class LeafletMapContainer extends Component {
