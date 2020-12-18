@@ -4,12 +4,21 @@ import "../css/app.css";
 import L from "leaflet";
 import Routing from "./routing";
 import RoutingRoundTrip from "./routingRoundTrip";
+import LocateControl from "./locateControl";
 
-const markerIcon = new L.Icon({
-  iconUrl: require("../images/currentLocationMarker2.webp"),
-  iconSize: [45, 45],
-  iconAnchor: [21, 46],
-});
+// const markerIcon = new L.Icon({
+//   iconUrl: require("../images/currentLocationMarker2.webp"),
+//   iconSize: [45, 45],
+//   iconAnchor: [21, 46],
+// });
+
+const locateOptions = {
+  position: "topright",
+  strings: {
+    title: "Show me where I am, yo!",
+  },
+  onActivate: () => {}, // callback before engine starts retrieving locations
+};
 
 class LeafletMapContainer extends Component {
   state = {
@@ -34,7 +43,9 @@ class LeafletMapContainer extends Component {
           attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
         />
 
-        <Marker icon={markerIcon} position={position}></Marker>
+        <LocateControl options={locateOptions} startDirectly />
+
+        {/* <Marker icon={markerIcon} position={position}></Marker> */}
 
         {this.props.journeyCoords !== undefined && this.state.isMapInit && (
           <Routing
