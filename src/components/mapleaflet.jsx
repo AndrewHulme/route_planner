@@ -15,7 +15,7 @@ import LocateControl from "./locateControl";
 const locateOptions = {
   position: "topright",
   strings: {
-    title: "Show me where I am, yo!",
+    title: "Show me where I am!",
   },
   onActivate: () => {}, // callback before engine starts retrieving locations
 };
