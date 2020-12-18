@@ -6,12 +6,6 @@ import Routing from "./routing";
 import RoutingRoundTrip from "./routingRoundTrip";
 import LocateControl from "./locateControl";
 
-// const markerIcon = new L.Icon({
-//   iconUrl: require("../images/currentLocationMarker2.webp"),
-//   iconSize: [45, 45],
-//   iconAnchor: [21, 46],
-// });
-
 const locateOptions = {
   position: "topright",
   strings: {
@@ -44,8 +38,6 @@ class LeafletMapContainer extends Component {
         />
 
         <LocateControl options={locateOptions} startDirectly />
-
-        {/* <Marker icon={markerIcon} position={position}></Marker> */}
 
         {this.props.journeyCoords !== undefined && this.state.isMapInit && (
           <Routing
