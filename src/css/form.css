@@ -55,6 +55,9 @@
 #roundTripMyLocation {
   margin-top: 10px;
 }
+#toggleForm {
+  float: left;
+}
 
 @media screen and (max-width: 736px) and (orientation: portrait) {
   .form-control.dropDownList {

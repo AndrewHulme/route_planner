@@ -31,6 +31,7 @@ class Form extends Component {
     startingPoint: "",
     endPoint: "",
     message: "",
+    isOpened: true,
   };
 
   constructor(props) {
@@ -347,6 +348,10 @@ class Form extends Component {
     asyncWrapper();
   };
 
+  toggleForm = () => {
+    this.setState({ isOpened: !this.state.isOpened });
+  };
+
   render() {
     const {
       startingPoint,
@@ -355,6 +360,7 @@ class Form extends Component {
       roundTripLength,
       endPoint,
       description,
+      isOpened,
     } = this.state;
 
     var displayStartingPoint = "";
@@ -367,123 +373,139 @@ class Form extends Component {
 
     return (
       <div className="main-container">
-        <div
-          className="main-form"
-          style={{ display: this.props.toggleMyMaps ? "none" : "block" }}
-        >
-          {!this.props.toggleMyMaps && (
-            <div>
-              <div className="row" id="userWelcome">
-                {this.props.user ? (
-                  <div className="col">
-                    <p id="welcome-message">Welcome: {this.props.user.email}</p>
-                  </div>
-                ) : (
-                  ""
-                )}
-              </div>
-
-              {this.state.roundTrip == true ? (
-                <form id="roundTripForm" onSubmit={this.handleSubmitRoundTrip}>
-                  <div className="form-row">
-                    <TextInput
-                      changeHandler={this.roundTripStartHandler}
-                      value={displayStartingPoint}
-                      placeholder={"Start point for round trip"}
-                      name={"startingPoint"}
-                    />
-
-                    <TextInput
-                      changeHandler={this.roundTripLengthHandler}
-                      value={roundTripLength}
-                      placeholder={"Length of trip (km)"}
-                      name={"roundTripLength"}
-                    />
-                  </div>
-
-                  <UseMyLocation
-                    locationHandler={this.locationHandler}
-                    value={"myRoundLocation"}
-                  />
-
-                  <div className="form-row" id="generateRoute">
-                    <VehicleChoice
-                      cyName={"vehicleChoice"}
-                      value={this.state.value}
-                      vehicleChangeHandler={this.vehicleChangeHandler}
-                    />
-
-                    <GenerateButton value={this.state.generateButton} />
-                  </div>
-                </form>
-              ) : (
-                <form onSubmit={this.submitHandler} id="secondForm">
-                  <div className="form-row">
-                    <TextInput
-                      changeHandler={this.startChangeHandler}
-                      value={displayStartingPoint}
-                      placeholder={"Starting point"}
-                      name={"startingPoint"}
-                    />
-
-                    <TextInput
-                      changeHandler={this.endChangeHandler}
-                      value={endPoint}
-                      placeholder={"End point"}
-                      name={"endPoint"}
-                    />
-                  </div>
-
-                  <UseMyLocation
-                    locationHandler={this.locationHandler}
-                    value={"myLocation"}
-                  />
-
-                  <div className="form-row" id="generateRoute">
-                    <VehicleChoice
-                      cyName={"roundVehiclechoice"}
-                      value={this.state.value}
-                      vehicleChangeHandler={this.vehicleChangeHandler}
-                    />
-
-                    <GenerateButton value={"Generate"} />
-                  </div>
-                </form>
-              )}
-
-              <ChangeFormType
-                formHandler={this.formHandler}
-                buttonText={this.state.buttonText}
-              />
-            </div>
-          )}
-
-          {!this.props.toggleMyMaps &&
-            this.props.user &&
-            (this.state.roundTripGenerated > 0 || this.state.generated > 0) && (
-              <div className="form-row" id="saveRouteID">
-                <div className="col">
-                  <input
-                    type="text"
-                    className="form-control"
-                    placeholder="Description here..."
-                    value={description}
-                    name="description"
-                    onChange={this.descriptionHandler}
-                  />
+        {isOpened && (
+          <div
+            className="main-form"
+            style={{ display: this.props.toggleMyMaps ? "none" : "block" }}
+          >
+            {!this.props.toggleMyMaps && (
+              <div>
+                <div className="row" id="userWelcome">
+                  {this.props.user ? (
+                    <div className="col">
+                      <p id="welcome-message">
+                        Welcome: {this.props.user.email}
+                      </p>
+                    </div>
+                  ) : (
+                    ""
+                  )}
                 </div>
-                <button
-                  value="saveRoute"
-                  id="saveRoute"
-                  className="btn btn-warning buttons"
-                  onClick={this.saveToDB}
-                >
-                  <BookmarkIcon id="save-icon" />
-                  Save route
-                </button>
+
+                {this.state.roundTrip == true ? (
+                  <form
+                    id="roundTripForm"
+                    onSubmit={this.handleSubmitRoundTrip}
+                  >
+                    <div className="form-row">
+                      <TextInput
+                        changeHandler={this.roundTripStartHandler}
+                        value={displayStartingPoint}
+                        placeholder={"Start point for round trip"}
+                        name={"startingPoint"}
+                      />
+
+                      <TextInput
+                        changeHandler={this.roundTripLengthHandler}
+                        value={roundTripLength}
+                        placeholder={"Length of trip (km)"}
+                        name={"roundTripLength"}
+                      />
+                    </div>
+
+                    <UseMyLocation
+                      locationHandler={this.locationHandler}
+                      value={"myRoundLocation"}
+                    />
+
+                    <div className="form-row" id="generateRoute">
+                      <VehicleChoice
+                        cyName={"vehicleChoice"}
+                        value={this.state.value}
+                        vehicleChangeHandler={this.vehicleChangeHandler}
+                      />
+
+                      <GenerateButton value={this.state.generateButton} />
+                    </div>
+                  </form>
+                ) : (
+                  <form onSubmit={this.submitHandler} id="secondForm">
+                    <div className="form-row">
+                      <TextInput
+                        changeHandler={this.startChangeHandler}
+                        value={displayStartingPoint}
+                        placeholder={"Starting point"}
+                        name={"startingPoint"}
+                      />
+
+                      <TextInput
+                        changeHandler={this.endChangeHandler}
+                        value={endPoint}
+                        placeholder={"End point"}
+                        name={"endPoint"}
+                      />
+                    </div>
+
+                    <UseMyLocation
+                      locationHandler={this.locationHandler}
+                      value={"myLocation"}
+                    />
+
+                    <div className="form-row" id="generateRoute">
+                      <VehicleChoice
+                        cyName={"roundVehiclechoice"}
+                        value={this.state.value}
+                        vehicleChangeHandler={this.vehicleChangeHandler}
+                      />
+
+                      <GenerateButton value={"Generate"} />
+                    </div>
+                  </form>
+                )}
+
+                <ChangeFormType
+                  formHandler={this.formHandler}
+                  buttonText={this.state.buttonText}
+                />
               </div>
             )}
-        </div>
+
+            {!this.props.toggleMyMaps &&
+              this.props.user &&
+              (this.state.roundTripGenerated > 0 ||
+                this.state.generated > 0) && (
+                <div className="form-row" id="saveRouteID">
+                  <div className="col">
+                    <input
+                      type="text"
+                      className="form-control"
+                      placeholder="Description here..."
+                      value={description}
+                      name="description"
+                      onChange={this.descriptionHandler}
+                    />
+                  </div>
+                  <button
+                    value="saveRoute"
+                    id="saveRoute"
+                    className="btn btn-warning buttons"
+                    onClick={this.saveToDB}
+                  >
+                    <BookmarkIcon id="save-icon" />
+                    Save route
+                  </button>
+                </div>
+              )}
+          </div>
+        )}
+
+        <button
+          id="toggleForm"
+          className="btn btn-primary"
+          onClick={this.toggleForm}
+        >
+          Toggle Form
+        </button>
 
         {this.props.toggleMyMaps && (
           <ReturnedFromDB
