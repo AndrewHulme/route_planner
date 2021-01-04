@@ -67,8 +67,11 @@ Our aim for the MVP was to have an interface with a map, and a form where the us
 
 ## Adding features to MVP
 
-With a working MVP we moved on and decided to add a database where the user can save routes.
-We also setup authentication to the app with Firebase.
+With a working MVP we moved on and:
+- Allowed users to save their routes to a database.
+- Setup authentication to the app with Firebase.
+- Added functionality to show the user's location in realtime.
+
 
 ## User Stories
 
@@ -136,6 +139,5 @@ I can add friends to my profile
 
 We are planning to extend the app with extra features:
 
-- show user's location in realtime
-- add friends & be able to see their saved routes
-- make it into a mobile app
+- Add friends & be able to see their saved routes
+- Make it into a mobile app
